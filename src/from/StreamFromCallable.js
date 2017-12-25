@@ -1,3 +1,5 @@
+import { EOF } from '..' ;
+
 /**
  * Class that wraps a callable with a stream.
  */
@@ -13,7 +15,7 @@ export class StreamFromCallable {
 	constructor ( callable ) {
 		this.callable = callable ;
 		this.buffer = [ ] ;
-		this.eof = { } ;
+		this.eof = EOF ;
 	}
 
 	/**
