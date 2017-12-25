@@ -1,5 +1,11 @@
 window.esdocSearchIndex = [
   [
+    "@aureooms/js-stream/src/eof.js~eof",
+    "variable/index.html#static-variable-EOF",
+    "<span>EOF</span> <span class=\"search-result-import-path\">@aureooms/js-stream/src/EOF.js</span>",
+    "variable"
+  ],
+  [
     "@aureooms/js-stream/src/from/streamfromcallable.js~streamfromcallable",
     "class/src/from/StreamFromCallable.js~StreamFromCallable.html",
     "<span>StreamFromCallable</span> <span class=\"search-result-import-path\">@aureooms/js-stream/src/from/StreamFromCallable.js</span>",
@@ -388,6 +394,12 @@ window.esdocSearchIndex = [
     "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/undefined",
     "src/.external-ecmascript.js~undefined",
     "external"
+  ],
+  [
+    "src/eof.js",
+    "file/src/EOF.js.html",
+    "src/EOF.js",
+    "file"
   ],
   [
     "src/chain.js",
