@@ -1,7 +1,7 @@
 {
   "name": "@aureooms/js-stream",
   "description": "Streaming library for JavaScript",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "author": "aureooms",
   "ava": {
     "require": [
