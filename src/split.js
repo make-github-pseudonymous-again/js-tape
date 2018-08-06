@@ -1,7 +1,7 @@
 
-import { fromiterable } from './from' ;
+import fromiterable from './fromiterable' ;
 
-import { exhaust } from './exhaust' ;
+import exhaust from './exhaust' ;
 
 /**
  * Splits the input stream into a stream of streams according to some set of
@@ -11,7 +11,7 @@ import { exhaust } from './exhaust' ;
  * @param {Iterable} sep - An iterable of separators.
  * @returns {Stream}
  */
-export function split ( stream , sep ) {
+export default function split ( stream , sep ) {
 
 	return fromiterable( _split( stream , sep ) ) ;
 

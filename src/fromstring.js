@@ -1,4 +1,4 @@
-import { fromiterable } from './fromiterable' ;
+import fromiterable from './fromiterable' ;
 
 /**
  * Converts a string to a stream.
@@ -9,4 +9,4 @@ import { fromiterable } from './fromiterable' ;
  * @param {String} _string the string to convert
  * @function
  */
-export const fromstring = fromiterable ;
+export default fromiterable ;

@@ -1,6 +1,6 @@
 import test from 'ava' ;
 
-import * as stream from '../../src' ;
+import stream from '../../src' ;
 
 test( 'unread token' , async t => {
 

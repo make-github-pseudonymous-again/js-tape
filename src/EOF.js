@@ -1,1 +1,1 @@
-export const EOF = { } ;
+export default { } ;

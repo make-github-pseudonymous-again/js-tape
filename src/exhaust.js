@@ -3,7 +3,7 @@
  * Exhausts a stream.
  * @param {Stream} stream the stream to read from
  */
-export function exhaust ( stream ) {
+export default function exhaust ( stream ) {
 
 	while ( stream.read( ) !== stream.eof ) ;
 

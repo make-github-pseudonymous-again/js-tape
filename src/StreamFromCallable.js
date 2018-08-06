@@ -1,9 +1,9 @@
-import { EOF } from '..' ;
+import EOF from './EOF' ;
 
 /**
  * Class that wraps a callable with a stream.
  */
-export class StreamFromCallable {
+export default class StreamFromCallable {
 
 	/**
 	 * The constructor. Stores the callable that yields values to stream.
