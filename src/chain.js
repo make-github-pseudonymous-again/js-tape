@@ -1,5 +1,5 @@
 import fromAsyncIterable from './fromAsyncIterable' ;
-import toIterable from './toIterable' ;
+import toAsyncIterable from './toAsyncIterable' ;
 import asyncIterableChain from './asyncIterableChain' ;
 import asyncIterableMap from './asyncIterableMap' ;
 
@@ -9,6 +9,6 @@ import asyncIterableMap from './asyncIterableMap' ;
  */
 export default function chain ( stream ) {
 
-	return fromAsyncIterable( asyncIterableChain( asyncIterableMap( toIterable , toIterable( stream ) ) ) ) ;
+	return fromAsyncIterable( asyncIterableChain( asyncIterableMap( toAsyncIterable , toAsyncIterable( stream ) ) ) ) ;
 
 }

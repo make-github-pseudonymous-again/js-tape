@@ -1,8 +1,8 @@
-import toIterable from './toIterable' ;
+import toAsyncIterable from './toAsyncIterable' ;
 
 /**
  * Converts a stream to an iterator.
  * @kind function
  * @param {Stream} stream the stream to read from
  */
-export default stream => toIterable( stream )[Symbol.asyncIterator]( ) ;
+export default stream => toAsyncIterable( stream )[Symbol.asyncIterator]( ) ;

@@ -17,7 +17,7 @@ import skip from './skip' ;
 import split from './split' ;
 import toArray from './toArray' ;
 import toCallable from './toCallable' ;
-import toIterable from './toIterable' ;
+import toAsyncIterable from './toAsyncIterable' ;
 import toIterator from './toIterator' ;
 import toString from './toString' ;
 
@@ -41,7 +41,7 @@ export default {
 	split ,
 	toArray ,
 	toCallable ,
-	toIterable ,
+	toAsyncIterable ,
 	toIterator ,
 	toString ,
 } ;
@@ -66,7 +66,7 @@ export {
 	split ,
 	toArray ,
 	toCallable ,
-	toIterable ,
+	toAsyncIterable ,
 	toIterator ,
 	toString ,
 } ;
