@@ -1,6 +1,6 @@
 import test from 'ava' ;
 
-import { fromstring , skip } from '../../src' ;
+import { fromString , skip } from '../../src' ;
 
 /**
  * @test {stream#fromstring}
@@ -9,7 +9,7 @@ import { fromstring , skip } from '../../src' ;
 test( 'can skip tokens from stream' , async t => {
 
 	const input = '\n\n\n    1 ,\t22\n, 333\t,\n-44 ,\t-5 \t\n  \t' ;
-	const stream = fromstring( input ) ;
+	const stream = fromString( input ) ;
 	t.deepEqual( await skip( stream , ' \t\n' ) , '1' ) ;
 	t.deepEqual( await skip( stream , ' \t\n' ) , ',' ) ;
 	t.deepEqual( await skip( stream , ' \t\n' ) , '2' ) ;

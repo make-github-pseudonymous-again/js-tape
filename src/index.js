@@ -1,60 +1,72 @@
 import EOF from './EOF' ;
 import StreamFromCallable from './StreamFromCallable' ;
+import asyncChain from './asyncChain' ;
+import asyncIterableToArray from './asyncIterableToArray' ;
+import asyncMap from './asyncMap' ;
 import chain from './chain' ;
 import exhaust from './exhaust' ;
-import fromarray from './fromarray' ;
-import fromcallable from './fromcallable' ;
-import fromiterable from './fromiterable' ;
-import fromiterator from './fromiterator' ;
-import fromstring from './fromstring' ;
+import fromArray from './fromArray' ;
+import fromAsyncIterable from './fromAsyncIterable' ;
+import fromCallable from './fromCallable' ;
+import fromIterable from './fromIterable' ;
+import fromIterator from './fromIterator' ;
+import fromString from './fromString' ;
 import ignore from './ignore' ;
 import map from './map' ;
 import skip from './skip' ;
 import split from './split' ;
-import toarray from './toarray' ;
-import tocallable from './tocallable' ;
-import toiterable from './toiterable' ;
-import toiterator from './toiterator' ;
-import tostring from './tostring' ;
+import toArray from './toArray' ;
+import toCallable from './toCallable' ;
+import toIterable from './toIterable' ;
+import toIterator from './toIterator' ;
+import toString from './toString' ;
 
 export default {
 	EOF ,
 	StreamFromCallable ,
+	asyncChain ,
+	asyncIterableToArray ,
+	asyncMap ,
 	chain ,
 	exhaust ,
-	fromarray ,
-	fromcallable ,
-	fromiterable ,
-	fromiterator ,
-	fromstring ,
+	fromArray ,
+	fromAsyncIterable ,
+	fromCallable ,
+	fromIterable ,
+	fromIterator ,
+	fromString ,
 	ignore ,
 	map ,
 	skip ,
 	split ,
-	toarray ,
-	tocallable ,
-	toiterable ,
-	toiterator ,
-	tostring ,
+	toArray ,
+	toCallable ,
+	toIterable ,
+	toIterator ,
+	toString ,
 } ;
 
 export {
 	EOF ,
 	StreamFromCallable ,
+	asyncChain ,
+	asyncIterableToArray ,
+	asyncMap ,
 	chain ,
 	exhaust ,
-	fromarray ,
-	fromcallable ,
-	fromiterable ,
-	fromiterator ,
-	fromstring ,
+	fromArray ,
+	fromAsyncIterable ,
+	fromCallable ,
+	fromIterable ,
+	fromIterator ,
+	fromString ,
 	ignore ,
 	map ,
 	skip ,
 	split ,
-	toarray ,
-	tocallable ,
-	toiterable ,
-	toiterator ,
-	tostring ,
+	toArray ,
+	toCallable ,
+	toIterable ,
+	toIterator ,
+	toString ,
 } ;

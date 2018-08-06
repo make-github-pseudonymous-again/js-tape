@@ -1,4 +1,4 @@
-import toiterator from './toiterator' ;
+import toIterator from './toIterator' ;
 
 /**
  * Converts a stream to a callable.
@@ -6,6 +6,6 @@ import toiterator from './toiterator' ;
  * @param {Stream} stream the stream to read from
  */
 export default stream => {
-	const it = toiterator( stream ) ;
+	const it = toIterator( stream ) ;
 	return it.next.bind( it ) ;
 } ;

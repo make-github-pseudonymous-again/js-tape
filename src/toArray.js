@@ -1,4 +1,4 @@
-import toiterable from './toiterable' ;
+import toIterable from './toIterable' ;
 import asyncIterableToArray from './asyncIterableToArray' ;
 
 /**
@@ -6,4 +6,4 @@ import asyncIterableToArray from './asyncIterableToArray' ;
  * @kind function
  * @param {Stream} stream the stream to read from
  */
-export default async stream => asyncIterableToArray( toiterable( stream ) ) ;
+export default async stream => asyncIterableToArray( toIterable( stream ) ) ;

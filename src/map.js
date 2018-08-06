@@ -1,5 +1,5 @@
-import fromasynciterable from './fromasynciterable' ;
-import toiterable from './toiterable' ;
+import fromAsyncIterable from './fromAsyncIterable' ;
+import toIterable from './toIterable' ;
 import asyncMap from './asyncMap' ;
 
 /**
@@ -9,6 +9,6 @@ import asyncMap from './asyncMap' ;
  */
 export default function map ( callable , stream ) {
 
-	return fromasynciterable( asyncMap( callable , toiterable( stream ) ) ) ;
+	return fromAsyncIterable( asyncMap( callable , toIterable( stream ) ) ) ;
 
 }

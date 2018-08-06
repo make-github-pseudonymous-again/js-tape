@@ -8,9 +8,9 @@ import stream from '../../src' ;
 test( 'can ignore tokens from stream' , async t => {
 
 	const input = '\n\n\n    1 ,\t22\n, 333\t,\n-44 ,\t-5 \t\n  \t' ;
-	let mystream = stream.fromstring( input ) ;
+	let mystream = stream.fromString( input ) ;
 	mystream = stream.ignore( mystream , ' \t\n' ) ;
-	t.deepEqual(await stream.tostring( mystream ), '1,22,333,-44,-5' ) ;
+	t.deepEqual(await stream.toString( mystream ), '1,22,333,-44,-5' ) ;
 
 } ) ;
 
@@ -20,8 +20,8 @@ test( 'can ignore tokens from stream' , async t => {
 test( 'can ignore tokens from stream (bis)' , async t => {
 
 	const input = '\n\n\n    1 ,\t22\n, 333\t,\n-44 ,\t-5' ;
-	let mystream = stream.fromstring( input ) ;
+	let mystream = stream.fromString( input ) ;
 	mystream = stream.ignore( mystream , ' \t\n' ) ;
-	t.deepEqual(await stream.tostring( mystream ), '1,22,333,-44,-5' ) ;
+	t.deepEqual(await stream.toString( mystream ), '1,22,333,-44,-5' ) ;
 
 } ) ;

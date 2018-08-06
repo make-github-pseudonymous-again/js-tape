@@ -1,4 +1,4 @@
-import fromasynciterable from './fromasynciterable' ;
+import fromAsyncIterable from './fromAsyncIterable' ;
 import exhaust from './exhaust' ;
 
 /**
@@ -11,7 +11,7 @@ import exhaust from './exhaust' ;
  */
 export default function split ( stream , sep ) {
 
-	return fromasynciterable( _split( stream , sep ) ) ;
+	return fromAsyncIterable( _split( stream , sep ) ) ;
 
 }
 
@@ -34,7 +34,7 @@ export async function* _split ( stream , sep ) {
 
 		if ( _sep.has( token ) ) continue ;
 
-		const group = fromasynciterable( ( async function* ( ) {
+		const group = fromAsyncIterable( ( async function* ( ) {
 
 			yield token ;
 
