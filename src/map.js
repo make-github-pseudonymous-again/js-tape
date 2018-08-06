@@ -1,7 +1,6 @@
-import { map as _map } from '@aureooms/js-itertools' ;
-
-import fromiterable from './fromiterable' ;
+import fromasynciterable from './fromasynciterable' ;
 import toiterable from './toiterable' ;
+import asyncMap from './asyncMap' ;
 
 /**
  * Applies a callable to each token of a stream.
@@ -10,6 +9,6 @@ import toiterable from './toiterable' ;
  */
 export default function map ( callable , stream ) {
 
-	return fromiterable( _map( callable , toiterable( stream ) ) ) ;
+	return fromasynciterable( asyncMap( callable , toiterable( stream ) ) ) ;
 
 }

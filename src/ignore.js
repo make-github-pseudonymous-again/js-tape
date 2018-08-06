@@ -1,4 +1,3 @@
-
 import split from './split' ;
 import chain from './chain' ;
 

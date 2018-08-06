@@ -1,10 +1,9 @@
-
 /**
  * Exhausts a stream.
  * @param {Stream} stream the stream to read from
  */
-export default function exhaust ( stream ) {
+export default async function exhaust ( stream ) {
 
-	while ( stream.read( ) !== stream.eof ) ;
+	while ( await stream.read( ) !== stream.eof ) ;
 
 }

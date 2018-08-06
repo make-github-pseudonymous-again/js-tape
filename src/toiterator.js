@@ -5,4 +5,4 @@ import toiterable from './toiterable' ;
  * @kind function
  * @param {Stream} stream the stream to read from
  */
-export default stream => toiterable( stream )[Symbol.iterator]( ) ;
+export default stream => toiterable( stream )[Symbol.asyncIterator]( ) ;

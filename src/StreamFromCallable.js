@@ -24,11 +24,11 @@ export default class StreamFromCallable {
 	 *
 	 * @returns {Object}
 	 */
-	read ( ) {
+	async read ( ) {
 
 		if ( this.buffer.length > 0 ) return this.buffer.pop( ) ;
 
-		const state = this.callable( ) ;
+		const state = await this.callable( ) ;
 
 		if ( state.done ) return this.eof ;
 
@@ -44,6 +44,7 @@ export default class StreamFromCallable {
 	 */
 	unread ( token ) {
 
+		// should this be async too ?
 		this.buffer.push( token ) ;
 
 	}

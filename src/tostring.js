@@ -5,4 +5,4 @@ import toarray from './toarray' ;
  * @kind function
  * @param {Stream} stream the stream to read from
  */
-export default stream => toarray( stream ).join( '' ) ;
+export default async stream => (await toarray( stream )).join( '' ) ;

@@ -5,13 +5,13 @@
  * @param {Stream} stream
  * @param {Iterable} toskip
  */
-export default function skip ( stream , toskip ) {
+export default async function skip ( stream , toskip ) {
 
 	const _toskip = new Set( toskip ) ;
 
 	while ( true ) {
 
-		const token = stream.read( ) ;
+		const token = await stream.read( ) ;
 
 		if ( token === stream.eof ) return stream.eof ;
 

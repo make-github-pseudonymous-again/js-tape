@@ -1,6 +1,4 @@
-
-import fromiterable from './fromiterable' ;
-
+import fromasynciterable from './fromasynciterable' ;
 import exhaust from './exhaust' ;
 
 /**
@@ -13,7 +11,7 @@ import exhaust from './exhaust' ;
  */
 export default function split ( stream , sep ) {
 
-	return fromiterable( _split( stream , sep ) ) ;
+	return fromasynciterable( _split( stream , sep ) ) ;
 
 }
 
@@ -24,25 +22,25 @@ export default function split ( stream , sep ) {
  * @param {Iterable} sep - An iterable of separators.
  * @returns {Iterator}
  */
-export function* _split ( stream , sep ) {
+export async function* _split ( stream , sep ) {
 
 	const _sep = new Set( sep ) ;
 
 	while ( true ) {
 
-		const token = stream.read( ) ;
+		const token = await stream.read( ) ;
 
 		if ( token === stream.eof ) break ;
 
 		if ( _sep.has( token ) ) continue ;
 
-		const group = fromiterable( ( function* ( ) {
+		const group = fromasynciterable( ( async function* ( ) {
 
 			yield token ;
 
 			while ( true ) {
 
-				const token = stream.read( ) ;
+				const token = await stream.read( ) ;
 
 				if ( _sep.has( token ) ) break ;
 
@@ -54,7 +52,7 @@ export function* _split ( stream , sep ) {
 
 		yield group ;
 
-		exhaust( group ) ;
+		await exhaust( group ) ;
 
 	}
 

@@ -1,7 +1,7 @@
-import { map as _map , chain as _chain } from '@aureooms/js-itertools' ;
-
-import fromiterable from './fromiterable' ;
+import fromasynciterable from './fromasynciterable' ;
 import toiterable from './toiterable' ;
+import asyncChain from './asyncChain' ;
+import asyncMap from './asyncMap' ;
 
 /**
  * Converts a stream of streams of tokens to a stream of tokens.
@@ -9,6 +9,6 @@ import toiterable from './toiterable' ;
  */
 export default function chain ( stream ) {
 
-	return fromiterable( _chain( _map( toiterable , toiterable( stream ) ) ) ) ;
+	return fromasynciterable( asyncChain( asyncMap( toiterable , toiterable( stream ) ) ) ) ;
 
 }
