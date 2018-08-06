@@ -39,6 +39,9 @@
     "np": "^2.18.3",
     "nyc": "^11.4.1"
   },
+  "files": [
+    "lib"
+  ],
   "homepage": "https://aureooms.github.io/js-stream",
   "keywords": [
     "stream"
