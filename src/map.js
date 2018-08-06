@@ -1,6 +1,6 @@
 import fromAsyncIterable from './fromAsyncIterable' ;
 import toIterable from './toIterable' ;
-import asyncMap from './asyncMap' ;
+import asyncIterableMap from './asyncIterableMap' ;
 
 /**
  * Applies a callable to each token of a stream.
@@ -9,6 +9,6 @@ import asyncMap from './asyncMap' ;
  */
 export default function map ( callable , stream ) {
 
-	return fromAsyncIterable( asyncMap( callable , toIterable( stream ) ) ) ;
+	return fromAsyncIterable( asyncIterableMap( callable , toIterable( stream ) ) ) ;
 
 }

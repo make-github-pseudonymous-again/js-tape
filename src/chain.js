@@ -1,7 +1,7 @@
 import fromAsyncIterable from './fromAsyncIterable' ;
 import toIterable from './toIterable' ;
-import asyncChain from './asyncChain' ;
-import asyncMap from './asyncMap' ;
+import asyncIterableChain from './asyncIterableChain' ;
+import asyncIterableMap from './asyncIterableMap' ;
 
 /**
  * Converts a stream of streams of tokens to a stream of tokens.
@@ -9,6 +9,6 @@ import asyncMap from './asyncMap' ;
  */
 export default function chain ( stream ) {
 
-	return fromAsyncIterable( asyncChain( asyncMap( toIterable , toIterable( stream ) ) ) ) ;
+	return fromAsyncIterable( asyncIterableChain( asyncIterableMap( toIterable , toIterable( stream ) ) ) ) ;
 
 }

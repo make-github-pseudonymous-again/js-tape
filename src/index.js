@@ -1,8 +1,8 @@
 import EOF from './EOF' ;
 import StreamFromCallable from './StreamFromCallable' ;
-import asyncChain from './asyncChain' ;
+import asyncIterableChain from './asyncIterableChain' ;
 import asyncIterableToArray from './asyncIterableToArray' ;
-import asyncMap from './asyncMap' ;
+import asyncIterableMap from './asyncIterableMap' ;
 import chain from './chain' ;
 import exhaust from './exhaust' ;
 import fromArray from './fromArray' ;
@@ -24,9 +24,9 @@ import toString from './toString' ;
 export default {
 	EOF ,
 	StreamFromCallable ,
-	asyncChain ,
+	asyncIterableChain ,
 	asyncIterableToArray ,
-	asyncMap ,
+	asyncIterableMap ,
 	chain ,
 	exhaust ,
 	fromArray ,
@@ -49,9 +49,9 @@ export default {
 export {
 	EOF ,
 	StreamFromCallable ,
-	asyncChain ,
+	asyncIterableChain ,
 	asyncIterableToArray ,
-	asyncMap ,
+	asyncIterableMap ,
 	chain ,
 	exhaust ,
 	fromArray ,
