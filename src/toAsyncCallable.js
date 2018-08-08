@@ -1,4 +1,4 @@
-import toIterator from './toIterator' ;
+import toAsyncIterator from './toAsyncIterator' ;
 
 /**
  * Converts a tape to a callable.
@@ -8,6 +8,6 @@ import toIterator from './toIterator' ;
  * @return {Callable}
  */
 export default tape => {
-	const it = toIterator( tape ) ;
+	const it = toAsyncIterator( tape ) ;
 	return it.next.bind( it ) ;
 } ;

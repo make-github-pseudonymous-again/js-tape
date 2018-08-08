@@ -3,7 +3,7 @@ import test from 'ava' ;
 import tape from '../../src' ;
 
 /**
- * @test {tape#map}
+ * @test {map}
  */
 test( 'can use map' , async t => {
 

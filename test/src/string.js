@@ -3,8 +3,8 @@ import test from 'ava' ;
 import tape from '../../src' ;
 
 /**
- * @test {tape#from}
- * @test {tape#to}
+ * @test {fromString}
+ * @test {toString}
  */
 test( 'can read from string' , async t => {
 

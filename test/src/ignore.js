@@ -3,7 +3,7 @@ import test from 'ava' ;
 import tape from '../../src' ;
 
 /**
- * @test {tape#ignore}
+ * @test {ignore}
  */
 test( 'can ignore tokens from tape' , async t => {
 
@@ -15,7 +15,7 @@ test( 'can ignore tokens from tape' , async t => {
 } ) ;
 
 /**
- * @test {tape#ignore}
+ * @test {ignore}
  */
 test( 'can ignore tokens from tape (bis)' , async t => {
 

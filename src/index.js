@@ -1,5 +1,5 @@
 import EOF from './EOF' ;
-import TapeFromCallable from './TapeFromCallable' ;
+import Tape from './Tape' ;
 import asyncIterableChain from './asyncIterableChain' ;
 import asyncIterableMap from './asyncIterableMap' ;
 import asyncIterableToArray from './asyncIterableToArray' ;
@@ -17,14 +17,14 @@ import map from './map' ;
 import skip from './skip' ;
 import split from './split' ;
 import toArray from './toArray' ;
+import toAsyncCallable from './toAsyncCallable' ;
 import toAsyncIterable from './toAsyncIterable' ;
-import toCallable from './toCallable' ;
-import toIterator from './toIterator' ;
+import toAsyncIterator from './toAsyncIterator' ;
 import toString from './toString' ;
 
 export default {
 	EOF ,
-	TapeFromCallable ,
+	Tape ,
 	asyncIterableChain ,
 	asyncIterableMap ,
 	asyncIterableToArray ,
@@ -42,15 +42,15 @@ export default {
 	skip ,
 	split ,
 	toArray ,
+	toAsyncCallable ,
 	toAsyncIterable ,
-	toCallable ,
-	toIterator ,
+	toAsyncIterator ,
 	toString ,
 } ;
 
 export {
 	EOF ,
-	TapeFromCallable ,
+	Tape ,
 	asyncIterableChain ,
 	asyncIterableMap ,
 	asyncIterableToArray ,
@@ -68,8 +68,8 @@ export {
 	skip ,
 	split ,
 	toArray ,
+	toAsyncCallable ,
 	toAsyncIterable ,
-	toCallable ,
-	toIterator ,
+	toAsyncIterator ,
 	toString ,
 } ;

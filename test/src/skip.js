@@ -3,8 +3,8 @@ import test from 'ava' ;
 import { fromString , skip } from '../../src' ;
 
 /**
- * @test {tape#fromstring}
- * @test {tape#skip}
+ * @test {fromString}
+ * @test {skip}
  */
 test( 'can skip tokens from tape' , async t => {
 

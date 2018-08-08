@@ -4,10 +4,10 @@ import tape from '../../src' ;
 
 /**
  * @test {fromString}
- * @test {TapeFromCallable#read}
- * @test {TapeFromCallable#unread}
- * @test {TapeFromCallable#skip}
- * @test {TapeFromCallable#skipMany}
+ * @test {Tape#read}
+ * @test {Tape#unread}
+ * @test {Tape#skip}
+ * @test {Tape#skipMany}
  */
 test( 'As a promise' , t => {
 

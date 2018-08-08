@@ -1,4 +1,4 @@
-import TapeFromCallable from './TapeFromCallable' ;
+import Tape from './Tape' ;
 
 /**
  * Converts a callable to a tape.
@@ -7,4 +7,4 @@ import TapeFromCallable from './TapeFromCallable' ;
  * @param {Callable} _callable - the callable to convert
  * @returns {Tape}
  */
-export default _callable => new TapeFromCallable( _callable ) ;
+export default _callable => new Tape( _callable ) ;

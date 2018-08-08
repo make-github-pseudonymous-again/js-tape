@@ -3,7 +3,7 @@ import test from 'ava' ;
 import tape from '../../src' ;
 
 /**
- * @test {tape#split}
+ * @test {split}
  */
 test( 'can split tape' , async t => {
 

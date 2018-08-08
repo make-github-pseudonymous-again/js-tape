@@ -1,10 +1,11 @@
 import EOF from './EOF' ;
+import toAsyncIterator from './toAsyncIterator' ;
 
 /**
  * Class that wraps a callable with a tape.
  * Do not use directly. Use {@link fromCallable} instead.
  */
-export default class TapeFromCallable {
+export default class Tape {
 
 	/**
 	 * The constructor. Stores the callable that yields values to put on the tape.
@@ -18,7 +19,7 @@ export default class TapeFromCallable {
 	}
 
 	/**
-	 * Returns the next token on the tape or {@link TapeFromCallable#eof}
+	 * Returns the next token on the tape or {@link Tape#eof}
 	 * if the tape has been exhausted.
 	 *
 	 * @returns {Object}
@@ -36,7 +37,7 @@ export default class TapeFromCallable {
 	}
 
 	/**
-	 * Puts a token back on the tape. If {@link TapeFromCallable#read} is
+	 * Puts a token back on the tape. If {@link Tape#read} is
 	 * used just after, this token will be returned.
 	 *
 	 * @param {Object} token - The token to put back on the tape.
@@ -66,6 +67,32 @@ export default class TapeFromCallable {
 	async skipMany ( n ) {
 
 		while ( n --> 0 ) await this.skip() ;
+
+	}
+
+	/**
+	 * Returns an async iterator on the tokens of the tape.
+	 *
+	 * @example
+	 * fromString('abc');
+	 * for await ( const token of tape ) console.log(token) ;
+	 *
+	 * @returns {AsyncIterator}
+	 */
+	[Symbol.asyncIterator] ( ) {
+
+		return toAsyncIterator(this);
+
+	}
+
+	/**
+	 * Explicitely throws when trying to access iterator symbol.
+	 *
+	 * @throws {Error} Always.
+	 */
+	[Symbol.iterator] ( ) {
+
+		throw new Error('Not implemented. A tape has no *synchronous* iterator. Use `toArray` or `toString` instead.') ;
 
 	}
 
