@@ -41,11 +41,14 @@ export default class TapeFromCallable {
 	 * used just after, this token will be returned.
 	 *
 	 * @param {Object} token - The token to put back in the tape.
+	 * @returns {TapeFromCallable} Self, for chaining.
 	 */
 	unread ( token ) {
 
 		// should this be async too ?
 		this.buffer.push( token ) ;
+
+		return this;
 
 	}
 

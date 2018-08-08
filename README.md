@@ -1,8 +1,33 @@
 [@aureooms/js-tape](https://aureooms.github.io/js-tape)
 ==
 
-Tape library for JavaScript.
+Tape library for JavaScript. Served with asynchronous goodness.
 See [docs](https://aureooms.github.io/js-tape/index.html).
+
+```js
+import tape from '@aureooms/js-tape' ;
+const myTape = tape.fromString( 'abracadabra' ) ;
+// // OR
+// const myTape = tape.fromArray( ... ) ;
+// const myTape = tape.fromCallable( ... ) ;
+// const myTape = tape.fromIterable( ... ) ;
+// const myTape = tape.fromAsyncIterable( ... ) ;
+// const myTape = tape.fromIterator( ... ) ;
+// const myTape = tape.fromReadStream( ... ) ;
+
+myTape.read()
+      .then( character => console.log(character) ) // 'a'
+      .then( () => myTape.read() )
+      .then( character => console.log(character) ) // 'b'
+      .then( () => myTape.unread('Z').unread('X') )
+      .then( () => myTape.read() )
+      .then( character => console.log(character) ) // 'X'
+      .then( () => myTape.read() )
+      .then( character => console.log(character) ) // 'Z'
+      .then( () => myTape.read() )
+      .then( character => console.log(character) ) // 'r'
+      // ...
+```
 
 [![License](https://img.shields.io/github/license/aureooms/js-tape.svg?style=flat)](https://raw.githubusercontent.com/aureooms/js-tape/master/LICENSE)
 [![NPM version](https://img.shields.io/npm/v/@aureooms/js-tape.svg?style=flat)](https://www.npmjs.org/package/@aureooms/js-tape)
