@@ -1,11 +1,11 @@
 import toIterator from './toIterator' ;
 
 /**
- * Converts a stream to a callable.
+ * Converts a tape to a callable.
  * @kind function
- * @param {Stream} stream the stream to read from
+ * @param {Tape} tape the tape to read from
  */
-export default stream => {
-	const it = toIterator( stream ) ;
+export default tape => {
+	const it = toIterator( tape ) ;
 	return it.next.bind( it ) ;
 } ;

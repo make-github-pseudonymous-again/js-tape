@@ -1,8 +1,8 @@
 import toArray from './toArray' ;
 
 /**
- * Converts a stream to a string.
+ * Converts a tape to a string.
  * @kind function
- * @param {Stream} stream the stream to read from
+ * @param {Tape} tape the tape to read from
  */
-export default async stream => (await toArray( stream )).join( '' ) ;
+export default async tape => (await toArray( tape )).join( '' ) ;

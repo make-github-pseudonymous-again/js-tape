@@ -1,17 +1,17 @@
 import test from 'ava' ;
 
-import stream from '../../src' ;
+import tape from '../../src' ;
 
 /**
- * @test {stream#tocallable}
+ * @test {tape#tocallable}
  */
-test( 'stream#tocallable' , async t => {
+test( 'tape#tocallable' , async t => {
 
 	const input = '\n\n\n    1 ,\t22\n, 333\t,\n-44 ,\t-5 \t\n  \t' ;
-	const mystream1 = stream.fromString( input ) ;
-	const mycallable = stream.toCallable( mystream1 ) ;
-	const mystream2 = stream.fromCallable( mycallable ) ;
+	const myTape1 = tape.fromString( input ) ;
+	const mycallable = tape.toCallable( myTape1 ) ;
+	const myTape2 = tape.fromCallable( mycallable ) ;
 	t.deepEqual((await mycallable()).value, '\n');
-	t.deepEqual('\n'+(await stream.toString( mystream2 )), input ) ;
+	t.deepEqual('\n'+(await tape.toString( myTape2 )), input ) ;
 
 } ) ;

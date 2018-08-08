@@ -1,19 +1,19 @@
 
 /**
- * Outputs the next token of a stream that is not contained in a given toskip
+ * Outputs the next token of a tape that is not contained in a given toskip
  * set.
- * @param {Stream} stream
+ * @param {Tape} tape
  * @param {Iterable} toskip
  */
-export default async function skip ( stream , toskip ) {
+export default async function skip ( tape , toskip ) {
 
 	const _toskip = new Set( toskip ) ;
 
 	while ( true ) {
 
-		const token = await stream.read( ) ;
+		const token = await tape.read( ) ;
 
-		if ( token === stream.eof ) return stream.eof ;
+		if ( token === tape.eof ) return tape.eof ;
 
 		if ( _toskip.has( token ) ) continue ;
 

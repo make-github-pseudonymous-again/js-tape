@@ -2,35 +2,35 @@ import fromAsyncIterable from './fromAsyncIterable' ;
 import exhaust from './exhaust' ;
 
 /**
- * Splits the input stream into a stream of streams according to some set of
+ * Splits the input tape into a tape of tapes according to some set of
  * separators. See {@link _split} for the actual implementation.
  *
- * @param {Stream} stream - The input stream.
+ * @param {Tape} tape - The input tape.
  * @param {Iterable} sep - An iterable of separators.
- * @returns {Stream}
+ * @returns {Tape}
  */
-export default function split ( stream , sep ) {
+export default function split ( tape , sep ) {
 
-	return fromAsyncIterable( _split( stream , sep ) ) ;
+	return fromAsyncIterable( _split( tape , sep ) ) ;
 
 }
 
 /**
- * Same as {@link split}, but returns an iterator rather than a stream.
+ * Same as {@link split}, but returns an iterator rather than a tape.
  *
- * @param {Stream} stream - The input stream.
+ * @param {Tape} tape - The input tape.
  * @param {Iterable} sep - An iterable of separators.
  * @returns {Iterator}
  */
-export async function* _split ( stream , sep ) {
+export async function* _split ( tape , sep ) {
 
 	const _sep = new Set( sep ) ;
 
 	while ( true ) {
 
-		const token = await stream.read( ) ;
+		const token = await tape.read( ) ;
 
-		if ( token === stream.eof ) break ;
+		if ( token === tape.eof ) break ;
 
 		if ( _sep.has( token ) ) continue ;
 
@@ -40,7 +40,7 @@ export async function* _split ( stream , sep ) {
 
 			while ( true ) {
 
-				const token = await stream.read( ) ;
+				const token = await tape.read( ) ;
 
 				if ( _sep.has( token ) ) break ;
 

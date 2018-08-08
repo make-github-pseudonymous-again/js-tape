@@ -2,12 +2,12 @@ import split from './split' ;
 import chain from './chain' ;
 
 /**
- * Filters a stream by ignoring a given set of tokens.
- * @param {Stream} stream the stream to filter
+ * Filters a tape by ignoring a given set of tokens.
+ * @param {Tape} tape the tape to filter
  * @param {Iterable} toignore the tokens to ignore
  */
-export default function ignore ( stream , toignore ) {
+export default function ignore ( tape , toignore ) {
 
-	return chain( split( stream , toignore ) ) ;
+	return chain( split( tape , toignore ) ) ;
 
 }

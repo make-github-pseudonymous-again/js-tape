@@ -1,7 +1,7 @@
 import fromIterator from './fromIterator' ;
 
 /**
- * Converts an asynchronous iterable to a stream.
+ * Converts an asynchronous iterable to a tape.
  * @param {AsyncIterable} _iterable the iterable to convert
  * @function
  */

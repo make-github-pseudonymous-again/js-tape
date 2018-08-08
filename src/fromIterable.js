@@ -1,7 +1,7 @@
 import fromIterator from './fromIterator' ;
 
 /**
- * Converts an iterable to a stream.
+ * Converts an iterable to a tape.
  * @param {Iterable} _iterable the iterable to convert
  * @function
  */

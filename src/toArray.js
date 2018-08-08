@@ -2,8 +2,8 @@ import toAsyncIterable from './toAsyncIterable' ;
 import asyncIterableToArray from './asyncIterableToArray' ;
 
 /**
- * Converts a stream to an array.
+ * Converts a tape to an array.
  * @kind function
- * @param {Stream} stream the stream to read from
+ * @param {Tape} tape the tape to read from
  */
-export default async stream => asyncIterableToArray( toAsyncIterable( stream ) ) ;
+export default async tape => asyncIterableToArray( toAsyncIterable( tape ) ) ;

@@ -1,6 +1,6 @@
 {
-  "name": "@aureooms/js-stream",
-  "description": "Streaming library for JavaScript",
+  "name": "@aureooms/js-tape",
+  "description": "Tape library for JavaScript",
   "version": "1.0.0",
   "author": "aureooms",
   "ava": {
@@ -23,7 +23,7 @@
     }
   },
   "bugs": {
-    "url": "https://github.com/aureooms/js-stream/issues"
+    "url": "https://github.com/aureooms/js-tape/issues"
   },
   "dependencies": {},
   "devDependencies": {
@@ -46,15 +46,19 @@
   "files": [
     "lib"
   ],
-  "homepage": "https://aureooms.github.io/js-stream",
+  "homepage": "https://aureooms.github.io/js-tape",
   "keywords": [
-    "stream"
+    "parsing",
+    "read",
+    "stream",
+    "tape",
+    "unread"
   ],
   "license": "AGPL-3.0",
   "main": "lib/index.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/aureooms/js-stream"
+    "url": "https://github.com/aureooms/js-tape"
   },
   "scripts": {
     "build": "rm -rf lib && babel src -d lib",

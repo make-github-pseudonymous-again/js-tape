@@ -1,9 +1,9 @@
 /**
- * Exhausts a stream.
- * @param {Stream} stream the stream to read from
+ * Exhausts a tape.
+ * @param {Tape} tape the tape to read from
  */
-export default async function exhaust ( stream ) {
+export default async function exhaust ( tape ) {
 
-	while ( await stream.read( ) !== stream.eof ) ;
+	while ( await tape.read( ) !== tape.eof ) ;
 
 }

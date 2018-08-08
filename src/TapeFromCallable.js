@@ -1,15 +1,15 @@
 import EOF from './EOF' ;
 
 /**
- * Class that wraps a callable with a stream.
+ * Class that wraps a callable with a tape.
  */
-export default class StreamFromCallable {
+export default class TapeFromCallable {
 
 	/**
-	 * The constructor. Stores the callable that yields values to stream.
+	 * The constructor. Stores the callable that yields values to tape.
 	 *
 	 * @param {Callable} callable - The callable to use.
-	 * @returns {StreamFromCallable}
+	 * @returns {TapeFromCallable}
 	 *
 	 */
 	constructor ( callable ) {
@@ -19,8 +19,8 @@ export default class StreamFromCallable {
 	}
 
 	/**
-	 * Returns the next token in the stream or {@link StreamFromCallable#eof}
-	 * if the stream has been exhausted.
+	 * Returns the next token in the tape or {@link TapeFromCallable#eof}
+	 * if the tape has been exhausted.
 	 *
 	 * @returns {Object}
 	 */
@@ -37,10 +37,10 @@ export default class StreamFromCallable {
 	}
 
 	/**
-	 * Puts a token back in the stream. If {@link StreamFromCallable#read} is
+	 * Puts a token back in the tape. If {@link TapeFromCallable#read} is
 	 * used just after, this token will be returned.
 	 *
-	 * @param {Object} token - The token to put back in the stream.
+	 * @param {Object} token - The token to put back in the tape.
 	 */
 	unread ( token ) {
 

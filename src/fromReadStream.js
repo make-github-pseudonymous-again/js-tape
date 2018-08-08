@@ -9,7 +9,7 @@ async function* _fromReadStream ( readStream ) {
 }
 
 /**
- * Converts a ReadStream object to a stream.
+ * Converts a ReadStream object to a tape.
  * @param {ReadStream} readStream the ReadStream object to convert
  * @function
  */

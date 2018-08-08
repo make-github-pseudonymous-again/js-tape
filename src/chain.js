@@ -4,11 +4,11 @@ import asyncIterableChain from './asyncIterableChain' ;
 import asyncIterableMap from './asyncIterableMap' ;
 
 /**
- * Converts a stream of streams of tokens to a stream of tokens.
- * @param {Stream} stream the stream to read from
+ * Converts a tape of tapes of tokens to a tape of tokens.
+ * @param {Tape} tape the tape to read from
  */
-export default function chain ( stream ) {
+export default function chain ( tape ) {
 
-	return fromAsyncIterable( asyncIterableChain( asyncIterableMap( toAsyncIterable , toAsyncIterable( stream ) ) ) ) ;
+	return fromAsyncIterable( asyncIterableChain( asyncIterableMap( toAsyncIterable , toAsyncIterable( tape ) ) ) ) ;
 
 }

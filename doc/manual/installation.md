@@ -6,10 +6,10 @@ or [npm](https://github.com/npm/npm).
 
 ### jspm
 ```terminal
-jspm install npm:@aureooms/js-stream
+jspm install npm:@aureooms/js-tape
 ```
 
 ### npm
 ```terminal
-npm install @aureooms/js-stream --save
+npm install @aureooms/js-tape --save
 ```

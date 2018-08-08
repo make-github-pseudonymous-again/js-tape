@@ -1,7 +1,7 @@
 import fromIterable from './fromIterable' ;
 
 /**
- * Converts a string to a stream.
+ * Converts a string to a tape.
  *
  * @example
  * fromstring( '1,3,2' ) ;

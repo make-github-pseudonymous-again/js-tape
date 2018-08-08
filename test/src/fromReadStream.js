@@ -1,7 +1,7 @@
 import test from 'ava' ;
 import fs from 'fs' ;
 
-import stream from '../../src' ;
+import tape from '../../src' ;
 
 test( 'unread token' , async t => {
 
@@ -17,8 +17,8 @@ test( 'unread token' , async t => {
 		}
 	) ;
 
-	const myStream = stream.fromReadStream( readStream ) ;
+	const myTape = tape.fromReadStream( readStream ) ;
 
-	t.deepEqual(await stream.toString( myStream ), expected ) ;
+	t.deepEqual(await tape.toString( myTape ), expected ) ;
 
 } ) ;

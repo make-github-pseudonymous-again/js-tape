@@ -1,24 +1,24 @@
 import test from 'ava' ;
 
-import stream from '../../src' ;
+import tape from '../../src' ;
 
 /**
- * @test {stream#split}
+ * @test {tape#split}
  */
-test( 'can split stream' , async t => {
+test( 'can split tape' , async t => {
 
 	const input = '\n\n\n    1 ,\t22\n, 333\t,\n-44 ,\t-5 \t\n  \t' ;
-	let mystream = stream.fromString( input ) ;
-	mystream = stream.split( mystream , ' \t\n' ) ;
-	t.deepEqual(await stream.toString( await mystream.read( ) ), '1' ) ;
-	t.deepEqual(await stream.toString( await mystream.read( ) ), ',' ) ;
-	t.deepEqual(await stream.toString( await mystream.read( ) ), '22' ) ;
-	t.deepEqual(await stream.toString( await mystream.read( ) ), ',' ) ;
-	t.deepEqual(await stream.toString( await mystream.read( ) ), '333' ) ;
-	t.deepEqual(await stream.toString( await mystream.read( ) ), ',' ) ;
-	t.deepEqual(await stream.toString( await mystream.read( ) ), '-44' ) ;
-	t.deepEqual(await stream.toString( await mystream.read( ) ), ',' ) ;
-	t.deepEqual(await stream.toString( await mystream.read( ) ), '-5' ) ;
-	t.deepEqual(await mystream.read( ), mystream.eof ) ;
+	let myTape = tape.fromString( input ) ;
+	myTape = tape.split( myTape , ' \t\n' ) ;
+	t.deepEqual(await tape.toString( await myTape.read( ) ), '1' ) ;
+	t.deepEqual(await tape.toString( await myTape.read( ) ), ',' ) ;
+	t.deepEqual(await tape.toString( await myTape.read( ) ), '22' ) ;
+	t.deepEqual(await tape.toString( await myTape.read( ) ), ',' ) ;
+	t.deepEqual(await tape.toString( await myTape.read( ) ), '333' ) ;
+	t.deepEqual(await tape.toString( await myTape.read( ) ), ',' ) ;
+	t.deepEqual(await tape.toString( await myTape.read( ) ), '-44' ) ;
+	t.deepEqual(await tape.toString( await myTape.read( ) ), ',' ) ;
+	t.deepEqual(await tape.toString( await myTape.read( ) ), '-5' ) ;
+	t.deepEqual(await myTape.read( ), myTape.eof ) ;
 
 } ) ;

@@ -10,7 +10,7 @@ import 'babel-polyfill' ;
 
 Then
 ```js
-const stream = require( '@aureooms/js-stream' ) ;
+const tape = require( '@aureooms/js-tape' ) ;
 // or
-import * as stream from '@aureooms/js-stream' ;
+import tape from '@aureooms/js-tape' ;
 ```

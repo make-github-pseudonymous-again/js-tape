@@ -3,12 +3,12 @@ import toAsyncIterable from './toAsyncIterable' ;
 import asyncIterableMap from './asyncIterableMap' ;
 
 /**
- * Applies a callable to each token of a stream.
+ * Applies a callable to each token of a tape.
  * @param {Callable} callable the callable to apply
- * @param {Stream} stream the stream to process
+ * @param {Tape} tape the tape to process
  */
-export default function map ( callable , stream ) {
+export default function map ( callable , tape ) {
 
-	return fromAsyncIterable( asyncIterableMap( callable , toAsyncIterable( stream ) ) ) ;
+	return fromAsyncIterable( asyncIterableMap( callable , toAsyncIterable( tape ) ) ) ;
 
 }

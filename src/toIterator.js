@@ -1,8 +1,8 @@
 import toAsyncIterable from './toAsyncIterable' ;
 
 /**
- * Converts a stream to an iterator.
+ * Converts a tape to an iterator.
  * @kind function
- * @param {Stream} stream the stream to read from
+ * @param {Tape} tape the tape to read from
  */
-export default stream => toAsyncIterable( stream )[Symbol.asyncIterator]( ) ;
+export default tape => toAsyncIterable( tape )[Symbol.asyncIterator]( ) ;

@@ -1,7 +1,7 @@
 import fromCallable from './fromCallable' ;
 
 /**
- * Converts an iterator to a stream.
+ * Converts an iterator to a tape.
  * @param {Iterator} _iterator the iterator to convert
  * @function
  */

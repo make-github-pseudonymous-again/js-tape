@@ -1,5 +1,5 @@
 import EOF from './EOF' ;
-import StreamFromCallable from './StreamFromCallable' ;
+import TapeFromCallable from './TapeFromCallable' ;
 import asyncIterableChain from './asyncIterableChain' ;
 import asyncIterableMap from './asyncIterableMap' ;
 import asyncIterableToArray from './asyncIterableToArray' ;
@@ -24,7 +24,7 @@ import toString from './toString' ;
 
 export default {
 	EOF ,
-	StreamFromCallable ,
+	TapeFromCallable ,
 	asyncIterableChain ,
 	asyncIterableMap ,
 	asyncIterableToArray ,
@@ -50,7 +50,7 @@ export default {
 
 export {
 	EOF ,
-	StreamFromCallable ,
+	TapeFromCallable ,
 	asyncIterableChain ,
 	asyncIterableMap ,
 	asyncIterableToArray ,

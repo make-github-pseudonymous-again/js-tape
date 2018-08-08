@@ -1,14 +1,14 @@
 /**
- * Converts a stream to an iterable.
- * @param {Stream} stream the stream to read from
+ * Converts a tape to an iterable.
+ * @param {Tape} tape the tape to read from
  */
-export default async function* toAsyncIterable ( stream ) {
+export default async function* toAsyncIterable ( tape ) {
 
 	while ( true ) {
 
-		const token = await stream.read( ) ;
+		const token = await tape.read( ) ;
 
-		if ( token === stream.eof ) break ;
+		if ( token === tape.eof ) break ;
 
 		yield token ;
 

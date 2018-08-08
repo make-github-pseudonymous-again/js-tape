@@ -1,27 +1,27 @@
 import test from 'ava' ;
 
-import stream from '../../src' ;
+import tape from '../../src' ;
 
 /**
- * @test {stream#ignore}
+ * @test {tape#ignore}
  */
-test( 'can ignore tokens from stream' , async t => {
+test( 'can ignore tokens from tape' , async t => {
 
 	const input = '\n\n\n    1 ,\t22\n, 333\t,\n-44 ,\t-5 \t\n  \t' ;
-	let mystream = stream.fromString( input ) ;
-	mystream = stream.ignore( mystream , ' \t\n' ) ;
-	t.deepEqual(await stream.toString( mystream ), '1,22,333,-44,-5' ) ;
+	let myTape = tape.fromString( input ) ;
+	myTape = tape.ignore( myTape , ' \t\n' ) ;
+	t.deepEqual(await tape.toString( myTape ), '1,22,333,-44,-5' ) ;
 
 } ) ;
 
 /**
- * @test {stream#ignore}
+ * @test {tape#ignore}
  */
-test( 'can ignore tokens from stream (bis)' , async t => {
+test( 'can ignore tokens from tape (bis)' , async t => {
 
 	const input = '\n\n\n    1 ,\t22\n, 333\t,\n-44 ,\t-5' ;
-	let mystream = stream.fromString( input ) ;
-	mystream = stream.ignore( mystream , ' \t\n' ) ;
-	t.deepEqual(await stream.toString( mystream ), '1,22,333,-44,-5' ) ;
+	let myTape = tape.fromString( input ) ;
+	myTape = tape.ignore( myTape , ' \t\n' ) ;
+	t.deepEqual(await tape.toString( myTape ), '1,22,333,-44,-5' ) ;
 
 } ) ;
