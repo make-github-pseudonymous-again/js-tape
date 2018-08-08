@@ -19,7 +19,7 @@ export default class TapeFromCallable {
 	}
 
 	/**
-	 * Returns the next token in the tape or {@link TapeFromCallable#eof}
+	 * Returns the next token on the tape or {@link TapeFromCallable#eof}
 	 * if the tape has been exhausted.
 	 *
 	 * @returns {Object}
@@ -37,10 +37,10 @@ export default class TapeFromCallable {
 	}
 
 	/**
-	 * Puts a token back in the tape. If {@link TapeFromCallable#read} is
+	 * Puts a token back on the tape. If {@link TapeFromCallable#read} is
 	 * used just after, this token will be returned.
 	 *
-	 * @param {Object} token - The token to put back in the tape.
+	 * @param {Object} token - The token to put back on the tape.
 	 * @returns {TapeFromCallable} Self, for chaining.
 	 */
 	unread ( token ) {
@@ -49,6 +49,27 @@ export default class TapeFromCallable {
 		this.buffer.push( token ) ;
 
 		return this;
+
+	}
+
+	/**
+	 * Skips the next token on the tape.
+	 */
+	async skip ( ) {
+
+		if ( this.buffer.length > 0 ) this.buffer.pop( ) ;
+		else await this.callable( ) ;
+
+	}
+
+	/**
+	 * Skip the next `n` tokens on the tape.
+	 *
+	 * @param {Number} n - The number of tokens to skip.
+	 */
+	async skipMany ( n ) {
+
+		while ( n --> 0 ) await this.skip() ;
 
 	}
 
