@@ -1,7 +1,7 @@
 {
   "type": "File",
   "start": 0,
-  "end": 315,
+  "end": 319,
   "loc": {
     "start": {
       "line": 1,
@@ -15,7 +15,7 @@
   "program": {
     "type": "Program",
     "start": 0,
-    "end": 315,
+    "end": 319,
     "loc": {
       "start": {
         "line": 1,
@@ -168,9 +168,9 @@
         "trailingComments": [
           {
             "type": "CommentBlock",
-            "value": "*\n * Filters a tape by ignoring a given set of tokens.\n * @param {Tape} tape the tape to filter\n * @param {Iterable} toignore the tokens to ignore\n ",
+            "value": "*\n * Filters a tape by ignoring a given set of tokens.\n * @param {Tape} tape - the tape to filter\n * @param {Iterable} toignore - the tokens to ignore\n ",
             "start": 61,
-            "end": 213,
+            "end": 217,
             "loc": {
               "start": {
                 "line": 4,
@@ -186,8 +186,8 @@
       },
       {
         "type": "ExportDefaultDeclaration",
-        "start": 214,
-        "end": 314,
+        "start": 218,
+        "end": 318,
         "loc": {
           "start": {
             "line": 9,
@@ -200,8 +200,8 @@
         },
         "declaration": {
           "type": "FunctionDeclaration",
-          "start": 229,
-          "end": 314,
+          "start": 233,
+          "end": 318,
           "loc": {
             "start": {
               "line": 9,
@@ -214,8 +214,8 @@
           },
           "id": {
             "type": "Identifier",
-            "start": 238,
-            "end": 244,
+            "start": 242,
+            "end": 248,
             "loc": {
               "start": {
                 "line": 9,
@@ -236,8 +236,8 @@
           "params": [
             {
               "type": "Identifier",
-              "start": 247,
-              "end": 251,
+              "start": 251,
+              "end": 255,
               "loc": {
                 "start": {
                   "line": 9,
@@ -253,8 +253,8 @@
             },
             {
               "type": "Identifier",
-              "start": 254,
-              "end": 262,
+              "start": 258,
+              "end": 266,
               "loc": {
                 "start": {
                   "line": 9,
@@ -271,8 +271,8 @@
           ],
           "body": {
             "type": "BlockStatement",
-            "start": 265,
-            "end": 314,
+            "start": 269,
+            "end": 318,
             "loc": {
               "start": {
                 "line": 9,
@@ -286,8 +286,8 @@
             "body": [
               {
                 "type": "ReturnStatement",
-                "start": 269,
-                "end": 311,
+                "start": 273,
+                "end": 315,
                 "loc": {
                   "start": {
                     "line": 11,
@@ -300,8 +300,8 @@
                 },
                 "argument": {
                   "type": "CallExpression",
-                  "start": 276,
-                  "end": 309,
+                  "start": 280,
+                  "end": 313,
                   "loc": {
                     "start": {
                       "line": 11,
@@ -314,8 +314,8 @@
                   },
                   "callee": {
                     "type": "Identifier",
-                    "start": 276,
-                    "end": 281,
+                    "start": 280,
+                    "end": 285,
                     "loc": {
                       "start": {
                         "line": 11,
@@ -332,8 +332,8 @@
                   "arguments": [
                     {
                       "type": "CallExpression",
-                      "start": 283,
-                      "end": 307,
+                      "start": 287,
+                      "end": 311,
                       "loc": {
                         "start": {
                           "line": 11,
@@ -346,8 +346,8 @@
                       },
                       "callee": {
                         "type": "Identifier",
-                        "start": 283,
-                        "end": 288,
+                        "start": 287,
+                        "end": 292,
                         "loc": {
                           "start": {
                             "line": 11,
@@ -364,8 +364,8 @@
                       "arguments": [
                         {
                           "type": "Identifier",
-                          "start": 290,
-                          "end": 294,
+                          "start": 294,
+                          "end": 298,
                           "loc": {
                             "start": {
                               "line": 11,
@@ -381,8 +381,8 @@
                         },
                         {
                           "type": "Identifier",
-                          "start": 297,
-                          "end": 305,
+                          "start": 301,
+                          "end": 309,
                           "loc": {
                             "start": {
                               "line": 11,
@@ -407,9 +407,9 @@
           "leadingComments": [
             {
               "type": "CommentBlock",
-              "value": "*\n * Filters a tape by ignoring a given set of tokens.\n * @param {Tape} tape the tape to filter\n * @param {Iterable} toignore the tokens to ignore\n ",
+              "value": "*\n * Filters a tape by ignoring a given set of tokens.\n * @param {Tape} tape - the tape to filter\n * @param {Iterable} toignore - the tokens to ignore\n ",
               "start": 61,
-              "end": 213,
+              "end": 217,
               "loc": {
                 "start": {
                   "line": 4,
@@ -427,9 +427,9 @@
         "leadingComments": [
           {
             "type": "CommentBlock",
-            "value": "*\n * Filters a tape by ignoring a given set of tokens.\n * @param {Tape} tape the tape to filter\n * @param {Iterable} toignore the tokens to ignore\n ",
+            "value": "*\n * Filters a tape by ignoring a given set of tokens.\n * @param {Tape} tape - the tape to filter\n * @param {Iterable} toignore - the tokens to ignore\n ",
             "start": 61,
-            "end": 213,
+            "end": 217,
             "loc": {
               "start": {
                 "line": 4,
@@ -449,9 +449,9 @@
   "comments": [
     {
       "type": "CommentBlock",
-      "value": "*\n * Filters a tape by ignoring a given set of tokens.\n * @param {Tape} tape the tape to filter\n * @param {Iterable} toignore the tokens to ignore\n ",
+      "value": "*\n * Filters a tape by ignoring a given set of tokens.\n * @param {Tape} tape - the tape to filter\n * @param {Iterable} toignore - the tokens to ignore\n ",
       "start": 61,
-      "end": 213,
+      "end": 217,
       "loc": {
         "start": {
           "line": 4,
@@ -733,9 +733,9 @@
     },
     {
       "type": "CommentBlock",
-      "value": "*\n * Filters a tape by ignoring a given set of tokens.\n * @param {Tape} tape the tape to filter\n * @param {Iterable} toignore the tokens to ignore\n ",
+      "value": "*\n * Filters a tape by ignoring a given set of tokens.\n * @param {Tape} tape - the tape to filter\n * @param {Iterable} toignore - the tokens to ignore\n ",
       "start": 61,
-      "end": 213,
+      "end": 217,
       "loc": {
         "start": {
           "line": 4,
@@ -762,8 +762,8 @@
         "updateContext": null
       },
       "value": "export",
-      "start": 214,
-      "end": 220,
+      "start": 218,
+      "end": 224,
       "loc": {
         "start": {
           "line": 9,
@@ -790,8 +790,8 @@
         "updateContext": null
       },
       "value": "default",
-      "start": 221,
-      "end": 228,
+      "start": 225,
+      "end": 232,
       "loc": {
         "start": {
           "line": 9,
@@ -817,8 +817,8 @@
         "binop": null
       },
       "value": "function",
-      "start": 229,
-      "end": 237,
+      "start": 233,
+      "end": 241,
       "loc": {
         "start": {
           "line": 9,
@@ -843,8 +843,8 @@
         "binop": null
       },
       "value": "ignore",
-      "start": 238,
-      "end": 244,
+      "start": 242,
+      "end": 248,
       "loc": {
         "start": {
           "line": 9,
@@ -868,8 +868,8 @@
         "postfix": false,
         "binop": null
       },
-      "start": 245,
-      "end": 246,
+      "start": 249,
+      "end": 250,
       "loc": {
         "start": {
           "line": 9,
@@ -894,8 +894,8 @@
         "binop": null
       },
       "value": "tape",
-      "start": 247,
-      "end": 251,
+      "start": 251,
+      "end": 255,
       "loc": {
         "start": {
           "line": 9,
@@ -920,8 +920,8 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 252,
-      "end": 253,
+      "start": 256,
+      "end": 257,
       "loc": {
         "start": {
           "line": 9,
@@ -946,8 +946,8 @@
         "binop": null
       },
       "value": "toignore",
-      "start": 254,
-      "end": 262,
+      "start": 258,
+      "end": 266,
       "loc": {
         "start": {
           "line": 9,
@@ -971,8 +971,8 @@
         "postfix": false,
         "binop": null
       },
-      "start": 263,
-      "end": 264,
+      "start": 267,
+      "end": 268,
       "loc": {
         "start": {
           "line": 9,
@@ -996,8 +996,8 @@
         "postfix": false,
         "binop": null
       },
-      "start": 265,
-      "end": 266,
+      "start": 269,
+      "end": 270,
       "loc": {
         "start": {
           "line": 9,
@@ -1024,8 +1024,8 @@
         "updateContext": null
       },
       "value": "return",
-      "start": 269,
-      "end": 275,
+      "start": 273,
+      "end": 279,
       "loc": {
         "start": {
           "line": 11,
@@ -1050,8 +1050,8 @@
         "binop": null
       },
       "value": "chain",
-      "start": 276,
-      "end": 281,
+      "start": 280,
+      "end": 285,
       "loc": {
         "start": {
           "line": 11,
@@ -1075,8 +1075,8 @@
         "postfix": false,
         "binop": null
       },
-      "start": 281,
-      "end": 282,
+      "start": 285,
+      "end": 286,
       "loc": {
         "start": {
           "line": 11,
@@ -1101,8 +1101,8 @@
         "binop": null
       },
       "value": "split",
-      "start": 283,
-      "end": 288,
+      "start": 287,
+      "end": 292,
       "loc": {
         "start": {
           "line": 11,
@@ -1126,8 +1126,8 @@
         "postfix": false,
         "binop": null
       },
-      "start": 288,
-      "end": 289,
+      "start": 292,
+      "end": 293,
       "loc": {
         "start": {
           "line": 11,
@@ -1152,8 +1152,8 @@
         "binop": null
       },
       "value": "tape",
-      "start": 290,
-      "end": 294,
+      "start": 294,
+      "end": 298,
       "loc": {
         "start": {
           "line": 11,
@@ -1178,8 +1178,8 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 295,
-      "end": 296,
+      "start": 299,
+      "end": 300,
       "loc": {
         "start": {
           "line": 11,
@@ -1204,8 +1204,8 @@
         "binop": null
       },
       "value": "toignore",
-      "start": 297,
-      "end": 305,
+      "start": 301,
+      "end": 309,
       "loc": {
         "start": {
           "line": 11,
@@ -1229,8 +1229,8 @@
         "postfix": false,
         "binop": null
       },
-      "start": 306,
-      "end": 307,
+      "start": 310,
+      "end": 311,
       "loc": {
         "start": {
           "line": 11,
@@ -1254,8 +1254,8 @@
         "postfix": false,
         "binop": null
       },
-      "start": 308,
-      "end": 309,
+      "start": 312,
+      "end": 313,
       "loc": {
         "start": {
           "line": 11,
@@ -1280,8 +1280,8 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 310,
-      "end": 311,
+      "start": 314,
+      "end": 315,
       "loc": {
         "start": {
           "line": 11,
@@ -1305,8 +1305,8 @@
         "postfix": false,
         "binop": null
       },
-      "start": 313,
-      "end": 314,
+      "start": 317,
+      "end": 318,
       "loc": {
         "start": {
           "line": 13,
@@ -1331,8 +1331,8 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 315,
-      "end": 315,
+      "start": 319,
+      "end": 319,
       "loc": {
         "start": {
           "line": 14,

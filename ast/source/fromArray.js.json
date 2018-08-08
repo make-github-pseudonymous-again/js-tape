@@ -1,28 +1,28 @@
 {
   "type": "File",
   "start": 0,
-  "end": 174,
+  "end": 198,
   "loc": {
     "start": {
       "line": 1,
       "column": 0
     },
     "end": {
-      "line": 9,
+      "line": 11,
       "column": 0
     }
   },
   "program": {
     "type": "Program",
     "start": 0,
-    "end": 174,
+    "end": 198,
     "loc": {
       "start": {
         "line": 1,
         "column": 0
       },
       "end": {
-        "line": 9,
+        "line": 11,
         "column": 0
       }
     },
@@ -99,16 +99,16 @@
         "trailingComments": [
           {
             "type": "CommentBlock",
-            "value": "*\n * Converts an array to a tape.\n * @param {Array} _array the array to convert\n * @function\n ",
+            "value": "*\n * Converts an array to a tape.\n *\n * @function\n * @param {Array} _array - the array to convert\n * @returns {Tape}\n ",
             "start": 45,
-            "end": 143,
+            "end": 167,
             "loc": {
               "start": {
                 "line": 3,
                 "column": 0
               },
               "end": {
-                "line": 7,
+                "line": 9,
                 "column": 3
               }
             }
@@ -117,29 +117,29 @@
       },
       {
         "type": "ExportDefaultDeclaration",
-        "start": 144,
-        "end": 173,
+        "start": 168,
+        "end": 197,
         "loc": {
           "start": {
-            "line": 8,
+            "line": 10,
             "column": 0
           },
           "end": {
-            "line": 8,
+            "line": 10,
             "column": 29
           }
         },
         "declaration": {
           "type": "Identifier",
-          "start": 159,
-          "end": 171,
+          "start": 183,
+          "end": 195,
           "loc": {
             "start": {
-              "line": 8,
+              "line": 10,
               "column": 15
             },
             "end": {
-              "line": 8,
+              "line": 10,
               "column": 27
             },
             "identifierName": "fromIterable"
@@ -148,16 +148,16 @@
           "leadingComments": [
             {
               "type": "CommentBlock",
-              "value": "*\n * Converts an array to a tape.\n * @param {Array} _array the array to convert\n * @function\n ",
+              "value": "*\n * Converts an array to a tape.\n *\n * @function\n * @param {Array} _array - the array to convert\n * @returns {Tape}\n ",
               "start": 45,
-              "end": 143,
+              "end": 167,
               "loc": {
                 "start": {
                   "line": 3,
                   "column": 0
                 },
                 "end": {
-                  "line": 7,
+                  "line": 9,
                   "column": 3
                 }
               }
@@ -168,16 +168,16 @@
         "leadingComments": [
           {
             "type": "CommentBlock",
-            "value": "*\n * Converts an array to a tape.\n * @param {Array} _array the array to convert\n * @function\n ",
+            "value": "*\n * Converts an array to a tape.\n *\n * @function\n * @param {Array} _array - the array to convert\n * @returns {Tape}\n ",
             "start": 45,
-            "end": 143,
+            "end": 167,
             "loc": {
               "start": {
                 "line": 3,
                 "column": 0
               },
               "end": {
-                "line": 7,
+                "line": 9,
                 "column": 3
               }
             }
@@ -190,16 +190,16 @@
   "comments": [
     {
       "type": "CommentBlock",
-      "value": "*\n * Converts an array to a tape.\n * @param {Array} _array the array to convert\n * @function\n ",
+      "value": "*\n * Converts an array to a tape.\n *\n * @function\n * @param {Array} _array - the array to convert\n * @returns {Tape}\n ",
       "start": 45,
-      "end": 143,
+      "end": 167,
       "loc": {
         "start": {
           "line": 3,
           "column": 0
         },
         "end": {
-          "line": 7,
+          "line": 9,
           "column": 3
         }
       }
@@ -341,16 +341,16 @@
     },
     {
       "type": "CommentBlock",
-      "value": "*\n * Converts an array to a tape.\n * @param {Array} _array the array to convert\n * @function\n ",
+      "value": "*\n * Converts an array to a tape.\n *\n * @function\n * @param {Array} _array - the array to convert\n * @returns {Tape}\n ",
       "start": 45,
-      "end": 143,
+      "end": 167,
       "loc": {
         "start": {
           "line": 3,
           "column": 0
         },
         "end": {
-          "line": 7,
+          "line": 9,
           "column": 3
         }
       }
@@ -370,15 +370,15 @@
         "updateContext": null
       },
       "value": "export",
-      "start": 144,
-      "end": 150,
+      "start": 168,
+      "end": 174,
       "loc": {
         "start": {
-          "line": 8,
+          "line": 10,
           "column": 0
         },
         "end": {
-          "line": 8,
+          "line": 10,
           "column": 6
         }
       }
@@ -398,15 +398,15 @@
         "updateContext": null
       },
       "value": "default",
-      "start": 151,
-      "end": 158,
+      "start": 175,
+      "end": 182,
       "loc": {
         "start": {
-          "line": 8,
+          "line": 10,
           "column": 7
         },
         "end": {
-          "line": 8,
+          "line": 10,
           "column": 14
         }
       }
@@ -424,15 +424,15 @@
         "binop": null
       },
       "value": "fromIterable",
-      "start": 159,
-      "end": 171,
+      "start": 183,
+      "end": 195,
       "loc": {
         "start": {
-          "line": 8,
+          "line": 10,
           "column": 15
         },
         "end": {
-          "line": 8,
+          "line": 10,
           "column": 27
         }
       }
@@ -450,15 +450,15 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 172,
-      "end": 173,
+      "start": 196,
+      "end": 197,
       "loc": {
         "start": {
-          "line": 8,
+          "line": 10,
           "column": 28
         },
         "end": {
-          "line": 8,
+          "line": 10,
           "column": 29
         }
       }
@@ -476,15 +476,15 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 174,
-      "end": 174,
+      "start": 198,
+      "end": 198,
       "loc": {
         "start": {
-          "line": 9,
+          "line": 11,
           "column": 0
         },
         "end": {
-          "line": 9,
+          "line": 11,
           "column": 0
         }
       }

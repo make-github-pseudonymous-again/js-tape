@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <base data-ice="baseUrl" href="../../">
-  <title data-ice="title">TapeFromCallable | @aureooms/js-tape</title>
+  <title data-ice="title">Tape | @aureooms/js-tape</title>
   <link type="text/css" rel="stylesheet" href="css/style.css">
   <link type="text/css" rel="stylesheet" href="css/prettify-tomorrow.css">
   <script src="script/prettify/prettify.js"></script>
@@ -29,7 +29,7 @@
 <nav class="navigation" data-ice="nav"><div>
   <ul>
     
-  <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/TapeFromCallable.js~TapeFromCallable.html">TapeFromCallable</a></span></span></li>
+  <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/Tape.js~Tape.html">Tape</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-asyncIterableChain">asyncIterableChain</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-asyncIterableMap">asyncIterableMap</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-asyncIterableToArray">asyncIterableToArray</a></span></span></li>
@@ -39,6 +39,7 @@
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-fromCallable">fromCallable</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-fromIterable">fromIterable</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-fromIterator">fromIterator</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-_fromReadStream">_fromReadStream</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-fromReadStream">fromReadStream</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-ignore">ignore</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-map">map</a></span></span></li>
@@ -46,26 +47,26 @@
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-_split">_split</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-split">split</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-toArray">toArray</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-toAsyncCallable">toAsyncCallable</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-toAsyncIterable">toAsyncIterable</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-toCallable">toCallable</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-toIterator">toIterator</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-toAsyncIterator">toAsyncIterator</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-toString">toString</a></span></span></li>
 </ul>
 </div>
 </nav>
 
 <div class="content" data-ice="content"><div class="header-notice">
-  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import TapeFromCallable from &apos;<span><a href="file/src/TapeFromCallable.js.html#lineNumber7">@aureooms/js-tape/src/TapeFromCallable.js</a></span>&apos;</code></pre></div>
+  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import Tape from &apos;<span><a href="file/src/Tape.js.html#lineNumber8">@aureooms/js-tape/src/Tape.js</a></span>&apos;</code></pre></div>
   <span data-ice="access">public</span>
   <span data-ice="kind">class</span>
   
   
   
-  <span data-ice="source">| <span><a href="file/src/TapeFromCallable.js.html#lineNumber7">source</a></span></span>
+  <span data-ice="source">| <span><a href="file/src/Tape.js.html#lineNumber8">source</a></span></span>
 </div>
 
 <div class="self-detail detail">
-  <h1 data-ice="name">TapeFromCallable</h1>
+  <h1 data-ice="name">Tape</h1>
 
   
 
@@ -115,7 +116,7 @@ Do not use directly. Use <span><a href="function/index.html#static-function-from
           
           
           
-          <span class="code" data-ice="name"><span><a href="class/src/TapeFromCallable.js~TapeFromCallable.html#instance-constructor-constructor">constructor</a></span></span><span class="code" data-ice="signature">(callable: <span>Callable</span>)</span>
+          <span class="code" data-ice="name"><span><a href="class/src/Tape.js~Tape.html#instance-constructor-constructor">constructor</a></span></span><span class="code" data-ice="signature">(callable: <span>Callable</span>)</span>
         </p>
       </div>
       <div>
@@ -151,7 +152,7 @@ Do not use directly. Use <span><a href="function/index.html#static-function-from
           
           
           
-          <span class="code" data-ice="name"><span><a href="class/src/TapeFromCallable.js~TapeFromCallable.html#instance-member-buffer">buffer</a></span></span><span class="code" data-ice="signature">: <span><span>*</span><span>[]</span></span></span>
+          <span class="code" data-ice="name"><span><a href="class/src/Tape.js~Tape.html#instance-member-buffer">buffer</a></span></span><span class="code" data-ice="signature">: <span><span>*</span><span>[]</span></span></span>
         </p>
       </div>
       <div>
@@ -179,7 +180,7 @@ Do not use directly. Use <span><a href="function/index.html#static-function-from
           
           
           
-          <span class="code" data-ice="name"><span><a href="class/src/TapeFromCallable.js~TapeFromCallable.html#instance-member-callable">callable</a></span></span><span class="code" data-ice="signature">: <span>*</span></span>
+          <span class="code" data-ice="name"><span><a href="class/src/Tape.js~Tape.html#instance-member-callable">callable</a></span></span><span class="code" data-ice="signature">: <span>*</span></span>
         </p>
       </div>
       <div>
@@ -207,7 +208,7 @@ Do not use directly. Use <span><a href="function/index.html#static-function-from
           
           
           
-          <span class="code" data-ice="name"><span><a href="class/src/TapeFromCallable.js~TapeFromCallable.html#instance-member-eof">eof</a></span></span><span class="code" data-ice="signature">: <span>*</span></span>
+          <span class="code" data-ice="name"><span><a href="class/src/Tape.js~Tape.html#instance-member-eof">eof</a></span></span><span class="code" data-ice="signature">: <span>*</span></span>
         </p>
       </div>
       <div>
@@ -240,15 +241,73 @@ Do not use directly. Use <span><a href="function/index.html#static-function-from
       <div>
         <p>
           
-          <span data-ice="async">async</span>
           
-          <span class="code" data-ice="name"><span><a href="class/src/TapeFromCallable.js~TapeFromCallable.html#instance-method-read">read</a></span></span><span class="code" data-ice="signature">(): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></span></span>
+          
+          <span class="code" data-ice="name"><span><a href="class/src/Tape.js~Tape.html#instance-method-[Symbol.asyncIterator]">[Symbol.asyncIterator]</a></span></span><span class="code" data-ice="signature">(): <span>AsyncIterator</span></span>
         </p>
       </div>
       <div>
         
         
-        <div data-ice="description"><p>Returns the next token on the tape or <span><a href="class/src/TapeFromCallable.js~TapeFromCallable.html#instance-member-eof">TapeFromCallable#eof</a></span>
+        <div data-ice="description"><p>Returns an async iterator on the tokens of the tape.</p>
+</div>
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
+          
+          <span class="code" data-ice="name"><span><a href="class/src/Tape.js~Tape.html#instance-method-[Symbol.iterator]">[Symbol.iterator]</a></span></span><span class="code" data-ice="signature">()</span>
+        </p>
+      </div>
+      <div>
+        
+        
+        <div data-ice="description"><p>Explicitely throws when trying to access iterator symbol.</p>
+</div>
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          <span data-ice="async">async</span>
+          
+          <span class="code" data-ice="name"><span><a href="class/src/Tape.js~Tape.html#instance-method-read">read</a></span></span><span class="code" data-ice="signature">(): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></span></span>
+        </p>
+      </div>
+      <div>
+        
+        
+        <div data-ice="description"><p>Returns the next token on the tape or <span><a href="class/src/Tape.js~Tape.html#instance-member-eof">Tape#eof</a></span>
 if the tape has been exhausted.</p>
 </div>
       </div>
@@ -272,7 +331,7 @@ if the tape has been exhausted.</p>
           
           <span data-ice="async">async</span>
           
-          <span class="code" data-ice="name"><span><a href="class/src/TapeFromCallable.js~TapeFromCallable.html#instance-method-skip">skip</a></span></span><span class="code" data-ice="signature">()</span>
+          <span class="code" data-ice="name"><span><a href="class/src/Tape.js~Tape.html#instance-method-skip">skip</a></span></span><span class="code" data-ice="signature">()</span>
         </p>
       </div>
       <div>
@@ -301,7 +360,7 @@ if the tape has been exhausted.</p>
           
           <span data-ice="async">async</span>
           
-          <span class="code" data-ice="name"><span><a href="class/src/TapeFromCallable.js~TapeFromCallable.html#instance-method-skipMany">skipMany</a></span></span><span class="code" data-ice="signature">(n: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></span>)</span>
+          <span class="code" data-ice="name"><span><a href="class/src/Tape.js~Tape.html#instance-method-skipMany">skipMany</a></span></span><span class="code" data-ice="signature">(n: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></span>)</span>
         </p>
       </div>
       <div>
@@ -330,7 +389,7 @@ if the tape has been exhausted.</p>
           
           
           
-          <span class="code" data-ice="name"><span><a href="class/src/TapeFromCallable.js~TapeFromCallable.html#instance-method-unread">unread</a></span></span><span class="code" data-ice="signature">(token: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></span>)</span>
+          <span class="code" data-ice="name"><span><a href="class/src/Tape.js~Tape.html#instance-method-unread">unread</a></span></span><span class="code" data-ice="signature">(token: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></span>)</span>
         </p>
       </div>
       <div>
@@ -367,7 +426,7 @@ if the tape has been exhausted.</p>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/TapeFromCallable.js.html#lineNumber14">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/Tape.js.html#lineNumber15">source</a></span></span>
     </span>
   </h3>
 
@@ -431,7 +490,7 @@ if the tape has been exhausted.</p>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/TapeFromCallable.js.html#lineNumber16">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/Tape.js.html#lineNumber17">source</a></span></span>
     </span>
   </h3>
 
@@ -474,7 +533,7 @@ if the tape has been exhausted.</p>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/TapeFromCallable.js.html#lineNumber15">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/Tape.js.html#lineNumber16">source</a></span></span>
     </span>
   </h3>
 
@@ -517,7 +576,7 @@ if the tape has been exhausted.</p>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/TapeFromCallable.js.html#lineNumber17">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/Tape.js.html#lineNumber18">source</a></span></span>
     </span>
   </h3>
 
@@ -552,6 +611,126 @@ if the tape has been exhausted.</p>
 <div data-ice="methodDetails"><h2 data-ice="title">Public Methods</h2>
 
 <div class="detail" data-ice="detail">
+  <h3 data-ice="anchor" id="instance-method-[Symbol.asyncIterator]">
+    <span class="access" data-ice="access">public</span>
+    
+    
+    
+    
+    
+    <span class="code" data-ice="name">[Symbol.asyncIterator]</span><span class="code" data-ice="signature">(): <span>AsyncIterator</span></span>
+    <span class="right-info">
+      
+      
+      <span data-ice="source"><span><a href="file/src/Tape.js.html#lineNumber82">source</a></span></span>
+    </span>
+  </h3>
+
+  
+  
+  
+  <div data-ice="description"><p>Returns an async iterator on the tokens of the tape.</p>
+</div>
+
+  
+
+  <div data-ice="properties">
+</div>
+
+  <div class="return-params" data-ice="returnParams">
+    <h4>Return:</h4>
+    <table>
+      <tbody>
+        <tr>
+          <td class="return-type code" data-ice="returnType"><span>AsyncIterator</span></td>
+          
+        </tr>
+      </tbody>
+    </table>
+    <div data-ice="returnProperties">
+</div>
+  </div>
+
+  
+
+  
+
+  
+
+  
+
+  <div data-ice="example">
+    <h4>Example:</h4>
+    
+  <div class="example-doc" data-ice="exampleDoc">
+      
+      <pre class="prettyprint source-code"><code data-ice="exampleCode">fromString(&apos;abc&apos;);
+for await ( const token of tape ) console.log(token) ;</code></pre>
+    </div>
+</div>
+
+  
+
+  
+  
+</div>
+<div class="detail" data-ice="detail">
+  <h3 data-ice="anchor" id="instance-method-[Symbol.iterator]">
+    <span class="access" data-ice="access">public</span>
+    
+    
+    
+    
+    
+    <span class="code" data-ice="name">[Symbol.iterator]</span><span class="code" data-ice="signature">()</span>
+    <span class="right-info">
+      
+      
+      <span data-ice="source"><span><a href="file/src/Tape.js.html#lineNumber93">source</a></span></span>
+    </span>
+  </h3>
+
+  
+  
+  
+  <div data-ice="description"><p>Explicitely throws when trying to access iterator symbol.</p>
+</div>
+
+  
+
+  <div data-ice="properties">
+</div>
+
+  
+
+  
+
+  
+
+  <div data-ice="throwWrap">
+    <h4>Throw:</h4>
+    <table>
+      <tbody>
+      
+      <tr class="throw" data-ice="throw">
+        <td><p data-ice="throwName"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Error">Error</a></span></p></td>
+        <td data-ice="throwDesc"><p>Always.</p>
+</td>
+      </tr>
+</tbody>
+    </table>
+  </div>
+
+  
+
+  
+
+  
+
+  
+  
+</div>
+<div class="detail" data-ice="detail">
   <h3 data-ice="anchor" id="instance-method-read">
     <span class="access" data-ice="access">public</span>
     
@@ -563,14 +742,14 @@ if the tape has been exhausted.</p>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/TapeFromCallable.js.html#lineNumber26">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/Tape.js.html#lineNumber27">source</a></span></span>
     </span>
   </h3>
 
   
   
   
-  <div data-ice="description"><p>Returns the next token on the tape or <span><a href="class/src/TapeFromCallable.js~TapeFromCallable.html#instance-member-eof">TapeFromCallable#eof</a></span>
+  <div data-ice="description"><p>Returns the next token on the tape or <span><a href="class/src/Tape.js~Tape.html#instance-member-eof">Tape#eof</a></span>
 if the tape has been exhausted.</p>
 </div>
 
@@ -620,7 +799,7 @@ if the tape has been exhausted.</p>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/TapeFromCallable.js.html#lineNumber54">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/Tape.js.html#lineNumber55">source</a></span></span>
     </span>
   </h3>
 
@@ -664,7 +843,7 @@ if the tape has been exhausted.</p>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/TapeFromCallable.js.html#lineNumber66">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/Tape.js.html#lineNumber67">source</a></span></span>
     </span>
   </h3>
 
@@ -725,14 +904,14 @@ if the tape has been exhausted.</p>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/TapeFromCallable.js.html#lineNumber44">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/Tape.js.html#lineNumber45">source</a></span></span>
     </span>
   </h3>
 
   
   
   
-  <div data-ice="description"><p>Puts a token back on the tape. If <span><a href="class/src/TapeFromCallable.js~TapeFromCallable.html#instance-method-read">TapeFromCallable#read</a></span> is
+  <div data-ice="description"><p>Puts a token back on the tape. If <span><a href="class/src/Tape.js~Tape.html#instance-method-read">Tape#read</a></span> is
 used just after, this token will be returned.</p>
 </div>
 

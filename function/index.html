@@ -29,7 +29,7 @@
 <nav class="navigation" data-ice="nav"><div>
   <ul>
     
-  <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/TapeFromCallable.js~TapeFromCallable.html">TapeFromCallable</a></span></span></li>
+  <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/Tape.js~Tape.html">Tape</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-asyncIterableChain">asyncIterableChain</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-asyncIterableMap">asyncIterableMap</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-asyncIterableToArray">asyncIterableToArray</a></span></span></li>
@@ -39,6 +39,7 @@
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-fromCallable">fromCallable</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-fromIterable">fromIterable</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-fromIterator">fromIterator</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-_fromReadStream">_fromReadStream</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-fromReadStream">fromReadStream</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-ignore">ignore</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-map">map</a></span></span></li>
@@ -46,9 +47,9 @@
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-_split">_split</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-split">split</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-toArray">toArray</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-toAsyncCallable">toAsyncCallable</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-toAsyncIterable">toAsyncIterable</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-toCallable">toCallable</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-toIterator">toIterator</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-toAsyncIterator">toAsyncIterator</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-toString">toString</a></span></span></li>
 </ul>
 </div>
@@ -71,95 +72,9 @@
       <div>
         <p>
           
-          <span data-ice="async">async</span>
-          <span data-ice="generator">*</span>
-          <span class="code" data-ice="name"><span><a href="function/index.html#static-function-asyncIterableChain">asyncIterableChain</a></span></span><span class="code" data-ice="signature">(iterables: <span>*</span>)</span>
-        </p>
-      </div>
-      <div>
-        
-        
-        <div data-ice="description"><p>Utility function to chain an async iterable of async iterables.</p>
-</div>
-      </div>
-    </td>
-    <td>
-      
-      
-    </td>
-  </tr>
-<tr data-ice="target">
-    <td>
-      <span class="access" data-ice="access">public</span>
-      
-      
-      
-      <span class="override" data-ice="override"></span>
-    </td>
-    <td>
-      <div>
-        <p>
-          
-          <span data-ice="async">async</span>
-          <span data-ice="generator">*</span>
-          <span class="code" data-ice="name"><span><a href="function/index.html#static-function-asyncIterableMap">asyncIterableMap</a></span></span><span class="code" data-ice="signature">(callable: <span>Callable</span>, iterable: <span>AsyncIterable</span>)</span>
-        </p>
-      </div>
-      <div>
-        
-        
-        <div data-ice="description"><p>Utility function to apply a sync callable to each item of an async iterable.</p>
-</div>
-      </div>
-    </td>
-    <td>
-      
-      
-    </td>
-  </tr>
-<tr data-ice="target">
-    <td>
-      <span class="access" data-ice="access">public</span>
-      
-      
-      
-      <span class="override" data-ice="override"></span>
-    </td>
-    <td>
-      <div>
-        <p>
-          
-          <span data-ice="async">async</span>
-          
-          <span class="code" data-ice="name"><span><a href="function/index.html#static-function-asyncIterableToArray">asyncIterableToArray</a></span></span><span class="code" data-ice="signature">(asyncIterable: <span>*</span>): <span>*</span></span>
-        </p>
-      </div>
-      <div>
-        
-        
-        
-      </div>
-    </td>
-    <td>
-      
-      
-    </td>
-  </tr>
-<tr data-ice="target">
-    <td>
-      <span class="access" data-ice="access">public</span>
-      
-      
-      
-      <span class="override" data-ice="override"></span>
-    </td>
-    <td>
-      <div>
-        <p>
           
           
-          
-          <span class="code" data-ice="name"><span><a href="function/index.html#static-function-chain">chain</a></span></span><span class="code" data-ice="signature">(tape: <span>Tape</span>): <span>*</span></span>
+          <span class="code" data-ice="name"><span><a href="function/index.html#static-function-chain">chain</a></span></span><span class="code" data-ice="signature">(tape: <span><a href="class/src/Tape.js~Tape.html">Tape</a></span>): <span>*</span></span>
         </p>
       </div>
       <div>
@@ -188,7 +103,7 @@
           
           <span data-ice="async">async</span>
           
-          <span class="code" data-ice="name"><span><a href="function/index.html#static-function-exhaust">exhaust</a></span></span><span class="code" data-ice="signature">(tape: <span>Tape</span>)</span>
+          <span class="code" data-ice="name"><span><a href="function/index.html#static-function-exhaust">exhaust</a></span></span><span class="code" data-ice="signature">(tape: <span><a href="class/src/Tape.js~Tape.html">Tape</a></span>)</span>
         </p>
       </div>
       <div>
@@ -217,7 +132,7 @@
           
           
           
-          <span class="code" data-ice="name"><span><a href="function/index.html#static-function-fromAsyncIterable">fromAsyncIterable</a></span></span><span class="code" data-ice="signature">(_iterable: <span>AsyncIterable</span>)</span>
+          <span class="code" data-ice="name"><span><a href="function/index.html#static-function-fromAsyncIterable">fromAsyncIterable</a></span></span><span class="code" data-ice="signature">(_iterable: <span>AsyncIterable</span>): <span><a href="class/src/Tape.js~Tape.html">Tape</a></span></span>
         </p>
       </div>
       <div>
@@ -246,7 +161,7 @@
           
           
           
-          <span class="code" data-ice="name"><span><a href="function/index.html#static-function-fromCallable">fromCallable</a></span></span><span class="code" data-ice="signature">(_callable: <span>Callable</span>)</span>
+          <span class="code" data-ice="name"><span><a href="function/index.html#static-function-fromCallable">fromCallable</a></span></span><span class="code" data-ice="signature">(_callable: <span>Callable</span>): <span><a href="class/src/Tape.js~Tape.html">Tape</a></span></span>
         </p>
       </div>
       <div>
@@ -275,7 +190,7 @@
           
           
           
-          <span class="code" data-ice="name"><span><a href="function/index.html#static-function-fromIterable">fromIterable</a></span></span><span class="code" data-ice="signature">(_iterable: <span>Iterable</span>)</span>
+          <span class="code" data-ice="name"><span><a href="function/index.html#static-function-fromIterable">fromIterable</a></span></span><span class="code" data-ice="signature">(_iterable: <span>Iterable</span>): <span><a href="class/src/Tape.js~Tape.html">Tape</a></span></span>
         </p>
       </div>
       <div>
@@ -304,7 +219,7 @@
           
           
           
-          <span class="code" data-ice="name"><span><a href="function/index.html#static-function-fromIterator">fromIterator</a></span></span><span class="code" data-ice="signature">(_iterator: <span>Iterator</span>)</span>
+          <span class="code" data-ice="name"><span><a href="function/index.html#static-function-fromIterator">fromIterator</a></span></span><span class="code" data-ice="signature">(_iterator: <span>Iterator</span>): <span><a href="class/src/Tape.js~Tape.html">Tape</a></span></span>
         </p>
       </div>
       <div>
@@ -333,7 +248,7 @@
           
           
           
-          <span class="code" data-ice="name"><span><a href="function/index.html#static-function-fromReadStream">fromReadStream</a></span></span><span class="code" data-ice="signature">(readStream: <span>ReadStream</span>)</span>
+          <span class="code" data-ice="name"><span><a href="function/index.html#static-function-fromReadStream">fromReadStream</a></span></span><span class="code" data-ice="signature">(readStream: <span>ReadStream</span>): <span><a href="class/src/Tape.js~Tape.html">Tape</a></span></span>
         </p>
       </div>
       <div>
@@ -362,7 +277,7 @@
           
           
           
-          <span class="code" data-ice="name"><span><a href="function/index.html#static-function-ignore">ignore</a></span></span><span class="code" data-ice="signature">(tape: <span>Tape</span>, toignore: <span>Iterable</span>): <span>*</span></span>
+          <span class="code" data-ice="name"><span><a href="function/index.html#static-function-ignore">ignore</a></span></span><span class="code" data-ice="signature">(tape: <span><a href="class/src/Tape.js~Tape.html">Tape</a></span>, toignore: <span>Iterable</span>): <span>*</span></span>
         </p>
       </div>
       <div>
@@ -391,7 +306,7 @@
           
           
           
-          <span class="code" data-ice="name"><span><a href="function/index.html#static-function-map">map</a></span></span><span class="code" data-ice="signature">(callable: <span>Callable</span>, tape: <span>Tape</span>): <span>*</span></span>
+          <span class="code" data-ice="name"><span><a href="function/index.html#static-function-map">map</a></span></span><span class="code" data-ice="signature">(callable: <span>Callable</span>, tape: <span><a href="class/src/Tape.js~Tape.html">Tape</a></span>): <span>*</span></span>
         </p>
       </div>
       <div>
@@ -418,39 +333,9 @@
       <div>
         <p>
           
-          <span data-ice="async">async</span>
-          
-          <span class="code" data-ice="name"><span><a href="function/index.html#static-function-skip">skip</a></span></span><span class="code" data-ice="signature">(tape: <span>Tape</span>, toskip: <span>Iterable</span>): <span>*</span></span>
-        </p>
-      </div>
-      <div>
-        
-        
-        <div data-ice="description"><p>Outputs the next token of a tape that is not contained in a given toskip
-set.</p>
-</div>
-      </div>
-    </td>
-    <td>
-      
-      
-    </td>
-  </tr>
-<tr data-ice="target">
-    <td>
-      <span class="access" data-ice="access">public</span>
-      
-      
-      
-      <span class="override" data-ice="override"></span>
-    </td>
-    <td>
-      <div>
-        <p>
           
           
-          
-          <span class="code" data-ice="name"><span><a href="function/index.html#static-function-split">split</a></span></span><span class="code" data-ice="signature">(tape: <span>Tape</span>, sep: <span>Iterable</span>): <span>Tape</span></span>
+          <span class="code" data-ice="name"><span><a href="function/index.html#static-function-split">split</a></span></span><span class="code" data-ice="signature">(tape: <span><a href="class/src/Tape.js~Tape.html">Tape</a></span>, sep: <span>Iterable</span>): <span><a href="class/src/Tape.js~Tape.html">Tape</a></span></span>
         </p>
       </div>
       <div>
@@ -480,7 +365,7 @@ separators.</p>
           
           <span data-ice="async">async</span>
           
-          <span class="code" data-ice="name"><span><a href="function/index.html#static-function-toArray">toArray</a></span></span><span class="code" data-ice="signature">(tape: <span>Tape</span>)</span>
+          <span class="code" data-ice="name"><span><a href="function/index.html#static-function-toArray">toArray</a></span></span><span class="code" data-ice="signature">(tape: <span><a href="class/src/Tape.js~Tape.html">Tape</a></span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></span></span>
         </p>
       </div>
       <div>
@@ -507,38 +392,9 @@ separators.</p>
       <div>
         <p>
           
-          <span data-ice="async">async</span>
-          <span data-ice="generator">*</span>
-          <span class="code" data-ice="name"><span><a href="function/index.html#static-function-toAsyncIterable">toAsyncIterable</a></span></span><span class="code" data-ice="signature">(tape: <span>Tape</span>)</span>
-        </p>
-      </div>
-      <div>
-        
-        
-        <div data-ice="description"><p>Converts a tape to an iterable.</p>
-</div>
-      </div>
-    </td>
-    <td>
-      
-      
-    </td>
-  </tr>
-<tr data-ice="target">
-    <td>
-      <span class="access" data-ice="access">public</span>
-      
-      
-      
-      <span class="override" data-ice="override"></span>
-    </td>
-    <td>
-      <div>
-        <p>
           
           
-          
-          <span class="code" data-ice="name"><span><a href="function/index.html#static-function-toCallable">toCallable</a></span></span><span class="code" data-ice="signature">(tape: <span>Tape</span>): <span>*</span></span>
+          <span class="code" data-ice="name"><span><a href="function/index.html#static-function-toAsyncCallable">toAsyncCallable</a></span></span><span class="code" data-ice="signature">(tape: <span><a href="class/src/Tape.js~Tape.html">Tape</a></span>): <span>Callable</span></span>
         </p>
       </div>
       <div>
@@ -565,15 +421,44 @@ separators.</p>
       <div>
         <p>
           
-          
-          
-          <span class="code" data-ice="name"><span><a href="function/index.html#static-function-toIterator">toIterator</a></span></span><span class="code" data-ice="signature">(tape: <span>Tape</span>)</span>
+          <span data-ice="async">async</span>
+          <span data-ice="generator">*</span>
+          <span class="code" data-ice="name"><span><a href="function/index.html#static-function-toAsyncIterable">toAsyncIterable</a></span></span><span class="code" data-ice="signature">(tape: <span><a href="class/src/Tape.js~Tape.html">Tape</a></span>): <span>AsyncIterable</span></span>
         </p>
       </div>
       <div>
         
         
-        <div data-ice="description"><p>Converts a tape to an iterator.</p>
+        <div data-ice="description"><p>Converts a tape to an asynchronous iterable.</p>
+</div>
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
+          
+          <span class="code" data-ice="name"><span><a href="function/index.html#static-function-toAsyncIterator">toAsyncIterator</a></span></span><span class="code" data-ice="signature">(tape: <span><a href="class/src/Tape.js~Tape.html">Tape</a></span>): <span>AsyncIterator</span></span>
+        </p>
+      </div>
+      <div>
+        
+        
+        <div data-ice="description"><p>Converts a tape to an async iterator.</p>
 </div>
       </div>
     </td>
@@ -596,7 +481,7 @@ separators.</p>
           
           <span data-ice="async">async</span>
           
-          <span class="code" data-ice="name"><span><a href="function/index.html#static-function-toString">toString</a></span></span><span class="code" data-ice="signature">(tape: <span>Tape</span>)</span>
+          <span class="code" data-ice="name"><span><a href="function/index.html#static-function-toString">toString</a></span></span><span class="code" data-ice="signature">(tape: <span><a href="class/src/Tape.js~Tape.html">Tape</a></span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">String</a></span></span>
         </p>
       </div>
       <div>
@@ -631,7 +516,36 @@ separators.</p>
           
           <span data-ice="async">async</span>
           <span data-ice="generator">*</span>
-          <span class="code" data-ice="name"><span><a href="function/index.html#static-function-_split">_split</a></span></span><span class="code" data-ice="signature">(tape: <span>Tape</span>, sep: <span>Iterable</span>): <span>Iterator</span></span>
+          <span class="code" data-ice="name"><span><a href="function/index.html#static-function-_fromReadStream">_fromReadStream</a></span></span><span class="code" data-ice="signature">(readStream: <span>ReadStream</span>): <span>AsyncIterable</span></span>
+        </p>
+      </div>
+      <div>
+        
+        
+        <div data-ice="description"><p>Converts a ReadStream object to an async iterable of tokens.</p>
+</div>
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">private</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          <span data-ice="async">async</span>
+          <span data-ice="generator">*</span>
+          <span class="code" data-ice="name"><span><a href="function/index.html#static-function-_split">_split</a></span></span><span class="code" data-ice="signature">(tape: <span><a href="class/src/Tape.js~Tape.html">Tape</a></span>, sep: <span>Iterable</span>): <span>Iterator</span></span>
         </p>
       </div>
       <div>
@@ -646,210 +560,128 @@ separators.</p>
       
     </td>
   </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">private</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          <span data-ice="async">async</span>
+          <span data-ice="generator">*</span>
+          <span class="code" data-ice="name"><span><a href="function/index.html#static-function-asyncIterableChain">asyncIterableChain</a></span></span><span class="code" data-ice="signature">(iterables: <span>AsyncIterable</span>): <span>AsyncIterable</span></span>
+        </p>
+      </div>
+      <div>
+        
+        
+        <div data-ice="description"><p>Utility function to chain an async iterable of async iterables.</p>
+</div>
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">private</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          <span data-ice="async">async</span>
+          <span data-ice="generator">*</span>
+          <span class="code" data-ice="name"><span><a href="function/index.html#static-function-asyncIterableMap">asyncIterableMap</a></span></span><span class="code" data-ice="signature">(callable: <span>Callable</span>, iterable: <span>AsyncIterable</span>): <span>AsyncIterable</span></span>
+        </p>
+      </div>
+      <div>
+        
+        
+        <div data-ice="description"><p>Utility function to apply a sync callable to each item of an async iterable.</p>
+</div>
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">private</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          <span data-ice="async">async</span>
+          
+          <span class="code" data-ice="name"><span><a href="function/index.html#static-function-asyncIterableToArray">asyncIterableToArray</a></span></span><span class="code" data-ice="signature">(asyncIterable: <span>AsyncIterable</span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></span></span>
+        </p>
+      </div>
+      <div>
+        
+        
+        <div data-ice="description"><p>Spreads an asynchronous iterable inside a new array.</p>
+</div>
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">private</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          <span data-ice="async">async</span>
+          
+          <span class="code" data-ice="name"><span><a href="function/index.html#static-function-skip">skip</a></span></span><span class="code" data-ice="signature">(tape: <span><a href="class/src/Tape.js~Tape.html">Tape</a></span>, toskip: <span>Iterable</span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></span></span>
+        </p>
+      </div>
+      <div>
+        
+        
+        <div data-ice="description"><p>Outputs the next token of a tape that is not contained in a given toskip
+set.</p>
+</div>
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
 </tbody>
 </table>
 </div>
 <div data-ice="details"><h2 data-ice="title">Static Public </h2>
 
-<div class="detail" data-ice="detail">
-  <h3 data-ice="anchor" id="static-function-asyncIterableChain">
-    <span class="access" data-ice="access">public</span>
-    
-    
-    
-    <span data-ice="async">async</span>
-    <span data-ice="generator">*</span>
-    <span class="code" data-ice="name">asyncIterableChain</span><span class="code" data-ice="signature">(iterables: <span>*</span>)</span>
-    <span class="right-info">
-      
-      
-      <span data-ice="source"><span><a href="file/src/asyncIterableChain.js.html#lineNumber4">source</a></span></span>
-    </span>
-  </h3>
-
-  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import asyncIterableChain from &apos;<span><a href="file/src/asyncIterableChain.js.html#lineNumber4">@aureooms/js-tape/src/asyncIterableChain.js</a></span>&apos;</code></pre></div>
-  
-  
-  <div data-ice="description"><p>Utility function to chain an async iterable of async iterables.</p>
-</div>
-
-  
-
-  <div data-ice="properties"><div data-ice="properties">
-  <h4 data-ice="title">Params:</h4>
-  <table class="params">
-    <thead>
-    <tr><td>Name</td><td>Type</td><td>Attribute</td><td>Description</td></tr>
-    </thead>
-    <tbody>
-    
-    <tr data-ice="property" data-depth="0">
-      <td data-ice="name" class="code" data-depth="0">iterables</td>
-      <td data-ice="type" class="code"><span>*</span></td>
-      <td data-ice="appendix"></td>
-      <td data-ice="description"></td>
-    </tr>
-</tbody>
-  </table>
-</div>
-</div>
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-  
-</div>
-<div class="detail" data-ice="detail">
-  <h3 data-ice="anchor" id="static-function-asyncIterableMap">
-    <span class="access" data-ice="access">public</span>
-    
-    
-    
-    <span data-ice="async">async</span>
-    <span data-ice="generator">*</span>
-    <span class="code" data-ice="name">asyncIterableMap</span><span class="code" data-ice="signature">(callable: <span>Callable</span>, iterable: <span>AsyncIterable</span>)</span>
-    <span class="right-info">
-      
-      
-      <span data-ice="source"><span><a href="file/src/asyncIterableMap.js.html#lineNumber6">source</a></span></span>
-    </span>
-  </h3>
-
-  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import asyncIterableMap from &apos;<span><a href="file/src/asyncIterableMap.js.html#lineNumber6">@aureooms/js-tape/src/asyncIterableMap.js</a></span>&apos;</code></pre></div>
-  
-  
-  <div data-ice="description"><p>Utility function to apply a sync callable to each item of an async iterable.</p>
-</div>
-
-  
-
-  <div data-ice="properties"><div data-ice="properties">
-  <h4 data-ice="title">Params:</h4>
-  <table class="params">
-    <thead>
-    <tr><td>Name</td><td>Type</td><td>Attribute</td><td>Description</td></tr>
-    </thead>
-    <tbody>
-    
-    <tr data-ice="property" data-depth="0">
-      <td data-ice="name" class="code" data-depth="0">callable</td>
-      <td data-ice="type" class="code"><span>Callable</span></td>
-      <td data-ice="appendix"></td>
-      <td data-ice="description"><p>the callable to apply</p>
-</td>
-    </tr>
-<tr data-ice="property" data-depth="0">
-      <td data-ice="name" class="code" data-depth="0">iterable</td>
-      <td data-ice="type" class="code"><span>AsyncIterable</span></td>
-      <td data-ice="appendix"></td>
-      <td data-ice="description"><p>the iterable to process</p>
-</td>
-    </tr>
-</tbody>
-  </table>
-</div>
-</div>
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-  
-</div>
-<div class="detail" data-ice="detail">
-  <h3 data-ice="anchor" id="static-function-asyncIterableToArray">
-    <span class="access" data-ice="access">public</span>
-    
-    
-    
-    <span data-ice="async">async</span>
-    
-    <span class="code" data-ice="name">asyncIterableToArray</span><span class="code" data-ice="signature">(asyncIterable: <span>*</span>): <span>*</span></span>
-    <span class="right-info">
-      
-      
-      <span data-ice="source"><span><a href="file/src/asyncIterableToArray.js.html#lineNumber1">source</a></span></span>
-    </span>
-  </h3>
-
-  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import asyncIterableToArray from &apos;<span><a href="file/src/asyncIterableToArray.js.html#lineNumber1">@aureooms/js-tape/src/asyncIterableToArray.js</a></span>&apos;</code></pre></div>
-  
-  
-  
-
-  
-
-  <div data-ice="properties"><div data-ice="properties">
-  <h4 data-ice="title">Params:</h4>
-  <table class="params">
-    <thead>
-    <tr><td>Name</td><td>Type</td><td>Attribute</td><td>Description</td></tr>
-    </thead>
-    <tbody>
-    
-    <tr data-ice="property" data-depth="0">
-      <td data-ice="name" class="code" data-depth="0">asyncIterable</td>
-      <td data-ice="type" class="code"><span>*</span></td>
-      <td data-ice="appendix"></td>
-      <td data-ice="description"></td>
-    </tr>
-</tbody>
-  </table>
-</div>
-</div>
-
-  <div class="return-params" data-ice="returnParams">
-    <h4>Return:</h4>
-    <table>
-      <tbody>
-        <tr>
-          <td class="return-type code" data-ice="returnType"><span>*</span></td>
-          
-        </tr>
-      </tbody>
-    </table>
-    <div data-ice="returnProperties">
-</div>
-  </div>
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-  
-</div>
 <div class="detail" data-ice="detail">
   <h3 data-ice="anchor" id="static-function-chain">
     <span class="access" data-ice="access">public</span>
@@ -858,7 +690,7 @@ separators.</p>
     
     
     
-    <span class="code" data-ice="name">chain</span><span class="code" data-ice="signature">(tape: <span>Tape</span>): <span>*</span></span>
+    <span class="code" data-ice="name">chain</span><span class="code" data-ice="signature">(tape: <span><a href="class/src/Tape.js~Tape.html">Tape</a></span>): <span>*</span></span>
     <span class="right-info">
       
       
@@ -884,7 +716,7 @@ separators.</p>
     
     <tr data-ice="property" data-depth="0">
       <td data-ice="name" class="code" data-depth="0">tape</td>
-      <td data-ice="type" class="code"><span>Tape</span></td>
+      <td data-ice="type" class="code"><span><a href="class/src/Tape.js~Tape.html">Tape</a></span></td>
       <td data-ice="appendix"></td>
       <td data-ice="description"><p>the tape to read from</p>
 </td>
@@ -931,7 +763,7 @@ separators.</p>
     
     <span data-ice="async">async</span>
     
-    <span class="code" data-ice="name">exhaust</span><span class="code" data-ice="signature">(tape: <span>Tape</span>)</span>
+    <span class="code" data-ice="name">exhaust</span><span class="code" data-ice="signature">(tape: <span><a href="class/src/Tape.js~Tape.html">Tape</a></span>)</span>
     <span class="right-info">
       
       
@@ -957,7 +789,7 @@ separators.</p>
     
     <tr data-ice="property" data-depth="0">
       <td data-ice="name" class="code" data-depth="0">tape</td>
-      <td data-ice="type" class="code"><span>Tape</span></td>
+      <td data-ice="type" class="code"><span><a href="class/src/Tape.js~Tape.html">Tape</a></span></td>
       <td data-ice="appendix"></td>
       <td data-ice="description"><p>the tape to read from</p>
 </td>
@@ -992,15 +824,15 @@ separators.</p>
     
     
     
-    <span class="code" data-ice="name">fromAsyncIterable</span><span class="code" data-ice="signature">(_iterable: <span>AsyncIterable</span>)</span>
+    <span class="code" data-ice="name">fromAsyncIterable</span><span class="code" data-ice="signature">(_iterable: <span>AsyncIterable</span>): <span><a href="class/src/Tape.js~Tape.html">Tape</a></span></span>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/fromAsyncIterable.js.html#lineNumber8">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/fromAsyncIterable.js.html#lineNumber10">source</a></span></span>
     </span>
   </h3>
 
-  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import fromAsyncIterable from &apos;<span><a href="file/src/fromAsyncIterable.js.html#lineNumber8">@aureooms/js-tape/src/fromAsyncIterable.js</a></span>&apos;</code></pre></div>
+  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import fromAsyncIterable from &apos;<span><a href="file/src/fromAsyncIterable.js.html#lineNumber10">@aureooms/js-tape/src/fromAsyncIterable.js</a></span>&apos;</code></pre></div>
   
   
   <div data-ice="description"><p>Converts an asynchronous iterable to a tape.</p>
@@ -1028,7 +860,19 @@ separators.</p>
 </div>
 </div>
 
-  
+  <div class="return-params" data-ice="returnParams">
+    <h4>Return:</h4>
+    <table>
+      <tbody>
+        <tr>
+          <td class="return-type code" data-ice="returnType"><span><a href="class/src/Tape.js~Tape.html">Tape</a></span></td>
+          
+        </tr>
+      </tbody>
+    </table>
+    <div data-ice="returnProperties">
+</div>
+  </div>
 
   
 
@@ -1053,15 +897,15 @@ separators.</p>
     
     
     
-    <span class="code" data-ice="name">fromCallable</span><span class="code" data-ice="signature">(_callable: <span>Callable</span>)</span>
+    <span class="code" data-ice="name">fromCallable</span><span class="code" data-ice="signature">(_callable: <span>Callable</span>): <span><a href="class/src/Tape.js~Tape.html">Tape</a></span></span>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/fromCallable.js.html#lineNumber8">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/fromCallable.js.html#lineNumber10">source</a></span></span>
     </span>
   </h3>
 
-  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import fromCallable from &apos;<span><a href="file/src/fromCallable.js.html#lineNumber8">@aureooms/js-tape/src/fromCallable.js</a></span>&apos;</code></pre></div>
+  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import fromCallable from &apos;<span><a href="file/src/fromCallable.js.html#lineNumber10">@aureooms/js-tape/src/fromCallable.js</a></span>&apos;</code></pre></div>
   
   
   <div data-ice="description"><p>Converts a callable to a tape.</p>
@@ -1089,7 +933,19 @@ separators.</p>
 </div>
 </div>
 
-  
+  <div class="return-params" data-ice="returnParams">
+    <h4>Return:</h4>
+    <table>
+      <tbody>
+        <tr>
+          <td class="return-type code" data-ice="returnType"><span><a href="class/src/Tape.js~Tape.html">Tape</a></span></td>
+          
+        </tr>
+      </tbody>
+    </table>
+    <div data-ice="returnProperties">
+</div>
+  </div>
 
   
 
@@ -1114,15 +970,15 @@ separators.</p>
     
     
     
-    <span class="code" data-ice="name">fromIterable</span><span class="code" data-ice="signature">(_iterable: <span>Iterable</span>)</span>
+    <span class="code" data-ice="name">fromIterable</span><span class="code" data-ice="signature">(_iterable: <span>Iterable</span>): <span><a href="class/src/Tape.js~Tape.html">Tape</a></span></span>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/fromIterable.js.html#lineNumber8">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/fromIterable.js.html#lineNumber10">source</a></span></span>
     </span>
   </h3>
 
-  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import fromIterable from &apos;<span><a href="file/src/fromIterable.js.html#lineNumber8">@aureooms/js-tape/src/fromIterable.js</a></span>&apos;</code></pre></div>
+  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import fromIterable from &apos;<span><a href="file/src/fromIterable.js.html#lineNumber10">@aureooms/js-tape/src/fromIterable.js</a></span>&apos;</code></pre></div>
   
   
   <div data-ice="description"><p>Converts an iterable to a tape.</p>
@@ -1150,7 +1006,19 @@ separators.</p>
 </div>
 </div>
 
-  
+  <div class="return-params" data-ice="returnParams">
+    <h4>Return:</h4>
+    <table>
+      <tbody>
+        <tr>
+          <td class="return-type code" data-ice="returnType"><span><a href="class/src/Tape.js~Tape.html">Tape</a></span></td>
+          
+        </tr>
+      </tbody>
+    </table>
+    <div data-ice="returnProperties">
+</div>
+  </div>
 
   
 
@@ -1175,15 +1043,15 @@ separators.</p>
     
     
     
-    <span class="code" data-ice="name">fromIterator</span><span class="code" data-ice="signature">(_iterator: <span>Iterator</span>)</span>
+    <span class="code" data-ice="name">fromIterator</span><span class="code" data-ice="signature">(_iterator: <span>Iterator</span>): <span><a href="class/src/Tape.js~Tape.html">Tape</a></span></span>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/fromIterator.js.html#lineNumber8">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/fromIterator.js.html#lineNumber10">source</a></span></span>
     </span>
   </h3>
 
-  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import fromIterator from &apos;<span><a href="file/src/fromIterator.js.html#lineNumber8">@aureooms/js-tape/src/fromIterator.js</a></span>&apos;</code></pre></div>
+  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import fromIterator from &apos;<span><a href="file/src/fromIterator.js.html#lineNumber10">@aureooms/js-tape/src/fromIterator.js</a></span>&apos;</code></pre></div>
   
   
   <div data-ice="description"><p>Converts an iterator to a tape.</p>
@@ -1211,7 +1079,19 @@ separators.</p>
 </div>
 </div>
 
-  
+  <div class="return-params" data-ice="returnParams">
+    <h4>Return:</h4>
+    <table>
+      <tbody>
+        <tr>
+          <td class="return-type code" data-ice="returnType"><span><a href="class/src/Tape.js~Tape.html">Tape</a></span></td>
+          
+        </tr>
+      </tbody>
+    </table>
+    <div data-ice="returnProperties">
+</div>
+  </div>
 
   
 
@@ -1236,15 +1116,15 @@ separators.</p>
     
     
     
-    <span class="code" data-ice="name">fromReadStream</span><span class="code" data-ice="signature">(readStream: <span>ReadStream</span>)</span>
+    <span class="code" data-ice="name">fromReadStream</span><span class="code" data-ice="signature">(readStream: <span>ReadStream</span>): <span><a href="class/src/Tape.js~Tape.html">Tape</a></span></span>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/fromReadStream.js.html#lineNumber16">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/fromReadStream.js.html#lineNumber25">source</a></span></span>
     </span>
   </h3>
 
-  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import fromReadStream from &apos;<span><a href="file/src/fromReadStream.js.html#lineNumber16">@aureooms/js-tape/src/fromReadStream.js</a></span>&apos;</code></pre></div>
+  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import fromReadStream from &apos;<span><a href="file/src/fromReadStream.js.html#lineNumber25">@aureooms/js-tape/src/fromReadStream.js</a></span>&apos;</code></pre></div>
   
   
   <div data-ice="description"><p>Converts a ReadStream object to a tape.</p>
@@ -1272,7 +1152,19 @@ separators.</p>
 </div>
 </div>
 
-  
+  <div class="return-params" data-ice="returnParams">
+    <h4>Return:</h4>
+    <table>
+      <tbody>
+        <tr>
+          <td class="return-type code" data-ice="returnType"><span><a href="class/src/Tape.js~Tape.html">Tape</a></span></td>
+          
+        </tr>
+      </tbody>
+    </table>
+    <div data-ice="returnProperties">
+</div>
+  </div>
 
   
 
@@ -1297,7 +1189,7 @@ separators.</p>
     
     
     
-    <span class="code" data-ice="name">ignore</span><span class="code" data-ice="signature">(tape: <span>Tape</span>, toignore: <span>Iterable</span>): <span>*</span></span>
+    <span class="code" data-ice="name">ignore</span><span class="code" data-ice="signature">(tape: <span><a href="class/src/Tape.js~Tape.html">Tape</a></span>, toignore: <span>Iterable</span>): <span>*</span></span>
     <span class="right-info">
       
       
@@ -1323,7 +1215,7 @@ separators.</p>
     
     <tr data-ice="property" data-depth="0">
       <td data-ice="name" class="code" data-depth="0">tape</td>
-      <td data-ice="type" class="code"><span>Tape</span></td>
+      <td data-ice="type" class="code"><span><a href="class/src/Tape.js~Tape.html">Tape</a></span></td>
       <td data-ice="appendix"></td>
       <td data-ice="description"><p>the tape to filter</p>
 </td>
@@ -1377,7 +1269,7 @@ separators.</p>
     
     
     
-    <span class="code" data-ice="name">map</span><span class="code" data-ice="signature">(callable: <span>Callable</span>, tape: <span>Tape</span>): <span>*</span></span>
+    <span class="code" data-ice="name">map</span><span class="code" data-ice="signature">(callable: <span>Callable</span>, tape: <span><a href="class/src/Tape.js~Tape.html">Tape</a></span>): <span>*</span></span>
     <span class="right-info">
       
       
@@ -1410,89 +1302,10 @@ separators.</p>
     </tr>
 <tr data-ice="property" data-depth="0">
       <td data-ice="name" class="code" data-depth="0">tape</td>
-      <td data-ice="type" class="code"><span>Tape</span></td>
+      <td data-ice="type" class="code"><span><a href="class/src/Tape.js~Tape.html">Tape</a></span></td>
       <td data-ice="appendix"></td>
       <td data-ice="description"><p>the tape to process</p>
 </td>
-    </tr>
-</tbody>
-  </table>
-</div>
-</div>
-
-  <div class="return-params" data-ice="returnParams">
-    <h4>Return:</h4>
-    <table>
-      <tbody>
-        <tr>
-          <td class="return-type code" data-ice="returnType"><span>*</span></td>
-          
-        </tr>
-      </tbody>
-    </table>
-    <div data-ice="returnProperties">
-</div>
-  </div>
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-  
-</div>
-<div class="detail" data-ice="detail">
-  <h3 data-ice="anchor" id="static-function-skip">
-    <span class="access" data-ice="access">public</span>
-    
-    
-    
-    <span data-ice="async">async</span>
-    
-    <span class="code" data-ice="name">skip</span><span class="code" data-ice="signature">(tape: <span>Tape</span>, toskip: <span>Iterable</span>): <span>*</span></span>
-    <span class="right-info">
-      
-      
-      <span data-ice="source"><span><a href="file/src/skip.js.html#lineNumber8">source</a></span></span>
-    </span>
-  </h3>
-
-  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import skip from &apos;<span><a href="file/src/skip.js.html#lineNumber8">@aureooms/js-tape/src/skip.js</a></span>&apos;</code></pre></div>
-  
-  
-  <div data-ice="description"><p>Outputs the next token of a tape that is not contained in a given toskip
-set.</p>
-</div>
-
-  
-
-  <div data-ice="properties"><div data-ice="properties">
-  <h4 data-ice="title">Params:</h4>
-  <table class="params">
-    <thead>
-    <tr><td>Name</td><td>Type</td><td>Attribute</td><td>Description</td></tr>
-    </thead>
-    <tbody>
-    
-    <tr data-ice="property" data-depth="0">
-      <td data-ice="name" class="code" data-depth="0">tape</td>
-      <td data-ice="type" class="code"><span>Tape</span></td>
-      <td data-ice="appendix"></td>
-      <td data-ice="description"></td>
-    </tr>
-<tr data-ice="property" data-depth="0">
-      <td data-ice="name" class="code" data-depth="0">toskip</td>
-      <td data-ice="type" class="code"><span>Iterable</span></td>
-      <td data-ice="appendix"></td>
-      <td data-ice="description"></td>
     </tr>
 </tbody>
   </table>
@@ -1536,7 +1349,7 @@ set.</p>
     
     
     
-    <span class="code" data-ice="name">split</span><span class="code" data-ice="signature">(tape: <span>Tape</span>, sep: <span>Iterable</span>): <span>Tape</span></span>
+    <span class="code" data-ice="name">split</span><span class="code" data-ice="signature">(tape: <span><a href="class/src/Tape.js~Tape.html">Tape</a></span>, sep: <span>Iterable</span>): <span><a href="class/src/Tape.js~Tape.html">Tape</a></span></span>
     <span class="right-info">
       
       
@@ -1563,7 +1376,7 @@ separators. See <span><a href="function/index.html#static-function-_split">_spli
     
     <tr data-ice="property" data-depth="0">
       <td data-ice="name" class="code" data-depth="0">tape</td>
-      <td data-ice="type" class="code"><span>Tape</span></td>
+      <td data-ice="type" class="code"><span><a href="class/src/Tape.js~Tape.html">Tape</a></span></td>
       <td data-ice="appendix"></td>
       <td data-ice="description"><p>The input tape.</p>
 </td>
@@ -1585,7 +1398,7 @@ separators. See <span><a href="function/index.html#static-function-_split">_spli
     <table>
       <tbody>
         <tr>
-          <td class="return-type code" data-ice="returnType"><span>Tape</span></td>
+          <td class="return-type code" data-ice="returnType"><span><a href="class/src/Tape.js~Tape.html">Tape</a></span></td>
           
         </tr>
       </tbody>
@@ -1617,15 +1430,15 @@ separators. See <span><a href="function/index.html#static-function-_split">_spli
     
     <span data-ice="async">async</span>
     
-    <span class="code" data-ice="name">toArray</span><span class="code" data-ice="signature">(tape: <span>Tape</span>)</span>
+    <span class="code" data-ice="name">toArray</span><span class="code" data-ice="signature">(tape: <span><a href="class/src/Tape.js~Tape.html">Tape</a></span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></span></span>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/toArray.js.html#lineNumber9">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/toArray.js.html#lineNumber11">source</a></span></span>
     </span>
   </h3>
 
-  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import toArray from &apos;<span><a href="file/src/toArray.js.html#lineNumber9">@aureooms/js-tape/src/toArray.js</a></span>&apos;</code></pre></div>
+  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import toArray from &apos;<span><a href="file/src/toArray.js.html#lineNumber11">@aureooms/js-tape/src/toArray.js</a></span>&apos;</code></pre></div>
   
   
   <div data-ice="description"><p>Converts a tape to an array.</p>
@@ -1643,129 +1456,7 @@ separators. See <span><a href="function/index.html#static-function-_split">_spli
     
     <tr data-ice="property" data-depth="0">
       <td data-ice="name" class="code" data-depth="0">tape</td>
-      <td data-ice="type" class="code"><span>Tape</span></td>
-      <td data-ice="appendix"></td>
-      <td data-ice="description"><p>the tape to read from</p>
-</td>
-    </tr>
-</tbody>
-  </table>
-</div>
-</div>
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-  
-</div>
-<div class="detail" data-ice="detail">
-  <h3 data-ice="anchor" id="static-function-toAsyncIterable">
-    <span class="access" data-ice="access">public</span>
-    
-    
-    
-    <span data-ice="async">async</span>
-    <span data-ice="generator">*</span>
-    <span class="code" data-ice="name">toAsyncIterable</span><span class="code" data-ice="signature">(tape: <span>Tape</span>)</span>
-    <span class="right-info">
-      
-      
-      <span data-ice="source"><span><a href="file/src/toAsyncIterable.js.html#lineNumber5">source</a></span></span>
-    </span>
-  </h3>
-
-  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import toAsyncIterable from &apos;<span><a href="file/src/toAsyncIterable.js.html#lineNumber5">@aureooms/js-tape/src/toAsyncIterable.js</a></span>&apos;</code></pre></div>
-  
-  
-  <div data-ice="description"><p>Converts a tape to an iterable.</p>
-</div>
-
-  
-
-  <div data-ice="properties"><div data-ice="properties">
-  <h4 data-ice="title">Params:</h4>
-  <table class="params">
-    <thead>
-    <tr><td>Name</td><td>Type</td><td>Attribute</td><td>Description</td></tr>
-    </thead>
-    <tbody>
-    
-    <tr data-ice="property" data-depth="0">
-      <td data-ice="name" class="code" data-depth="0">tape</td>
-      <td data-ice="type" class="code"><span>Tape</span></td>
-      <td data-ice="appendix"></td>
-      <td data-ice="description"><p>the tape to read from</p>
-</td>
-    </tr>
-</tbody>
-  </table>
-</div>
-</div>
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-  
-</div>
-<div class="detail" data-ice="detail">
-  <h3 data-ice="anchor" id="static-function-toCallable">
-    <span class="access" data-ice="access">public</span>
-    
-    
-    
-    
-    
-    <span class="code" data-ice="name">toCallable</span><span class="code" data-ice="signature">(tape: <span>Tape</span>): <span>*</span></span>
-    <span class="right-info">
-      
-      
-      <span data-ice="source"><span><a href="file/src/toCallable.js.html#lineNumber8">source</a></span></span>
-    </span>
-  </h3>
-
-  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import toCallable from &apos;<span><a href="file/src/toCallable.js.html#lineNumber8">@aureooms/js-tape/src/toCallable.js</a></span>&apos;</code></pre></div>
-  
-  
-  <div data-ice="description"><p>Converts a tape to a callable.</p>
-</div>
-
-  
-
-  <div data-ice="properties"><div data-ice="properties">
-  <h4 data-ice="title">Params:</h4>
-  <table class="params">
-    <thead>
-    <tr><td>Name</td><td>Type</td><td>Attribute</td><td>Description</td></tr>
-    </thead>
-    <tbody>
-    
-    <tr data-ice="property" data-depth="0">
-      <td data-ice="name" class="code" data-depth="0">tape</td>
-      <td data-ice="type" class="code"><span>Tape</span></td>
+      <td data-ice="type" class="code"><span><a href="class/src/Tape.js~Tape.html">Tape</a></span></td>
       <td data-ice="appendix"></td>
       <td data-ice="description"><p>the tape to read from</p>
 </td>
@@ -1780,7 +1471,7 @@ separators. See <span><a href="function/index.html#static-function-_split">_spli
     <table>
       <tbody>
         <tr>
-          <td class="return-type code" data-ice="returnType"><span>*</span></td>
+          <td class="return-type code" data-ice="returnType"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></span></td>
           
         </tr>
       </tbody>
@@ -1805,25 +1496,25 @@ separators. See <span><a href="function/index.html#static-function-_split">_spli
   
 </div>
 <div class="detail" data-ice="detail">
-  <h3 data-ice="anchor" id="static-function-toIterator">
+  <h3 data-ice="anchor" id="static-function-toAsyncCallable">
     <span class="access" data-ice="access">public</span>
     
     
     
     
     
-    <span class="code" data-ice="name">toIterator</span><span class="code" data-ice="signature">(tape: <span>Tape</span>)</span>
+    <span class="code" data-ice="name">toAsyncCallable</span><span class="code" data-ice="signature">(tape: <span><a href="class/src/Tape.js~Tape.html">Tape</a></span>): <span>Callable</span></span>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/toIterator.js.html#lineNumber8">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/toAsyncCallable.js.html#lineNumber10">source</a></span></span>
     </span>
   </h3>
 
-  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import toIterator from &apos;<span><a href="file/src/toIterator.js.html#lineNumber8">@aureooms/js-tape/src/toIterator.js</a></span>&apos;</code></pre></div>
+  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import toAsyncCallable from &apos;<span><a href="file/src/toAsyncCallable.js.html#lineNumber10">@aureooms/js-tape/src/toAsyncCallable.js</a></span>&apos;</code></pre></div>
   
   
-  <div data-ice="description"><p>Converts a tape to an iterator.</p>
+  <div data-ice="description"><p>Converts a tape to a callable.</p>
 </div>
 
   
@@ -1838,7 +1529,7 @@ separators. See <span><a href="function/index.html#static-function-_split">_spli
     
     <tr data-ice="property" data-depth="0">
       <td data-ice="name" class="code" data-depth="0">tape</td>
-      <td data-ice="type" class="code"><span>Tape</span></td>
+      <td data-ice="type" class="code"><span><a href="class/src/Tape.js~Tape.html">Tape</a></span></td>
       <td data-ice="appendix"></td>
       <td data-ice="description"><p>the tape to read from</p>
 </td>
@@ -1848,7 +1539,165 @@ separators. See <span><a href="function/index.html#static-function-_split">_spli
 </div>
 </div>
 
+  <div class="return-params" data-ice="returnParams">
+    <h4>Return:</h4>
+    <table>
+      <tbody>
+        <tr>
+          <td class="return-type code" data-ice="returnType"><span>Callable</span></td>
+          
+        </tr>
+      </tbody>
+    </table>
+    <div data-ice="returnProperties">
+</div>
+  </div>
+
   
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+</div>
+<div class="detail" data-ice="detail">
+  <h3 data-ice="anchor" id="static-function-toAsyncIterable">
+    <span class="access" data-ice="access">public</span>
+    
+    
+    
+    <span data-ice="async">async</span>
+    <span data-ice="generator">*</span>
+    <span class="code" data-ice="name">toAsyncIterable</span><span class="code" data-ice="signature">(tape: <span><a href="class/src/Tape.js~Tape.html">Tape</a></span>): <span>AsyncIterable</span></span>
+    <span class="right-info">
+      
+      
+      <span data-ice="source"><span><a href="file/src/toAsyncIterable.js.html#lineNumber7">source</a></span></span>
+    </span>
+  </h3>
+
+  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import toAsyncIterable from &apos;<span><a href="file/src/toAsyncIterable.js.html#lineNumber7">@aureooms/js-tape/src/toAsyncIterable.js</a></span>&apos;</code></pre></div>
+  
+  
+  <div data-ice="description"><p>Converts a tape to an asynchronous iterable.</p>
+</div>
+
+  
+
+  <div data-ice="properties"><div data-ice="properties">
+  <h4 data-ice="title">Params:</h4>
+  <table class="params">
+    <thead>
+    <tr><td>Name</td><td>Type</td><td>Attribute</td><td>Description</td></tr>
+    </thead>
+    <tbody>
+    
+    <tr data-ice="property" data-depth="0">
+      <td data-ice="name" class="code" data-depth="0">tape</td>
+      <td data-ice="type" class="code"><span><a href="class/src/Tape.js~Tape.html">Tape</a></span></td>
+      <td data-ice="appendix"></td>
+      <td data-ice="description"><p>the tape to read from</p>
+</td>
+    </tr>
+</tbody>
+  </table>
+</div>
+</div>
+
+  <div class="return-params" data-ice="returnParams">
+    <h4>Return:</h4>
+    <table>
+      <tbody>
+        <tr>
+          <td class="return-type code" data-ice="returnType"><span>AsyncIterable</span></td>
+          
+        </tr>
+      </tbody>
+    </table>
+    <div data-ice="returnProperties">
+</div>
+  </div>
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+</div>
+<div class="detail" data-ice="detail">
+  <h3 data-ice="anchor" id="static-function-toAsyncIterator">
+    <span class="access" data-ice="access">public</span>
+    
+    
+    
+    
+    
+    <span class="code" data-ice="name">toAsyncIterator</span><span class="code" data-ice="signature">(tape: <span><a href="class/src/Tape.js~Tape.html">Tape</a></span>): <span>AsyncIterator</span></span>
+    <span class="right-info">
+      
+      
+      <span data-ice="source"><span><a href="file/src/toAsyncIterator.js.html#lineNumber10">source</a></span></span>
+    </span>
+  </h3>
+
+  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import toAsyncIterator from &apos;<span><a href="file/src/toAsyncIterator.js.html#lineNumber10">@aureooms/js-tape/src/toAsyncIterator.js</a></span>&apos;</code></pre></div>
+  
+  
+  <div data-ice="description"><p>Converts a tape to an async iterator.</p>
+</div>
+
+  
+
+  <div data-ice="properties"><div data-ice="properties">
+  <h4 data-ice="title">Params:</h4>
+  <table class="params">
+    <thead>
+    <tr><td>Name</td><td>Type</td><td>Attribute</td><td>Description</td></tr>
+    </thead>
+    <tbody>
+    
+    <tr data-ice="property" data-depth="0">
+      <td data-ice="name" class="code" data-depth="0">tape</td>
+      <td data-ice="type" class="code"><span><a href="class/src/Tape.js~Tape.html">Tape</a></span></td>
+      <td data-ice="appendix"></td>
+      <td data-ice="description"><p>the tape to read from</p>
+</td>
+    </tr>
+</tbody>
+  </table>
+</div>
+</div>
+
+  <div class="return-params" data-ice="returnParams">
+    <h4>Return:</h4>
+    <table>
+      <tbody>
+        <tr>
+          <td class="return-type code" data-ice="returnType"><span>AsyncIterator</span></td>
+          
+        </tr>
+      </tbody>
+    </table>
+    <div data-ice="returnProperties">
+</div>
+  </div>
 
   
 
@@ -1873,15 +1722,15 @@ separators. See <span><a href="function/index.html#static-function-_split">_spli
     
     <span data-ice="async">async</span>
     
-    <span class="code" data-ice="name">toString</span><span class="code" data-ice="signature">(tape: <span>Tape</span>)</span>
+    <span class="code" data-ice="name">toString</span><span class="code" data-ice="signature">(tape: <span><a href="class/src/Tape.js~Tape.html">Tape</a></span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">String</a></span></span>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/toString.js.html#lineNumber8">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/toString.js.html#lineNumber10">source</a></span></span>
     </span>
   </h3>
 
-  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import toString from &apos;<span><a href="file/src/toString.js.html#lineNumber8">@aureooms/js-tape/src/toString.js</a></span>&apos;</code></pre></div>
+  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import toString from &apos;<span><a href="file/src/toString.js.html#lineNumber10">@aureooms/js-tape/src/toString.js</a></span>&apos;</code></pre></div>
   
   
   <div data-ice="description"><p>Converts a tape to a string.</p>
@@ -1899,7 +1748,7 @@ separators. See <span><a href="function/index.html#static-function-_split">_spli
     
     <tr data-ice="property" data-depth="0">
       <td data-ice="name" class="code" data-depth="0">tape</td>
-      <td data-ice="type" class="code"><span>Tape</span></td>
+      <td data-ice="type" class="code"><span><a href="class/src/Tape.js~Tape.html">Tape</a></span></td>
       <td data-ice="appendix"></td>
       <td data-ice="description"><p>the tape to read from</p>
 </td>
@@ -1909,7 +1758,19 @@ separators. See <span><a href="function/index.html#static-function-_split">_spli
 </div>
 </div>
 
-  
+  <div class="return-params" data-ice="returnParams">
+    <h4>Return:</h4>
+    <table>
+      <tbody>
+        <tr>
+          <td class="return-type code" data-ice="returnType"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">String</a></span></td>
+          
+        </tr>
+      </tbody>
+    </table>
+    <div data-ice="returnProperties">
+</div>
+  </div>
 
   
 
@@ -1929,6 +1790,79 @@ separators. See <span><a href="function/index.html#static-function-_split">_spli
 <h2 data-ice="title">Static Private </h2>
 
 <div class="detail" data-ice="detail">
+  <h3 data-ice="anchor" id="static-function-_fromReadStream">
+    <span class="access" data-ice="access">private</span>
+    
+    
+    
+    <span data-ice="async">async</span>
+    <span data-ice="generator">*</span>
+    <span class="code" data-ice="name">_fromReadStream</span><span class="code" data-ice="signature">(readStream: <span>ReadStream</span>): <span>AsyncIterable</span></span>
+    <span class="right-info">
+      
+      
+      <span data-ice="source"><span><a href="file/src/fromReadStream.js.html#lineNumber10">source</a></span></span>
+    </span>
+  </h3>
+
+  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import {_fromReadStream} from &apos;<span><a href="file/src/fromReadStream.js.html#lineNumber10">@aureooms/js-tape/src/fromReadStream.js</a></span>&apos;</code></pre></div>
+  
+  
+  <div data-ice="description"><p>Converts a ReadStream object to an async iterable of tokens.</p>
+</div>
+
+  
+
+  <div data-ice="properties"><div data-ice="properties">
+  <h4 data-ice="title">Params:</h4>
+  <table class="params">
+    <thead>
+    <tr><td>Name</td><td>Type</td><td>Attribute</td><td>Description</td></tr>
+    </thead>
+    <tbody>
+    
+    <tr data-ice="property" data-depth="0">
+      <td data-ice="name" class="code" data-depth="0">readStream</td>
+      <td data-ice="type" class="code"><span>ReadStream</span></td>
+      <td data-ice="appendix"></td>
+      <td data-ice="description"><p>the ReadStream object to convert</p>
+</td>
+    </tr>
+</tbody>
+  </table>
+</div>
+</div>
+
+  <div class="return-params" data-ice="returnParams">
+    <h4>Return:</h4>
+    <table>
+      <tbody>
+        <tr>
+          <td class="return-type code" data-ice="returnType"><span>AsyncIterable</span></td>
+          
+        </tr>
+      </tbody>
+    </table>
+    <div data-ice="returnProperties">
+</div>
+  </div>
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+</div>
+<div class="detail" data-ice="detail">
   <h3 data-ice="anchor" id="static-function-_split">
     <span class="access" data-ice="access">private</span>
     
@@ -1936,15 +1870,15 @@ separators. See <span><a href="function/index.html#static-function-_split">_spli
     
     <span data-ice="async">async</span>
     <span data-ice="generator">*</span>
-    <span class="code" data-ice="name">_split</span><span class="code" data-ice="signature">(tape: <span>Tape</span>, sep: <span>Iterable</span>): <span>Iterator</span></span>
+    <span class="code" data-ice="name">_split</span><span class="code" data-ice="signature">(tape: <span><a href="class/src/Tape.js~Tape.html">Tape</a></span>, sep: <span>Iterable</span>): <span>Iterator</span></span>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/split.js.html#lineNumber25">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/split.js.html#lineNumber26">source</a></span></span>
     </span>
   </h3>
 
-  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import {_split} from &apos;<span><a href="file/src/split.js.html#lineNumber25">@aureooms/js-tape/src/split.js</a></span>&apos;</code></pre></div>
+  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import {_split} from &apos;<span><a href="file/src/split.js.html#lineNumber26">@aureooms/js-tape/src/split.js</a></span>&apos;</code></pre></div>
   
   
   <div data-ice="description"><p>Same as <span><a href="function/index.html#static-function-split">split</a></span>, but returns an iterator rather than a tape.</p>
@@ -1962,7 +1896,7 @@ separators. See <span><a href="function/index.html#static-function-_split">_spli
     
     <tr data-ice="property" data-depth="0">
       <td data-ice="name" class="code" data-depth="0">tape</td>
-      <td data-ice="type" class="code"><span>Tape</span></td>
+      <td data-ice="type" class="code"><span><a href="class/src/Tape.js~Tape.html">Tape</a></span></td>
       <td data-ice="appendix"></td>
       <td data-ice="description"><p>The input tape.</p>
 </td>
@@ -1986,6 +1920,316 @@ separators. See <span><a href="function/index.html#static-function-_split">_spli
         <tr>
           <td class="return-type code" data-ice="returnType"><span>Iterator</span></td>
           
+        </tr>
+      </tbody>
+    </table>
+    <div data-ice="returnProperties">
+</div>
+  </div>
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+</div>
+<div class="detail" data-ice="detail">
+  <h3 data-ice="anchor" id="static-function-asyncIterableChain">
+    <span class="access" data-ice="access">private</span>
+    
+    
+    
+    <span data-ice="async">async</span>
+    <span data-ice="generator">*</span>
+    <span class="code" data-ice="name">asyncIterableChain</span><span class="code" data-ice="signature">(iterables: <span>AsyncIterable</span>): <span>AsyncIterable</span></span>
+    <span class="right-info">
+      
+      
+      <span data-ice="source"><span><a href="file/src/asyncIterableChain.js.html#lineNumber8">source</a></span></span>
+    </span>
+  </h3>
+
+  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import asyncIterableChain from &apos;<span><a href="file/src/asyncIterableChain.js.html#lineNumber8">@aureooms/js-tape/src/asyncIterableChain.js</a></span>&apos;</code></pre></div>
+  
+  
+  <div data-ice="description"><p>Utility function to chain an async iterable of async iterables.</p>
+</div>
+
+  
+
+  <div data-ice="properties"><div data-ice="properties">
+  <h4 data-ice="title">Params:</h4>
+  <table class="params">
+    <thead>
+    <tr><td>Name</td><td>Type</td><td>Attribute</td><td>Description</td></tr>
+    </thead>
+    <tbody>
+    
+    <tr data-ice="property" data-depth="0">
+      <td data-ice="name" class="code" data-depth="0">iterables</td>
+      <td data-ice="type" class="code"><span>AsyncIterable</span></td>
+      <td data-ice="appendix"></td>
+      <td data-ice="description"><p>the input iterable of iterables.</p>
+</td>
+    </tr>
+</tbody>
+  </table>
+</div>
+</div>
+
+  <div class="return-params" data-ice="returnParams">
+    <h4>Return:</h4>
+    <table>
+      <tbody>
+        <tr>
+          <td class="return-type code" data-ice="returnType"><span>AsyncIterable</span></td>
+          <td class="return-desc" data-ice="returnDescription"><p>The chain of the input iterables.</p>
+</td>
+        </tr>
+      </tbody>
+    </table>
+    <div data-ice="returnProperties">
+</div>
+  </div>
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+</div>
+<div class="detail" data-ice="detail">
+  <h3 data-ice="anchor" id="static-function-asyncIterableMap">
+    <span class="access" data-ice="access">private</span>
+    
+    
+    
+    <span data-ice="async">async</span>
+    <span data-ice="generator">*</span>
+    <span class="code" data-ice="name">asyncIterableMap</span><span class="code" data-ice="signature">(callable: <span>Callable</span>, iterable: <span>AsyncIterable</span>): <span>AsyncIterable</span></span>
+    <span class="right-info">
+      
+      
+      <span data-ice="source"><span><a href="file/src/asyncIterableMap.js.html#lineNumber9">source</a></span></span>
+    </span>
+  </h3>
+
+  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import asyncIterableMap from &apos;<span><a href="file/src/asyncIterableMap.js.html#lineNumber9">@aureooms/js-tape/src/asyncIterableMap.js</a></span>&apos;</code></pre></div>
+  
+  
+  <div data-ice="description"><p>Utility function to apply a sync callable to each item of an async iterable.</p>
+</div>
+
+  
+
+  <div data-ice="properties"><div data-ice="properties">
+  <h4 data-ice="title">Params:</h4>
+  <table class="params">
+    <thead>
+    <tr><td>Name</td><td>Type</td><td>Attribute</td><td>Description</td></tr>
+    </thead>
+    <tbody>
+    
+    <tr data-ice="property" data-depth="0">
+      <td data-ice="name" class="code" data-depth="0">callable</td>
+      <td data-ice="type" class="code"><span>Callable</span></td>
+      <td data-ice="appendix"></td>
+      <td data-ice="description"><p>the callable to apply</p>
+</td>
+    </tr>
+<tr data-ice="property" data-depth="0">
+      <td data-ice="name" class="code" data-depth="0">iterable</td>
+      <td data-ice="type" class="code"><span>AsyncIterable</span></td>
+      <td data-ice="appendix"></td>
+      <td data-ice="description"><p>the iterable to process</p>
+</td>
+    </tr>
+</tbody>
+  </table>
+</div>
+</div>
+
+  <div class="return-params" data-ice="returnParams">
+    <h4>Return:</h4>
+    <table>
+      <tbody>
+        <tr>
+          <td class="return-type code" data-ice="returnType"><span>AsyncIterable</span></td>
+          
+        </tr>
+      </tbody>
+    </table>
+    <div data-ice="returnProperties">
+</div>
+  </div>
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+</div>
+<div class="detail" data-ice="detail">
+  <h3 data-ice="anchor" id="static-function-asyncIterableToArray">
+    <span class="access" data-ice="access">private</span>
+    
+    
+    
+    <span data-ice="async">async</span>
+    
+    <span class="code" data-ice="name">asyncIterableToArray</span><span class="code" data-ice="signature">(asyncIterable: <span>AsyncIterable</span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></span></span>
+    <span class="right-info">
+      
+      
+      <span data-ice="source"><span><a href="file/src/asyncIterableToArray.js.html#lineNumber8">source</a></span></span>
+    </span>
+  </h3>
+
+  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import asyncIterableToArray from &apos;<span><a href="file/src/asyncIterableToArray.js.html#lineNumber8">@aureooms/js-tape/src/asyncIterableToArray.js</a></span>&apos;</code></pre></div>
+  
+  
+  <div data-ice="description"><p>Spreads an asynchronous iterable inside a new array.</p>
+</div>
+
+  
+
+  <div data-ice="properties"><div data-ice="properties">
+  <h4 data-ice="title">Params:</h4>
+  <table class="params">
+    <thead>
+    <tr><td>Name</td><td>Type</td><td>Attribute</td><td>Description</td></tr>
+    </thead>
+    <tbody>
+    
+    <tr data-ice="property" data-depth="0">
+      <td data-ice="name" class="code" data-depth="0">asyncIterable</td>
+      <td data-ice="type" class="code"><span>AsyncIterable</span></td>
+      <td data-ice="appendix"></td>
+      <td data-ice="description"><p>the input iterable.</p>
+</td>
+    </tr>
+</tbody>
+  </table>
+</div>
+</div>
+
+  <div class="return-params" data-ice="returnParams">
+    <h4>Return:</h4>
+    <table>
+      <tbody>
+        <tr>
+          <td class="return-type code" data-ice="returnType"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></span></td>
+          <td class="return-desc" data-ice="returnDescription"><p>A new array filled with the elements of the input iterable.</p>
+</td>
+        </tr>
+      </tbody>
+    </table>
+    <div data-ice="returnProperties">
+</div>
+  </div>
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+</div>
+<div class="detail" data-ice="detail">
+  <h3 data-ice="anchor" id="static-function-skip">
+    <span class="access" data-ice="access">private</span>
+    
+    
+    
+    <span data-ice="async">async</span>
+    
+    <span class="code" data-ice="name">skip</span><span class="code" data-ice="signature">(tape: <span><a href="class/src/Tape.js~Tape.html">Tape</a></span>, toskip: <span>Iterable</span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></span></span>
+    <span class="right-info">
+      
+      
+      <span data-ice="source"><span><a href="file/src/skip.js.html#lineNumber11">source</a></span></span>
+    </span>
+  </h3>
+
+  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import skip from &apos;<span><a href="file/src/skip.js.html#lineNumber11">@aureooms/js-tape/src/skip.js</a></span>&apos;</code></pre></div>
+  
+  
+  <div data-ice="description"><p>Outputs the next token of a tape that is not contained in a given toskip
+set.</p>
+</div>
+
+  
+
+  <div data-ice="properties"><div data-ice="properties">
+  <h4 data-ice="title">Params:</h4>
+  <table class="params">
+    <thead>
+    <tr><td>Name</td><td>Type</td><td>Attribute</td><td>Description</td></tr>
+    </thead>
+    <tbody>
+    
+    <tr data-ice="property" data-depth="0">
+      <td data-ice="name" class="code" data-depth="0">tape</td>
+      <td data-ice="type" class="code"><span><a href="class/src/Tape.js~Tape.html">Tape</a></span></td>
+      <td data-ice="appendix"></td>
+      <td data-ice="description"><p>The input tape.</p>
+</td>
+    </tr>
+<tr data-ice="property" data-depth="0">
+      <td data-ice="name" class="code" data-depth="0">toskip</td>
+      <td data-ice="type" class="code"><span>Iterable</span></td>
+      <td data-ice="appendix"></td>
+      <td data-ice="description"><p>The (hashable) tokens to skip.</p>
+</td>
+    </tr>
+</tbody>
+  </table>
+</div>
+</div>
+
+  <div class="return-params" data-ice="returnParams">
+    <h4>Return:</h4>
+    <table>
+      <tbody>
+        <tr>
+          <td class="return-type code" data-ice="returnType"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></span></td>
+          <td class="return-desc" data-ice="returnDescription"><p>The next token not in <code>toskip</code>.</p>
+</td>
         </tr>
       </tbody>
     </table>

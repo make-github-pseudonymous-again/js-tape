@@ -1,7 +1,7 @@
 {
   "type": "File",
   "start": 0,
-  "end": 484,
+  "end": 486,
   "loc": {
     "start": {
       "line": 1,
@@ -15,7 +15,7 @@
   "program": {
     "type": "Program",
     "start": 0,
-    "end": 484,
+    "end": 486,
     "loc": {
       "start": {
         "line": 1,
@@ -306,9 +306,9 @@
         "trailingComments": [
           {
             "type": "CommentBlock",
-            "value": "*\n * Converts a tape of tapes of tokens to a tape of tokens.\n * @param {Tape} tape the tape to read from\n ",
+            "value": "*\n * Converts a tape of tapes of tokens to a tape of tokens.\n * @param {Tape} tape - the tape to read from\n ",
             "start": 213,
-            "end": 323,
+            "end": 325,
             "loc": {
               "start": {
                 "line": 6,
@@ -324,8 +324,8 @@
       },
       {
         "type": "ExportDefaultDeclaration",
-        "start": 324,
-        "end": 483,
+        "start": 326,
+        "end": 485,
         "loc": {
           "start": {
             "line": 10,
@@ -338,8 +338,8 @@
         },
         "declaration": {
           "type": "FunctionDeclaration",
-          "start": 339,
-          "end": 483,
+          "start": 341,
+          "end": 485,
           "loc": {
             "start": {
               "line": 10,
@@ -352,8 +352,8 @@
           },
           "id": {
             "type": "Identifier",
-            "start": 348,
-            "end": 353,
+            "start": 350,
+            "end": 355,
             "loc": {
               "start": {
                 "line": 10,
@@ -374,8 +374,8 @@
           "params": [
             {
               "type": "Identifier",
-              "start": 356,
-              "end": 360,
+              "start": 358,
+              "end": 362,
               "loc": {
                 "start": {
                   "line": 10,
@@ -392,8 +392,8 @@
           ],
           "body": {
             "type": "BlockStatement",
-            "start": 363,
-            "end": 483,
+            "start": 365,
+            "end": 485,
             "loc": {
               "start": {
                 "line": 10,
@@ -407,8 +407,8 @@
             "body": [
               {
                 "type": "ReturnStatement",
-                "start": 367,
-                "end": 480,
+                "start": 369,
+                "end": 482,
                 "loc": {
                   "start": {
                     "line": 12,
@@ -421,8 +421,8 @@
                 },
                 "argument": {
                   "type": "CallExpression",
-                  "start": 374,
-                  "end": 478,
+                  "start": 376,
+                  "end": 480,
                   "loc": {
                     "start": {
                       "line": 12,
@@ -435,8 +435,8 @@
                   },
                   "callee": {
                     "type": "Identifier",
-                    "start": 374,
-                    "end": 391,
+                    "start": 376,
+                    "end": 393,
                     "loc": {
                       "start": {
                         "line": 12,
@@ -453,8 +453,8 @@
                   "arguments": [
                     {
                       "type": "CallExpression",
-                      "start": 393,
-                      "end": 476,
+                      "start": 395,
+                      "end": 478,
                       "loc": {
                         "start": {
                           "line": 12,
@@ -467,8 +467,8 @@
                       },
                       "callee": {
                         "type": "Identifier",
-                        "start": 393,
-                        "end": 411,
+                        "start": 395,
+                        "end": 413,
                         "loc": {
                           "start": {
                             "line": 12,
@@ -485,8 +485,8 @@
                       "arguments": [
                         {
                           "type": "CallExpression",
-                          "start": 413,
-                          "end": 474,
+                          "start": 415,
+                          "end": 476,
                           "loc": {
                             "start": {
                               "line": 12,
@@ -499,8 +499,8 @@
                           },
                           "callee": {
                             "type": "Identifier",
-                            "start": 413,
-                            "end": 429,
+                            "start": 415,
+                            "end": 431,
                             "loc": {
                               "start": {
                                 "line": 12,
@@ -517,8 +517,8 @@
                           "arguments": [
                             {
                               "type": "Identifier",
-                              "start": 431,
-                              "end": 446,
+                              "start": 433,
+                              "end": 448,
                               "loc": {
                                 "start": {
                                   "line": 12,
@@ -534,8 +534,8 @@
                             },
                             {
                               "type": "CallExpression",
-                              "start": 449,
-                              "end": 472,
+                              "start": 451,
+                              "end": 474,
                               "loc": {
                                 "start": {
                                   "line": 12,
@@ -548,8 +548,8 @@
                               },
                               "callee": {
                                 "type": "Identifier",
-                                "start": 449,
-                                "end": 464,
+                                "start": 451,
+                                "end": 466,
                                 "loc": {
                                   "start": {
                                     "line": 12,
@@ -566,8 +566,8 @@
                               "arguments": [
                                 {
                                   "type": "Identifier",
-                                  "start": 466,
-                                  "end": 470,
+                                  "start": 468,
+                                  "end": 472,
                                   "loc": {
                                     "start": {
                                       "line": 12,
@@ -596,9 +596,9 @@
           "leadingComments": [
             {
               "type": "CommentBlock",
-              "value": "*\n * Converts a tape of tapes of tokens to a tape of tokens.\n * @param {Tape} tape the tape to read from\n ",
+              "value": "*\n * Converts a tape of tapes of tokens to a tape of tokens.\n * @param {Tape} tape - the tape to read from\n ",
               "start": 213,
-              "end": 323,
+              "end": 325,
               "loc": {
                 "start": {
                   "line": 6,
@@ -616,9 +616,9 @@
         "leadingComments": [
           {
             "type": "CommentBlock",
-            "value": "*\n * Converts a tape of tapes of tokens to a tape of tokens.\n * @param {Tape} tape the tape to read from\n ",
+            "value": "*\n * Converts a tape of tapes of tokens to a tape of tokens.\n * @param {Tape} tape - the tape to read from\n ",
             "start": 213,
-            "end": 323,
+            "end": 325,
             "loc": {
               "start": {
                 "line": 6,
@@ -638,9 +638,9 @@
   "comments": [
     {
       "type": "CommentBlock",
-      "value": "*\n * Converts a tape of tapes of tokens to a tape of tokens.\n * @param {Tape} tape the tape to read from\n ",
+      "value": "*\n * Converts a tape of tapes of tokens to a tape of tokens.\n * @param {Tape} tape - the tape to read from\n ",
       "start": 213,
-      "end": 323,
+      "end": 325,
       "loc": {
         "start": {
           "line": 6,
@@ -1188,9 +1188,9 @@
     },
     {
       "type": "CommentBlock",
-      "value": "*\n * Converts a tape of tapes of tokens to a tape of tokens.\n * @param {Tape} tape the tape to read from\n ",
+      "value": "*\n * Converts a tape of tapes of tokens to a tape of tokens.\n * @param {Tape} tape - the tape to read from\n ",
       "start": 213,
-      "end": 323,
+      "end": 325,
       "loc": {
         "start": {
           "line": 6,
@@ -1217,8 +1217,8 @@
         "updateContext": null
       },
       "value": "export",
-      "start": 324,
-      "end": 330,
+      "start": 326,
+      "end": 332,
       "loc": {
         "start": {
           "line": 10,
@@ -1245,8 +1245,8 @@
         "updateContext": null
       },
       "value": "default",
-      "start": 331,
-      "end": 338,
+      "start": 333,
+      "end": 340,
       "loc": {
         "start": {
           "line": 10,
@@ -1272,8 +1272,8 @@
         "binop": null
       },
       "value": "function",
-      "start": 339,
-      "end": 347,
+      "start": 341,
+      "end": 349,
       "loc": {
         "start": {
           "line": 10,
@@ -1298,8 +1298,8 @@
         "binop": null
       },
       "value": "chain",
-      "start": 348,
-      "end": 353,
+      "start": 350,
+      "end": 355,
       "loc": {
         "start": {
           "line": 10,
@@ -1323,8 +1323,8 @@
         "postfix": false,
         "binop": null
       },
-      "start": 354,
-      "end": 355,
+      "start": 356,
+      "end": 357,
       "loc": {
         "start": {
           "line": 10,
@@ -1349,8 +1349,8 @@
         "binop": null
       },
       "value": "tape",
-      "start": 356,
-      "end": 360,
+      "start": 358,
+      "end": 362,
       "loc": {
         "start": {
           "line": 10,
@@ -1374,8 +1374,8 @@
         "postfix": false,
         "binop": null
       },
-      "start": 361,
-      "end": 362,
+      "start": 363,
+      "end": 364,
       "loc": {
         "start": {
           "line": 10,
@@ -1399,8 +1399,8 @@
         "postfix": false,
         "binop": null
       },
-      "start": 363,
-      "end": 364,
+      "start": 365,
+      "end": 366,
       "loc": {
         "start": {
           "line": 10,
@@ -1427,8 +1427,8 @@
         "updateContext": null
       },
       "value": "return",
-      "start": 367,
-      "end": 373,
+      "start": 369,
+      "end": 375,
       "loc": {
         "start": {
           "line": 12,
@@ -1453,8 +1453,8 @@
         "binop": null
       },
       "value": "fromAsyncIterable",
-      "start": 374,
-      "end": 391,
+      "start": 376,
+      "end": 393,
       "loc": {
         "start": {
           "line": 12,
@@ -1478,8 +1478,8 @@
         "postfix": false,
         "binop": null
       },
-      "start": 391,
-      "end": 392,
+      "start": 393,
+      "end": 394,
       "loc": {
         "start": {
           "line": 12,
@@ -1504,8 +1504,8 @@
         "binop": null
       },
       "value": "asyncIterableChain",
-      "start": 393,
-      "end": 411,
+      "start": 395,
+      "end": 413,
       "loc": {
         "start": {
           "line": 12,
@@ -1529,8 +1529,8 @@
         "postfix": false,
         "binop": null
       },
-      "start": 411,
-      "end": 412,
+      "start": 413,
+      "end": 414,
       "loc": {
         "start": {
           "line": 12,
@@ -1555,8 +1555,8 @@
         "binop": null
       },
       "value": "asyncIterableMap",
-      "start": 413,
-      "end": 429,
+      "start": 415,
+      "end": 431,
       "loc": {
         "start": {
           "line": 12,
@@ -1580,8 +1580,8 @@
         "postfix": false,
         "binop": null
       },
-      "start": 429,
-      "end": 430,
+      "start": 431,
+      "end": 432,
       "loc": {
         "start": {
           "line": 12,
@@ -1606,8 +1606,8 @@
         "binop": null
       },
       "value": "toAsyncIterable",
-      "start": 431,
-      "end": 446,
+      "start": 433,
+      "end": 448,
       "loc": {
         "start": {
           "line": 12,
@@ -1632,8 +1632,8 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 447,
-      "end": 448,
+      "start": 449,
+      "end": 450,
       "loc": {
         "start": {
           "line": 12,
@@ -1658,8 +1658,8 @@
         "binop": null
       },
       "value": "toAsyncIterable",
-      "start": 449,
-      "end": 464,
+      "start": 451,
+      "end": 466,
       "loc": {
         "start": {
           "line": 12,
@@ -1683,8 +1683,8 @@
         "postfix": false,
         "binop": null
       },
-      "start": 464,
-      "end": 465,
+      "start": 466,
+      "end": 467,
       "loc": {
         "start": {
           "line": 12,
@@ -1709,8 +1709,8 @@
         "binop": null
       },
       "value": "tape",
-      "start": 466,
-      "end": 470,
+      "start": 468,
+      "end": 472,
       "loc": {
         "start": {
           "line": 12,
@@ -1734,8 +1734,8 @@
         "postfix": false,
         "binop": null
       },
-      "start": 471,
-      "end": 472,
+      "start": 473,
+      "end": 474,
       "loc": {
         "start": {
           "line": 12,
@@ -1759,8 +1759,8 @@
         "postfix": false,
         "binop": null
       },
-      "start": 473,
-      "end": 474,
+      "start": 475,
+      "end": 476,
       "loc": {
         "start": {
           "line": 12,
@@ -1784,8 +1784,8 @@
         "postfix": false,
         "binop": null
       },
-      "start": 475,
-      "end": 476,
+      "start": 477,
+      "end": 478,
       "loc": {
         "start": {
           "line": 12,
@@ -1809,8 +1809,8 @@
         "postfix": false,
         "binop": null
       },
-      "start": 477,
-      "end": 478,
+      "start": 479,
+      "end": 480,
       "loc": {
         "start": {
           "line": 12,
@@ -1835,8 +1835,8 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 479,
-      "end": 480,
+      "start": 481,
+      "end": 482,
       "loc": {
         "start": {
           "line": 12,
@@ -1860,8 +1860,8 @@
         "postfix": false,
         "binop": null
       },
-      "start": 482,
-      "end": 483,
+      "start": 484,
+      "end": 485,
       "loc": {
         "start": {
           "line": 14,
@@ -1886,8 +1886,8 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 484,
-      "end": 484,
+      "start": 486,
+      "end": 486,
       "loc": {
         "start": {
           "line": 15,

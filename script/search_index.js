@@ -1,9 +1,15 @@
 window.esdocSearchIndex = [
   [
-    "@aureooms/js-tape/src/tapefromcallable.js~tapefromcallable",
-    "class/src/TapeFromCallable.js~TapeFromCallable.html",
-    "<span>TapeFromCallable</span> <span class=\"search-result-import-path\">@aureooms/js-tape/src/TapeFromCallable.js</span>",
+    "@aureooms/js-tape/src/tape.js~tape",
+    "class/src/Tape.js~Tape.html",
+    "<span>Tape</span> <span class=\"search-result-import-path\">@aureooms/js-tape/src/Tape.js</span>",
     "class"
+  ],
+  [
+    "@aureooms/js-tape/src/fromreadstream.js~_fromreadstream",
+    "function/index.html#static-function-_fromReadStream",
+    "<span>_fromReadStream</span> <span class=\"search-result-import-path\">@aureooms/js-tape/src/fromReadStream.js</span>",
+    "function"
   ],
   [
     "@aureooms/js-tape/src/split.js~_split",
@@ -102,21 +108,21 @@ window.esdocSearchIndex = [
     "function"
   ],
   [
+    "@aureooms/js-tape/src/toasynccallable.js~toasynccallable",
+    "function/index.html#static-function-toAsyncCallable",
+    "<span>toAsyncCallable</span> <span class=\"search-result-import-path\">@aureooms/js-tape/src/toAsyncCallable.js</span>",
+    "function"
+  ],
+  [
     "@aureooms/js-tape/src/toasynciterable.js~toasynciterable",
     "function/index.html#static-function-toAsyncIterable",
     "<span>toAsyncIterable</span> <span class=\"search-result-import-path\">@aureooms/js-tape/src/toAsyncIterable.js</span>",
     "function"
   ],
   [
-    "@aureooms/js-tape/src/tocallable.js~tocallable",
-    "function/index.html#static-function-toCallable",
-    "<span>toCallable</span> <span class=\"search-result-import-path\">@aureooms/js-tape/src/toCallable.js</span>",
-    "function"
-  ],
-  [
-    "@aureooms/js-tape/src/toiterator.js~toiterator",
-    "function/index.html#static-function-toIterator",
-    "<span>toIterator</span> <span class=\"search-result-import-path\">@aureooms/js-tape/src/toIterator.js</span>",
+    "@aureooms/js-tape/src/toasynciterator.js~toasynciterator",
+    "function/index.html#static-function-toAsyncIterator",
+    "<span>toAsyncIterator</span> <span class=\"search-result-import-path\">@aureooms/js-tape/src/toAsyncIterator.js</span>",
     "function"
   ],
   [
@@ -414,57 +420,69 @@ window.esdocSearchIndex = [
     "file"
   ],
   [
-    "src/tapefromcallable.js",
-    "file/src/TapeFromCallable.js.html",
-    "src/TapeFromCallable.js",
+    "src/tape.js",
+    "file/src/Tape.js.html",
+    "src/Tape.js",
     "file"
   ],
   [
-    "src/tapefromcallable.js~tapefromcallable#buffer",
-    "class/src/TapeFromCallable.js~TapeFromCallable.html#instance-member-buffer",
-    "src/TapeFromCallable.js~TapeFromCallable#buffer",
+    "src/tape.js~tape#[symbol.asynciterator]",
+    "class/src/Tape.js~Tape.html#instance-method-[Symbol.asyncIterator]",
+    "src/Tape.js~Tape#[Symbol.asyncIterator]",
+    "method"
+  ],
+  [
+    "src/tape.js~tape#[symbol.iterator]",
+    "class/src/Tape.js~Tape.html#instance-method-[Symbol.iterator]",
+    "src/Tape.js~Tape#[Symbol.iterator]",
+    "method"
+  ],
+  [
+    "src/tape.js~tape#buffer",
+    "class/src/Tape.js~Tape.html#instance-member-buffer",
+    "src/Tape.js~Tape#buffer",
     "member"
   ],
   [
-    "src/tapefromcallable.js~tapefromcallable#callable",
-    "class/src/TapeFromCallable.js~TapeFromCallable.html#instance-member-callable",
-    "src/TapeFromCallable.js~TapeFromCallable#callable",
+    "src/tape.js~tape#callable",
+    "class/src/Tape.js~Tape.html#instance-member-callable",
+    "src/Tape.js~Tape#callable",
     "member"
   ],
   [
-    "src/tapefromcallable.js~tapefromcallable#constructor",
-    "class/src/TapeFromCallable.js~TapeFromCallable.html#instance-constructor-constructor",
-    "src/TapeFromCallable.js~TapeFromCallable#constructor",
+    "src/tape.js~tape#constructor",
+    "class/src/Tape.js~Tape.html#instance-constructor-constructor",
+    "src/Tape.js~Tape#constructor",
     "method"
   ],
   [
-    "src/tapefromcallable.js~tapefromcallable#eof",
-    "class/src/TapeFromCallable.js~TapeFromCallable.html#instance-member-eof",
-    "src/TapeFromCallable.js~TapeFromCallable#eof",
+    "src/tape.js~tape#eof",
+    "class/src/Tape.js~Tape.html#instance-member-eof",
+    "src/Tape.js~Tape#eof",
     "member"
   ],
   [
-    "src/tapefromcallable.js~tapefromcallable#read",
-    "class/src/TapeFromCallable.js~TapeFromCallable.html#instance-method-read",
-    "src/TapeFromCallable.js~TapeFromCallable#read",
+    "src/tape.js~tape#read",
+    "class/src/Tape.js~Tape.html#instance-method-read",
+    "src/Tape.js~Tape#read",
     "method"
   ],
   [
-    "src/tapefromcallable.js~tapefromcallable#skip",
-    "class/src/TapeFromCallable.js~TapeFromCallable.html#instance-method-skip",
-    "src/TapeFromCallable.js~TapeFromCallable#skip",
+    "src/tape.js~tape#skip",
+    "class/src/Tape.js~Tape.html#instance-method-skip",
+    "src/Tape.js~Tape#skip",
     "method"
   ],
   [
-    "src/tapefromcallable.js~tapefromcallable#skipmany",
-    "class/src/TapeFromCallable.js~TapeFromCallable.html#instance-method-skipMany",
-    "src/TapeFromCallable.js~TapeFromCallable#skipMany",
+    "src/tape.js~tape#skipmany",
+    "class/src/Tape.js~Tape.html#instance-method-skipMany",
+    "src/Tape.js~Tape#skipMany",
     "method"
   ],
   [
-    "src/tapefromcallable.js~tapefromcallable#unread",
-    "class/src/TapeFromCallable.js~TapeFromCallable.html#instance-method-unread",
-    "src/TapeFromCallable.js~TapeFromCallable#unread",
+    "src/tape.js~tape#unread",
+    "class/src/Tape.js~Tape.html#instance-method-unread",
+    "src/Tape.js~Tape#unread",
     "method"
   ],
   [
@@ -576,21 +594,21 @@ window.esdocSearchIndex = [
     "file"
   ],
   [
+    "src/toasynccallable.js",
+    "file/src/toAsyncCallable.js.html",
+    "src/toAsyncCallable.js",
+    "file"
+  ],
+  [
     "src/toasynciterable.js",
     "file/src/toAsyncIterable.js.html",
     "src/toAsyncIterable.js",
     "file"
   ],
   [
-    "src/tocallable.js",
-    "file/src/toCallable.js.html",
-    "src/toCallable.js",
-    "file"
-  ],
-  [
-    "src/toiterator.js",
-    "file/src/toIterator.js.html",
-    "src/toIterator.js",
+    "src/toasynciterator.js",
+    "file/src/toAsyncIterator.js.html",
+    "src/toAsyncIterator.js",
     "file"
   ],
   [
