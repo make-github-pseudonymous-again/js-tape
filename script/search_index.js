@@ -1,116 +1,128 @@
 window.esdocSearchIndex = [
   [
-    "@aureooms/js-stream/src/eof.js~eof",
-    "variable/index.html#static-variable-EOF",
-    "<span>EOF</span> <span class=\"search-result-import-path\">@aureooms/js-stream/src/EOF.js</span>",
-    "variable"
-  ],
-  [
-    "@aureooms/js-stream/src/from/streamfromcallable.js~streamfromcallable",
-    "class/src/from/StreamFromCallable.js~StreamFromCallable.html",
-    "<span>StreamFromCallable</span> <span class=\"search-result-import-path\">@aureooms/js-stream/src/from/StreamFromCallable.js</span>",
+    "@aureooms/js-tape/src/tapefromcallable.js~tapefromcallable",
+    "class/src/TapeFromCallable.js~TapeFromCallable.html",
+    "<span>TapeFromCallable</span> <span class=\"search-result-import-path\">@aureooms/js-tape/src/TapeFromCallable.js</span>",
     "class"
   ],
   [
-    "@aureooms/js-stream/src/split.js~_split",
+    "@aureooms/js-tape/src/split.js~_split",
     "function/index.html#static-function-_split",
-    "<span>_split</span> <span class=\"search-result-import-path\">@aureooms/js-stream/src/split.js</span>",
+    "<span>_split</span> <span class=\"search-result-import-path\">@aureooms/js-tape/src/split.js</span>",
     "function"
   ],
   [
-    "@aureooms/js-stream/src/chain.js~chain",
+    "@aureooms/js-tape/src/asynciterablechain.js~asynciterablechain",
+    "function/index.html#static-function-asyncIterableChain",
+    "<span>asyncIterableChain</span> <span class=\"search-result-import-path\">@aureooms/js-tape/src/asyncIterableChain.js</span>",
+    "function"
+  ],
+  [
+    "@aureooms/js-tape/src/asynciterablemap.js~asynciterablemap",
+    "function/index.html#static-function-asyncIterableMap",
+    "<span>asyncIterableMap</span> <span class=\"search-result-import-path\">@aureooms/js-tape/src/asyncIterableMap.js</span>",
+    "function"
+  ],
+  [
+    "@aureooms/js-tape/src/asynciterabletoarray.js~asynciterabletoarray",
+    "function/index.html#static-function-asyncIterableToArray",
+    "<span>asyncIterableToArray</span> <span class=\"search-result-import-path\">@aureooms/js-tape/src/asyncIterableToArray.js</span>",
+    "function"
+  ],
+  [
+    "@aureooms/js-tape/src/chain.js~chain",
     "function/index.html#static-function-chain",
-    "<span>chain</span> <span class=\"search-result-import-path\">@aureooms/js-stream/src/chain.js</span>",
+    "<span>chain</span> <span class=\"search-result-import-path\">@aureooms/js-tape/src/chain.js</span>",
     "function"
   ],
   [
-    "@aureooms/js-stream/src/exhaust.js~exhaust",
+    "@aureooms/js-tape/src/exhaust.js~exhaust",
     "function/index.html#static-function-exhaust",
-    "<span>exhaust</span> <span class=\"search-result-import-path\">@aureooms/js-stream/src/exhaust.js</span>",
+    "<span>exhaust</span> <span class=\"search-result-import-path\">@aureooms/js-tape/src/exhaust.js</span>",
     "function"
   ],
   [
-    "@aureooms/js-stream/src/from/fromarray.js~fromarray",
-    "variable/index.html#static-variable-fromarray",
-    "<span>fromarray</span> <span class=\"search-result-import-path\">@aureooms/js-stream/src/from/fromarray.js</span>",
-    "variable"
-  ],
-  [
-    "@aureooms/js-stream/src/from/fromcallable.js~fromcallable",
-    "function/index.html#static-function-fromcallable",
-    "<span>fromcallable</span> <span class=\"search-result-import-path\">@aureooms/js-stream/src/from/fromcallable.js</span>",
+    "@aureooms/js-tape/src/fromasynciterable.js~fromasynciterable",
+    "function/index.html#static-function-fromAsyncIterable",
+    "<span>fromAsyncIterable</span> <span class=\"search-result-import-path\">@aureooms/js-tape/src/fromAsyncIterable.js</span>",
     "function"
   ],
   [
-    "@aureooms/js-stream/src/from/fromiterable.js~fromiterable",
-    "function/index.html#static-function-fromiterable",
-    "<span>fromiterable</span> <span class=\"search-result-import-path\">@aureooms/js-stream/src/from/fromiterable.js</span>",
+    "@aureooms/js-tape/src/fromcallable.js~fromcallable",
+    "function/index.html#static-function-fromCallable",
+    "<span>fromCallable</span> <span class=\"search-result-import-path\">@aureooms/js-tape/src/fromCallable.js</span>",
     "function"
   ],
   [
-    "@aureooms/js-stream/src/from/fromiterator.js~fromiterator",
-    "function/index.html#static-function-fromiterator",
-    "<span>fromiterator</span> <span class=\"search-result-import-path\">@aureooms/js-stream/src/from/fromiterator.js</span>",
+    "@aureooms/js-tape/src/fromiterable.js~fromiterable",
+    "function/index.html#static-function-fromIterable",
+    "<span>fromIterable</span> <span class=\"search-result-import-path\">@aureooms/js-tape/src/fromIterable.js</span>",
     "function"
   ],
   [
-    "@aureooms/js-stream/src/from/fromstring.js~fromstring",
-    "variable/index.html#static-variable-fromstring",
-    "<span>fromstring</span> <span class=\"search-result-import-path\">@aureooms/js-stream/src/from/fromstring.js</span>",
-    "variable"
+    "@aureooms/js-tape/src/fromiterator.js~fromiterator",
+    "function/index.html#static-function-fromIterator",
+    "<span>fromIterator</span> <span class=\"search-result-import-path\">@aureooms/js-tape/src/fromIterator.js</span>",
+    "function"
   ],
   [
-    "@aureooms/js-stream/src/ignore.js~ignore",
+    "@aureooms/js-tape/src/fromreadstream.js~fromreadstream",
+    "function/index.html#static-function-fromReadStream",
+    "<span>fromReadStream</span> <span class=\"search-result-import-path\">@aureooms/js-tape/src/fromReadStream.js</span>",
+    "function"
+  ],
+  [
+    "@aureooms/js-tape/src/ignore.js~ignore",
     "function/index.html#static-function-ignore",
-    "<span>ignore</span> <span class=\"search-result-import-path\">@aureooms/js-stream/src/ignore.js</span>",
+    "<span>ignore</span> <span class=\"search-result-import-path\">@aureooms/js-tape/src/ignore.js</span>",
     "function"
   ],
   [
-    "@aureooms/js-stream/src/map.js~map",
+    "@aureooms/js-tape/src/map.js~map",
     "function/index.html#static-function-map",
-    "<span>map</span> <span class=\"search-result-import-path\">@aureooms/js-stream/src/map.js</span>",
+    "<span>map</span> <span class=\"search-result-import-path\">@aureooms/js-tape/src/map.js</span>",
     "function"
   ],
   [
-    "@aureooms/js-stream/src/skip.js~skip",
+    "@aureooms/js-tape/src/skip.js~skip",
     "function/index.html#static-function-skip",
-    "<span>skip</span> <span class=\"search-result-import-path\">@aureooms/js-stream/src/skip.js</span>",
+    "<span>skip</span> <span class=\"search-result-import-path\">@aureooms/js-tape/src/skip.js</span>",
     "function"
   ],
   [
-    "@aureooms/js-stream/src/split.js~split",
+    "@aureooms/js-tape/src/split.js~split",
     "function/index.html#static-function-split",
-    "<span>split</span> <span class=\"search-result-import-path\">@aureooms/js-stream/src/split.js</span>",
+    "<span>split</span> <span class=\"search-result-import-path\">@aureooms/js-tape/src/split.js</span>",
     "function"
   ],
   [
-    "@aureooms/js-stream/src/to/toarray.js~toarray",
-    "function/index.html#static-function-toarray",
-    "<span>toarray</span> <span class=\"search-result-import-path\">@aureooms/js-stream/src/to/toarray.js</span>",
+    "@aureooms/js-tape/src/toarray.js~toarray",
+    "function/index.html#static-function-toArray",
+    "<span>toArray</span> <span class=\"search-result-import-path\">@aureooms/js-tape/src/toArray.js</span>",
     "function"
   ],
   [
-    "@aureooms/js-stream/src/to/tocallable.js~tocallable",
-    "function/index.html#static-function-tocallable",
-    "<span>tocallable</span> <span class=\"search-result-import-path\">@aureooms/js-stream/src/to/tocallable.js</span>",
+    "@aureooms/js-tape/src/toasynciterable.js~toasynciterable",
+    "function/index.html#static-function-toAsyncIterable",
+    "<span>toAsyncIterable</span> <span class=\"search-result-import-path\">@aureooms/js-tape/src/toAsyncIterable.js</span>",
     "function"
   ],
   [
-    "@aureooms/js-stream/src/to/toiterable.js~toiterable",
-    "function/index.html#static-function-toiterable",
-    "<span>toiterable</span> <span class=\"search-result-import-path\">@aureooms/js-stream/src/to/toiterable.js</span>",
+    "@aureooms/js-tape/src/tocallable.js~tocallable",
+    "function/index.html#static-function-toCallable",
+    "<span>toCallable</span> <span class=\"search-result-import-path\">@aureooms/js-tape/src/toCallable.js</span>",
     "function"
   ],
   [
-    "@aureooms/js-stream/src/to/toiterator.js~toiterator",
-    "function/index.html#static-function-toiterator",
-    "<span>toiterator</span> <span class=\"search-result-import-path\">@aureooms/js-stream/src/to/toiterator.js</span>",
+    "@aureooms/js-tape/src/toiterator.js~toiterator",
+    "function/index.html#static-function-toIterator",
+    "<span>toIterator</span> <span class=\"search-result-import-path\">@aureooms/js-tape/src/toIterator.js</span>",
     "function"
   ],
   [
-    "@aureooms/js-stream/src/to/tostring.js~tostring",
-    "function/index.html#static-function-tostring",
-    "<span>tostring</span> <span class=\"search-result-import-path\">@aureooms/js-stream/src/to/tostring.js</span>",
+    "@aureooms/js-tape/src/tostring.js~tostring",
+    "function/index.html#static-function-toString",
+    "<span>toString</span> <span class=\"search-result-import-path\">@aureooms/js-tape/src/toString.js</span>",
     "function"
   ],
   [
@@ -402,6 +414,78 @@ window.esdocSearchIndex = [
     "file"
   ],
   [
+    "src/tapefromcallable.js",
+    "file/src/TapeFromCallable.js.html",
+    "src/TapeFromCallable.js",
+    "file"
+  ],
+  [
+    "src/tapefromcallable.js~tapefromcallable#buffer",
+    "class/src/TapeFromCallable.js~TapeFromCallable.html#instance-member-buffer",
+    "src/TapeFromCallable.js~TapeFromCallable#buffer",
+    "member"
+  ],
+  [
+    "src/tapefromcallable.js~tapefromcallable#callable",
+    "class/src/TapeFromCallable.js~TapeFromCallable.html#instance-member-callable",
+    "src/TapeFromCallable.js~TapeFromCallable#callable",
+    "member"
+  ],
+  [
+    "src/tapefromcallable.js~tapefromcallable#constructor",
+    "class/src/TapeFromCallable.js~TapeFromCallable.html#instance-constructor-constructor",
+    "src/TapeFromCallable.js~TapeFromCallable#constructor",
+    "method"
+  ],
+  [
+    "src/tapefromcallable.js~tapefromcallable#eof",
+    "class/src/TapeFromCallable.js~TapeFromCallable.html#instance-member-eof",
+    "src/TapeFromCallable.js~TapeFromCallable#eof",
+    "member"
+  ],
+  [
+    "src/tapefromcallable.js~tapefromcallable#read",
+    "class/src/TapeFromCallable.js~TapeFromCallable.html#instance-method-read",
+    "src/TapeFromCallable.js~TapeFromCallable#read",
+    "method"
+  ],
+  [
+    "src/tapefromcallable.js~tapefromcallable#skip",
+    "class/src/TapeFromCallable.js~TapeFromCallable.html#instance-method-skip",
+    "src/TapeFromCallable.js~TapeFromCallable#skip",
+    "method"
+  ],
+  [
+    "src/tapefromcallable.js~tapefromcallable#skipmany",
+    "class/src/TapeFromCallable.js~TapeFromCallable.html#instance-method-skipMany",
+    "src/TapeFromCallable.js~TapeFromCallable#skipMany",
+    "method"
+  ],
+  [
+    "src/tapefromcallable.js~tapefromcallable#unread",
+    "class/src/TapeFromCallable.js~TapeFromCallable.html#instance-method-unread",
+    "src/TapeFromCallable.js~TapeFromCallable#unread",
+    "method"
+  ],
+  [
+    "src/asynciterablechain.js",
+    "file/src/asyncIterableChain.js.html",
+    "src/asyncIterableChain.js",
+    "file"
+  ],
+  [
+    "src/asynciterablemap.js",
+    "file/src/asyncIterableMap.js.html",
+    "src/asyncIterableMap.js",
+    "file"
+  ],
+  [
+    "src/asynciterabletoarray.js",
+    "file/src/asyncIterableToArray.js.html",
+    "src/asyncIterableToArray.js",
+    "file"
+  ],
+  [
     "src/chain.js",
     "file/src/chain.js.html",
     "src/chain.js",
@@ -414,81 +498,45 @@ window.esdocSearchIndex = [
     "file"
   ],
   [
-    "src/from/streamfromcallable.js",
-    "file/src/from/StreamFromCallable.js.html",
-    "src/from/StreamFromCallable.js",
+    "src/fromarray.js",
+    "file/src/fromArray.js.html",
+    "src/fromArray.js",
     "file"
   ],
   [
-    "src/from/streamfromcallable.js~streamfromcallable#buffer",
-    "class/src/from/StreamFromCallable.js~StreamFromCallable.html#instance-member-buffer",
-    "src/from/StreamFromCallable.js~StreamFromCallable#buffer",
-    "member"
-  ],
-  [
-    "src/from/streamfromcallable.js~streamfromcallable#callable",
-    "class/src/from/StreamFromCallable.js~StreamFromCallable.html#instance-member-callable",
-    "src/from/StreamFromCallable.js~StreamFromCallable#callable",
-    "member"
-  ],
-  [
-    "src/from/streamfromcallable.js~streamfromcallable#constructor",
-    "class/src/from/StreamFromCallable.js~StreamFromCallable.html#instance-constructor-constructor",
-    "src/from/StreamFromCallable.js~StreamFromCallable#constructor",
-    "method"
-  ],
-  [
-    "src/from/streamfromcallable.js~streamfromcallable#eof",
-    "class/src/from/StreamFromCallable.js~StreamFromCallable.html#instance-member-eof",
-    "src/from/StreamFromCallable.js~StreamFromCallable#eof",
-    "member"
-  ],
-  [
-    "src/from/streamfromcallable.js~streamfromcallable#read",
-    "class/src/from/StreamFromCallable.js~StreamFromCallable.html#instance-method-read",
-    "src/from/StreamFromCallable.js~StreamFromCallable#read",
-    "method"
-  ],
-  [
-    "src/from/streamfromcallable.js~streamfromcallable#unread",
-    "class/src/from/StreamFromCallable.js~StreamFromCallable.html#instance-method-unread",
-    "src/from/StreamFromCallable.js~StreamFromCallable#unread",
-    "method"
-  ],
-  [
-    "src/from/fromarray.js",
-    "file/src/from/fromarray.js.html",
-    "src/from/fromarray.js",
+    "src/fromasynciterable.js",
+    "file/src/fromAsyncIterable.js.html",
+    "src/fromAsyncIterable.js",
     "file"
   ],
   [
-    "src/from/fromcallable.js",
-    "file/src/from/fromcallable.js.html",
-    "src/from/fromcallable.js",
+    "src/fromcallable.js",
+    "file/src/fromCallable.js.html",
+    "src/fromCallable.js",
     "file"
   ],
   [
-    "src/from/fromiterable.js",
-    "file/src/from/fromiterable.js.html",
-    "src/from/fromiterable.js",
+    "src/fromiterable.js",
+    "file/src/fromIterable.js.html",
+    "src/fromIterable.js",
     "file"
   ],
   [
-    "src/from/fromiterator.js",
-    "file/src/from/fromiterator.js.html",
-    "src/from/fromiterator.js",
+    "src/fromiterator.js",
+    "file/src/fromIterator.js.html",
+    "src/fromIterator.js",
     "file"
   ],
   [
-    "src/from/fromstring.js",
-    "file/src/from/fromstring.js.html",
-    "src/from/fromstring.js",
+    "src/fromreadstream.js",
+    "file/src/fromReadStream.js.html",
+    "src/fromReadStream.js",
     "file"
   ],
   [
-    "src/from/index.js",
-    "file/src/from/index.js.html",
-    "src/from/index.js",
+    "src/fromstring.js",
+    "file/src/fromString.js.html",
+    "src/fromString.js",
     "file"
   ],
   [
@@ -522,39 +570,33 @@ window.esdocSearchIndex = [
     "file"
   ],
   [
-    "src/to/index.js",
-    "file/src/to/index.js.html",
-    "src/to/index.js",
+    "src/toarray.js",
+    "file/src/toArray.js.html",
+    "src/toArray.js",
     "file"
   ],
   [
-    "src/to/toarray.js",
-    "file/src/to/toarray.js.html",
-    "src/to/toarray.js",
+    "src/toasynciterable.js",
+    "file/src/toAsyncIterable.js.html",
+    "src/toAsyncIterable.js",
     "file"
   ],
   [
-    "src/to/tocallable.js",
-    "file/src/to/tocallable.js.html",
-    "src/to/tocallable.js",
+    "src/tocallable.js",
+    "file/src/toCallable.js.html",
+    "src/toCallable.js",
     "file"
   ],
   [
-    "src/to/toiterable.js",
-    "file/src/to/toiterable.js.html",
-    "src/to/toiterable.js",
+    "src/toiterator.js",
+    "file/src/toIterator.js.html",
+    "src/toIterator.js",
     "file"
   ],
   [
-    "src/to/toiterator.js",
-    "file/src/to/toiterator.js.html",
-    "src/to/toiterator.js",
-    "file"
-  ],
-  [
-    "src/to/tostring.js",
-    "file/src/to/tostring.js.html",
-    "src/to/tostring.js",
+    "src/tostring.js",
+    "file/src/toString.js.html",
+    "src/toString.js",
     "file"
   ]
 ]

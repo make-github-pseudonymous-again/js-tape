@@ -567,161 +567,51 @@
     "__docId__": 48,
     "kind": "file",
     "name": "src/EOF.js",
-    "content": "export const EOF = { } ;\n",
+    "content": "/**\n * Shared object used as end of file.\n */\nexport default { } ;\n",
     "static": true,
-    "longname": "/home/aureooms/dev/js/util/parse/js-stream/src/EOF.js",
+    "longname": "/home/aureooms/dev/js/js-tape/src/EOF.js",
     "access": "public",
     "description": null,
     "lineNumber": 1
   },
   {
     "__docId__": 49,
-    "kind": "variable",
-    "name": "EOF",
-    "memberof": "src/EOF.js",
+    "kind": "file",
+    "name": "src/TapeFromCallable.js",
+    "content": "import EOF from './EOF' ;\n\n/**\n * Class that wraps a callable with a tape.\n * Do not use directly. Use {@link fromCallable} instead.\n */\nexport default class TapeFromCallable {\n\n\t/**\n\t * The constructor. Stores the callable that yields values to put on the tape.\n\t *\n\t * @param {Callable} callable - The callable to use.\n\t */\n\tconstructor ( callable ) {\n\t\tthis.callable = callable ;\n\t\tthis.buffer = [ ] ;\n\t\tthis.eof = EOF ;\n\t}\n\n\t/**\n\t * Returns the next token on the tape or {@link TapeFromCallable#eof}\n\t * if the tape has been exhausted.\n\t *\n\t * @returns {Object}\n\t */\n\tasync read ( ) {\n\n\t\tif ( this.buffer.length > 0 ) return this.buffer.pop( ) ;\n\n\t\tconst state = await this.callable( ) ;\n\n\t\tif ( state.done ) return this.eof ;\n\n\t\treturn state.value ;\n\n\t}\n\n\t/**\n\t * Puts a token back on the tape. If {@link TapeFromCallable#read} is\n\t * used just after, this token will be returned.\n\t *\n\t * @param {Object} token - The token to put back on the tape.\n\t */\n\tunread ( token ) {\n\n\t\t// should this be async too ?\n\t\tthis.buffer.push( token ) ;\n\n\t}\n\n\t/**\n\t * Skips the next token on the tape.\n\t */\n\tasync skip ( ) {\n\n\t\tif ( this.buffer.length > 0 ) this.buffer.pop( ) ;\n\t\telse await this.callable( ) ;\n\n\t}\n\n\t/**\n\t * Skip the next `n` tokens on the tape.\n\t *\n\t * @param {Number} n - The number of tokens to skip.\n\t */\n\tasync skipMany ( n ) {\n\n\t\twhile ( n --> 0 ) await this.skip() ;\n\n\t}\n\n}\n",
     "static": true,
-    "longname": "src/EOF.js~EOF",
+    "longname": "/home/aureooms/dev/js/js-tape/src/TapeFromCallable.js",
     "access": "public",
-    "export": true,
-    "importPath": "@aureooms/js-stream/src/EOF.js",
-    "importStyle": "{EOF}",
     "description": null,
-    "lineNumber": 1,
-    "undocument": true,
-    "type": {
-      "types": [
-        "{}"
-      ]
-    }
+    "lineNumber": 1
   },
   {
     "__docId__": 50,
-    "kind": "file",
-    "name": "src/chain.js",
-    "content": "\nimport { fromiterable } from './from' ;\nimport { toiterable } from './to' ;\nimport { map as _map , chain as _chain } from '@aureooms/js-itertools' ;\n\n/**\n * Converts a stream of streams of tokens to a stream of tokens.\n * @param {Stream} stream the stream to read from\n */\nexport function chain ( stream ) {\n\n\treturn fromiterable( _chain( _map( toiterable , toiterable( stream ) ) ) ) ;\n\n}\n",
-    "static": true,
-    "longname": "/home/aureooms/dev/js/util/parse/js-stream/src/chain.js",
-    "access": "public",
-    "description": null,
-    "lineNumber": 1
-  },
-  {
-    "__docId__": 51,
-    "kind": "function",
-    "name": "chain",
-    "memberof": "src/chain.js",
-    "generator": false,
-    "async": false,
-    "static": true,
-    "longname": "src/chain.js~chain",
-    "access": "public",
-    "export": true,
-    "importPath": "@aureooms/js-stream/src/chain.js",
-    "importStyle": "{chain}",
-    "description": "Converts a stream of streams of tokens to a stream of tokens.",
-    "lineNumber": 10,
-    "params": [
-      {
-        "nullable": null,
-        "types": [
-          "Stream"
-        ],
-        "spread": false,
-        "optional": false,
-        "name": "stream",
-        "description": "the stream to read from"
-      }
-    ],
-    "return": {
-      "types": [
-        "*"
-      ]
-    }
-  },
-  {
-    "__docId__": 52,
-    "kind": "file",
-    "name": "src/exhaust.js",
-    "content": "\n/**\n * Exhausts a stream.\n * @param {Stream} stream the stream to read from\n */\nexport function exhaust ( stream ) {\n\n\twhile ( stream.read( ) !== stream.eof ) ;\n\n}\n",
-    "static": true,
-    "longname": "/home/aureooms/dev/js/util/parse/js-stream/src/exhaust.js",
-    "access": "public",
-    "description": null,
-    "lineNumber": 1
-  },
-  {
-    "__docId__": 53,
-    "kind": "function",
-    "name": "exhaust",
-    "memberof": "src/exhaust.js",
-    "generator": false,
-    "async": false,
-    "static": true,
-    "longname": "src/exhaust.js~exhaust",
-    "access": "public",
-    "export": true,
-    "importPath": "@aureooms/js-stream/src/exhaust.js",
-    "importStyle": "{exhaust}",
-    "description": "Exhausts a stream.",
-    "lineNumber": 6,
-    "params": [
-      {
-        "nullable": null,
-        "types": [
-          "Stream"
-        ],
-        "spread": false,
-        "optional": false,
-        "name": "stream",
-        "description": "the stream to read from"
-      }
-    ],
-    "return": null
-  },
-  {
-    "__docId__": 54,
-    "kind": "file",
-    "name": "src/from/StreamFromCallable.js",
-    "content": "import { EOF } from '..' ;\n\n/**\n * Class that wraps a callable with a stream.\n */\nexport class StreamFromCallable {\n\n\t/**\n\t * The constructor. Stores the callable that yields values to stream.\n\t *\n\t * @param {Callable} callable - The callable to use.\n\t * @returns {StreamFromCallable}\n\t *\n\t */\n\tconstructor ( callable ) {\n\t\tthis.callable = callable ;\n\t\tthis.buffer = [ ] ;\n\t\tthis.eof = EOF ;\n\t}\n\n\t/**\n\t * Returns the next token in the stream or {@link StreamFromCallable#eof}\n\t * if the stream has been exhausted.\n\t *\n\t * @returns {Object}\n\t */\n\tread ( ) {\n\n\t\tif ( this.buffer.length > 0 ) return this.buffer.pop( ) ;\n\n\t\tconst state = this.callable( ) ;\n\n\t\tif ( state.done ) return this.eof ;\n\n\t\treturn state.value ;\n\n\t}\n\n\t/**\n\t * Puts a token back in the stream. If {@link StreamFromCallable#read} is\n\t * used just after, this token will be returned.\n\t *\n\t * @param {Object} token - The token to put back in the stream.\n\t */\n\tunread ( token ) {\n\n\t\tthis.buffer.push( token ) ;\n\n\t}\n\n}\n",
-    "static": true,
-    "longname": "/home/aureooms/dev/js/util/parse/js-stream/src/from/StreamFromCallable.js",
-    "access": "public",
-    "description": null,
-    "lineNumber": 1
-  },
-  {
-    "__docId__": 55,
     "kind": "class",
-    "name": "StreamFromCallable",
-    "memberof": "src/from/StreamFromCallable.js",
+    "name": "TapeFromCallable",
+    "memberof": "src/TapeFromCallable.js",
     "static": true,
-    "longname": "src/from/StreamFromCallable.js~StreamFromCallable",
+    "longname": "src/TapeFromCallable.js~TapeFromCallable",
     "access": "public",
     "export": true,
-    "importPath": "@aureooms/js-stream/src/from/StreamFromCallable.js",
-    "importStyle": "{StreamFromCallable}",
-    "description": "Class that wraps a callable with a stream.",
-    "lineNumber": 6,
+    "importPath": "@aureooms/js-tape/src/TapeFromCallable.js",
+    "importStyle": "TapeFromCallable",
+    "description": "Class that wraps a callable with a tape.\nDo not use directly. Use {@link fromCallable} instead.",
+    "lineNumber": 7,
     "interface": false
   },
   {
-    "__docId__": 56,
+    "__docId__": 51,
     "kind": "constructor",
     "name": "constructor",
-    "memberof": "src/from/StreamFromCallable.js~StreamFromCallable",
+    "memberof": "src/TapeFromCallable.js~TapeFromCallable",
     "generator": false,
     "async": false,
     "static": false,
-    "longname": "src/from/StreamFromCallable.js~StreamFromCallable#constructor",
+    "longname": "src/TapeFromCallable.js~TapeFromCallable#constructor",
     "access": "public",
-    "description": "The constructor. Stores the callable that yields values to stream.",
-    "lineNumber": 15,
-    "unknown": [
-      {
-        "tagName": "@returns",
-        "tagValue": "{StreamFromCallable}"
-      }
-    ],
+    "description": "The constructor. Stores the callable that yields values to put on the tape.",
+    "lineNumber": 14,
     "params": [
       {
         "nullable": null,
@@ -733,26 +623,18 @@
         "name": "callable",
         "description": "The callable to use."
       }
-    ],
-    "return": {
-      "nullable": null,
-      "types": [
-        "StreamFromCallable"
-      ],
-      "spread": false,
-      "description": ""
-    }
+    ]
   },
   {
-    "__docId__": 57,
+    "__docId__": 52,
     "kind": "member",
     "name": "callable",
-    "memberof": "src/from/StreamFromCallable.js~StreamFromCallable",
+    "memberof": "src/TapeFromCallable.js~TapeFromCallable",
     "static": false,
-    "longname": "src/from/StreamFromCallable.js~StreamFromCallable#callable",
+    "longname": "src/TapeFromCallable.js~TapeFromCallable#callable",
     "access": "public",
     "description": null,
-    "lineNumber": 16,
+    "lineNumber": 15,
     "undocument": true,
     "type": {
       "types": [
@@ -761,15 +643,15 @@
     }
   },
   {
-    "__docId__": 58,
+    "__docId__": 53,
     "kind": "member",
     "name": "buffer",
-    "memberof": "src/from/StreamFromCallable.js~StreamFromCallable",
+    "memberof": "src/TapeFromCallable.js~TapeFromCallable",
     "static": false,
-    "longname": "src/from/StreamFromCallable.js~StreamFromCallable#buffer",
+    "longname": "src/TapeFromCallable.js~TapeFromCallable#buffer",
     "access": "public",
     "description": null,
-    "lineNumber": 17,
+    "lineNumber": 16,
     "undocument": true,
     "type": {
       "types": [
@@ -778,15 +660,15 @@
     }
   },
   {
-    "__docId__": 59,
+    "__docId__": 54,
     "kind": "member",
     "name": "eof",
-    "memberof": "src/from/StreamFromCallable.js~StreamFromCallable",
+    "memberof": "src/TapeFromCallable.js~TapeFromCallable",
     "static": false,
-    "longname": "src/from/StreamFromCallable.js~StreamFromCallable#eof",
+    "longname": "src/TapeFromCallable.js~TapeFromCallable#eof",
     "access": "public",
     "description": null,
-    "lineNumber": 18,
+    "lineNumber": 17,
     "undocument": true,
     "type": {
       "types": [
@@ -795,17 +677,17 @@
     }
   },
   {
-    "__docId__": 60,
+    "__docId__": 55,
     "kind": "method",
     "name": "read",
-    "memberof": "src/from/StreamFromCallable.js~StreamFromCallable",
+    "memberof": "src/TapeFromCallable.js~TapeFromCallable",
     "generator": false,
-    "async": false,
+    "async": true,
     "static": false,
-    "longname": "src/from/StreamFromCallable.js~StreamFromCallable#read",
+    "longname": "src/TapeFromCallable.js~TapeFromCallable#read",
     "access": "public",
-    "description": "Returns the next token in the stream or {@link StreamFromCallable#eof}\nif the stream has been exhausted.",
-    "lineNumber": 27,
+    "description": "Returns the next token on the tape or {@link TapeFromCallable#eof}\nif the tape has been exhausted.",
+    "lineNumber": 26,
     "unknown": [
       {
         "tagName": "@returns",
@@ -823,17 +705,17 @@
     "params": []
   },
   {
-    "__docId__": 61,
+    "__docId__": 56,
     "kind": "method",
     "name": "unread",
-    "memberof": "src/from/StreamFromCallable.js~StreamFromCallable",
+    "memberof": "src/TapeFromCallable.js~TapeFromCallable",
     "generator": false,
     "async": false,
     "static": false,
-    "longname": "src/from/StreamFromCallable.js~StreamFromCallable#unread",
+    "longname": "src/TapeFromCallable.js~TapeFromCallable#unread",
     "access": "public",
-    "description": "Puts a token back in the stream. If {@link StreamFromCallable#read} is\nused just after, this token will be returned.",
-    "lineNumber": 45,
+    "description": "Puts a token back on the tape. If {@link TapeFromCallable#read} is\nused just after, this token will be returned.",
+    "lineNumber": 44,
     "params": [
       {
         "nullable": null,
@@ -843,34 +725,299 @@
         "spread": false,
         "optional": false,
         "name": "token",
-        "description": "The token to put back in the stream."
+        "description": "The token to put back on the tape."
       }
     ],
     "return": null
   },
   {
-    "__docId__": 62,
+    "__docId__": 57,
+    "kind": "method",
+    "name": "skip",
+    "memberof": "src/TapeFromCallable.js~TapeFromCallable",
+    "generator": false,
+    "async": true,
+    "static": false,
+    "longname": "src/TapeFromCallable.js~TapeFromCallable#skip",
+    "access": "public",
+    "description": "Skips the next token on the tape.",
+    "lineNumber": 54,
+    "params": [],
+    "return": null
+  },
+  {
+    "__docId__": 58,
+    "kind": "method",
+    "name": "skipMany",
+    "memberof": "src/TapeFromCallable.js~TapeFromCallable",
+    "generator": false,
+    "async": true,
+    "static": false,
+    "longname": "src/TapeFromCallable.js~TapeFromCallable#skipMany",
+    "access": "public",
+    "description": "Skip the next `n` tokens on the tape.",
+    "lineNumber": 66,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "Number"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "n",
+        "description": "The number of tokens to skip."
+      }
+    ],
+    "return": null
+  },
+  {
+    "__docId__": 59,
     "kind": "file",
-    "name": "src/from/fromarray.js",
-    "content": "import { fromiterable } from './fromiterable' ;\n\n/**\n * Converts an array to a stream.\n * @param {Array} _array the array to convert\n * @function\n */\nexport const fromarray = fromiterable ;\n",
+    "name": "src/asyncIterableChain.js",
+    "content": "/**\n * Utility function to chain an async iterable of async iterables.\n */\nexport default async function* asyncIterableChain ( iterables ) {\n\tfor await ( const iterable of iterables ) {\n\t\tfor await ( const item of iterable ) yield item ;\n\t}\n}\n",
     "static": true,
-    "longname": "/home/aureooms/dev/js/util/parse/js-stream/src/from/fromarray.js",
+    "longname": "/home/aureooms/dev/js/js-tape/src/asyncIterableChain.js",
     "access": "public",
     "description": null,
     "lineNumber": 1
   },
   {
-    "__docId__": 63,
-    "kind": "variable",
-    "name": "fromarray",
-    "memberof": "src/from/fromarray.js",
+    "__docId__": 60,
+    "kind": "function",
+    "name": "asyncIterableChain",
+    "memberof": "src/asyncIterableChain.js",
+    "generator": true,
+    "async": true,
     "static": true,
-    "longname": "src/from/fromarray.js~fromarray",
+    "longname": "src/asyncIterableChain.js~asyncIterableChain",
     "access": "public",
     "export": true,
-    "importPath": "@aureooms/js-stream/src/from/fromarray.js",
-    "importStyle": "{fromarray}",
-    "description": "Converts an array to a stream.",
+    "importPath": "@aureooms/js-tape/src/asyncIterableChain.js",
+    "importStyle": "asyncIterableChain",
+    "description": "Utility function to chain an async iterable of async iterables.",
+    "lineNumber": 4,
+    "params": [
+      {
+        "name": "iterables",
+        "types": [
+          "*"
+        ]
+      }
+    ],
+    "return": null
+  },
+  {
+    "__docId__": 61,
+    "kind": "file",
+    "name": "src/asyncIterableMap.js",
+    "content": "/**\n * Utility function to apply a sync callable to each item of an async iterable.\n * @param {Callable} callable the callable to apply\n * @param {AsyncIterable} iterable the iterable to process\n */\nexport default async function* asyncIterableMap ( callable , iterable ) {\n\t// should the callable also be async ?\n\tfor await ( const item of iterable ) yield callable(item) ;\n}\n",
+    "static": true,
+    "longname": "/home/aureooms/dev/js/js-tape/src/asyncIterableMap.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 62,
+    "kind": "function",
+    "name": "asyncIterableMap",
+    "memberof": "src/asyncIterableMap.js",
+    "generator": true,
+    "async": true,
+    "static": true,
+    "longname": "src/asyncIterableMap.js~asyncIterableMap",
+    "access": "public",
+    "export": true,
+    "importPath": "@aureooms/js-tape/src/asyncIterableMap.js",
+    "importStyle": "asyncIterableMap",
+    "description": "Utility function to apply a sync callable to each item of an async iterable.",
+    "lineNumber": 6,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "Callable"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "callable",
+        "description": "the callable to apply"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "AsyncIterable"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "iterable",
+        "description": "the iterable to process"
+      }
+    ],
+    "return": null
+  },
+  {
+    "__docId__": 63,
+    "kind": "file",
+    "name": "src/asyncIterableToArray.js",
+    "content": "export default async function asyncIterableToArray ( asyncIterable ) {\n\tconst array = [ ] ;\n\tfor await (const item of asyncIterable) array.push(item) ;\n\treturn array ;\n}\n",
+    "static": true,
+    "longname": "/home/aureooms/dev/js/js-tape/src/asyncIterableToArray.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 64,
+    "kind": "function",
+    "name": "asyncIterableToArray",
+    "memberof": "src/asyncIterableToArray.js",
+    "generator": false,
+    "async": true,
+    "static": true,
+    "longname": "src/asyncIterableToArray.js~asyncIterableToArray",
+    "access": "public",
+    "export": true,
+    "importPath": "@aureooms/js-tape/src/asyncIterableToArray.js",
+    "importStyle": "asyncIterableToArray",
+    "description": null,
+    "lineNumber": 1,
+    "undocument": true,
+    "params": [
+      {
+        "name": "asyncIterable",
+        "types": [
+          "*"
+        ]
+      }
+    ],
+    "return": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 65,
+    "kind": "file",
+    "name": "src/chain.js",
+    "content": "import fromAsyncIterable from './fromAsyncIterable' ;\nimport toAsyncIterable from './toAsyncIterable' ;\nimport asyncIterableChain from './asyncIterableChain' ;\nimport asyncIterableMap from './asyncIterableMap' ;\n\n/**\n * Converts a tape of tapes of tokens to a tape of tokens.\n * @param {Tape} tape the tape to read from\n */\nexport default function chain ( tape ) {\n\n\treturn fromAsyncIterable( asyncIterableChain( asyncIterableMap( toAsyncIterable , toAsyncIterable( tape ) ) ) ) ;\n\n}\n",
+    "static": true,
+    "longname": "/home/aureooms/dev/js/js-tape/src/chain.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 66,
+    "kind": "function",
+    "name": "chain",
+    "memberof": "src/chain.js",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "src/chain.js~chain",
+    "access": "public",
+    "export": true,
+    "importPath": "@aureooms/js-tape/src/chain.js",
+    "importStyle": "chain",
+    "description": "Converts a tape of tapes of tokens to a tape of tokens.",
+    "lineNumber": 10,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "Tape"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "tape",
+        "description": "the tape to read from"
+      }
+    ],
+    "return": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 67,
+    "kind": "file",
+    "name": "src/exhaust.js",
+    "content": "/**\n * Exhausts a tape.\n * @param {Tape} tape the tape to read from\n */\nexport default async function exhaust ( tape ) {\n\n\twhile ( await tape.read( ) !== tape.eof ) ;\n\n}\n",
+    "static": true,
+    "longname": "/home/aureooms/dev/js/js-tape/src/exhaust.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 68,
+    "kind": "function",
+    "name": "exhaust",
+    "memberof": "src/exhaust.js",
+    "generator": false,
+    "async": true,
+    "static": true,
+    "longname": "src/exhaust.js~exhaust",
+    "access": "public",
+    "export": true,
+    "importPath": "@aureooms/js-tape/src/exhaust.js",
+    "importStyle": "exhaust",
+    "description": "Exhausts a tape.",
+    "lineNumber": 5,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "Tape"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "tape",
+        "description": "the tape to read from"
+      }
+    ],
+    "return": null
+  },
+  {
+    "__docId__": 69,
+    "kind": "file",
+    "name": "src/fromArray.js",
+    "content": "import fromIterable from './fromIterable' ;\n\n/**\n * Converts an array to a tape.\n * @param {Array} _array the array to convert\n * @function\n */\nexport default fromIterable ;\n",
+    "static": true,
+    "longname": "/home/aureooms/dev/js/js-tape/src/fromArray.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 70,
+    "kind": "file",
+    "name": "src/fromAsyncIterable.js",
+    "content": "import fromIterator from './fromIterator' ;\n\n/**\n * Converts an asynchronous iterable to a tape.\n * @param {AsyncIterable} _iterable the iterable to convert\n * @function\n */\nexport default _iterable => fromIterator( _iterable[Symbol.asyncIterator]( ) ) ;\n",
+    "static": true,
+    "longname": "/home/aureooms/dev/js/js-tape/src/fromAsyncIterable.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 71,
+    "kind": "function",
+    "name": "fromAsyncIterable",
+    "memberof": "src/fromAsyncIterable.js",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "src/fromAsyncIterable.js~fromAsyncIterable",
+    "access": "public",
+    "export": true,
+    "importPath": "@aureooms/js-tape/src/fromAsyncIterable.js",
+    "importStyle": "fromAsyncIterable",
+    "description": "Converts an asynchronous iterable to a tape.",
     "lineNumber": 8,
     "unknown": [
       {
@@ -882,45 +1029,41 @@
       {
         "nullable": null,
         "types": [
-          "Array"
+          "AsyncIterable"
         ],
         "spread": false,
         "optional": false,
-        "name": "_array",
-        "description": "the array to convert"
+        "name": "_iterable",
+        "description": "the iterable to convert"
       }
     ],
-    "type": {
-      "types": [
-        "*"
-      ]
-    }
+    "return": null
   },
   {
-    "__docId__": 64,
+    "__docId__": 72,
     "kind": "file",
-    "name": "src/from/fromcallable.js",
-    "content": "import { StreamFromCallable } from './StreamFromCallable' ;\n\n/**\n * Converts a callable to a stream.\n * @param {Callable} _callable the callable to convert\n * @function\n */\nexport const fromcallable = _callable => new StreamFromCallable( _callable ) ;\n",
+    "name": "src/fromCallable.js",
+    "content": "import TapeFromCallable from './TapeFromCallable' ;\n\n/**\n * Converts a callable to a tape.\n * @param {Callable} _callable the callable to convert\n * @function\n */\nexport default _callable => new TapeFromCallable( _callable ) ;\n",
     "static": true,
-    "longname": "/home/aureooms/dev/js/util/parse/js-stream/src/from/fromcallable.js",
+    "longname": "/home/aureooms/dev/js/js-tape/src/fromCallable.js",
     "access": "public",
     "description": null,
     "lineNumber": 1
   },
   {
-    "__docId__": 65,
+    "__docId__": 73,
     "kind": "function",
-    "name": "fromcallable",
-    "memberof": "src/from/fromcallable.js",
+    "name": "fromCallable",
+    "memberof": "src/fromCallable.js",
     "generator": false,
     "async": false,
     "static": true,
-    "longname": "src/from/fromcallable.js~fromcallable",
+    "longname": "src/fromCallable.js~fromCallable",
     "access": "public",
     "export": true,
-    "importPath": "@aureooms/js-stream/src/from/fromcallable.js",
-    "importStyle": "{fromcallable}",
-    "description": "Converts a callable to a stream.",
+    "importPath": "@aureooms/js-tape/src/fromCallable.js",
+    "importStyle": "fromCallable",
+    "description": "Converts a callable to a tape.",
     "lineNumber": 8,
     "unknown": [
       {
@@ -943,30 +1086,30 @@
     "return": null
   },
   {
-    "__docId__": 66,
+    "__docId__": 74,
     "kind": "file",
-    "name": "src/from/fromiterable.js",
-    "content": "import { fromiterator } from './fromiterator' ;\n\n/**\n * Converts an iterable to a stream.\n * @param {Iterable} _iterable the iterable to convert\n * @function\n */\nexport const fromiterable = _iterable => fromiterator( _iterable[Symbol.iterator]( ) ) ;\n",
+    "name": "src/fromIterable.js",
+    "content": "import fromIterator from './fromIterator' ;\n\n/**\n * Converts an iterable to a tape.\n * @param {Iterable} _iterable the iterable to convert\n * @function\n */\nexport default _iterable => fromIterator( _iterable[Symbol.iterator]( ) ) ;\n",
     "static": true,
-    "longname": "/home/aureooms/dev/js/util/parse/js-stream/src/from/fromiterable.js",
+    "longname": "/home/aureooms/dev/js/js-tape/src/fromIterable.js",
     "access": "public",
     "description": null,
     "lineNumber": 1
   },
   {
-    "__docId__": 67,
+    "__docId__": 75,
     "kind": "function",
-    "name": "fromiterable",
-    "memberof": "src/from/fromiterable.js",
+    "name": "fromIterable",
+    "memberof": "src/fromIterable.js",
     "generator": false,
     "async": false,
     "static": true,
-    "longname": "src/from/fromiterable.js~fromiterable",
+    "longname": "src/fromIterable.js~fromIterable",
     "access": "public",
     "export": true,
-    "importPath": "@aureooms/js-stream/src/from/fromiterable.js",
-    "importStyle": "{fromiterable}",
-    "description": "Converts an iterable to a stream.",
+    "importPath": "@aureooms/js-tape/src/fromIterable.js",
+    "importStyle": "fromIterable",
+    "description": "Converts an iterable to a tape.",
     "lineNumber": 8,
     "unknown": [
       {
@@ -989,30 +1132,30 @@
     "return": null
   },
   {
-    "__docId__": 68,
+    "__docId__": 76,
     "kind": "file",
-    "name": "src/from/fromiterator.js",
-    "content": "import { fromcallable } from './fromcallable' ;\n\n/**\n * Converts an iterator to a stream.\n * @param {Iterator} _iterator the iterator to convert\n * @function\n */\nexport const fromiterator = _iterator => fromcallable( _iterator.next.bind( _iterator ) ) ;\n",
+    "name": "src/fromIterator.js",
+    "content": "import fromCallable from './fromCallable' ;\n\n/**\n * Converts an iterator to a tape.\n * @param {Iterator} _iterator the iterator to convert\n * @function\n */\nexport default _iterator => fromCallable( _iterator.next.bind( _iterator ) ) ;\n",
     "static": true,
-    "longname": "/home/aureooms/dev/js/util/parse/js-stream/src/from/fromiterator.js",
+    "longname": "/home/aureooms/dev/js/js-tape/src/fromIterator.js",
     "access": "public",
     "description": null,
     "lineNumber": 1
   },
   {
-    "__docId__": 69,
+    "__docId__": 77,
     "kind": "function",
-    "name": "fromiterator",
-    "memberof": "src/from/fromiterator.js",
+    "name": "fromIterator",
+    "memberof": "src/fromIterator.js",
     "generator": false,
     "async": false,
     "static": true,
-    "longname": "src/from/fromiterator.js~fromiterator",
+    "longname": "src/fromIterator.js~fromIterator",
     "access": "public",
     "export": true,
-    "importPath": "@aureooms/js-stream/src/from/fromiterator.js",
-    "importStyle": "{fromiterator}",
-    "description": "Converts an iterator to a stream.",
+    "importPath": "@aureooms/js-tape/src/fromIterator.js",
+    "importStyle": "fromIterator",
+    "description": "Converts an iterator to a tape.",
     "lineNumber": 8,
     "unknown": [
       {
@@ -1035,32 +1178,58 @@
     "return": null
   },
   {
-    "__docId__": 70,
+    "__docId__": 78,
     "kind": "file",
-    "name": "src/from/fromstring.js",
-    "content": "import { fromiterable } from './fromiterable' ;\n\n/**\n * Converts a string to a stream.\n *\n * @example\n * fromstring( '1,3,2' ) ;\n *\n * @param {String} _string the string to convert\n * @function\n */\nexport const fromstring = fromiterable ;\n",
+    "name": "src/fromReadStream.js",
+    "content": "import fromAsyncIterable from './fromAsyncIterable' ;\n\nasync function* _fromReadStream ( readStream ) {\n\n\tfor await (const chunk of readStream) {\n\t\tfor (const piece of chunk) yield piece ;\n\t}\n\n}\n\n/**\n * Converts a ReadStream object to a tape.\n * @param {ReadStream} readStream the ReadStream object to convert\n * @function\n */\nexport default readStream => fromAsyncIterable( _fromReadStream( readStream ) ) ;\n",
     "static": true,
-    "longname": "/home/aureooms/dev/js/util/parse/js-stream/src/from/fromstring.js",
+    "longname": "/home/aureooms/dev/js/js-tape/src/fromReadStream.js",
     "access": "public",
     "description": null,
     "lineNumber": 1
   },
   {
-    "__docId__": 71,
-    "kind": "variable",
-    "name": "fromstring",
-    "memberof": "src/from/fromstring.js",
+    "__docId__": 79,
+    "kind": "function",
+    "name": "_fromReadStream",
+    "memberof": "src/fromReadStream.js",
+    "generator": true,
+    "async": true,
     "static": true,
-    "longname": "src/from/fromstring.js~fromstring",
+    "longname": "src/fromReadStream.js~_fromReadStream",
+    "access": "private",
+    "export": false,
+    "importPath": "@aureooms/js-tape/src/fromReadStream.js",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 3,
+    "undocument": true,
+    "params": [
+      {
+        "name": "readStream",
+        "types": [
+          "*"
+        ]
+      }
+    ],
+    "return": null,
+    "ignore": true
+  },
+  {
+    "__docId__": 80,
+    "kind": "function",
+    "name": "fromReadStream",
+    "memberof": "src/fromReadStream.js",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "src/fromReadStream.js~fromReadStream",
     "access": "public",
     "export": true,
-    "importPath": "@aureooms/js-stream/src/from/fromstring.js",
-    "importStyle": "{fromstring}",
-    "description": "Converts a string to a stream.",
-    "examples": [
-      "fromstring( '1,3,2' ) ;"
-    ],
-    "lineNumber": 12,
+    "importPath": "@aureooms/js-tape/src/fromReadStream.js",
+    "importStyle": "fromReadStream",
+    "description": "Converts a ReadStream object to a tape.",
+    "lineNumber": 16,
     "unknown": [
       {
         "tagName": "@function",
@@ -1071,44 +1240,40 @@
       {
         "nullable": null,
         "types": [
-          "String"
+          "ReadStream"
         ],
         "spread": false,
         "optional": false,
-        "name": "_string",
-        "description": "the string to convert"
+        "name": "readStream",
+        "description": "the ReadStream object to convert"
       }
     ],
-    "type": {
-      "types": [
-        "*"
-      ]
-    }
+    "return": null
   },
   {
-    "__docId__": 72,
+    "__docId__": 81,
     "kind": "file",
-    "name": "src/from/index.js",
-    "content": "export * from './StreamFromCallable' ;\nexport * from './fromarray' ;\nexport * from './fromcallable' ;\nexport * from './fromiterable' ;\nexport * from './fromiterator' ;\nexport * from './fromstring' ;\n",
+    "name": "src/fromString.js",
+    "content": "import fromIterable from './fromIterable' ;\n\n/**\n * Converts a string to a tape.\n *\n * @example\n * fromstring( '1,3,2' ) ;\n *\n * @param {String} _string the string to convert\n * @function\n */\nexport default fromIterable ;\n",
     "static": true,
-    "longname": "/home/aureooms/dev/js/util/parse/js-stream/src/from/index.js",
+    "longname": "/home/aureooms/dev/js/js-tape/src/fromString.js",
     "access": "public",
     "description": null,
     "lineNumber": 1
   },
   {
-    "__docId__": 73,
+    "__docId__": 82,
     "kind": "file",
     "name": "src/ignore.js",
-    "content": "\nimport { split } from './split' ;\nimport { chain } from './chain' ;\n\n/**\n * Filters a stream by ignoring a given set of tokens.\n * @param {Stream} stream the stream to filter\n * @param {Iterable} toignore the tokens to ignore\n */\nexport function ignore ( stream , toignore ) {\n\n\treturn chain( split( stream , toignore ) ) ;\n\n}\n",
+    "content": "import split from './split' ;\nimport chain from './chain' ;\n\n/**\n * Filters a tape by ignoring a given set of tokens.\n * @param {Tape} tape the tape to filter\n * @param {Iterable} toignore the tokens to ignore\n */\nexport default function ignore ( tape , toignore ) {\n\n\treturn chain( split( tape , toignore ) ) ;\n\n}\n",
     "static": true,
-    "longname": "/home/aureooms/dev/js/util/parse/js-stream/src/ignore.js",
+    "longname": "/home/aureooms/dev/js/js-tape/src/ignore.js",
     "access": "public",
     "description": null,
     "lineNumber": 1
   },
   {
-    "__docId__": 74,
+    "__docId__": 83,
     "kind": "function",
     "name": "ignore",
     "memberof": "src/ignore.js",
@@ -1118,20 +1283,20 @@
     "longname": "src/ignore.js~ignore",
     "access": "public",
     "export": true,
-    "importPath": "@aureooms/js-stream/src/ignore.js",
-    "importStyle": "{ignore}",
-    "description": "Filters a stream by ignoring a given set of tokens.",
-    "lineNumber": 10,
+    "importPath": "@aureooms/js-tape/src/ignore.js",
+    "importStyle": "ignore",
+    "description": "Filters a tape by ignoring a given set of tokens.",
+    "lineNumber": 9,
     "params": [
       {
         "nullable": null,
         "types": [
-          "Stream"
+          "Tape"
         ],
         "spread": false,
         "optional": false,
-        "name": "stream",
-        "description": "the stream to filter"
+        "name": "tape",
+        "description": "the tape to filter"
       },
       {
         "nullable": null,
@@ -1151,29 +1316,29 @@
     }
   },
   {
-    "__docId__": 75,
+    "__docId__": 84,
     "kind": "file",
     "name": "src/index.js",
-    "content": "export * from './chain' ;\nexport * from './exhaust' ;\nexport * from './from' ;\nexport * from './ignore' ;\nexport * from './map' ;\nexport * from './skip' ;\nexport * from './split' ;\nexport * from './to' ;\n",
+    "content": "import EOF from './EOF' ;\nimport TapeFromCallable from './TapeFromCallable' ;\nimport asyncIterableChain from './asyncIterableChain' ;\nimport asyncIterableMap from './asyncIterableMap' ;\nimport asyncIterableToArray from './asyncIterableToArray' ;\nimport chain from './chain' ;\nimport exhaust from './exhaust' ;\nimport fromArray from './fromArray' ;\nimport fromAsyncIterable from './fromAsyncIterable' ;\nimport fromCallable from './fromCallable' ;\nimport fromIterable from './fromIterable' ;\nimport fromIterator from './fromIterator' ;\nimport fromReadStream from './fromReadStream' ;\nimport fromString from './fromString' ;\nimport ignore from './ignore' ;\nimport map from './map' ;\nimport skip from './skip' ;\nimport split from './split' ;\nimport toArray from './toArray' ;\nimport toAsyncIterable from './toAsyncIterable' ;\nimport toCallable from './toCallable' ;\nimport toIterator from './toIterator' ;\nimport toString from './toString' ;\n\nexport default {\n\tEOF ,\n\tTapeFromCallable ,\n\tasyncIterableChain ,\n\tasyncIterableMap ,\n\tasyncIterableToArray ,\n\tchain ,\n\texhaust ,\n\tfromArray ,\n\tfromAsyncIterable ,\n\tfromCallable ,\n\tfromIterable ,\n\tfromIterator ,\n\tfromReadStream ,\n\tfromString ,\n\tignore ,\n\tmap ,\n\tskip ,\n\tsplit ,\n\ttoArray ,\n\ttoAsyncIterable ,\n\ttoCallable ,\n\ttoIterator ,\n\ttoString ,\n} ;\n\nexport {\n\tEOF ,\n\tTapeFromCallable ,\n\tasyncIterableChain ,\n\tasyncIterableMap ,\n\tasyncIterableToArray ,\n\tchain ,\n\texhaust ,\n\tfromArray ,\n\tfromAsyncIterable ,\n\tfromCallable ,\n\tfromIterable ,\n\tfromIterator ,\n\tfromReadStream ,\n\tfromString ,\n\tignore ,\n\tmap ,\n\tskip ,\n\tsplit ,\n\ttoArray ,\n\ttoAsyncIterable ,\n\ttoCallable ,\n\ttoIterator ,\n\ttoString ,\n} ;\n",
     "static": true,
-    "longname": "/home/aureooms/dev/js/util/parse/js-stream/src/index.js",
+    "longname": "/home/aureooms/dev/js/js-tape/src/index.js",
     "access": "public",
     "description": null,
     "lineNumber": 1
   },
   {
-    "__docId__": 76,
+    "__docId__": 85,
     "kind": "file",
     "name": "src/map.js",
-    "content": "\nimport { fromiterable } from './from' ;\nimport { toiterable } from './to' ;\nimport { map as _map } from '@aureooms/js-itertools' ;\n\n/**\n * Applies a callable to each token of a stream.\n * @param {Callable} callable the callable to apply\n * @param {Stream} stream the stream to process\n */\nexport function map ( callable , stream ) {\n\n\treturn fromiterable( _map( callable , toiterable( stream ) ) ) ;\n\n}\n",
+    "content": "import fromAsyncIterable from './fromAsyncIterable' ;\nimport toAsyncIterable from './toAsyncIterable' ;\nimport asyncIterableMap from './asyncIterableMap' ;\n\n/**\n * Applies a callable to each token of a tape.\n * @param {Callable} callable the callable to apply\n * @param {Tape} tape the tape to process\n */\nexport default function map ( callable , tape ) {\n\n\treturn fromAsyncIterable( asyncIterableMap( callable , toAsyncIterable( tape ) ) ) ;\n\n}\n",
     "static": true,
-    "longname": "/home/aureooms/dev/js/util/parse/js-stream/src/map.js",
+    "longname": "/home/aureooms/dev/js/js-tape/src/map.js",
     "access": "public",
     "description": null,
     "lineNumber": 1
   },
   {
-    "__docId__": 77,
+    "__docId__": 86,
     "kind": "function",
     "name": "map",
     "memberof": "src/map.js",
@@ -1183,10 +1348,10 @@
     "longname": "src/map.js~map",
     "access": "public",
     "export": true,
-    "importPath": "@aureooms/js-stream/src/map.js",
-    "importStyle": "{map}",
-    "description": "Applies a callable to each token of a stream.",
-    "lineNumber": 11,
+    "importPath": "@aureooms/js-tape/src/map.js",
+    "importStyle": "map",
+    "description": "Applies a callable to each token of a tape.",
+    "lineNumber": 10,
     "params": [
       {
         "nullable": null,
@@ -1201,12 +1366,12 @@
       {
         "nullable": null,
         "types": [
-          "Stream"
+          "Tape"
         ],
         "spread": false,
         "optional": false,
-        "name": "stream",
-        "description": "the stream to process"
+        "name": "tape",
+        "description": "the tape to process"
       }
     ],
     "return": {
@@ -1216,40 +1381,40 @@
     }
   },
   {
-    "__docId__": 78,
+    "__docId__": 87,
     "kind": "file",
     "name": "src/skip.js",
-    "content": "\n/**\n * Outputs the next token of a stream that is not contained in a given toskip\n * set.\n * @param {Stream} stream\n * @param {Iterable} toskip\n */\nexport function skip ( stream , toskip ) {\n\n\tconst _toskip = new Set( toskip ) ;\n\n\twhile ( true ) {\n\n\t\tconst token = stream.read( ) ;\n\n\t\tif ( token === stream.eof ) return stream.eof ;\n\n\t\tif ( _toskip.has( token ) ) continue ;\n\n\t\treturn token ;\n\n\t}\n\n}\n",
+    "content": "\n/**\n * Outputs the next token of a tape that is not contained in a given toskip\n * set.\n * @param {Tape} tape\n * @param {Iterable} toskip\n */\nexport default async function skip ( tape , toskip ) {\n\n\tconst _toskip = new Set( toskip ) ;\n\n\twhile ( true ) {\n\n\t\tconst token = await tape.read( ) ;\n\n\t\tif ( token === tape.eof ) return tape.eof ;\n\n\t\tif ( _toskip.has( token ) ) continue ;\n\n\t\treturn token ;\n\n\t}\n\n}\n",
     "static": true,
-    "longname": "/home/aureooms/dev/js/util/parse/js-stream/src/skip.js",
+    "longname": "/home/aureooms/dev/js/js-tape/src/skip.js",
     "access": "public",
     "description": null,
     "lineNumber": 1
   },
   {
-    "__docId__": 79,
+    "__docId__": 88,
     "kind": "function",
     "name": "skip",
     "memberof": "src/skip.js",
     "generator": false,
-    "async": false,
+    "async": true,
     "static": true,
     "longname": "src/skip.js~skip",
     "access": "public",
     "export": true,
-    "importPath": "@aureooms/js-stream/src/skip.js",
-    "importStyle": "{skip}",
-    "description": "Outputs the next token of a stream that is not contained in a given toskip\nset.",
+    "importPath": "@aureooms/js-tape/src/skip.js",
+    "importStyle": "skip",
+    "description": "Outputs the next token of a tape that is not contained in a given toskip\nset.",
     "lineNumber": 8,
     "params": [
       {
         "nullable": null,
         "types": [
-          "Stream"
+          "Tape"
         ],
         "spread": false,
         "optional": false,
-        "name": "stream",
+        "name": "tape",
         "description": ""
       },
       {
@@ -1270,18 +1435,18 @@
     }
   },
   {
-    "__docId__": 80,
+    "__docId__": 89,
     "kind": "file",
     "name": "src/split.js",
-    "content": "\nimport { fromiterable } from './from' ;\n\nimport { exhaust } from './exhaust' ;\n\n/**\n * Splits the input stream into a stream of streams according to some set of\n * separators. See {@link _split} for the actual implementation.\n *\n * @param {Stream} stream - The input stream.\n * @param {Iterable} sep - An iterable of separators.\n * @returns {Stream}\n */\nexport function split ( stream , sep ) {\n\n\treturn fromiterable( _split( stream , sep ) ) ;\n\n}\n\n/**\n * Same as {@link split}, but returns an iterator rather than a stream.\n *\n * @param {Stream} stream - The input stream.\n * @param {Iterable} sep - An iterable of separators.\n * @returns {Iterator}\n */\nexport function* _split ( stream , sep ) {\n\n\tconst _sep = new Set( sep ) ;\n\n\twhile ( true ) {\n\n\t\tconst token = stream.read( ) ;\n\n\t\tif ( token === stream.eof ) break ;\n\n\t\tif ( _sep.has( token ) ) continue ;\n\n\t\tconst group = fromiterable( ( function* ( ) {\n\n\t\t\tyield token ;\n\n\t\t\twhile ( true ) {\n\n\t\t\t\tconst token = stream.read( ) ;\n\n\t\t\t\tif ( _sep.has( token ) ) break ;\n\n\t\t\t\tyield token ;\n\n\t\t\t}\n\n\t\t} )( ) ) ;\n\n\t\tyield group ;\n\n\t\texhaust( group ) ;\n\n\t}\n\n}\n",
+    "content": "import fromAsyncIterable from './fromAsyncIterable' ;\nimport exhaust from './exhaust' ;\n\n/**\n * Splits the input tape into a tape of tapes according to some set of\n * separators. See {@link _split} for the actual implementation.\n *\n * @param {Tape} tape - The input tape.\n * @param {Iterable} sep - An iterable of separators.\n * @returns {Tape}\n */\nexport default function split ( tape , sep ) {\n\n\treturn fromAsyncIterable( _split( tape , sep ) ) ;\n\n}\n\n/**\n * Same as {@link split}, but returns an iterator rather than a tape.\n *\n * @param {Tape} tape - The input tape.\n * @param {Iterable} sep - An iterable of separators.\n * @returns {Iterator}\n */\nexport async function* _split ( tape , sep ) {\n\n\tconst _sep = new Set( sep ) ;\n\n\twhile ( true ) {\n\n\t\tconst token = await tape.read( ) ;\n\n\t\tif ( token === tape.eof ) break ;\n\n\t\tif ( _sep.has( token ) ) continue ;\n\n\t\tconst group = fromAsyncIterable( ( async function* ( ) {\n\n\t\t\tyield token ;\n\n\t\t\twhile ( true ) {\n\n\t\t\t\tconst token = await tape.read( ) ;\n\n\t\t\t\tif ( _sep.has( token ) ) break ;\n\n\t\t\t\tyield token ;\n\n\t\t\t}\n\n\t\t} )( ) ) ;\n\n\t\tyield group ;\n\n\t\tawait exhaust( group ) ;\n\n\t}\n\n}\n",
     "static": true,
-    "longname": "/home/aureooms/dev/js/util/parse/js-stream/src/split.js",
+    "longname": "/home/aureooms/dev/js/js-tape/src/split.js",
     "access": "public",
     "description": null,
     "lineNumber": 1
   },
   {
-    "__docId__": 81,
+    "__docId__": 90,
     "kind": "function",
     "name": "split",
     "memberof": "src/split.js",
@@ -1291,26 +1456,26 @@
     "longname": "src/split.js~split",
     "access": "public",
     "export": true,
-    "importPath": "@aureooms/js-stream/src/split.js",
-    "importStyle": "{split}",
-    "description": "Splits the input stream into a stream of streams according to some set of\nseparators. See {@link _split} for the actual implementation.",
-    "lineNumber": 14,
+    "importPath": "@aureooms/js-tape/src/split.js",
+    "importStyle": "split",
+    "description": "Splits the input tape into a tape of tapes according to some set of\nseparators. See {@link _split} for the actual implementation.",
+    "lineNumber": 12,
     "unknown": [
       {
         "tagName": "@returns",
-        "tagValue": "{Stream}"
+        "tagValue": "{Tape}"
       }
     ],
     "params": [
       {
         "nullable": null,
         "types": [
-          "Stream"
+          "Tape"
         ],
         "spread": false,
         "optional": false,
-        "name": "stream",
-        "description": "The input stream."
+        "name": "tape",
+        "description": "The input tape."
       },
       {
         "nullable": null,
@@ -1326,27 +1491,27 @@
     "return": {
       "nullable": null,
       "types": [
-        "Stream"
+        "Tape"
       ],
       "spread": false,
       "description": ""
     }
   },
   {
-    "__docId__": 82,
+    "__docId__": 91,
     "kind": "function",
     "name": "_split",
     "memberof": "src/split.js",
     "generator": true,
-    "async": false,
+    "async": true,
     "static": true,
     "longname": "src/split.js~_split",
     "access": "private",
     "export": true,
-    "importPath": "@aureooms/js-stream/src/split.js",
+    "importPath": "@aureooms/js-tape/src/split.js",
     "importStyle": "{_split}",
-    "description": "Same as {@link split}, but returns an iterator rather than a stream.",
-    "lineNumber": 27,
+    "description": "Same as {@link split}, but returns an iterator rather than a tape.",
+    "lineNumber": 25,
     "unknown": [
       {
         "tagName": "@returns",
@@ -1357,12 +1522,12 @@
       {
         "nullable": null,
         "types": [
-          "Stream"
+          "Tape"
         ],
         "spread": false,
         "optional": false,
-        "name": "stream",
-        "description": "The input stream."
+        "name": "tape",
+        "description": "The input tape."
       },
       {
         "nullable": null,
@@ -1385,92 +1550,121 @@
     }
   },
   {
-    "__docId__": 83,
+    "__docId__": 92,
     "kind": "file",
-    "name": "src/to/index.js",
-    "content": "export * from './toarray' ;\nexport * from './tocallable' ;\nexport * from './toiterable' ;\nexport * from './toiterator' ;\nexport * from './tostring' ;\n",
+    "name": "src/toArray.js",
+    "content": "import toAsyncIterable from './toAsyncIterable' ;\nimport asyncIterableToArray from './asyncIterableToArray' ;\n\n/**\n * Converts a tape to an array.\n * @kind function\n * @param {Tape} tape the tape to read from\n */\nexport default async tape => asyncIterableToArray( toAsyncIterable( tape ) ) ;\n",
     "static": true,
-    "longname": "/home/aureooms/dev/js/util/parse/js-stream/src/to/index.js",
+    "longname": "/home/aureooms/dev/js/js-tape/src/toArray.js",
     "access": "public",
     "description": null,
     "lineNumber": 1
   },
   {
-    "__docId__": 84,
-    "kind": "file",
-    "name": "src/to/toarray.js",
-    "content": "\nimport { toiterable } from './toiterable' ;\n\n/**\n * Converts a stream to an array.\n * @kind function\n * @param {Stream} stream the stream to read from\n */\nexport const toarray = stream => [ ...toiterable( stream ) ] ;\n",
-    "static": true,
-    "longname": "/home/aureooms/dev/js/util/parse/js-stream/src/to/toarray.js",
-    "access": "public",
-    "description": null,
-    "lineNumber": 1
-  },
-  {
-    "__docId__": 85,
+    "__docId__": 93,
     "kind": "function",
-    "name": "toarray",
-    "memberof": "src/to/toarray.js",
+    "name": "toArray",
+    "memberof": "src/toArray.js",
     "generator": false,
-    "async": false,
+    "async": true,
     "static": true,
-    "longname": "src/to/toarray.js~toarray",
+    "longname": "src/toArray.js~toArray",
     "access": "public",
     "export": true,
-    "importPath": "@aureooms/js-stream/src/to/toarray.js",
-    "importStyle": "{toarray}",
-    "description": "Converts a stream to an array.",
+    "importPath": "@aureooms/js-tape/src/toArray.js",
+    "importStyle": "toArray",
+    "description": "Converts a tape to an array.",
     "lineNumber": 9,
     "params": [
       {
         "nullable": null,
         "types": [
-          "Stream"
+          "Tape"
         ],
         "spread": false,
         "optional": false,
-        "name": "stream",
-        "description": "the stream to read from"
+        "name": "tape",
+        "description": "the tape to read from"
       }
     ],
     "return": null
   },
   {
-    "__docId__": 86,
+    "__docId__": 94,
     "kind": "file",
-    "name": "src/to/tocallable.js",
-    "content": "import { toiterator } from './toiterator' ;\n\n/**\n * Converts a stream to a callable.\n * @kind function\n * @param {Stream} stream the stream to read from\n */\nexport const tocallable = stream => {\n\tconst it = toiterator( stream ) ;\n\treturn it.next.bind( it ) ;\n} ;\n",
+    "name": "src/toAsyncIterable.js",
+    "content": "/**\n * Converts a tape to an iterable.\n * @param {Tape} tape the tape to read from\n */\nexport default async function* toAsyncIterable ( tape ) {\n\n\twhile ( true ) {\n\n\t\tconst token = await tape.read( ) ;\n\n\t\tif ( token === tape.eof ) break ;\n\n\t\tyield token ;\n\n\t}\n\n}\n",
     "static": true,
-    "longname": "/home/aureooms/dev/js/util/parse/js-stream/src/to/tocallable.js",
+    "longname": "/home/aureooms/dev/js/js-tape/src/toAsyncIterable.js",
     "access": "public",
     "description": null,
     "lineNumber": 1
   },
   {
-    "__docId__": 87,
+    "__docId__": 95,
     "kind": "function",
-    "name": "tocallable",
-    "memberof": "src/to/tocallable.js",
+    "name": "toAsyncIterable",
+    "memberof": "src/toAsyncIterable.js",
+    "generator": true,
+    "async": true,
+    "static": true,
+    "longname": "src/toAsyncIterable.js~toAsyncIterable",
+    "access": "public",
+    "export": true,
+    "importPath": "@aureooms/js-tape/src/toAsyncIterable.js",
+    "importStyle": "toAsyncIterable",
+    "description": "Converts a tape to an iterable.",
+    "lineNumber": 5,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "Tape"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "tape",
+        "description": "the tape to read from"
+      }
+    ],
+    "return": null
+  },
+  {
+    "__docId__": 96,
+    "kind": "file",
+    "name": "src/toCallable.js",
+    "content": "import toIterator from './toIterator' ;\n\n/**\n * Converts a tape to a callable.\n * @kind function\n * @param {Tape} tape the tape to read from\n */\nexport default tape => {\n\tconst it = toIterator( tape ) ;\n\treturn it.next.bind( it ) ;\n} ;\n",
+    "static": true,
+    "longname": "/home/aureooms/dev/js/js-tape/src/toCallable.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 97,
+    "kind": "function",
+    "name": "toCallable",
+    "memberof": "src/toCallable.js",
     "generator": false,
     "async": false,
     "static": true,
-    "longname": "src/to/tocallable.js~tocallable",
+    "longname": "src/toCallable.js~toCallable",
     "access": "public",
     "export": true,
-    "importPath": "@aureooms/js-stream/src/to/tocallable.js",
-    "importStyle": "{tocallable}",
-    "description": "Converts a stream to a callable.",
+    "importPath": "@aureooms/js-tape/src/toCallable.js",
+    "importStyle": "toCallable",
+    "description": "Converts a tape to a callable.",
     "lineNumber": 8,
     "params": [
       {
         "nullable": null,
         "types": [
-          "Stream"
+          "Tape"
         ],
         "spread": false,
         "optional": false,
-        "name": "stream",
-        "description": "the stream to read from"
+        "name": "tape",
+        "description": "the tape to read from"
       }
     ],
     "return": {
@@ -1480,137 +1674,97 @@
     }
   },
   {
-    "__docId__": 88,
+    "__docId__": 98,
     "kind": "file",
-    "name": "src/to/toiterable.js",
-    "content": "/**\n * Converts a stream to an iterable.\n * @param {Stream} stream the stream to read from\n */\nexport function* toiterable ( stream ) {\n\n\twhile ( true ) {\n\n\t\tconst token = stream.read( ) ;\n\n\t\tif ( token === stream.eof ) break ;\n\n\t\tyield token ;\n\n\t}\n\n}\n",
+    "name": "src/toIterator.js",
+    "content": "import toAsyncIterable from './toAsyncIterable' ;\n\n/**\n * Converts a tape to an iterator.\n * @kind function\n * @param {Tape} tape the tape to read from\n */\nexport default tape => toAsyncIterable( tape )[Symbol.asyncIterator]( ) ;\n",
     "static": true,
-    "longname": "/home/aureooms/dev/js/util/parse/js-stream/src/to/toiterable.js",
+    "longname": "/home/aureooms/dev/js/js-tape/src/toIterator.js",
     "access": "public",
     "description": null,
     "lineNumber": 1
   },
   {
-    "__docId__": 89,
+    "__docId__": 99,
     "kind": "function",
-    "name": "toiterable",
-    "memberof": "src/to/toiterable.js",
-    "generator": true,
-    "async": false,
-    "static": true,
-    "longname": "src/to/toiterable.js~toiterable",
-    "access": "public",
-    "export": true,
-    "importPath": "@aureooms/js-stream/src/to/toiterable.js",
-    "importStyle": "{toiterable}",
-    "description": "Converts a stream to an iterable.",
-    "lineNumber": 5,
-    "params": [
-      {
-        "nullable": null,
-        "types": [
-          "Stream"
-        ],
-        "spread": false,
-        "optional": false,
-        "name": "stream",
-        "description": "the stream to read from"
-      }
-    ],
-    "return": null
-  },
-  {
-    "__docId__": 90,
-    "kind": "file",
-    "name": "src/to/toiterator.js",
-    "content": "import { toiterable } from './toiterable' ;\n\n/**\n * Converts a stream to an iterator.\n * @kind function\n * @param {Stream} stream the stream to read from\n */\nexport const toiterator = stream => toiterable( stream )[Symbol.iterator]( ) ;\n",
-    "static": true,
-    "longname": "/home/aureooms/dev/js/util/parse/js-stream/src/to/toiterator.js",
-    "access": "public",
-    "description": null,
-    "lineNumber": 1
-  },
-  {
-    "__docId__": 91,
-    "kind": "function",
-    "name": "toiterator",
-    "memberof": "src/to/toiterator.js",
+    "name": "toIterator",
+    "memberof": "src/toIterator.js",
     "generator": false,
     "async": false,
     "static": true,
-    "longname": "src/to/toiterator.js~toiterator",
+    "longname": "src/toIterator.js~toIterator",
     "access": "public",
     "export": true,
-    "importPath": "@aureooms/js-stream/src/to/toiterator.js",
-    "importStyle": "{toiterator}",
-    "description": "Converts a stream to an iterator.",
+    "importPath": "@aureooms/js-tape/src/toIterator.js",
+    "importStyle": "toIterator",
+    "description": "Converts a tape to an iterator.",
     "lineNumber": 8,
     "params": [
       {
         "nullable": null,
         "types": [
-          "Stream"
+          "Tape"
         ],
         "spread": false,
         "optional": false,
-        "name": "stream",
-        "description": "the stream to read from"
+        "name": "tape",
+        "description": "the tape to read from"
       }
     ],
     "return": null
   },
   {
-    "__docId__": 92,
+    "__docId__": 100,
     "kind": "file",
-    "name": "src/to/tostring.js",
-    "content": "import { toarray } from './toarray' ;\n\n/**\n * Converts a stream to a string.\n * @kind function\n * @param {Stream} stream the stream to read from\n */\nexport const tostring = stream => toarray( stream ).join( '' ) ;\n",
+    "name": "src/toString.js",
+    "content": "import toArray from './toArray' ;\n\n/**\n * Converts a tape to a string.\n * @kind function\n * @param {Tape} tape the tape to read from\n */\nexport default async tape => (await toArray( tape )).join( '' ) ;\n",
     "static": true,
-    "longname": "/home/aureooms/dev/js/util/parse/js-stream/src/to/tostring.js",
+    "longname": "/home/aureooms/dev/js/js-tape/src/toString.js",
     "access": "public",
     "description": null,
     "lineNumber": 1
   },
   {
-    "__docId__": 93,
+    "__docId__": 101,
     "kind": "function",
-    "name": "tostring",
-    "memberof": "src/to/tostring.js",
+    "name": "toString",
+    "memberof": "src/toString.js",
     "generator": false,
-    "async": false,
+    "async": true,
     "static": true,
-    "longname": "src/to/tostring.js~tostring",
+    "longname": "src/toString.js~toString",
     "access": "public",
     "export": true,
-    "importPath": "@aureooms/js-stream/src/to/tostring.js",
-    "importStyle": "{tostring}",
-    "description": "Converts a stream to a string.",
+    "importPath": "@aureooms/js-tape/src/toString.js",
+    "importStyle": "toString",
+    "description": "Converts a tape to a string.",
     "lineNumber": 8,
     "params": [
       {
         "nullable": null,
         "types": [
-          "Stream"
+          "Tape"
         ],
         "spread": false,
         "optional": false,
-        "name": "stream",
-        "description": "the stream to read from"
+        "name": "tape",
+        "description": "the tape to read from"
       }
     ],
     "return": null
   },
   {
     "kind": "index",
-    "content": "[@aureooms/js-stream](https://aureooms.github.io/js-stream)\n==\n\nStreaming library for JavaScript.\nSee [docs](https://aureooms.github.io/js-stream/index.html).\n\n[![License](https://img.shields.io/github/license/aureooms/js-stream.svg?style=flat)](https://raw.githubusercontent.com/aureooms/js-stream/master/LICENSE)\n[![NPM version](https://img.shields.io/npm/v/@aureooms/js-stream.svg?style=flat)](https://www.npmjs.org/package/@aureooms/js-stream)\n[![Build status](https://img.shields.io/travis/aureooms/js-stream.svg?style=flat)](https://travis-ci.org/aureooms/js-stream)\n[![Coverage status](https://img.shields.io/coveralls/aureooms/js-stream.svg?style=flat)](https://coveralls.io/r/aureooms/js-stream)\n[![Dependencies status](https://img.shields.io/david/aureooms/js-stream.svg?style=flat)](https://david-dm.org/aureooms/js-stream)\n[![Dev dependencies status](https://img.shields.io/david/dev/aureooms/js-stream.svg?style=flat)](https://david-dm.org/aureooms/js-stream?type=dev)\n[![Code Climate](https://img.shields.io/codeclimate/github/aureooms/js-stream.svg?style=flat)](https://codeclimate.com/github/aureooms/js-stream)\n[![NPM downloads per month](https://img.shields.io/npm/dm/@aureooms/js-stream.svg?style=flat)](https://www.npmjs.org/package/@aureooms/js-stream)\n[![GitHub issues](https://img.shields.io/github/issues/aureooms/js-stream.svg?style=flat)](https://github.com/aureooms/js-stream/issues)\n[![Documentation](https://aureooms.github.io/js-stream/badge.svg)](https://aureooms.github.io/js-stream/source.html)\n",
-    "longname": "/home/aureooms/dev/js/util/parse/js-stream/README.md",
+    "content": "[@aureooms/js-tape](https://aureooms.github.io/js-tape)\n==\n\nTape library for JavaScript. Served with asynchronous goodness.\nSee [docs](https://aureooms.github.io/js-tape/index.html).\n\n```js\nimport tape from '@aureooms/js-tape' ;\nconst myTape = tape.fromString( 'abracadabra' ) ;\n// // OR\n// const myTape = tape.fromArray( ... ) ;\n// const myTape = tape.fromCallable( ... ) ;\n// const myTape = tape.fromIterable( ... ) ;\n// const myTape = tape.fromAsyncIterable( ... ) ;\n// const myTape = tape.fromIterator( ... ) ;\n// const myTape = tape.fromReadStream( ... ) ;\n\nmyTape.read()\n      .then( character => console.log(character) ) // 'a'\n      .then( () => myTape.read() )\n      .then( character => console.log(character) ) // 'b'\n      .then( () => myTape.unread('Z') )\n      .then( () => myTape.unread('X') )\n      .then( () => myTape.read() )\n      .then( character => console.log(character) ) // 'X'\n      .then( () => myTape.read() )\n      .then( character => console.log(character) ) // 'Z'\n      .then( () => myTape.read() )\n      .then( character => console.log(character) ) // 'r'\n      // ...\n```\n\n[![License](https://img.shields.io/github/license/aureooms/js-tape.svg?style=flat)](https://raw.githubusercontent.com/aureooms/js-tape/master/LICENSE)\n[![NPM version](https://img.shields.io/npm/v/@aureooms/js-tape.svg?style=flat)](https://www.npmjs.org/package/@aureooms/js-tape)\n[![Build status](https://img.shields.io/travis/aureooms/js-tape.svg?style=flat)](https://travis-ci.org/aureooms/js-tape)\n[![Coverage status](https://img.shields.io/coveralls/aureooms/js-tape.svg?style=flat)](https://coveralls.io/r/aureooms/js-tape)\n[![Dependencies status](https://img.shields.io/david/aureooms/js-tape.svg?style=flat)](https://david-dm.org/aureooms/js-tape)\n[![Dev dependencies status](https://img.shields.io/david/dev/aureooms/js-tape.svg?style=flat)](https://david-dm.org/aureooms/js-tape?type=dev)\n[![Code Climate](https://img.shields.io/codeclimate/github/aureooms/js-tape.svg?style=flat)](https://codeclimate.com/github/aureooms/js-tape)\n[![NPM downloads per month](https://img.shields.io/npm/dm/@aureooms/js-tape.svg?style=flat)](https://www.npmjs.org/package/@aureooms/js-tape)\n[![GitHub issues](https://img.shields.io/github/issues/aureooms/js-tape.svg?style=flat)](https://github.com/aureooms/js-tape/issues)\n[![Documentation](https://aureooms.github.io/js-tape/badge.svg)](https://aureooms.github.io/js-tape/source.html)\n",
+    "longname": "/home/aureooms/dev/js/js-tape/README.md",
     "name": "./README.md",
     "static": true,
     "access": "public"
   },
   {
     "kind": "packageJSON",
-    "content": "{\n  \"name\": \"@aureooms/js-stream\",\n  \"description\": \"Streaming library for JavaScript\",\n  \"version\": \"0.0.2\",\n  \"author\": \"aureooms\",\n  \"ava\": {\n    \"require\": [\n      \"babel-polyfill\",\n      \"babel-register\"\n    ]\n  },\n  \"babel\": {\n    \"presets\": [\n      \"env\"\n    ],\n    \"env\": {\n      \"development\": {\n        \"sourceMaps\": \"inline\"\n      }\n    }\n  },\n  \"bugs\": {\n    \"url\": \"https://github.com/aureooms/js-stream/issues\"\n  },\n  \"dependencies\": {\n    \"@aureooms/js-itertools\": \"^3.4.0\"\n  },\n  \"devDependencies\": {\n    \"ava\": \"^0.24.0\",\n    \"babel-cli\": \"^6.26.0\",\n    \"babel-polyfill\": \"^6.26.0\",\n    \"babel-preset-env\": \"^1.6.1\",\n    \"codeclimate-test-reporter\": \"^0.5.0\",\n    \"coveralls\": \"^3.0.0\",\n    \"esdoc\": \"^1.0.4\",\n    \"esdoc-inject-script-plugin\": \"^1.0.0\",\n    \"esdoc-inject-style-plugin\": \"^1.0.0\",\n    \"esdoc-standard-plugin\": \"^1.0.0\",\n    \"np\": \"^2.18.3\",\n    \"nyc\": \"^11.4.1\"\n  },\n  \"homepage\": \"https://aureooms.github.io/js-stream\",\n  \"keywords\": [\n    \"stream\"\n  ],\n  \"license\": \"AGPL-3.0\",\n  \"main\": \"lib/index.js\",\n  \"repository\": {\n    \"type\": \"git\",\n    \"url\": \"https://github.com/aureooms/js-stream\"\n  },\n  \"scripts\": {\n    \"build\": \"rm -rf lib && babel src -d lib\",\n    \"cover\": \"nyc --reporter=lcov npm test\",\n    \"esdoc\": \"esdoc\",\n    \"prepare\": \"npm run build\",\n    \"release\": \"np\",\n    \"test\": \"ava ./test/src\"\n  }\n}\n",
-    "longname": "/home/aureooms/dev/js/util/parse/js-stream/package.json",
+    "content": "{\n  \"name\": \"@aureooms/js-tape\",\n  \"description\": \"Tape library for JavaScript\",\n  \"version\": \"3.0.0\",\n  \"author\": \"aureooms\",\n  \"ava\": {\n    \"require\": [\n      \"@babel/polyfill\",\n      \"@babel/register\"\n    ]\n  },\n  \"babel\": {\n    \"presets\": [\n      \"@babel/preset-env\"\n    ],\n    \"plugins\": [\n      \"@babel/plugin-proposal-async-generator-functions\"\n    ],\n    \"env\": {\n      \"development\": {\n        \"sourceMaps\": \"inline\"\n      }\n    }\n  },\n  \"bugs\": {\n    \"url\": \"https://github.com/aureooms/js-tape/issues\"\n  },\n  \"dependencies\": {},\n  \"devDependencies\": {\n    \"@babel/cli\": \"^7.0.0-beta.56\",\n    \"@babel/core\": \"^7.0.0-beta.56\",\n    \"@babel/plugin-proposal-async-generator-functions\": \"^7.0.0-beta.56\",\n    \"@babel/polyfill\": \"^7.0.0-beta.56\",\n    \"@babel/preset-env\": \"^7.0.0-beta.56\",\n    \"@babel/register\": \"^7.0.0-beta.56\",\n    \"ava\": \"^0.25.0\",\n    \"codeclimate-test-reporter\": \"^0.5.0\",\n    \"coveralls\": \"^3.0.2\",\n    \"esdoc\": \"^1.1.0\",\n    \"esdoc-ecmascript-proposal-plugin\": \"^1.0.0\",\n    \"esdoc-inject-script-plugin\": \"^1.0.0\",\n    \"esdoc-inject-style-plugin\": \"^1.0.0\",\n    \"esdoc-standard-plugin\": \"^1.0.0\",\n    \"np\": \"^3.0.4\",\n    \"nyc\": \"^12.0.2\"\n  },\n  \"files\": [\n    \"lib\"\n  ],\n  \"homepage\": \"https://aureooms.github.io/js-tape\",\n  \"keywords\": [\n    \"parsing\",\n    \"read\",\n    \"stream\",\n    \"tape\",\n    \"unread\"\n  ],\n  \"license\": \"AGPL-3.0\",\n  \"main\": \"lib/index.js\",\n  \"repository\": {\n    \"type\": \"git\",\n    \"url\": \"https://github.com/aureooms/js-tape\"\n  },\n  \"scripts\": {\n    \"build\": \"rm -rf lib && babel src -d lib\",\n    \"cover\": \"nyc --reporter=lcov npm test\",\n    \"esdoc\": \"esdoc\",\n    \"prepare\": \"npm run build\",\n    \"release\": \"np\",\n    \"test\": \"ava ./test/src\"\n  }\n}\n",
+    "longname": "/home/aureooms/dev/js/js-tape/package.json",
     "name": "package.json",
     "static": true,
     "access": "public"
@@ -1625,7 +1779,7 @@
   },
   {
     "kind": "manual",
-    "longname": "/home/aureooms/dev/js/util/parse/js-stream/doc/manual/overview.md",
+    "longname": "/home/aureooms/dev/js/js-tape/doc/manual/overview.md",
     "name": "./doc/manual/overview.md",
     "content": "# Overview\n",
     "static": true,
@@ -1633,23 +1787,23 @@
   },
   {
     "kind": "manual",
-    "longname": "/home/aureooms/dev/js/util/parse/js-stream/doc/manual/installation.md",
+    "longname": "/home/aureooms/dev/js/js-tape/doc/manual/installation.md",
     "name": "./doc/manual/installation.md",
-    "content": "# Installation\n\nCan be managed using\n[jspm](http://jspm.io)\nor [npm](https://github.com/npm/npm).\n\n### jspm\n```terminal\njspm install npm:@aureooms/js-stream\n```\n\n### npm\n```terminal\nnpm install @aureooms/js-stream --save\n```\n",
+    "content": "# Installation\n\nCan be managed using\n[jspm](http://jspm.io)\nor [npm](https://github.com/npm/npm).\n\n### jspm\n```terminal\njspm install npm:@aureooms/js-tape\n```\n\n### npm\n```terminal\nnpm install @aureooms/js-tape --save\n```\n",
     "static": true,
     "access": "public"
   },
   {
     "kind": "manual",
-    "longname": "/home/aureooms/dev/js/util/parse/js-stream/doc/manual/usage.md",
+    "longname": "/home/aureooms/dev/js/js-tape/doc/manual/usage.md",
     "name": "./doc/manual/usage.md",
-    "content": "# Usage\n\nThe code needs a ES2015+ polyfill to work, for example\n[babel-polyfill](https://babeljs.io/docs/usage/polyfill).\n```js\nrequire( 'babel-polyfill' ) ;\n// or\nimport 'babel-polyfill' ;\n```\n\nThen\n```js\nconst stream = require( '@aureooms/js-stream' ) ;\n// or\nimport * as stream from '@aureooms/js-stream' ;\n```\n",
+    "content": "# Usage\n\nThe code needs a ES2015+ polyfill to work, for example\n[babel-polyfill](https://babeljs.io/docs/usage/polyfill).\n```js\nrequire( 'babel-polyfill' ) ;\n// or\nimport 'babel-polyfill' ;\n```\n\nThen\n```js\nconst tape = require( '@aureooms/js-tape' ) ;\n// or\nimport tape from '@aureooms/js-tape' ;\n```\n",
     "static": true,
     "access": "public"
   },
   {
     "kind": "manual",
-    "longname": "/home/aureooms/dev/js/util/parse/js-stream/doc/manual/example.md",
+    "longname": "/home/aureooms/dev/js/js-tape/doc/manual/example.md",
     "name": "./doc/manual/example.md",
     "content": "# Example\n",
     "static": true,

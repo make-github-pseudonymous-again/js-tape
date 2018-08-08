@@ -1,9 +1,28 @@
 {
-  "coverage": "84%",
-  "expectCount": 25,
-  "actualCount": 21,
+  "coverage": "83.33%",
+  "expectCount": 30,
+  "actualCount": 25,
   "files": {
-    "src/EOF.js": {
+    "src/TapeFromCallable.js": {
+      "expectCount": 9,
+      "actualCount": 6,
+      "undocumentLines": [
+        15,
+        16,
+        17
+      ]
+    },
+    "src/asyncIterableChain.js": {
+      "expectCount": 1,
+      "actualCount": 1,
+      "undocumentLines": []
+    },
+    "src/asyncIterableMap.js": {
+      "expectCount": 1,
+      "actualCount": 1,
+      "undocumentLines": []
+    },
+    "src/asyncIterableToArray.js": {
       "expectCount": 1,
       "actualCount": 0,
       "undocumentLines": [
@@ -20,39 +39,32 @@
       "actualCount": 1,
       "undocumentLines": []
     },
-    "src/from/StreamFromCallable.js": {
-      "expectCount": 7,
-      "actualCount": 4,
+    "src/fromAsyncIterable.js": {
+      "expectCount": 1,
+      "actualCount": 1,
+      "undocumentLines": []
+    },
+    "src/fromCallable.js": {
+      "expectCount": 1,
+      "actualCount": 1,
+      "undocumentLines": []
+    },
+    "src/fromIterable.js": {
+      "expectCount": 1,
+      "actualCount": 1,
+      "undocumentLines": []
+    },
+    "src/fromIterator.js": {
+      "expectCount": 1,
+      "actualCount": 1,
+      "undocumentLines": []
+    },
+    "src/fromReadStream.js": {
+      "expectCount": 2,
+      "actualCount": 1,
       "undocumentLines": [
-        16,
-        17,
-        18
+        3
       ]
-    },
-    "src/from/fromarray.js": {
-      "expectCount": 1,
-      "actualCount": 1,
-      "undocumentLines": []
-    },
-    "src/from/fromcallable.js": {
-      "expectCount": 1,
-      "actualCount": 1,
-      "undocumentLines": []
-    },
-    "src/from/fromiterable.js": {
-      "expectCount": 1,
-      "actualCount": 1,
-      "undocumentLines": []
-    },
-    "src/from/fromiterator.js": {
-      "expectCount": 1,
-      "actualCount": 1,
-      "undocumentLines": []
-    },
-    "src/from/fromstring.js": {
-      "expectCount": 1,
-      "actualCount": 1,
-      "undocumentLines": []
     },
     "src/ignore.js": {
       "expectCount": 1,
@@ -74,27 +86,27 @@
       "actualCount": 2,
       "undocumentLines": []
     },
-    "src/to/toarray.js": {
+    "src/toArray.js": {
       "expectCount": 1,
       "actualCount": 1,
       "undocumentLines": []
     },
-    "src/to/tocallable.js": {
+    "src/toAsyncIterable.js": {
       "expectCount": 1,
       "actualCount": 1,
       "undocumentLines": []
     },
-    "src/to/toiterable.js": {
+    "src/toCallable.js": {
       "expectCount": 1,
       "actualCount": 1,
       "undocumentLines": []
     },
-    "src/to/toiterator.js": {
+    "src/toIterator.js": {
       "expectCount": 1,
       "actualCount": 1,
       "undocumentLines": []
     },
-    "src/to/tostring.js": {
+    "src/toString.js": {
       "expectCount": 1,
       "actualCount": 1,
       "undocumentLines": []
