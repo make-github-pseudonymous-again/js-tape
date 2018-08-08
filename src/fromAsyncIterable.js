@@ -2,7 +2,9 @@ import fromIterator from './fromIterator' ;
 
 /**
  * Converts an asynchronous iterable to a tape.
- * @param {AsyncIterable} _iterable the iterable to convert
+ *
  * @function
+ * @param {AsyncIterable} _iterable - the iterable to convert
+ * @returns {Tape}
  */
 export default _iterable => fromIterator( _iterable[Symbol.asyncIterator]( ) ) ;

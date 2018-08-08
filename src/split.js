@@ -18,6 +18,7 @@ export default function split ( tape , sep ) {
 /**
  * Same as {@link split}, but returns an iterator rather than a tape.
  *
+ * @private
  * @param {Tape} tape - The input tape.
  * @param {Iterable} sep - An iterable of separators.
  * @returns {Iterator}

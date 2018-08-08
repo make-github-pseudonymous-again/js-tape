@@ -4,8 +4,8 @@ import asyncIterableMap from './asyncIterableMap' ;
 
 /**
  * Applies a callable to each token of a tape.
- * @param {Callable} callable the callable to apply
- * @param {Tape} tape the tape to process
+ * @param {Callable} callable - the callable to apply
+ * @param {Tape} tape - the tape to process
  */
 export default function map ( callable , tape ) {
 

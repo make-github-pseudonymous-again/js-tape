@@ -2,8 +2,11 @@
 /**
  * Outputs the next token of a tape that is not contained in a given toskip
  * set.
- * @param {Tape} tape
- * @param {Iterable} toskip
+ *
+ * @private
+ * @param {Tape} tape - The input tape.
+ * @param {Iterable} toskip - The (hashable) tokens to skip.
+ * @returns {Object} The next token not in `toskip`.
  */
 export default async function skip ( tape , toskip ) {
 

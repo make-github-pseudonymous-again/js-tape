@@ -5,7 +5,7 @@ import asyncIterableMap from './asyncIterableMap' ;
 
 /**
  * Converts a tape of tapes of tokens to a tape of tokens.
- * @param {Tape} tape the tape to read from
+ * @param {Tape} tape - the tape to read from
  */
 export default function chain ( tape ) {
 

@@ -1,6 +1,6 @@
 /**
  * Exhausts a tape.
- * @param {Tape} tape the tape to read from
+ * @param {Tape} tape - the tape to read from
  */
 export default async function exhaust ( tape ) {
 

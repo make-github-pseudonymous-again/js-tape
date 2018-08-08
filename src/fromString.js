@@ -4,9 +4,10 @@ import fromIterable from './fromIterable' ;
  * Converts a string to a tape.
  *
  * @example
- * fromstring( '1,3,2' ) ;
+ * fromString( '1,3,2' ) ;
  *
- * @param {String} _string the string to convert
  * @function
+ * @param {String} _string - the string to convert
+ * @returns {Tape}
  */
 export default fromIterable ;

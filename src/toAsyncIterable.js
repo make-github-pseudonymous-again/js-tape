@@ -1,6 +1,8 @@
 /**
- * Converts a tape to an iterable.
- * @param {Tape} tape the tape to read from
+ * Converts a tape to an asynchronous iterable.
+ *
+ * @param {Tape} tape - the tape to read from
+ * @returns {AsyncIterable}
  */
 export default async function* toAsyncIterable ( tape ) {
 
