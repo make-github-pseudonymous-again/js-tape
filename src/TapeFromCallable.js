@@ -2,15 +2,14 @@ import EOF from './EOF' ;
 
 /**
  * Class that wraps a callable with a tape.
+ * Do not use directly. Use {@link fromCallable} instead.
  */
 export default class TapeFromCallable {
 
 	/**
-	 * The constructor. Stores the callable that yields values to tape.
+	 * The constructor. Stores the callable that yields values to put on the tape.
 	 *
 	 * @param {Callable} callable - The callable to use.
-	 * @returns {TapeFromCallable}
-	 *
 	 */
 	constructor ( callable ) {
 		this.callable = callable ;
@@ -41,14 +40,11 @@ export default class TapeFromCallable {
 	 * used just after, this token will be returned.
 	 *
 	 * @param {Object} token - The token to put back on the tape.
-	 * @returns {TapeFromCallable} Self, for chaining.
 	 */
 	unread ( token ) {
 
 		// should this be async too ?
 		this.buffer.push( token ) ;
-
-		return this;
 
 	}
 

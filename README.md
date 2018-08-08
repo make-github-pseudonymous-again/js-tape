@@ -19,7 +19,8 @@ myTape.read()
       .then( character => console.log(character) ) // 'a'
       .then( () => myTape.read() )
       .then( character => console.log(character) ) // 'b'
-      .then( () => myTape.unread('Z').unread('X') )
+      .then( () => myTape.unread('Z') )
+      .then( () => myTape.unread('X') )
       .then( () => myTape.read() )
       .then( character => console.log(character) ) // 'X'
       .then( () => myTape.read() )
