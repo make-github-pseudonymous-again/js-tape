@@ -4,6 +4,9 @@
 Tape library for JavaScript. Served with asynchronous goodness.
 See [docs](https://aureooms.github.io/js-tape/index.html).
 
+> :warning: The code needs a ES2015+ polyfill to work (`regeneratorRuntime`),
+> for instance [@babel/polyfill](https://babeljs.io/docs/usage/polyfill).
+
 ```js
 const stdin = fs.createReadStream( '/dev/stdin' , { encoding : 'utf8'} ) ;
 const myTape = tape.fromReadStream( stdin ) ;
@@ -24,11 +27,3 @@ for await ( const character of tape ) ... ;
 [![Code Climate coverage](https://img.shields.io/codeclimate/coverage-letter/aureooms/js-tape.svg)](https://codeclimate.com/github/aureooms/js-tape/trends/test_coverage_new_code)
 [![Code Climate technical debt](https://img.shields.io/codeclimate/tech-debt/aureooms/js-tape.svg)](https://codeclimate.com/github/aureooms/js-tape/trends/technical_debt)
 [![Documentation](https://aureooms.github.io/js-tape/badge.svg)](https://aureooms.github.io/js-tape/source.html)
-
-
-> :warning: The code needs a ES2015+ polyfill to work (`regeneratorRuntime`), for instance
-> [@babel/polyfill](https://babeljs.io/docs/usage/polyfill).
-
-```js
-import '@babel/polyfill' ;
-```
