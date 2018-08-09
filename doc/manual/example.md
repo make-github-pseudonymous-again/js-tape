@@ -1,8 +1,16 @@
-# Example
+# Examples
 
-      More examples in [the test files](https://github.com/aureooms/js-tape/tree/master/test/src).
+> More examples in [the test files](https://github.com/aureooms/js-tape/tree/master/test/src).
 
-## Create a tape from a string then read or unread characters.
+
+## Import
+
+```js
+import tape from '@aureooms/js-tape' ;
+```
+
+
+## `fromString`
 
 ```js
 import tape from '@aureooms/js-tape' ;
@@ -14,7 +22,12 @@ const myTape = tape.fromString( 'abracadabra' ) ;
 // const myTape = tape.fromAsyncIterable( ... ) ;
 // const myTape = tape.fromIterator( ... ) ;
 // const myTape = tape.fromReadStream( ... ) ;
+```
 
+
+## `read` and `unread`
+
+```js
 myTape.read()
       .then( character => console.log(character) ) // 'a'
       .then( () => myTape.read() )
