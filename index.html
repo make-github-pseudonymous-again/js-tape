@@ -57,29 +57,9 @@
 
 <div class="content" data-ice="content"><div data-ice="index" class="github-markdown"><h1 id="-a-href--https---aureooms-github-io-js-tape---aureooms-js-tape--a-"><a href="https://aureooms.github.io/js-tape">@aureooms/js-tape</a></h1><p>Tape library for JavaScript. Served with asynchronous goodness.
 See <a href="https://aureooms.github.io/js-tape/index.html">docs</a>.</p>
-<pre><code class="lang-js"><code class="source-code prettyprint">import tape from &apos;@aureooms/js-tape&apos; ;
-const myTape = tape.fromString( &apos;abracadabra&apos; ) ;
-// // OR
-// const myTape = tape.fromArray( ... ) ;
-// const myTape = tape.fromCallable( ... ) ;
-// const myTape = tape.fromIterable( ... ) ;
-// const myTape = tape.fromAsyncIterable( ... ) ;
-// const myTape = tape.fromIterator( ... ) ;
-// const myTape = tape.fromReadStream( ... ) ;
-
-myTape.read()
-      .then( character =&gt; console.log(character) ) // &apos;a&apos;
-      .then( () =&gt; myTape.read() )
-      .then( character =&gt; console.log(character) ) // &apos;b&apos;
-      .then( () =&gt; myTape.unread(&apos;Z&apos;) )
-      .then( () =&gt; myTape.unread(&apos;X&apos;) )
-      .then( () =&gt; myTape.read() )
-      .then( character =&gt; console.log(character) ) // &apos;X&apos;
-      .then( () =&gt; myTape.read() )
-      .then( character =&gt; console.log(character) ) // &apos;Z&apos;
-      .then( () =&gt; myTape.read() )
-      .then( character =&gt; console.log(character) ) // &apos;r&apos;
-      // ...</code>
+<pre><code class="lang-js"><code class="source-code prettyprint">const stdin = fs.createReadStream( &apos;/dev/stdin&apos; , { encoding : &apos;utf8&apos;} ) ;
+const myTape = tape.fromReadStream( stdin ) ;
+for await ( const character of tape ) ... ;</code>
 </code></pre>
 <p><a href="https://raw.githubusercontent.com/aureooms/js-tape/master/LICENSE"><img src="https://img.shields.io/github/license/aureooms/js-tape.svg" alt="License"></a>
 <a href="https://www.npmjs.org/package/@aureooms/js-tape"><img src="https://img.shields.io/npm/v/@aureooms/js-tape.svg" alt="NPM version"></a>
@@ -94,6 +74,12 @@ myTape.read()
 <a href="https://codeclimate.com/github/aureooms/js-tape/trends/test_coverage_new_code"><img src="https://img.shields.io/codeclimate/coverage-letter/aureooms/js-tape.svg" alt="Code Climate coverage"></a>
 <a href="https://codeclimate.com/github/aureooms/js-tape/trends/technical_debt"><img src="https://img.shields.io/codeclimate/tech-debt/aureooms/js-tape.svg" alt="Code Climate technical debt"></a>
 <a href="https://aureooms.github.io/js-tape/source.html"><img src="https://aureooms.github.io/js-tape/badge.svg" alt="Documentation"></a></p>
+<blockquote>
+<p>:warning: The code needs a ES2015+ polyfill to work (<code>regeneratorRuntime</code>), for instance
+<a href="https://babeljs.io/docs/usage/polyfill">@babel/polyfill</a>.</p>
+</blockquote>
+<pre><code class="lang-js"><code class="source-code prettyprint">import &apos;@babel/polyfill&apos; ;</code>
+</code></pre>
 </div>
 </div>
 

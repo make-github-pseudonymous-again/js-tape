@@ -57,7 +57,33 @@
 </div>
 </nav>
 
-<div class="content" data-ice="content"><div class="github-markdown" data-ice="content"><h1 id="example">Example</h1></div>
+<div class="content" data-ice="content"><div class="github-markdown" data-ice="content"><h1 id="example">Example</h1><p>Create a tape from a string then read or unread characters.
+More examples in <a href="https://github.com/aureooms/js-tape/tree/master/test/src">the test files</a>.</p>
+<pre><code class="lang-js"><code class="source-code prettyprint">import tape from &apos;@aureooms/js-tape&apos; ;
+const myTape = tape.fromString( &apos;abracadabra&apos; ) ;
+// // OR
+// const myTape = tape.fromArray( ... ) ;
+// const myTape = tape.fromCallable( ... ) ;
+// const myTape = tape.fromIterable( ... ) ;
+// const myTape = tape.fromAsyncIterable( ... ) ;
+// const myTape = tape.fromIterator( ... ) ;
+// const myTape = tape.fromReadStream( ... ) ;
+
+myTape.read()
+      .then( character =&gt; console.log(character) ) // &apos;a&apos;
+      .then( () =&gt; myTape.read() )
+      .then( character =&gt; console.log(character) ) // &apos;b&apos;
+      .then( () =&gt; myTape.unread(&apos;Z&apos;) )
+      .then( () =&gt; myTape.unread(&apos;X&apos;) )
+      .then( () =&gt; myTape.read() )
+      .then( character =&gt; console.log(character) ) // &apos;X&apos;
+      .then( () =&gt; myTape.read() )
+      .then( character =&gt; console.log(character) ) // &apos;Z&apos;
+      .then( () =&gt; myTape.read() )
+      .then( character =&gt; console.log(character) ) // &apos;r&apos;
+      // ...</code>
+</code></pre>
+</div>
 </div>
 
 <footer class="footer">
