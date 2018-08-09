@@ -52,8 +52,10 @@
 <div data-ice="manual">
     <ul class="manual-toc">
       
-    <li data-ice="manualNav" class="indent-h1" data-link="manual/example.html"><a href="manual/example.html" data-ice="link">Example</a></li>
-<li data-ice="manualNav" class="indent-h2" data-link="manual/example.html"><a href="manual/example.html#create-a-tape-from-a-string-then-read-or-unread-characters-" data-ice="link">Create a tape from a string then read or unread characters.</a></li>
+    <li data-ice="manualNav" class="indent-h1" data-link="manual/example.html"><a href="manual/example.html" data-ice="link">Examples</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/example.html"><a href="manual/example.html#import" data-ice="link">Import</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/example.html"><a href="manual/example.html#-code-fromstring--code-" data-ice="link">fromString</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/example.html"><a href="manual/example.html#-code-read--code--and--code-unread--code-" data-ice="link">read and unread</a></li>
 </ul>
   </div>
 </div>
@@ -101,8 +103,10 @@ import tape from &apos;@aureooms/js-tape&apos; ;</code>
     </div>
 <div class="manual-card-wrap" data-ice="cards">
       <div class="manual-card">
-        <div data-ice="card"><h1>Example</h1><pre><code><code class="source-code prettyprint">  More examples in [the test files](https://github.com/aureooms/js-tape/tree/master/test/src).</code>
-</code></pre><h2>Create a tape from a string then read or unread characters.</h2><pre><code class="lang-js"><code class="source-code prettyprint">import tape from &apos;@aureooms/js-tape&apos; ;
+        <div data-ice="card"><h1>Examples</h1><blockquote>
+<p>More examples in <a href="https://github.com/aureooms/js-tape/tree/master/test/src">the test files</a>.</p>
+</blockquote><h2>Import</h2><pre><code class="lang-js"><code class="source-code prettyprint">import tape from &apos;@aureooms/js-tape&apos; ;</code>
+</code></pre><h2><code>fromString</code></h2><pre><code class="lang-js"><code class="source-code prettyprint">import tape from &apos;@aureooms/js-tape&apos; ;
 const myTape = tape.fromString( &apos;abracadabra&apos; ) ;
 // // OR
 // const myTape = tape.fromArray( ... ) ;
@@ -110,9 +114,8 @@ const myTape = tape.fromString( &apos;abracadabra&apos; ) ;
 // const myTape = tape.fromIterable( ... ) ;
 // const myTape = tape.fromAsyncIterable( ... ) ;
 // const myTape = tape.fromIterator( ... ) ;
-// const myTape = tape.fromReadStream( ... ) ;
-
-myTape.read()
+// const myTape = tape.fromReadStream( ... ) ;</code>
+</code></pre><h2><code>read</code> and <code>unread</code></h2><pre><code class="lang-js"><code class="source-code prettyprint">myTape.read()
       .then( character =&gt; console.log(character) ) // &apos;a&apos;
       .then( () =&gt; myTape.read() )
       .then( character =&gt; console.log(character) ) // &apos;b&apos;
