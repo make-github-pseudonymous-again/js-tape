@@ -1,7 +1,8 @@
 # Example
 
-Create a tape from a string then read or unread characters.
-More examples in [the test files](https://github.com/aureooms/js-tape/tree/master/test/src).
+      More examples in [the test files](https://github.com/aureooms/js-tape/tree/master/test/src).
+
+## Create a tape from a string then read or unread characters.
 
 ```js
 import tape from '@aureooms/js-tape' ;
