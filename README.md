@@ -5,29 +5,9 @@ Tape library for JavaScript. Served with asynchronous goodness.
 See [docs](https://aureooms.github.io/js-tape/index.html).
 
 ```js
-import tape from '@aureooms/js-tape' ;
-const myTape = tape.fromString( 'abracadabra' ) ;
-// // OR
-// const myTape = tape.fromArray( ... ) ;
-// const myTape = tape.fromCallable( ... ) ;
-// const myTape = tape.fromIterable( ... ) ;
-// const myTape = tape.fromAsyncIterable( ... ) ;
-// const myTape = tape.fromIterator( ... ) ;
-// const myTape = tape.fromReadStream( ... ) ;
-
-myTape.read()
-      .then( character => console.log(character) ) // 'a'
-      .then( () => myTape.read() )
-      .then( character => console.log(character) ) // 'b'
-      .then( () => myTape.unread('Z') )
-      .then( () => myTape.unread('X') )
-      .then( () => myTape.read() )
-      .then( character => console.log(character) ) // 'X'
-      .then( () => myTape.read() )
-      .then( character => console.log(character) ) // 'Z'
-      .then( () => myTape.read() )
-      .then( character => console.log(character) ) // 'r'
-      // ...
+const stdin = fs.createReadStream( '/dev/stdin' , { encoding : 'utf8'} ) ;
+const myTape = tape.fromReadStream( stdin ) ;
+for await ( const character of tape ) ... ;
 ```
 
 [![License](https://img.shields.io/github/license/aureooms/js-tape.svg)](https://raw.githubusercontent.com/aureooms/js-tape/master/LICENSE)
@@ -44,3 +24,11 @@ myTape.read()
 [![Code Climate coverage](https://img.shields.io/codeclimate/coverage-letter/aureooms/js-tape.svg)](https://codeclimate.com/github/aureooms/js-tape/trends/test_coverage_new_code)
 [![Code Climate technical debt](https://img.shields.io/codeclimate/tech-debt/aureooms/js-tape.svg)](https://codeclimate.com/github/aureooms/js-tape/trends/technical_debt)
 [![Documentation](https://aureooms.github.io/js-tape/badge.svg)](https://aureooms.github.io/js-tape/source.html)
+
+
+> :warning: The code needs a ES2015+ polyfill to work (`regeneratorRuntime`), for instance
+> [@babel/polyfill](https://babeljs.io/docs/usage/polyfill).
+
+```js
+import '@babel/polyfill' ;
+```
