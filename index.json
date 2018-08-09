@@ -2037,7 +2037,7 @@
     "kind": "manual",
     "longname": "/home/aureooms/dev/js/js-tape/doc/manual/installation.md",
     "name": "./doc/manual/installation.md",
-    "content": "# Installation\n\nCan be managed using\n[yarn](https://yarnpkg.com),\n[npm](https://github.com/npm/npm),\nor [jspm](https://jspm.io).\n\n\n### yarn\n```terminal\nyarn add @aureooms/js-tape\n```\n\n### npm\n```terminal\nnpm install @aureooms/js-tape --save\n```\n\n### jspm\n```terminal\njspm install npm:@aureooms/js-tape\n```\n",
+    "content": "# Installation\n\nCan be managed using\n[yarn](https://yarnpkg.com/en/docs),\n[npm](https://docs.npmjs.com),\nor [jspm](https://jspm.org/docs).\n\n\n### yarn\n```terminal\nyarn add @aureooms/js-tape\n```\n\n### npm\n```terminal\nnpm install @aureooms/js-tape --save\n```\n\n### jspm\n```terminal\njspm install npm:@aureooms/js-tape\n```\n",
     "static": true,
     "access": "public"
   },
