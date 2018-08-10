@@ -569,7 +569,7 @@
     "name": "src/EOF.js",
     "content": "/**\n * Shared object used as end of file.\n */\nexport default { } ;\n",
     "static": true,
-    "longname": "/home/aureooms/dev/js/js-tape/src/EOF.js",
+    "longname": "/home/aureooms/dev/js/compilers/js-tape/src/EOF.js",
     "access": "public",
     "description": null,
     "lineNumber": 1
@@ -580,7 +580,7 @@
     "name": "src/Tape.js",
     "content": "import EOF from './EOF' ;\nimport toAsyncIterator from './toAsyncIterator' ;\n\n/**\n * Class that wraps a callable with a tape.\n * Do not use directly. Use {@link fromCallable} instead.\n */\nexport default class Tape {\n\n\t/**\n\t * The constructor. Stores the callable that yields values to put on the tape.\n\t *\n\t * @param {Callable} callable - The callable to use.\n\t */\n\tconstructor ( callable ) {\n\t\tthis.callable = callable ;\n\t\tthis.buffer = [ ] ;\n\t\tthis.eof = EOF ;\n\t}\n\n\t/**\n\t * Returns the next token on the tape or {@link Tape#eof}\n\t * if the tape has been exhausted.\n\t *\n\t * @returns {Object}\n\t */\n\tasync read ( ) {\n\n\t\tif ( this.buffer.length > 0 ) return this.buffer.pop( ) ;\n\n\t\tconst state = await this.callable( ) ;\n\n\t\tif ( state.done ) return this.eof ;\n\n\t\treturn state.value ;\n\n\t}\n\n\t/**\n\t * Puts a token back on the tape. If {@link Tape#read} is\n\t * used just after, this token will be returned.\n\t *\n\t * @param {Object} token - The token to put back on the tape.\n\t */\n\tunread ( token ) {\n\n\t\t// should this be async too ?\n\t\tthis.buffer.push( token ) ;\n\n\t}\n\n\t/**\n\t * Skips the next token on the tape.\n\t */\n\tasync skip ( ) {\n\n\t\tif ( this.buffer.length > 0 ) this.buffer.pop( ) ;\n\t\telse await this.callable( ) ;\n\n\t}\n\n\t/**\n\t * Skip the next `n` tokens on the tape.\n\t *\n\t * @param {Number} n - The number of tokens to skip.\n\t */\n\tasync skipMany ( n ) {\n\n\t\twhile ( n --> 0 ) await this.skip() ;\n\n\t}\n\n\t/**\n\t * Returns an async iterator on the tokens of the tape.\n\t *\n\t * @example\n\t * fromString('abc');\n\t * for await ( const token of tape ) console.log(token) ;\n\t *\n\t * @returns {AsyncIterator}\n\t */\n\t[Symbol.asyncIterator] ( ) {\n\n\t\treturn toAsyncIterator(this);\n\n\t}\n\n\t/**\n\t * Explicitely throws when trying to access iterator symbol.\n\t *\n\t * @throws {Error} Always.\n\t */\n\t[Symbol.iterator] ( ) {\n\n\t\tthrow new Error('Not implemented. A tape has no *synchronous* iterator. Use `toArray` or `toString` instead.') ;\n\n\t}\n\n}\n",
     "static": true,
-    "longname": "/home/aureooms/dev/js/js-tape/src/Tape.js",
+    "longname": "/home/aureooms/dev/js/compilers/js-tape/src/Tape.js",
     "access": "public",
     "description": null,
     "lineNumber": 1
@@ -831,7 +831,7 @@
     "name": "src/asyncIterableChain.js",
     "content": "/**\n * Utility function to chain an async iterable of async iterables.\n *\n * @private\n * @param {AsyncIterable} iterables - the input iterable of iterables.\n * @returns {AsyncIterable} The chain of the input iterables.\n */\nexport default async function* asyncIterableChain ( iterables ) {\n\tfor await ( const iterable of iterables ) {\n\t\tfor await ( const item of iterable ) yield item ;\n\t}\n}\n",
     "static": true,
-    "longname": "/home/aureooms/dev/js/js-tape/src/asyncIterableChain.js",
+    "longname": "/home/aureooms/dev/js/compilers/js-tape/src/asyncIterableChain.js",
     "access": "public",
     "description": null,
     "lineNumber": 1
@@ -884,7 +884,7 @@
     "name": "src/asyncIterableMap.js",
     "content": "/**\n * Utility function to apply a sync callable to each item of an async iterable.\n *\n * @private\n * @param {Callable} callable - the callable to apply\n * @param {AsyncIterable} iterable - the iterable to process\n * @returns {AsyncIterable}\n */\nexport default async function* asyncIterableMap ( callable , iterable ) {\n\t// should the callable also be async ?\n\tfor await ( const item of iterable ) yield callable(item) ;\n}\n",
     "static": true,
-    "longname": "/home/aureooms/dev/js/js-tape/src/asyncIterableMap.js",
+    "longname": "/home/aureooms/dev/js/compilers/js-tape/src/asyncIterableMap.js",
     "access": "public",
     "description": null,
     "lineNumber": 1
@@ -947,7 +947,7 @@
     "name": "src/asyncIterableToArray.js",
     "content": "/**\n * Spreads an asynchronous iterable inside a new array.\n *\n * @private\n * @param {AsyncIterable} asyncIterable - the input iterable.\n * @returns {Array} A new array filled with the elements of the input iterable.\n */\nexport default async function asyncIterableToArray ( asyncIterable ) {\n\tconst array = [ ] ;\n\tfor await (const item of asyncIterable) array.push(item) ;\n\treturn array ;\n}\n",
     "static": true,
-    "longname": "/home/aureooms/dev/js/js-tape/src/asyncIterableToArray.js",
+    "longname": "/home/aureooms/dev/js/compilers/js-tape/src/asyncIterableToArray.js",
     "access": "public",
     "description": null,
     "lineNumber": 1
@@ -1000,7 +1000,7 @@
     "name": "src/chain.js",
     "content": "import fromAsyncIterable from './fromAsyncIterable' ;\nimport toAsyncIterable from './toAsyncIterable' ;\nimport asyncIterableChain from './asyncIterableChain' ;\nimport asyncIterableMap from './asyncIterableMap' ;\n\n/**\n * Converts a tape of tapes of tokens to a tape of tokens.\n * @param {Tape} tape - the tape to read from\n */\nexport default function chain ( tape ) {\n\n\treturn fromAsyncIterable( asyncIterableChain( asyncIterableMap( toAsyncIterable , toAsyncIterable( tape ) ) ) ) ;\n\n}\n",
     "static": true,
-    "longname": "/home/aureooms/dev/js/js-tape/src/chain.js",
+    "longname": "/home/aureooms/dev/js/compilers/js-tape/src/chain.js",
     "access": "public",
     "description": null,
     "lineNumber": 1
@@ -1044,7 +1044,7 @@
     "name": "src/exhaust.js",
     "content": "/**\n * Exhausts a tape.\n * @param {Tape} tape - the tape to read from\n */\nexport default async function exhaust ( tape ) {\n\n\twhile ( await tape.read( ) !== tape.eof ) ;\n\n}\n",
     "static": true,
-    "longname": "/home/aureooms/dev/js/js-tape/src/exhaust.js",
+    "longname": "/home/aureooms/dev/js/compilers/js-tape/src/exhaust.js",
     "access": "public",
     "description": null,
     "lineNumber": 1
@@ -1084,7 +1084,7 @@
     "name": "src/fromArray.js",
     "content": "import fromIterable from './fromIterable' ;\n\n/**\n * Converts an array to a tape.\n *\n * @function\n * @param {Array} _array - the array to convert\n * @returns {Tape}\n */\nexport default fromIterable ;\n",
     "static": true,
-    "longname": "/home/aureooms/dev/js/js-tape/src/fromArray.js",
+    "longname": "/home/aureooms/dev/js/compilers/js-tape/src/fromArray.js",
     "access": "public",
     "description": null,
     "lineNumber": 1
@@ -1095,7 +1095,7 @@
     "name": "src/fromAsyncIterable.js",
     "content": "import fromIterator from './fromIterator' ;\n\n/**\n * Converts an asynchronous iterable to a tape.\n *\n * @function\n * @param {AsyncIterable} _iterable - the iterable to convert\n * @returns {Tape}\n */\nexport default _iterable => fromIterator( _iterable[Symbol.asyncIterator]( ) ) ;\n",
     "static": true,
-    "longname": "/home/aureooms/dev/js/js-tape/src/fromAsyncIterable.js",
+    "longname": "/home/aureooms/dev/js/compilers/js-tape/src/fromAsyncIterable.js",
     "access": "public",
     "description": null,
     "lineNumber": 1
@@ -1152,7 +1152,7 @@
     "name": "src/fromCallable.js",
     "content": "import Tape from './Tape' ;\n\n/**\n * Converts a callable to a tape.\n *\n * @function\n * @param {Callable} _callable - the callable to convert\n * @returns {Tape}\n */\nexport default _callable => new Tape( _callable ) ;\n",
     "static": true,
-    "longname": "/home/aureooms/dev/js/js-tape/src/fromCallable.js",
+    "longname": "/home/aureooms/dev/js/compilers/js-tape/src/fromCallable.js",
     "access": "public",
     "description": null,
     "lineNumber": 1
@@ -1209,7 +1209,7 @@
     "name": "src/fromIterable.js",
     "content": "import fromIterator from './fromIterator' ;\n\n/**\n * Converts an iterable to a tape.\n *\n * @function\n * @param {Iterable} _iterable - the iterable to convert\n * @returns {Tape}\n */\nexport default _iterable => fromIterator( _iterable[Symbol.iterator]( ) ) ;\n",
     "static": true,
-    "longname": "/home/aureooms/dev/js/js-tape/src/fromIterable.js",
+    "longname": "/home/aureooms/dev/js/compilers/js-tape/src/fromIterable.js",
     "access": "public",
     "description": null,
     "lineNumber": 1
@@ -1266,7 +1266,7 @@
     "name": "src/fromIterator.js",
     "content": "import fromCallable from './fromCallable' ;\n\n/**\n * Converts an iterator to a tape.\n *\n * @function\n * @param {Iterator} _iterator - the iterator to convert\n * @returns {Tape}\n */\nexport default _iterator => fromCallable( _iterator.next.bind( _iterator ) ) ;\n",
     "static": true,
-    "longname": "/home/aureooms/dev/js/js-tape/src/fromIterator.js",
+    "longname": "/home/aureooms/dev/js/compilers/js-tape/src/fromIterator.js",
     "access": "public",
     "description": null,
     "lineNumber": 1
@@ -1323,7 +1323,7 @@
     "name": "src/fromReadStream.js",
     "content": "import fromAsyncIterable from './fromAsyncIterable' ;\n\n/**\n * Converts a ReadStream object to an async iterable of tokens.\n *\n * @private\n * @param {ReadStream} readStream - the ReadStream object to convert\n * @returns {AsyncIterable}\n */\nexport async function* _fromReadStream ( readStream ) {\n\n\tfor await (const chunk of readStream) {\n\t\tfor (const piece of chunk) yield piece ;\n\t}\n\n}\n\n/**\n * Converts a ReadStream object to a tape.\n *\n * @function\n * @param {ReadStream} readStream - the ReadStream object to convert\n * @returns {Tape}\n */\nexport default readStream => fromAsyncIterable( _fromReadStream( readStream ) ) ;\n",
     "static": true,
-    "longname": "/home/aureooms/dev/js/js-tape/src/fromReadStream.js",
+    "longname": "/home/aureooms/dev/js/compilers/js-tape/src/fromReadStream.js",
     "access": "public",
     "description": null,
     "lineNumber": 1
@@ -1422,7 +1422,7 @@
     "name": "src/fromString.js",
     "content": "import fromIterable from './fromIterable' ;\n\n/**\n * Converts a string to a tape.\n *\n * @example\n * fromString( '1,3,2' ) ;\n *\n * @function\n * @param {String} _string - the string to convert\n * @returns {Tape}\n */\nexport default fromIterable ;\n",
     "static": true,
-    "longname": "/home/aureooms/dev/js/js-tape/src/fromString.js",
+    "longname": "/home/aureooms/dev/js/compilers/js-tape/src/fromString.js",
     "access": "public",
     "description": null,
     "lineNumber": 1
@@ -1433,7 +1433,7 @@
     "name": "src/ignore.js",
     "content": "import split from './split' ;\nimport chain from './chain' ;\n\n/**\n * Filters a tape by ignoring a given set of tokens.\n * @param {Tape} tape - the tape to filter\n * @param {Iterable} toignore - the tokens to ignore\n */\nexport default function ignore ( tape , toignore ) {\n\n\treturn chain( split( tape , toignore ) ) ;\n\n}\n",
     "static": true,
-    "longname": "/home/aureooms/dev/js/js-tape/src/ignore.js",
+    "longname": "/home/aureooms/dev/js/compilers/js-tape/src/ignore.js",
     "access": "public",
     "description": null,
     "lineNumber": 1
@@ -1487,7 +1487,7 @@
     "name": "src/index.js",
     "content": "import EOF from './EOF' ;\nimport Tape from './Tape' ;\nimport asyncIterableChain from './asyncIterableChain' ;\nimport asyncIterableMap from './asyncIterableMap' ;\nimport asyncIterableToArray from './asyncIterableToArray' ;\nimport chain from './chain' ;\nimport exhaust from './exhaust' ;\nimport fromArray from './fromArray' ;\nimport fromAsyncIterable from './fromAsyncIterable' ;\nimport fromCallable from './fromCallable' ;\nimport fromIterable from './fromIterable' ;\nimport fromIterator from './fromIterator' ;\nimport fromReadStream from './fromReadStream' ;\nimport fromString from './fromString' ;\nimport ignore from './ignore' ;\nimport map from './map' ;\nimport skip from './skip' ;\nimport split from './split' ;\nimport toArray from './toArray' ;\nimport toAsyncCallable from './toAsyncCallable' ;\nimport toAsyncIterable from './toAsyncIterable' ;\nimport toAsyncIterator from './toAsyncIterator' ;\nimport toString from './toString' ;\n\nexport default {\n\tEOF ,\n\tTape ,\n\tasyncIterableChain ,\n\tasyncIterableMap ,\n\tasyncIterableToArray ,\n\tchain ,\n\texhaust ,\n\tfromArray ,\n\tfromAsyncIterable ,\n\tfromCallable ,\n\tfromIterable ,\n\tfromIterator ,\n\tfromReadStream ,\n\tfromString ,\n\tignore ,\n\tmap ,\n\tskip ,\n\tsplit ,\n\ttoArray ,\n\ttoAsyncCallable ,\n\ttoAsyncIterable ,\n\ttoAsyncIterator ,\n\ttoString ,\n} ;\n\nexport {\n\tEOF ,\n\tTape ,\n\tasyncIterableChain ,\n\tasyncIterableMap ,\n\tasyncIterableToArray ,\n\tchain ,\n\texhaust ,\n\tfromArray ,\n\tfromAsyncIterable ,\n\tfromCallable ,\n\tfromIterable ,\n\tfromIterator ,\n\tfromReadStream ,\n\tfromString ,\n\tignore ,\n\tmap ,\n\tskip ,\n\tsplit ,\n\ttoArray ,\n\ttoAsyncCallable ,\n\ttoAsyncIterable ,\n\ttoAsyncIterator ,\n\ttoString ,\n} ;\n",
     "static": true,
-    "longname": "/home/aureooms/dev/js/js-tape/src/index.js",
+    "longname": "/home/aureooms/dev/js/compilers/js-tape/src/index.js",
     "access": "public",
     "description": null,
     "lineNumber": 1
@@ -1498,7 +1498,7 @@
     "name": "src/map.js",
     "content": "import fromAsyncIterable from './fromAsyncIterable' ;\nimport toAsyncIterable from './toAsyncIterable' ;\nimport asyncIterableMap from './asyncIterableMap' ;\n\n/**\n * Applies a callable to each token of a tape.\n * @param {Callable} callable - the callable to apply\n * @param {Tape} tape - the tape to process\n */\nexport default function map ( callable , tape ) {\n\n\treturn fromAsyncIterable( asyncIterableMap( callable , toAsyncIterable( tape ) ) ) ;\n\n}\n",
     "static": true,
-    "longname": "/home/aureooms/dev/js/js-tape/src/map.js",
+    "longname": "/home/aureooms/dev/js/compilers/js-tape/src/map.js",
     "access": "public",
     "description": null,
     "lineNumber": 1
@@ -1552,7 +1552,7 @@
     "name": "src/skip.js",
     "content": "\n/**\n * Outputs the next token of a tape that is not contained in a given toskip\n * set.\n *\n * @private\n * @param {Tape} tape - The input tape.\n * @param {Iterable} toskip - The (hashable) tokens to skip.\n * @returns {Object} The next token not in `toskip`.\n */\nexport default async function skip ( tape , toskip ) {\n\n\tconst _toskip = new Set( toskip ) ;\n\n\twhile ( true ) {\n\n\t\tconst token = await tape.read( ) ;\n\n\t\tif ( token === tape.eof ) return tape.eof ;\n\n\t\tif ( _toskip.has( token ) ) continue ;\n\n\t\treturn token ;\n\n\t}\n\n}\n",
     "static": true,
-    "longname": "/home/aureooms/dev/js/js-tape/src/skip.js",
+    "longname": "/home/aureooms/dev/js/compilers/js-tape/src/skip.js",
     "access": "public",
     "description": null,
     "lineNumber": 1
@@ -1615,7 +1615,7 @@
     "name": "src/split.js",
     "content": "import fromAsyncIterable from './fromAsyncIterable' ;\nimport exhaust from './exhaust' ;\n\n/**\n * Splits the input tape into a tape of tapes according to some set of\n * separators. See {@link _split} for the actual implementation.\n *\n * @param {Tape} tape - The input tape.\n * @param {Iterable} sep - An iterable of separators.\n * @returns {Tape}\n */\nexport default function split ( tape , sep ) {\n\n\treturn fromAsyncIterable( _split( tape , sep ) ) ;\n\n}\n\n/**\n * Same as {@link split}, but returns an iterator rather than a tape.\n *\n * @private\n * @param {Tape} tape - The input tape.\n * @param {Iterable} sep - An iterable of separators.\n * @returns {Iterator}\n */\nexport async function* _split ( tape , sep ) {\n\n\tconst _sep = new Set( sep ) ;\n\n\twhile ( true ) {\n\n\t\tconst token = await tape.read( ) ;\n\n\t\tif ( token === tape.eof ) break ;\n\n\t\tif ( _sep.has( token ) ) continue ;\n\n\t\tconst group = fromAsyncIterable( ( async function* ( ) {\n\n\t\t\tyield token ;\n\n\t\t\twhile ( true ) {\n\n\t\t\t\tconst token = await tape.read( ) ;\n\n\t\t\t\tif ( _sep.has( token ) ) break ;\n\n\t\t\t\tyield token ;\n\n\t\t\t}\n\n\t\t} )( ) ) ;\n\n\t\tyield group ;\n\n\t\tawait exhaust( group ) ;\n\n\t}\n\n}\n",
     "static": true,
-    "longname": "/home/aureooms/dev/js/js-tape/src/split.js",
+    "longname": "/home/aureooms/dev/js/compilers/js-tape/src/split.js",
     "access": "public",
     "description": null,
     "lineNumber": 1
@@ -1730,7 +1730,7 @@
     "name": "src/toArray.js",
     "content": "import toAsyncIterable from './toAsyncIterable' ;\nimport asyncIterableToArray from './asyncIterableToArray' ;\n\n/**\n * Converts a tape to an array.\n *\n * @function\n * @param {Tape} tape - the tape to read from\n * @returns {Array}\n */\nexport default async tape => asyncIterableToArray( toAsyncIterable( tape ) ) ;\n",
     "static": true,
-    "longname": "/home/aureooms/dev/js/js-tape/src/toArray.js",
+    "longname": "/home/aureooms/dev/js/compilers/js-tape/src/toArray.js",
     "access": "public",
     "description": null,
     "lineNumber": 1
@@ -1787,7 +1787,7 @@
     "name": "src/toAsyncCallable.js",
     "content": "import toAsyncIterator from './toAsyncIterator' ;\n\n/**\n * Converts a tape to a callable.\n *\n * @function\n * @param {Tape} tape - the tape to read from\n * @return {Callable}\n */\nexport default tape => {\n\tconst it = toAsyncIterator( tape ) ;\n\treturn it.next.bind( it ) ;\n} ;\n",
     "static": true,
-    "longname": "/home/aureooms/dev/js/js-tape/src/toAsyncCallable.js",
+    "longname": "/home/aureooms/dev/js/compilers/js-tape/src/toAsyncCallable.js",
     "access": "public",
     "description": null,
     "lineNumber": 1
@@ -1840,7 +1840,7 @@
     "name": "src/toAsyncIterable.js",
     "content": "/**\n * Converts a tape to an asynchronous iterable.\n *\n * @param {Tape} tape - the tape to read from\n * @returns {AsyncIterable}\n */\nexport default async function* toAsyncIterable ( tape ) {\n\n\twhile ( true ) {\n\n\t\tconst token = await tape.read( ) ;\n\n\t\tif ( token === tape.eof ) break ;\n\n\t\tyield token ;\n\n\t}\n\n}\n",
     "static": true,
-    "longname": "/home/aureooms/dev/js/js-tape/src/toAsyncIterable.js",
+    "longname": "/home/aureooms/dev/js/compilers/js-tape/src/toAsyncIterable.js",
     "access": "public",
     "description": null,
     "lineNumber": 1
@@ -1893,7 +1893,7 @@
     "name": "src/toAsyncIterator.js",
     "content": "import toAsyncIterable from './toAsyncIterable' ;\n\n/**\n * Converts a tape to an async iterator.\n *\n * @function\n * @param {Tape} tape - the tape to read from\n * @returns {AsyncIterator}\n */\nexport default tape => toAsyncIterable( tape )[Symbol.asyncIterator]( ) ;\n",
     "static": true,
-    "longname": "/home/aureooms/dev/js/js-tape/src/toAsyncIterator.js",
+    "longname": "/home/aureooms/dev/js/compilers/js-tape/src/toAsyncIterator.js",
     "access": "public",
     "description": null,
     "lineNumber": 1
@@ -1950,7 +1950,7 @@
     "name": "src/toString.js",
     "content": "import toArray from './toArray' ;\n\n/**\n * Converts a tape to a string.\n *\n * @function\n * @param {Tape} tape - the tape to read from\n * @returns {String}\n */\nexport default async tape => (await toArray( tape )).join( '' ) ;\n",
     "static": true,
-    "longname": "/home/aureooms/dev/js/js-tape/src/toString.js",
+    "longname": "/home/aureooms/dev/js/compilers/js-tape/src/toString.js",
     "access": "public",
     "description": null,
     "lineNumber": 1
@@ -2004,15 +2004,15 @@
   {
     "kind": "index",
     "content": "[@aureooms/js-tape](https://aureooms.github.io/js-tape)\n==\n\nTape library for JavaScript. Served with asynchronous goodness.\nSee [docs](https://aureooms.github.io/js-tape/index.html).\n\n> :warning: The code needs a ES2015+ polyfill to work (`regeneratorRuntime`),\n> for instance [@babel/polyfill](https://babeljs.io/docs/usage/polyfill).\n\n```js\nconst stdin = fs.createReadStream( '/dev/stdin' , { encoding : 'utf8'} ) ;\nconst myTape = tape.fromReadStream( stdin ) ;\nfor await ( const character of tape ) ... ;\n```\n\n[![License](https://img.shields.io/github/license/aureooms/js-tape.svg)](https://raw.githubusercontent.com/aureooms/js-tape/master/LICENSE)\n[![Version](https://img.shields.io/npm/v/@aureooms/js-tape.svg)](https://www.npmjs.org/package/@aureooms/js-tape)\n[![Build](https://img.shields.io/travis/aureooms/js-tape.svg)](https://travis-ci.org/aureooms/js-tape)\n[![Dependencies](https://img.shields.io/david/aureooms/js-tape.svg)](https://david-dm.org/aureooms/js-tape)\n[![Dev dependencies](https://img.shields.io/david/dev/aureooms/js-tape.svg)](https://david-dm.org/aureooms/js-tape?type=dev)\n[![GitHub issues](https://img.shields.io/github/issues/aureooms/js-tape.svg)](https://github.com/aureooms/js-tape/issues)\n[![Downloads](https://img.shields.io/npm/dm/@aureooms/js-tape.svg)](https://www.npmjs.org/package/@aureooms/js-tape)\n\n[![Code issues](https://img.shields.io/codeclimate/issues/aureooms/js-tape.svg)](https://codeclimate.com/github/aureooms/js-tape/issues)\n[![Code maintainability](https://img.shields.io/codeclimate/maintainability/github/aureooms/js-tape.svg)](https://codeclimate.com/github/aureooms/js-tape/trends/churn)\n[![Code coverage (cov)](https://img.shields.io/codecov/c/github/aureooms/js-tape.svg)](https://codecov.io/gh/aureooms/js-tape)\n[![Code coverage (clim)](https://img.shields.io/codeclimate/coverage-letter/aureooms/js-tape.svg)](https://codeclimate.com/github/aureooms/js-tape/trends/test_coverage_new_code)\n[![Code technical debt](https://img.shields.io/codeclimate/tech-debt/aureooms/js-tape.svg)](https://codeclimate.com/github/aureooms/js-tape/trends/technical_debt)\n[![Documentation](https://aureooms.github.io/js-tape/badge.svg)](https://aureooms.github.io/js-tape/source.html)\n",
-    "longname": "/home/aureooms/dev/js/js-tape/README.md",
+    "longname": "/home/aureooms/dev/js/compilers/js-tape/README.md",
     "name": "./README.md",
     "static": true,
     "access": "public"
   },
   {
     "kind": "packageJSON",
-    "content": "{\n  \"name\": \"@aureooms/js-tape\",\n  \"description\": \"Tape library for JavaScript\",\n  \"version\": \"4.0.0\",\n  \"author\": \"aureooms\",\n  \"ava\": {\n    \"require\": [\n      \"@babel/polyfill\",\n      \"@babel/register\"\n    ]\n  },\n  \"babel\": {\n    \"presets\": [\n      \"@babel/preset-env\"\n    ],\n    \"plugins\": [\n      \"@babel/plugin-proposal-async-generator-functions\"\n    ],\n    \"env\": {\n      \"development\": {\n        \"sourceMaps\": \"inline\"\n      }\n    }\n  },\n  \"bugs\": {\n    \"url\": \"https://github.com/aureooms/js-tape/issues\"\n  },\n  \"dependencies\": {},\n  \"devDependencies\": {\n    \"@babel/cli\": \"^7.0.0-beta.56\",\n    \"@babel/core\": \"^7.0.0-beta.56\",\n    \"@babel/plugin-proposal-async-generator-functions\": \"^7.0.0-beta.56\",\n    \"@babel/polyfill\": \"^7.0.0-beta.56\",\n    \"@babel/preset-env\": \"^7.0.0-beta.56\",\n    \"@babel/register\": \"^7.0.0-beta.56\",\n    \"ava\": \"^1.0.0-beta.1\",\n    \"codeclimate-test-reporter\": \"^0.5.0\",\n    \"coveralls\": \"^3.0.2\",\n    \"esdoc\": \"^1.1.0\",\n    \"esdoc-ecmascript-proposal-plugin\": \"^1.0.0\",\n    \"esdoc-inject-script-plugin\": \"^1.0.0\",\n    \"esdoc-inject-style-plugin\": \"^1.0.0\",\n    \"esdoc-standard-plugin\": \"^1.0.0\",\n    \"np\": \"^3.0.4\",\n    \"nyc\": \"^12.0.2\"\n  },\n  \"files\": [\n    \"lib\"\n  ],\n  \"homepage\": \"https://aureooms.github.io/js-tape\",\n  \"keywords\": [\n    \"parsing\",\n    \"read\",\n    \"stream\",\n    \"tape\",\n    \"unread\"\n  ],\n  \"license\": \"AGPL-3.0\",\n  \"main\": \"lib/index.js\",\n  \"repository\": {\n    \"type\": \"git\",\n    \"url\": \"https://github.com/aureooms/js-tape\"\n  },\n  \"scripts\": {\n    \"build\": \"rm -rf lib && babel src -d lib\",\n    \"cover\": \"nyc --reporter=lcov npm test\",\n    \"esdoc\": \"esdoc\",\n    \"prepare\": \"npm run build\",\n    \"release\": \"np\",\n    \"test\": \"ava ./test/src\"\n  }\n}\n",
-    "longname": "/home/aureooms/dev/js/js-tape/package.json",
+    "content": "{\n  \"name\": \"@aureooms/js-tape\",\n  \"description\": \"Tape library for JavaScript\",\n  \"version\": \"4.0.1\",\n  \"author\": \"aureooms\",\n  \"ava\": {\n    \"require\": [\n      \"@babel/polyfill\",\n      \"@babel/register\"\n    ]\n  },\n  \"babel\": {\n    \"presets\": [\n      \"@babel/preset-env\"\n    ],\n    \"plugins\": [\n      \"@babel/plugin-proposal-async-generator-functions\"\n    ],\n    \"env\": {\n      \"development\": {\n        \"sourceMaps\": \"inline\"\n      }\n    }\n  },\n  \"bugs\": {\n    \"url\": \"https://github.com/aureooms/js-tape/issues\"\n  },\n  \"dependencies\": {},\n  \"devDependencies\": {\n    \"@babel/cli\": \"^7.0.0-rc.1\",\n    \"@babel/core\": \"^7.0.0-rc.1\",\n    \"@babel/plugin-proposal-async-generator-functions\": \"^7.0.0-rc.1\",\n    \"@babel/polyfill\": \"^7.0.0-rc.1\",\n    \"@babel/preset-env\": \"^7.0.0-rc.1\",\n    \"@babel/register\": \"^7.0.0-rc.1\",\n    \"ava\": \"^1.0.0-beta.1\",\n    \"codeclimate-test-reporter\": \"^0.5.0\",\n    \"coveralls\": \"^3.0.2\",\n    \"esdoc\": \"^1.1.0\",\n    \"esdoc-ecmascript-proposal-plugin\": \"^1.0.0\",\n    \"esdoc-inject-script-plugin\": \"^1.0.0\",\n    \"esdoc-inject-style-plugin\": \"^1.0.0\",\n    \"esdoc-standard-plugin\": \"^1.0.0\",\n    \"np\": \"^3.0.4\",\n    \"nyc\": \"^12.0.2\"\n  },\n  \"files\": [\n    \"lib\"\n  ],\n  \"homepage\": \"https://aureooms.github.io/js-tape\",\n  \"keywords\": [\n    \"parsing\",\n    \"read\",\n    \"stream\",\n    \"tape\",\n    \"unread\"\n  ],\n  \"license\": \"AGPL-3.0\",\n  \"main\": \"lib/index.js\",\n  \"repository\": {\n    \"type\": \"git\",\n    \"url\": \"https://github.com/aureooms/js-tape\"\n  },\n  \"scripts\": {\n    \"build\": \"rm -rf lib && babel src -d lib\",\n    \"cover\": \"nyc --reporter=lcov npm test\",\n    \"esdoc\": \"esdoc\",\n    \"prepare\": \"npm run build\",\n    \"release\": \"np\",\n    \"test\": \"ava ./test/src\"\n  }\n}\n",
+    "longname": "/home/aureooms/dev/js/compilers/js-tape/package.json",
     "name": "package.json",
     "static": true,
     "access": "public"
@@ -2027,7 +2027,7 @@
   },
   {
     "kind": "manual",
-    "longname": "/home/aureooms/dev/js/js-tape/doc/manual/overview.md",
+    "longname": "/home/aureooms/dev/js/compilers/js-tape/doc/manual/overview.md",
     "name": "./doc/manual/overview.md",
     "content": "# Overview\n",
     "static": true,
@@ -2035,7 +2035,7 @@
   },
   {
     "kind": "manual",
-    "longname": "/home/aureooms/dev/js/js-tape/doc/manual/installation.md",
+    "longname": "/home/aureooms/dev/js/compilers/js-tape/doc/manual/installation.md",
     "name": "./doc/manual/installation.md",
     "content": "# Installation\n\nCan be managed using\n[yarn](https://yarnpkg.com/en/docs),\n[npm](https://docs.npmjs.com),\nor [jspm](https://jspm.org/docs).\n\n\n### yarn\n```terminal\nyarn add @aureooms/js-tape\n```\n\n### npm\n```terminal\nnpm install @aureooms/js-tape --save\n```\n\n### jspm\n```terminal\njspm install npm:@aureooms/js-tape\n```\n",
     "static": true,
@@ -2043,7 +2043,7 @@
   },
   {
     "kind": "manual",
-    "longname": "/home/aureooms/dev/js/js-tape/doc/manual/usage.md",
+    "longname": "/home/aureooms/dev/js/compilers/js-tape/doc/manual/usage.md",
     "name": "./doc/manual/usage.md",
     "content": "# Usage\n\n> :warning: The code needs a ES2015+ polyfill to work (`regeneratorRuntime`),\n> for instance [@babel/polyfill](https://babeljs.io/docs/usage/polyfill).\n\nFirst, require the polyfill at the entry point of your application\n```js\nrequire( '@babel/polyfill' ) ;\n// or\nimport '@babel/polyfill' ;\n```\n\nThen, import the library where needed\n```js\nconst tape = require( '@aureooms/js-tape' ) ;\n// or\nimport tape from '@aureooms/js-tape' ;\n```\n",
     "static": true,
@@ -2051,7 +2051,7 @@
   },
   {
     "kind": "manual",
-    "longname": "/home/aureooms/dev/js/js-tape/doc/manual/example.md",
+    "longname": "/home/aureooms/dev/js/compilers/js-tape/doc/manual/example.md",
     "name": "./doc/manual/example.md",
     "content": "# Examples\n\n> More examples in [the test files](https://github.com/aureooms/js-tape/tree/master/test/src).\n\n\n## Import\n\n```js\nimport tape from '@aureooms/js-tape' ;\n```\n\n\n## `fromString`\n\n```js\nimport tape from '@aureooms/js-tape' ;\nconst myTape = tape.fromString( 'abracadabra' ) ;\n// // OR\n// const myTape = tape.fromArray( ... ) ;\n// const myTape = tape.fromCallable( ... ) ;\n// const myTape = tape.fromIterable( ... ) ;\n// const myTape = tape.fromAsyncIterable( ... ) ;\n// const myTape = tape.fromIterator( ... ) ;\n// const myTape = tape.fromReadStream( ... ) ;\n```\n\n\n## `read` and `unread`\n\n```js\nmyTape.read()\n      .then( character => console.log(character) ) // 'a'\n      .then( () => myTape.read() )\n      .then( character => console.log(character) ) // 'b'\n      .then( () => myTape.unread('Z') )\n      .then( () => myTape.unread('X') )\n      .then( () => myTape.read() )\n      .then( character => console.log(character) ) // 'X'\n      .then( () => myTape.read() )\n      .then( character => console.log(character) ) // 'Z'\n      .then( () => myTape.read() )\n      .then( character => console.log(character) ) // 'r'\n      // ...\n```\n",
     "static": true,
