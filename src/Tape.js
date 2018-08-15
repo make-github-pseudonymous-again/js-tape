@@ -13,9 +13,25 @@ export default class Tape {
 	 * @param {Callable} callable - The callable to use.
 	 */
 	constructor ( callable ) {
+
+		/**
+		 * The callable yielding values to put on the tape.
+		 * @type {Callable}
+		 */
 		this.callable = callable ;
+
+		/**
+		 * Buffer used to implement {@link Tape#unread}.
+		 * @type {Array}
+		 */
 		this.buffer = [ ] ;
+
+		/**
+		 * The eof symbol.
+		 * @type {String}
+		 */
 		this.eof = EOF ;
+
 	}
 
 	/**
