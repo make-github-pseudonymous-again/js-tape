@@ -1,24 +1,20 @@
-import test from 'ava' ;
-import fs from 'fs' ;
+import fs from 'fs';
+import test from 'ava';
 
-import tape from '../../src' ;
+import fromReadStream from '../../src/fromReadStream';
+import toString from '../../src/toString';
 
-test( 'unread token' , async t => {
-
-	const filepath = 'test/data/hello-world.txt' ;
-	const encoding = 'utf8' ;
+test('unread token', async t => {
+	const filepath = 'test/data/hello-world.txt';
+	const encoding = 'utf8';
 	const expected = fs.readFileSync(filepath, encoding);
 
-	const readStream = fs.createReadStream(
-		filepath ,
-		{
-			encoding: encoding ,
-			highWaterMark: 1024 ,
-		}
-	) ;
+	const readStream = fs.createReadStream(filepath, {
+		encoding,
+		highWaterMark: 1024
+	});
 
-	const myTape = tape.fromReadStream( readStream ) ;
+	const myTape = fromReadStream(readStream);
 
-	t.deepEqual(await tape.toString( myTape ), expected ) ;
-
-} ) ;
+	t.deepEqual(await toString(myTape), expected);
+});

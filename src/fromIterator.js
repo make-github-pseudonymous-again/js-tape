@@ -1,10 +1,10 @@
-import fromCallable from './fromCallable' ;
+import fromCallable from './fromCallable';
 
 /**
  * Converts an iterator to a tape.
  *
  * @function
- * @param {Iterator} _iterator - the iterator to convert
- * @returns {Tape}
+ * @param {Iterator} iterator - The iterator to convert.
+ * @returns {Tape} The converted tape.
  */
-export default _iterator => fromCallable( _iterator.next.bind( _iterator ) ) ;
+export default iterator => fromCallable(iterator.next.bind(iterator));

@@ -1,10 +1,10 @@
-import fromIterator from './fromIterator' ;
+import fromIterator from './fromIterator';
 
 /**
  * Converts an iterable to a tape.
  *
  * @function
- * @param {Iterable} _iterable - the iterable to convert
- * @returns {Tape}
+ * @param {Iterable} iterable - The iterable to convert.
+ * @returns {Tape} The converted tape.
  */
-export default _iterable => fromIterator( _iterable[Symbol.iterator]( ) ) ;
+export default iterable => fromIterator(iterable[Symbol.iterator]());

@@ -1,16 +1,16 @@
-import test from 'ava' ;
+import test from 'ava';
 
-import tape from '../../src' ;
+import fromString from '../../src/fromString';
+import map from '../../src/map';
+import toString from '../../src/toString';
 
 /**
  * @test {map}
  */
-test( 'can use map' , async t => {
-
-	const input = 'ababbaab' ;
-	const myTape1 = tape.fromString( input ) ;
-	const myTape2 = tape.map( x => x === 'a' ? 0 : 1, myTape1) ;
+test('can use map', async t => {
+	const input = 'ababbaab';
+	const myTape1 = fromString(input);
+	const myTape2 = map(x => (x === 'a' ? 0 : 1), myTape1);
 	const expected = input.replace(/a/g, '0').replace(/b/g, '1');
-	t.deepEqual(await tape.toString( myTape2 ), expected ) ;
-
-} ) ;
+	t.deepEqual(await toString(myTape2), expected);
+});

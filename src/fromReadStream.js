@@ -1,25 +1,23 @@
-import fromAsyncIterable from './fromAsyncIterable' ;
+import fromAsyncIterable from './fromAsyncIterable';
 
 /**
  * Converts a ReadStream object to an async iterable of tokens.
  *
  * @private
- * @param {ReadStream} readStream - the ReadStream object to convert
- * @returns {AsyncIterable}
+ * @param {ReadStream} readStream - The ReadStream object to convert.
+ * @returns {AsyncIterable} The converted iterable.
  */
-export async function* _fromReadStream ( readStream ) {
-
+export async function* _fromReadStream(readStream) {
 	for await (const chunk of readStream) {
-		for (const piece of chunk) yield piece ;
+		for (const piece of chunk) yield piece;
 	}
-
 }
 
 /**
  * Converts a ReadStream object to a tape.
  *
  * @function
- * @param {ReadStream} readStream - the ReadStream object to convert
- * @returns {Tape}
+ * @param {ReadStream} readStream - The ReadStream object to convert.
+ * @returns {Tape} The converted tape.
  */
-export default readStream => fromAsyncIterable( _fromReadStream( readStream ) ) ;
+export default readStream => fromAsyncIterable(_fromReadStream(readStream));

@@ -1,18 +1,22 @@
-import test from 'ava' ;
+import test from 'ava';
 
-import tape from '../../src' ;
+import fromString from '../../src/fromString';
 
 /**
+ * Checks that trying to access the synchronous iterator of a tape throws.
+ *
  * @test {Tape#[Symbol.iterator]}
+ * @param {Object} t - Test object.
+ * @param {String} string - A string to test.
  */
-function iterator ( t , string ) {
-	const myTape = tape.fromString(string) ;
-	t.throws( () => myTape[Symbol.iterator]() ) ;
+function iterator(t, string) {
+	const myTape = fromString(string);
+	t.throws(() => myTape[Symbol.iterator]());
 }
 
-iterator.title = ( title , string ) => `Throws when trying to access synchronous iterator of fromString('${string}')` ;
+iterator.title = (title, string) =>
+	`Throws when trying to access synchronous iterator of fromString('${string}')`;
 
-
-test( iterator , '' ) ;
-test( iterator , 'x' ) ;
-test( iterator , 'abc' ) ;
+test(iterator, '');
+test(iterator, 'x');
+test(iterator, 'abc');

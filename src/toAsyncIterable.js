@@ -1,19 +1,15 @@
 /**
  * Converts a tape to an asynchronous iterable.
  *
- * @param {Tape} tape - the tape to read from
- * @returns {AsyncIterable}
+ * @param {Tape} tape - The tape to read from.
+ * @returns {AsyncIterable} The converted iterable.
  */
-export default async function* toAsyncIterable ( tape ) {
+export default async function* toAsyncIterable(tape) {
+	while (true) {
+		const token = await tape.read(); // eslint-disable-line no-await-in-loop
 
-	while ( true ) {
+		if (token === tape.eof) break;
 
-		const token = await tape.read( ) ;
-
-		if ( token === tape.eof ) break ;
-
-		yield token ;
-
+		yield token;
 	}
-
 }

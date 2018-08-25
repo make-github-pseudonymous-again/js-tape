@@ -1,4 +1,3 @@
-
 /**
  * Outputs the next token of a tape that is not contained in a given toskip
  * set.
@@ -8,20 +7,11 @@
  * @param {Iterable} toskip - The (hashable) tokens to skip.
  * @returns {Object} The next token not in `toskip`.
  */
-export default async function skip ( tape , toskip ) {
+export default async function skip(tape, toskip) {
+	const _toskip = new Set(toskip);
 
-	const _toskip = new Set( toskip ) ;
-
-	while ( true ) {
-
-		const token = await tape.read( ) ;
-
-		if ( token === tape.eof ) return tape.eof ;
-
-		if ( _toskip.has( token ) ) continue ;
-
-		return token ;
-
+	for (;;) {
+		const token = await tape.read(); // eslint-disable-line no-await-in-loop
+		if (!_toskip.has(token)) return token;
 	}
-
 }

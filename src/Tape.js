@@ -1,55 +1,50 @@
-import EOF from './EOF' ;
-import toAsyncIterator from './toAsyncIterator' ;
+import eof from './eof';
+import toAsyncIterator from './toAsyncIterator';
 
 /**
  * Class that wraps a callable with a tape.
  * Do not use directly. Use {@link fromCallable} instead.
  */
 export default class Tape {
-
 	/**
 	 * The constructor. Stores the callable that yields values to put on the tape.
 	 *
 	 * @param {Callable} callable - The callable to use.
 	 */
-	constructor ( callable ) {
-
+	constructor(callable) {
 		/**
 		 * The callable yielding values to put on the tape.
 		 * @type {Callable}
 		 */
-		this.callable = callable ;
+		this.callable = callable;
 
 		/**
 		 * Buffer used to implement {@link Tape#unread}.
 		 * @type {Array}
 		 */
-		this.buffer = [ ] ;
+		this.buffer = [];
 
 		/**
 		 * The eof symbol.
 		 * @type {String}
 		 */
-		this.eof = EOF ;
-
+		this.eof = eof;
 	}
 
 	/**
 	 * Returns the next token on the tape or {@link Tape#eof}
 	 * if the tape has been exhausted.
 	 *
-	 * @returns {Object}
+	 * @returns {Object} The next token on the tape or {@link Tape#eof}.
 	 */
-	async read ( ) {
+	async read() {
+		if (this.buffer.length > 0) return this.buffer.pop();
 
-		if ( this.buffer.length > 0 ) return this.buffer.pop( ) ;
+		const state = await this.callable();
 
-		const state = await this.callable( ) ;
+		if (state.done) return this.eof;
 
-		if ( state.done ) return this.eof ;
-
-		return state.value ;
-
+		return state.value;
 	}
 
 	/**
@@ -58,21 +53,17 @@ export default class Tape {
 	 *
 	 * @param {Object} token - The token to put back on the tape.
 	 */
-	unread ( token ) {
-
-		// should this be async too ?
-		this.buffer.push( token ) ;
-
+	unread(token) {
+		// Should this be async too ?
+		this.buffer.push(token);
 	}
 
 	/**
 	 * Skips the next token on the tape.
 	 */
-	async skip ( ) {
-
-		if ( this.buffer.length > 0 ) this.buffer.pop( ) ;
-		else await this.callable( ) ;
-
+	async skip() {
+		if (this.buffer.length > 0) this.buffer.pop();
+		else await this.callable();
 	}
 
 	/**
@@ -80,10 +71,8 @@ export default class Tape {
 	 *
 	 * @param {Number} n - The number of tokens to skip.
 	 */
-	async skipMany ( n ) {
-
-		while ( n --> 0 ) await this.skip() ;
-
+	async skipMany(n) {
+		while (n-- > 0) await this.skip(); // eslint-disable-line no-await-in-loop
 	}
 
 	/**
@@ -93,12 +82,10 @@ export default class Tape {
 	 * fromString('abc');
 	 * for await ( const token of tape ) console.log(token) ;
 	 *
-	 * @returns {AsyncIterator}
+	 * @returns {AsyncIterator} Iterator on the tokens of the tape.
 	 */
-	[Symbol.asyncIterator] ( ) {
-
+	[Symbol.asyncIterator]() {
 		return toAsyncIterator(this);
-
 	}
 
 	/**
@@ -106,10 +93,9 @@ export default class Tape {
 	 *
 	 * @throws {Error} Always.
 	 */
-	[Symbol.iterator] ( ) {
-
-		throw new Error('Not implemented. A tape has no *synchronous* iterator. Use `toArray` or `toString` instead.') ;
-
+	[Symbol.iterator]() {
+		throw new Error(
+			'Not implemented. A tape has no *synchronous* iterator. Use `toArray` or `toString` instead.'
+		);
 	}
-
 }

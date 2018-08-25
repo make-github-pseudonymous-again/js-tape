@@ -1,5 +1,5 @@
-import fromAsyncIterable from './fromAsyncIterable' ;
-import exhaust from './exhaust' ;
+import fromAsyncIterable from './fromAsyncIterable';
+import exhaust from './exhaust';
 
 /**
  * Splits the input tape into a tape of tapes according to some set of
@@ -7,54 +7,46 @@ import exhaust from './exhaust' ;
  *
  * @param {Tape} tape - The input tape.
  * @param {Iterable} sep - An iterable of separators.
- * @returns {Tape}
+ * @returns {Tape} A tape of tapes.
  */
-export default function split ( tape , sep ) {
-
-	return fromAsyncIterable( _split( tape , sep ) ) ;
-
+export default function split(tape, sep) {
+	return fromAsyncIterable(_split(tape, sep));
 }
 
 /**
- * Same as {@link split}, but returns an iterator rather than a tape.
+ * Same as {@link split}, but returns an iterable rather than a tape.
  *
  * @private
  * @param {Tape} tape - The input tape.
  * @param {Iterable} sep - An iterable of separators.
- * @returns {Iterator}
+ * @returns {AsyncIterable} An iterable of tapes.
  */
-export async function* _split ( tape , sep ) {
+export async function* _split(tape, sep) {
+	const _sep = new Set(sep);
 
-	const _sep = new Set( sep ) ;
+	while (true) {
+		const token = await tape.read(); // eslint-disable-line no-await-in-loop
 
-	while ( true ) {
+		if (token === tape.eof) break;
 
-		const token = await tape.read( ) ;
+		if (_sep.has(token)) continue;
 
-		if ( token === tape.eof ) break ;
+		const group = fromAsyncIterable(
+			(async function*() {
+				yield token;
 
-		if ( _sep.has( token ) ) continue ;
+				while (true) {
+					const token = await tape.read(); // eslint-disable-line no-await-in-loop
 
-		const group = fromAsyncIterable( ( async function* ( ) {
+					if (_sep.has(token)) break;
 
-			yield token ;
+					yield token;
+				}
+			})()
+		);
 
-			while ( true ) {
+		yield group;
 
-				const token = await tape.read( ) ;
-
-				if ( _sep.has( token ) ) break ;
-
-				yield token ;
-
-			}
-
-		} )( ) ) ;
-
-		yield group ;
-
-		await exhaust( group ) ;
-
+		await exhaust(group); // eslint-disable-line no-await-in-loop
 	}
-
 }

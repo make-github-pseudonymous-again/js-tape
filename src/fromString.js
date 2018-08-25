@@ -1,4 +1,4 @@
-import fromIterable from './fromIterable' ;
+import fromIterable from './fromIterable';
 
 /**
  * Converts a string to a tape.
@@ -10,4 +10,4 @@ import fromIterable from './fromIterable' ;
  * @param {String} _string - the string to convert
  * @returns {Tape}
  */
-export default fromIterable ;
+export default fromIterable;

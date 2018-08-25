@@ -1,4 +1,4 @@
-import fromIterable from './fromIterable' ;
+import fromIterable from './fromIterable';
 
 /**
  * Converts an array to a tape.
@@ -7,4 +7,4 @@ import fromIterable from './fromIterable' ;
  * @param {Array} _array - the array to convert
  * @returns {Tape}
  */
-export default fromIterable ;
+export default fromIterable;

@@ -42,7 +42,8 @@
     "esdoc-inject-style-plugin": "1.0.0",
     "esdoc-standard-plugin": "1.0.0",
     "np": "3.0.4",
-    "nyc": "12.0.2"
+    "nyc": "12.0.2",
+    "xo": "0.22.0"
   },
   "files": [
     "lib"
@@ -67,6 +68,37 @@
     "esdoc": "esdoc",
     "prepare": "npm run build",
     "release": "np",
-    "test": "ava ./test/src"
+    "test": "xo && ava ./test/src"
+  },
+  "xo": {
+    "prettier": true,
+    "ignore": [
+      "lib",
+      "doc"
+    ],
+    "plugins": [
+      "unicorn"
+    ],
+    "rules": {
+      "unicorn/filename-case": [
+        "error",
+        {
+          "case": "camelCase"
+        }
+      ]
+    },
+    "overrides": [
+      {
+        "files": "src/Tape.js",
+        "rules": {
+          "unicorn/filename-case": [
+            "error",
+            {
+              "case": "pascalCase"
+            }
+          ]
+        }
+      }
+    ]
   }
 }

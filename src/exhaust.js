@@ -1,9 +1,7 @@
 /**
  * Exhausts a tape.
- * @param {Tape} tape - the tape to read from
+ * @param {Tape} tape - The tape to read from.
  */
-export default async function exhaust ( tape ) {
-
-	while ( await tape.read( ) !== tape.eof ) ;
-
+export default async function exhaust(tape) {
+	while ((await tape.read()) !== tape.eof); // eslint-disable-line no-await-in-loop
 }
