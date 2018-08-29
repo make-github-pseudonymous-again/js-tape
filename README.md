@@ -15,7 +15,7 @@ for await ( const character of tape ) ... ;
 
 [![License](https://img.shields.io/github/license/aureooms/js-tape.svg)](https://raw.githubusercontent.com/aureooms/js-tape/master/LICENSE)
 [![Version](https://img.shields.io/npm/v/@aureooms/js-tape.svg)](https://www.npmjs.org/package/@aureooms/js-tape)
-[![Build](https://img.shields.io/travis/aureooms/js-tape.svg)](https://travis-ci.org/aureooms/js-tape)
+[![Build](https://img.shields.io/travis/aureooms/js-tape/master.svg)](https://travis-ci.org/aureooms/js-tape/branches)
 [![Dependencies](https://img.shields.io/david/aureooms/js-tape.svg)](https://david-dm.org/aureooms/js-tape)
 [![Dev dependencies](https://img.shields.io/david/dev/aureooms/js-tape.svg)](https://david-dm.org/aureooms/js-tape?type=dev)
 [![GitHub issues](https://img.shields.io/github/issues/aureooms/js-tape.svg)](https://github.com/aureooms/js-tape/issues)
