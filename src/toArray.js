@@ -8,4 +8,4 @@ import asyncIterableToArray from './asyncIterableToArray';
  * @param {Tape} tape - The tape to read from.
  * @returns {Array} The converted array.
  */
-export default async tape => asyncIterableToArray(toAsyncIterable(tape));
+export default tape => asyncIterableToArray(toAsyncIterable(tape));
