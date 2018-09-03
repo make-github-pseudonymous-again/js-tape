@@ -1,7 +1,7 @@
 {
   "name": "@aureooms/js-tape",
   "description": "Tape library for JavaScript",
-  "version": "5.0.0",
+  "version": "5.0.1",
   "author": "aureooms",
   "ava": {
     "require": [
