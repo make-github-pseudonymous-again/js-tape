@@ -63,11 +63,11 @@ for instance <a href="https://babeljs.io/docs/usage/polyfill">@babel/polyfill</a
 </blockquote>
 <pre><code class="lang-js"><code class="source-code prettyprint">const stdin = fs.createReadStream( &apos;/dev/stdin&apos; , { encoding : &apos;utf8&apos;} ) ;
 const myTape = tape.fromReadStream( stdin ) ;
-for await ( const character of tape ) ... ;</code>
+for await ( const character of myTape ) ... ;</code>
 </code></pre>
 <p><a href="https://raw.githubusercontent.com/aureooms/js-tape/master/LICENSE"><img src="https://img.shields.io/github/license/aureooms/js-tape.svg" alt="License"></a>
 <a href="https://www.npmjs.org/package/@aureooms/js-tape"><img src="https://img.shields.io/npm/v/@aureooms/js-tape.svg" alt="Version"></a>
-<a href="https://travis-ci.org/aureooms/js-tape"><img src="https://img.shields.io/travis/aureooms/js-tape.svg" alt="Build"></a>
+<a href="https://travis-ci.org/aureooms/js-tape/branches"><img src="https://img.shields.io/travis/aureooms/js-tape/master.svg" alt="Build"></a>
 <a href="https://david-dm.org/aureooms/js-tape"><img src="https://img.shields.io/david/aureooms/js-tape.svg" alt="Dependencies"></a>
 <a href="https://david-dm.org/aureooms/js-tape?type=dev"><img src="https://img.shields.io/david/dev/aureooms/js-tape.svg" alt="Dev dependencies"></a>
 <a href="https://github.com/aureooms/js-tape/issues"><img src="https://img.shields.io/github/issues/aureooms/js-tape.svg" alt="GitHub issues"></a>

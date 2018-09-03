@@ -56,19 +56,18 @@
 </nav>
 
 <div class="content" data-ice="content"><h1 data-ice="title">src/map.js</h1>
-<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">import fromAsyncIterable from &apos;./fromAsyncIterable&apos; ;
-import toAsyncIterable from &apos;./toAsyncIterable&apos; ;
-import asyncIterableMap from &apos;./asyncIterableMap&apos; ;
+<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">import fromAsyncIterable from &apos;./fromAsyncIterable&apos;;
+import toAsyncIterable from &apos;./toAsyncIterable&apos;;
+import asyncIterableMap from &apos;./asyncIterableMap&apos;;
 
 /**
  * Applies a callable to each token of a tape.
  * @param {Callable} callable - the callable to apply
  * @param {Tape} tape - the tape to process
+ * @returns {Tape} The processed tape.
  */
-export default function map ( callable , tape ) {
-
-	return fromAsyncIterable( asyncIterableMap( callable , toAsyncIterable( tape ) ) ) ;
-
+export default function map(callable, tape) {
+	return fromAsyncIterable(asyncIterableMap(callable, toAsyncIterable(tape)));
 }
 </code></pre>
 

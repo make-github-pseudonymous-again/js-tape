@@ -56,19 +56,19 @@
 </nav>
 
 <div class="content" data-ice="content"><h1 data-ice="title">src/toAsyncCallable.js</h1>
-<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">import toAsyncIterator from &apos;./toAsyncIterator&apos; ;
+<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">import toAsyncIterator from &apos;./toAsyncIterator&apos;;
 
 /**
  * Converts a tape to a callable.
  *
  * @function
- * @param {Tape} tape - the tape to read from
- * @return {Callable}
+ * @param {Tape} tape - The tape to read from.
+ * @return {Callable} The converted callable.
  */
 export default tape =&gt; {
-	const it = toAsyncIterator( tape ) ;
-	return it.next.bind( it ) ;
-} ;
+	const it = toAsyncIterator(tape);
+	return it.next.bind(it);
+};
 </code></pre>
 
 </div>

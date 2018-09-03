@@ -56,17 +56,17 @@
 </nav>
 
 <div class="content" data-ice="content"><h1 data-ice="title">src/toArray.js</h1>
-<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">import toAsyncIterable from &apos;./toAsyncIterable&apos; ;
-import asyncIterableToArray from &apos;./asyncIterableToArray&apos; ;
+<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">import toAsyncIterable from &apos;./toAsyncIterable&apos;;
+import asyncIterableToArray from &apos;./asyncIterableToArray&apos;;
 
 /**
  * Converts a tape to an array.
  *
  * @function
- * @param {Tape} tape - the tape to read from
- * @returns {Array}
+ * @param {Tape} tape - The tape to read from.
+ * @returns {Array} The converted array.
  */
-export default async tape =&gt; asyncIterableToArray( toAsyncIterable( tape ) ) ;
+export default async tape =&gt; asyncIterableToArray(toAsyncIterable(tape));
 </code></pre>
 
 </div>

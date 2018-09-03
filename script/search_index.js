@@ -414,12 +414,6 @@ window.esdocSearchIndex = [
     "external"
   ],
   [
-    "src/eof.js",
-    "file/src/EOF.js.html",
-    "src/EOF.js",
-    "file"
-  ],
-  [
     "src/tape.js",
     "file/src/Tape.js.html",
     "src/Tape.js",
@@ -507,6 +501,12 @@ window.esdocSearchIndex = [
     "src/chain.js",
     "file/src/chain.js.html",
     "src/chain.js",
+    "file"
+  ],
+  [
+    "src/eof.js",
+    "file/src/eof.js.html",
+    "src/eof.js",
     "file"
   ],
   [

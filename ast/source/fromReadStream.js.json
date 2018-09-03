@@ -1,28 +1,28 @@
 {
   "type": "File",
   "start": 0,
-  "end": 624,
+  "end": 658,
   "loc": {
     "start": {
       "line": 1,
       "column": 0
     },
     "end": {
-      "line": 26,
+      "line": 24,
       "column": 0
     }
   },
   "program": {
     "type": "Program",
     "start": 0,
-    "end": 624,
+    "end": 658,
     "loc": {
       "start": {
         "line": 1,
         "column": 0
       },
       "end": {
-        "line": 26,
+        "line": 24,
         "column": 0
       }
     },
@@ -31,7 +31,7 @@
       {
         "type": "ImportDeclaration",
         "start": 0,
-        "end": 53,
+        "end": 52,
         "loc": {
           "start": {
             "line": 1,
@@ -39,7 +39,7 @@
           },
           "end": {
             "line": 1,
-            "column": 53
+            "column": 52
           }
         },
         "specifiers": [
@@ -99,9 +99,9 @@
         "trailingComments": [
           {
             "type": "CommentBlock",
-            "value": "*\n * Converts a ReadStream object to an async iterable of tokens.\n *\n * @private\n * @param {ReadStream} readStream - the ReadStream object to convert\n * @returns {AsyncIterable}\n ",
-            "start": 55,
-            "end": 238,
+            "value": "*\n * Converts a ReadStream object to an async iterable of tokens.\n *\n * @private\n * @param {ReadStream} readStream - The ReadStream object to convert.\n * @returns {AsyncIterable} The converted iterable.\n ",
+            "start": 54,
+            "end": 262,
             "loc": {
               "start": {
                 "line": 3,
@@ -117,15 +117,15 @@
       },
       {
         "type": "ExportNamedDeclaration",
-        "start": 239,
-        "end": 385,
+        "start": 263,
+        "end": 403,
         "loc": {
           "start": {
             "line": 10,
             "column": 0
           },
           "end": {
-            "line": 16,
+            "line": 14,
             "column": 1
           }
         },
@@ -133,22 +133,22 @@
         "source": null,
         "declaration": {
           "type": "FunctionDeclaration",
-          "start": 246,
-          "end": 385,
+          "start": 270,
+          "end": 403,
           "loc": {
             "start": {
               "line": 10,
               "column": 7
             },
             "end": {
-              "line": 16,
+              "line": 14,
               "column": 1
             }
           },
           "id": {
             "type": "Identifier",
-            "start": 262,
-            "end": 277,
+            "start": 286,
+            "end": 301,
             "loc": {
               "start": {
                 "line": 10,
@@ -169,16 +169,16 @@
           "params": [
             {
               "type": "Identifier",
-              "start": 280,
-              "end": 290,
+              "start": 302,
+              "end": 312,
               "loc": {
                 "start": {
                   "line": 10,
-                  "column": 41
+                  "column": 39
                 },
                 "end": {
                   "line": 10,
-                  "column": 51
+                  "column": 49
                 },
                 "identifierName": "readStream"
               },
@@ -187,73 +187,73 @@
           ],
           "body": {
             "type": "BlockStatement",
-            "start": 293,
-            "end": 385,
+            "start": 314,
+            "end": 403,
             "loc": {
               "start": {
                 "line": 10,
-                "column": 54
+                "column": 51
               },
               "end": {
-                "line": 16,
+                "line": 14,
                 "column": 1
               }
             },
             "body": [
               {
                 "type": "ForAwaitStatement",
-                "start": 297,
-                "end": 382,
+                "start": 317,
+                "end": 401,
                 "loc": {
                   "start": {
-                    "line": 12,
+                    "line": 11,
                     "column": 1
                   },
                   "end": {
-                    "line": 14,
+                    "line": 13,
                     "column": 2
                   }
                 },
                 "left": {
                   "type": "VariableDeclaration",
-                  "start": 308,
-                  "end": 319,
+                  "start": 328,
+                  "end": 339,
                   "loc": {
                     "start": {
-                      "line": 12,
+                      "line": 11,
                       "column": 12
                     },
                     "end": {
-                      "line": 12,
+                      "line": 11,
                       "column": 23
                     }
                   },
                   "declarations": [
                     {
                       "type": "VariableDeclarator",
-                      "start": 314,
-                      "end": 319,
+                      "start": 334,
+                      "end": 339,
                       "loc": {
                         "start": {
-                          "line": 12,
+                          "line": 11,
                           "column": 18
                         },
                         "end": {
-                          "line": 12,
+                          "line": 11,
                           "column": 23
                         }
                       },
                       "id": {
                         "type": "Identifier",
-                        "start": 314,
-                        "end": 319,
+                        "start": 334,
+                        "end": 339,
                         "loc": {
                           "start": {
-                            "line": 12,
+                            "line": 11,
                             "column": 18
                           },
                           "end": {
-                            "line": 12,
+                            "line": 11,
                             "column": 23
                           },
                           "identifierName": "chunk"
@@ -267,15 +267,15 @@
                 },
                 "right": {
                   "type": "Identifier",
-                  "start": 323,
-                  "end": 333,
+                  "start": 343,
+                  "end": 353,
                   "loc": {
                     "start": {
-                      "line": 12,
+                      "line": 11,
                       "column": 27
                     },
                     "end": {
-                      "line": 12,
+                      "line": 11,
                       "column": 37
                     },
                     "identifierName": "readStream"
@@ -284,73 +284,73 @@
                 },
                 "body": {
                   "type": "BlockStatement",
-                  "start": 335,
-                  "end": 382,
+                  "start": 355,
+                  "end": 401,
                   "loc": {
                     "start": {
-                      "line": 12,
+                      "line": 11,
                       "column": 39
                     },
                     "end": {
-                      "line": 14,
+                      "line": 13,
                       "column": 2
                     }
                   },
                   "body": [
                     {
                       "type": "ForOfStatement",
-                      "start": 339,
-                      "end": 379,
+                      "start": 359,
+                      "end": 398,
                       "loc": {
                         "start": {
-                          "line": 13,
+                          "line": 12,
                           "column": 2
                         },
                         "end": {
-                          "line": 13,
-                          "column": 42
+                          "line": 12,
+                          "column": 41
                         }
                       },
                       "left": {
                         "type": "VariableDeclaration",
-                        "start": 344,
-                        "end": 355,
+                        "start": 364,
+                        "end": 375,
                         "loc": {
                           "start": {
-                            "line": 13,
+                            "line": 12,
                             "column": 7
                           },
                           "end": {
-                            "line": 13,
+                            "line": 12,
                             "column": 18
                           }
                         },
                         "declarations": [
                           {
                             "type": "VariableDeclarator",
-                            "start": 350,
-                            "end": 355,
+                            "start": 370,
+                            "end": 375,
                             "loc": {
                               "start": {
-                                "line": 13,
+                                "line": 12,
                                 "column": 13
                               },
                               "end": {
-                                "line": 13,
+                                "line": 12,
                                 "column": 18
                               }
                             },
                             "id": {
                               "type": "Identifier",
-                              "start": 350,
-                              "end": 355,
+                              "start": 370,
+                              "end": 375,
                               "loc": {
                                 "start": {
-                                  "line": 13,
+                                  "line": 12,
                                   "column": 13
                                 },
                                 "end": {
-                                  "line": 13,
+                                  "line": 12,
                                   "column": 18
                                 },
                                 "identifierName": "piece"
@@ -364,15 +364,15 @@
                       },
                       "right": {
                         "type": "Identifier",
-                        "start": 359,
-                        "end": 364,
+                        "start": 379,
+                        "end": 384,
                         "loc": {
                           "start": {
-                            "line": 13,
+                            "line": 12,
                             "column": 22
                           },
                           "end": {
-                            "line": 13,
+                            "line": 12,
                             "column": 27
                           },
                           "identifierName": "chunk"
@@ -381,44 +381,44 @@
                       },
                       "body": {
                         "type": "ExpressionStatement",
-                        "start": 366,
-                        "end": 379,
+                        "start": 386,
+                        "end": 398,
                         "loc": {
                           "start": {
-                            "line": 13,
+                            "line": 12,
                             "column": 29
                           },
                           "end": {
-                            "line": 13,
-                            "column": 42
+                            "line": 12,
+                            "column": 41
                           }
                         },
                         "expression": {
                           "type": "YieldExpression",
-                          "start": 366,
-                          "end": 377,
+                          "start": 386,
+                          "end": 397,
                           "loc": {
                             "start": {
-                              "line": 13,
+                              "line": 12,
                               "column": 29
                             },
                             "end": {
-                              "line": 13,
+                              "line": 12,
                               "column": 40
                             }
                           },
                           "delegate": false,
                           "argument": {
                             "type": "Identifier",
-                            "start": 372,
-                            "end": 377,
+                            "start": 392,
+                            "end": 397,
                             "loc": {
                               "start": {
-                                "line": 13,
+                                "line": 12,
                                 "column": 35
                               },
                               "end": {
-                                "line": 13,
+                                "line": 12,
                                 "column": 40
                               },
                               "identifierName": "piece"
@@ -439,9 +439,9 @@
           "leadingComments": [
             {
               "type": "CommentBlock",
-              "value": "*\n * Converts a ReadStream object to an async iterable of tokens.\n *\n * @private\n * @param {ReadStream} readStream - the ReadStream object to convert\n * @returns {AsyncIterable}\n ",
-              "start": 55,
-              "end": 238,
+              "value": "*\n * Converts a ReadStream object to an async iterable of tokens.\n *\n * @private\n * @param {ReadStream} readStream - The ReadStream object to convert.\n * @returns {AsyncIterable} The converted iterable.\n ",
+              "start": 54,
+              "end": 262,
               "loc": {
                 "start": {
                   "line": 3,
@@ -457,16 +457,16 @@
           "trailingComments": [
             {
               "type": "CommentBlock",
-              "value": "*\n * Converts a ReadStream object to a tape.\n *\n * @function\n * @param {ReadStream} readStream - the ReadStream object to convert\n * @returns {Tape}\n ",
-              "start": 387,
-              "end": 541,
+              "value": "*\n * Converts a ReadStream object to a tape.\n *\n * @function\n * @param {ReadStream} readStream - The ReadStream object to convert.\n * @returns {Tape} The converted tape.\n ",
+              "start": 405,
+              "end": 580,
               "loc": {
                 "start": {
-                  "line": 18,
+                  "line": 16,
                   "column": 0
                 },
                 "end": {
-                  "line": 24,
+                  "line": 22,
                   "column": 3
                 }
               }
@@ -476,9 +476,9 @@
         "leadingComments": [
           {
             "type": "CommentBlock",
-            "value": "*\n * Converts a ReadStream object to an async iterable of tokens.\n *\n * @private\n * @param {ReadStream} readStream - the ReadStream object to convert\n * @returns {AsyncIterable}\n ",
-            "start": 55,
-            "end": 238,
+            "value": "*\n * Converts a ReadStream object to an async iterable of tokens.\n *\n * @private\n * @param {ReadStream} readStream - The ReadStream object to convert.\n * @returns {AsyncIterable} The converted iterable.\n ",
+            "start": 54,
+            "end": 262,
             "loc": {
               "start": {
                 "line": 3,
@@ -494,16 +494,16 @@
         "trailingComments": [
           {
             "type": "CommentBlock",
-            "value": "*\n * Converts a ReadStream object to a tape.\n *\n * @function\n * @param {ReadStream} readStream - the ReadStream object to convert\n * @returns {Tape}\n ",
-            "start": 387,
-            "end": 541,
+            "value": "*\n * Converts a ReadStream object to a tape.\n *\n * @function\n * @param {ReadStream} readStream - The ReadStream object to convert.\n * @returns {Tape} The converted tape.\n ",
+            "start": 405,
+            "end": 580,
             "loc": {
               "start": {
-                "line": 18,
+                "line": 16,
                 "column": 0
               },
               "end": {
-                "line": 24,
+                "line": 22,
                 "column": 3
               }
             }
@@ -512,30 +512,30 @@
       },
       {
         "type": "ExportDefaultDeclaration",
-        "start": 542,
-        "end": 623,
+        "start": 581,
+        "end": 657,
         "loc": {
           "start": {
-            "line": 25,
+            "line": 23,
             "column": 0
           },
           "end": {
-            "line": 25,
-            "column": 81
+            "line": 23,
+            "column": 76
           }
         },
         "declaration": {
           "type": "ArrowFunctionExpression",
-          "start": 557,
-          "end": 621,
+          "start": 596,
+          "end": 656,
           "loc": {
             "start": {
-              "line": 25,
+              "line": 23,
               "column": 15
             },
             "end": {
-              "line": 25,
-              "column": 79
+              "line": 23,
+              "column": 75
             }
           },
           "id": null,
@@ -545,15 +545,15 @@
           "params": [
             {
               "type": "Identifier",
-              "start": 557,
-              "end": 567,
+              "start": 596,
+              "end": 606,
               "loc": {
                 "start": {
-                  "line": 25,
+                  "line": 23,
                   "column": 15
                 },
                 "end": {
-                  "line": 25,
+                  "line": 23,
                   "column": 25
                 },
                 "identifierName": "readStream"
@@ -564,29 +564,29 @@
           ],
           "body": {
             "type": "CallExpression",
-            "start": 571,
-            "end": 621,
+            "start": 610,
+            "end": 656,
             "loc": {
               "start": {
-                "line": 25,
+                "line": 23,
                 "column": 29
               },
               "end": {
-                "line": 25,
-                "column": 79
+                "line": 23,
+                "column": 75
               }
             },
             "callee": {
               "type": "Identifier",
-              "start": 571,
-              "end": 588,
+              "start": 610,
+              "end": 627,
               "loc": {
                 "start": {
-                  "line": 25,
+                  "line": 23,
                   "column": 29
                 },
                 "end": {
-                  "line": 25,
+                  "line": 23,
                   "column": 46
                 },
                 "identifierName": "fromAsyncIterable"
@@ -596,30 +596,30 @@
             "arguments": [
               {
                 "type": "CallExpression",
-                "start": 590,
-                "end": 619,
+                "start": 628,
+                "end": 655,
                 "loc": {
                   "start": {
-                    "line": 25,
-                    "column": 48
+                    "line": 23,
+                    "column": 47
                   },
                   "end": {
-                    "line": 25,
-                    "column": 77
+                    "line": 23,
+                    "column": 74
                   }
                 },
                 "callee": {
                   "type": "Identifier",
-                  "start": 590,
-                  "end": 605,
+                  "start": 628,
+                  "end": 643,
                   "loc": {
                     "start": {
-                      "line": 25,
-                      "column": 48
+                      "line": 23,
+                      "column": 47
                     },
                     "end": {
-                      "line": 25,
-                      "column": 63
+                      "line": 23,
+                      "column": 62
                     },
                     "identifierName": "_fromReadStream"
                   },
@@ -628,16 +628,16 @@
                 "arguments": [
                   {
                     "type": "Identifier",
-                    "start": 607,
-                    "end": 617,
+                    "start": 644,
+                    "end": 654,
                     "loc": {
                       "start": {
-                        "line": 25,
-                        "column": 65
+                        "line": 23,
+                        "column": 63
                       },
                       "end": {
-                        "line": 25,
-                        "column": 75
+                        "line": 23,
+                        "column": 73
                       },
                       "identifierName": "readStream"
                     },
@@ -650,16 +650,16 @@
           "leadingComments": [
             {
               "type": "CommentBlock",
-              "value": "*\n * Converts a ReadStream object to a tape.\n *\n * @function\n * @param {ReadStream} readStream - the ReadStream object to convert\n * @returns {Tape}\n ",
-              "start": 387,
-              "end": 541,
+              "value": "*\n * Converts a ReadStream object to a tape.\n *\n * @function\n * @param {ReadStream} readStream - The ReadStream object to convert.\n * @returns {Tape} The converted tape.\n ",
+              "start": 405,
+              "end": 580,
               "loc": {
                 "start": {
-                  "line": 18,
+                  "line": 16,
                   "column": 0
                 },
                 "end": {
-                  "line": 24,
+                  "line": 22,
                   "column": 3
                 }
               }
@@ -670,16 +670,16 @@
         "leadingComments": [
           {
             "type": "CommentBlock",
-            "value": "*\n * Converts a ReadStream object to a tape.\n *\n * @function\n * @param {ReadStream} readStream - the ReadStream object to convert\n * @returns {Tape}\n ",
-            "start": 387,
-            "end": 541,
+            "value": "*\n * Converts a ReadStream object to a tape.\n *\n * @function\n * @param {ReadStream} readStream - The ReadStream object to convert.\n * @returns {Tape} The converted tape.\n ",
+            "start": 405,
+            "end": 580,
             "loc": {
               "start": {
-                "line": 18,
+                "line": 16,
                 "column": 0
               },
               "end": {
-                "line": 24,
+                "line": 22,
                 "column": 3
               }
             }
@@ -692,9 +692,9 @@
   "comments": [
     {
       "type": "CommentBlock",
-      "value": "*\n * Converts a ReadStream object to an async iterable of tokens.\n *\n * @private\n * @param {ReadStream} readStream - the ReadStream object to convert\n * @returns {AsyncIterable}\n ",
-      "start": 55,
-      "end": 238,
+      "value": "*\n * Converts a ReadStream object to an async iterable of tokens.\n *\n * @private\n * @param {ReadStream} readStream - The ReadStream object to convert.\n * @returns {AsyncIterable} The converted iterable.\n ",
+      "start": 54,
+      "end": 262,
       "loc": {
         "start": {
           "line": 3,
@@ -708,16 +708,16 @@
     },
     {
       "type": "CommentBlock",
-      "value": "*\n * Converts a ReadStream object to a tape.\n *\n * @function\n * @param {ReadStream} readStream - the ReadStream object to convert\n * @returns {Tape}\n ",
-      "start": 387,
-      "end": 541,
+      "value": "*\n * Converts a ReadStream object to a tape.\n *\n * @function\n * @param {ReadStream} readStream - The ReadStream object to convert.\n * @returns {Tape} The converted tape.\n ",
+      "start": 405,
+      "end": 580,
       "loc": {
         "start": {
-          "line": 18,
+          "line": 16,
           "column": 0
         },
         "end": {
-          "line": 24,
+          "line": 22,
           "column": 3
         }
       }
@@ -844,24 +844,24 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 52,
-      "end": 53,
+      "start": 51,
+      "end": 52,
       "loc": {
         "start": {
           "line": 1,
-          "column": 52
+          "column": 51
         },
         "end": {
           "line": 1,
-          "column": 53
+          "column": 52
         }
       }
     },
     {
       "type": "CommentBlock",
-      "value": "*\n * Converts a ReadStream object to an async iterable of tokens.\n *\n * @private\n * @param {ReadStream} readStream - the ReadStream object to convert\n * @returns {AsyncIterable}\n ",
-      "start": 55,
-      "end": 238,
+      "value": "*\n * Converts a ReadStream object to an async iterable of tokens.\n *\n * @private\n * @param {ReadStream} readStream - The ReadStream object to convert.\n * @returns {AsyncIterable} The converted iterable.\n ",
+      "start": 54,
+      "end": 262,
       "loc": {
         "start": {
           "line": 3,
@@ -888,8 +888,8 @@
         "updateContext": null
       },
       "value": "export",
-      "start": 239,
-      "end": 245,
+      "start": 263,
+      "end": 269,
       "loc": {
         "start": {
           "line": 10,
@@ -914,8 +914,8 @@
         "binop": null
       },
       "value": "async",
-      "start": 246,
-      "end": 251,
+      "start": 270,
+      "end": 275,
       "loc": {
         "start": {
           "line": 10,
@@ -941,8 +941,8 @@
         "binop": null
       },
       "value": "function",
-      "start": 252,
-      "end": 260,
+      "start": 276,
+      "end": 284,
       "loc": {
         "start": {
           "line": 10,
@@ -968,8 +968,8 @@
         "updateContext": null
       },
       "value": "*",
-      "start": 260,
-      "end": 261,
+      "start": 284,
+      "end": 285,
       "loc": {
         "start": {
           "line": 10,
@@ -994,8 +994,8 @@
         "binop": null
       },
       "value": "_fromReadStream",
-      "start": 262,
-      "end": 277,
+      "start": 286,
+      "end": 301,
       "loc": {
         "start": {
           "line": 10,
@@ -1019,16 +1019,16 @@
         "postfix": false,
         "binop": null
       },
-      "start": 278,
-      "end": 279,
+      "start": 301,
+      "end": 302,
       "loc": {
         "start": {
           "line": 10,
-          "column": 39
+          "column": 38
         },
         "end": {
           "line": 10,
-          "column": 40
+          "column": 39
         }
       }
     },
@@ -1045,16 +1045,16 @@
         "binop": null
       },
       "value": "readStream",
-      "start": 280,
-      "end": 290,
+      "start": 302,
+      "end": 312,
       "loc": {
         "start": {
           "line": 10,
-          "column": 41
+          "column": 39
         },
         "end": {
           "line": 10,
-          "column": 51
+          "column": 49
         }
       }
     },
@@ -1070,16 +1070,16 @@
         "postfix": false,
         "binop": null
       },
-      "start": 291,
-      "end": 292,
+      "start": 312,
+      "end": 313,
       "loc": {
         "start": {
           "line": 10,
-          "column": 52
+          "column": 49
         },
         "end": {
           "line": 10,
-          "column": 53
+          "column": 50
         }
       }
     },
@@ -1095,16 +1095,16 @@
         "postfix": false,
         "binop": null
       },
-      "start": 293,
-      "end": 294,
+      "start": 314,
+      "end": 315,
       "loc": {
         "start": {
           "line": 10,
-          "column": 54
+          "column": 51
         },
         "end": {
           "line": 10,
-          "column": 55
+          "column": 52
         }
       }
     },
@@ -1123,15 +1123,15 @@
         "updateContext": null
       },
       "value": "for",
-      "start": 297,
-      "end": 300,
+      "start": 317,
+      "end": 320,
       "loc": {
         "start": {
-          "line": 12,
+          "line": 11,
           "column": 1
         },
         "end": {
-          "line": 12,
+          "line": 11,
           "column": 4
         }
       }
@@ -1149,15 +1149,15 @@
         "binop": null
       },
       "value": "await",
-      "start": 301,
-      "end": 306,
+      "start": 321,
+      "end": 326,
       "loc": {
         "start": {
-          "line": 12,
+          "line": 11,
           "column": 5
         },
         "end": {
-          "line": 12,
+          "line": 11,
           "column": 10
         }
       }
@@ -1174,15 +1174,15 @@
         "postfix": false,
         "binop": null
       },
-      "start": 307,
-      "end": 308,
+      "start": 327,
+      "end": 328,
       "loc": {
         "start": {
-          "line": 12,
+          "line": 11,
           "column": 11
         },
         "end": {
-          "line": 12,
+          "line": 11,
           "column": 12
         }
       }
@@ -1202,15 +1202,15 @@
         "updateContext": null
       },
       "value": "const",
-      "start": 308,
-      "end": 313,
+      "start": 328,
+      "end": 333,
       "loc": {
         "start": {
-          "line": 12,
+          "line": 11,
           "column": 12
         },
         "end": {
-          "line": 12,
+          "line": 11,
           "column": 17
         }
       }
@@ -1228,15 +1228,15 @@
         "binop": null
       },
       "value": "chunk",
-      "start": 314,
-      "end": 319,
+      "start": 334,
+      "end": 339,
       "loc": {
         "start": {
-          "line": 12,
+          "line": 11,
           "column": 18
         },
         "end": {
-          "line": 12,
+          "line": 11,
           "column": 23
         }
       }
@@ -1254,15 +1254,15 @@
         "binop": null
       },
       "value": "of",
-      "start": 320,
-      "end": 322,
+      "start": 340,
+      "end": 342,
       "loc": {
         "start": {
-          "line": 12,
+          "line": 11,
           "column": 24
         },
         "end": {
-          "line": 12,
+          "line": 11,
           "column": 26
         }
       }
@@ -1280,15 +1280,15 @@
         "binop": null
       },
       "value": "readStream",
-      "start": 323,
-      "end": 333,
+      "start": 343,
+      "end": 353,
       "loc": {
         "start": {
-          "line": 12,
+          "line": 11,
           "column": 27
         },
         "end": {
-          "line": 12,
+          "line": 11,
           "column": 37
         }
       }
@@ -1305,15 +1305,15 @@
         "postfix": false,
         "binop": null
       },
-      "start": 333,
-      "end": 334,
+      "start": 353,
+      "end": 354,
       "loc": {
         "start": {
-          "line": 12,
+          "line": 11,
           "column": 37
         },
         "end": {
-          "line": 12,
+          "line": 11,
           "column": 38
         }
       }
@@ -1330,15 +1330,15 @@
         "postfix": false,
         "binop": null
       },
-      "start": 335,
-      "end": 336,
+      "start": 355,
+      "end": 356,
       "loc": {
         "start": {
-          "line": 12,
+          "line": 11,
           "column": 39
         },
         "end": {
-          "line": 12,
+          "line": 11,
           "column": 40
         }
       }
@@ -1358,15 +1358,15 @@
         "updateContext": null
       },
       "value": "for",
-      "start": 339,
-      "end": 342,
+      "start": 359,
+      "end": 362,
       "loc": {
         "start": {
-          "line": 13,
+          "line": 12,
           "column": 2
         },
         "end": {
-          "line": 13,
+          "line": 12,
           "column": 5
         }
       }
@@ -1383,15 +1383,15 @@
         "postfix": false,
         "binop": null
       },
-      "start": 343,
-      "end": 344,
+      "start": 363,
+      "end": 364,
       "loc": {
         "start": {
-          "line": 13,
+          "line": 12,
           "column": 6
         },
         "end": {
-          "line": 13,
+          "line": 12,
           "column": 7
         }
       }
@@ -1411,15 +1411,15 @@
         "updateContext": null
       },
       "value": "const",
-      "start": 344,
-      "end": 349,
+      "start": 364,
+      "end": 369,
       "loc": {
         "start": {
-          "line": 13,
+          "line": 12,
           "column": 7
         },
         "end": {
-          "line": 13,
+          "line": 12,
           "column": 12
         }
       }
@@ -1437,15 +1437,15 @@
         "binop": null
       },
       "value": "piece",
-      "start": 350,
-      "end": 355,
+      "start": 370,
+      "end": 375,
       "loc": {
         "start": {
-          "line": 13,
+          "line": 12,
           "column": 13
         },
         "end": {
-          "line": 13,
+          "line": 12,
           "column": 18
         }
       }
@@ -1463,15 +1463,15 @@
         "binop": null
       },
       "value": "of",
-      "start": 356,
-      "end": 358,
+      "start": 376,
+      "end": 378,
       "loc": {
         "start": {
-          "line": 13,
+          "line": 12,
           "column": 19
         },
         "end": {
-          "line": 13,
+          "line": 12,
           "column": 21
         }
       }
@@ -1489,15 +1489,15 @@
         "binop": null
       },
       "value": "chunk",
-      "start": 359,
-      "end": 364,
+      "start": 379,
+      "end": 384,
       "loc": {
         "start": {
-          "line": 13,
+          "line": 12,
           "column": 22
         },
         "end": {
-          "line": 13,
+          "line": 12,
           "column": 27
         }
       }
@@ -1514,15 +1514,15 @@
         "postfix": false,
         "binop": null
       },
-      "start": 364,
-      "end": 365,
+      "start": 384,
+      "end": 385,
       "loc": {
         "start": {
-          "line": 13,
+          "line": 12,
           "column": 27
         },
         "end": {
-          "line": 13,
+          "line": 12,
           "column": 28
         }
       }
@@ -1542,15 +1542,15 @@
         "updateContext": null
       },
       "value": "yield",
-      "start": 366,
-      "end": 371,
+      "start": 386,
+      "end": 391,
       "loc": {
         "start": {
-          "line": 13,
+          "line": 12,
           "column": 29
         },
         "end": {
-          "line": 13,
+          "line": 12,
           "column": 34
         }
       }
@@ -1568,15 +1568,15 @@
         "binop": null
       },
       "value": "piece",
-      "start": 372,
-      "end": 377,
+      "start": 392,
+      "end": 397,
       "loc": {
         "start": {
-          "line": 13,
+          "line": 12,
           "column": 35
         },
         "end": {
-          "line": 13,
+          "line": 12,
           "column": 40
         }
       }
@@ -1594,16 +1594,16 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 378,
-      "end": 379,
+      "start": 397,
+      "end": 398,
       "loc": {
         "start": {
-          "line": 13,
-          "column": 41
+          "line": 12,
+          "column": 40
         },
         "end": {
-          "line": 13,
-          "column": 42
+          "line": 12,
+          "column": 41
         }
       }
     },
@@ -1619,15 +1619,15 @@
         "postfix": false,
         "binop": null
       },
-      "start": 381,
-      "end": 382,
+      "start": 400,
+      "end": 401,
       "loc": {
         "start": {
-          "line": 14,
+          "line": 13,
           "column": 1
         },
         "end": {
-          "line": 14,
+          "line": 13,
           "column": 2
         }
       }
@@ -1644,31 +1644,31 @@
         "postfix": false,
         "binop": null
       },
-      "start": 384,
-      "end": 385,
+      "start": 402,
+      "end": 403,
       "loc": {
         "start": {
-          "line": 16,
+          "line": 14,
           "column": 0
         },
         "end": {
-          "line": 16,
+          "line": 14,
           "column": 1
         }
       }
     },
     {
       "type": "CommentBlock",
-      "value": "*\n * Converts a ReadStream object to a tape.\n *\n * @function\n * @param {ReadStream} readStream - the ReadStream object to convert\n * @returns {Tape}\n ",
-      "start": 387,
-      "end": 541,
+      "value": "*\n * Converts a ReadStream object to a tape.\n *\n * @function\n * @param {ReadStream} readStream - The ReadStream object to convert.\n * @returns {Tape} The converted tape.\n ",
+      "start": 405,
+      "end": 580,
       "loc": {
         "start": {
-          "line": 18,
+          "line": 16,
           "column": 0
         },
         "end": {
-          "line": 24,
+          "line": 22,
           "column": 3
         }
       }
@@ -1688,15 +1688,15 @@
         "updateContext": null
       },
       "value": "export",
-      "start": 542,
-      "end": 548,
+      "start": 581,
+      "end": 587,
       "loc": {
         "start": {
-          "line": 25,
+          "line": 23,
           "column": 0
         },
         "end": {
-          "line": 25,
+          "line": 23,
           "column": 6
         }
       }
@@ -1716,15 +1716,15 @@
         "updateContext": null
       },
       "value": "default",
-      "start": 549,
-      "end": 556,
+      "start": 588,
+      "end": 595,
       "loc": {
         "start": {
-          "line": 25,
+          "line": 23,
           "column": 7
         },
         "end": {
-          "line": 25,
+          "line": 23,
           "column": 14
         }
       }
@@ -1742,15 +1742,15 @@
         "binop": null
       },
       "value": "readStream",
-      "start": 557,
-      "end": 567,
+      "start": 596,
+      "end": 606,
       "loc": {
         "start": {
-          "line": 25,
+          "line": 23,
           "column": 15
         },
         "end": {
-          "line": 25,
+          "line": 23,
           "column": 25
         }
       }
@@ -1768,15 +1768,15 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 568,
-      "end": 570,
+      "start": 607,
+      "end": 609,
       "loc": {
         "start": {
-          "line": 25,
+          "line": 23,
           "column": 26
         },
         "end": {
-          "line": 25,
+          "line": 23,
           "column": 28
         }
       }
@@ -1794,15 +1794,15 @@
         "binop": null
       },
       "value": "fromAsyncIterable",
-      "start": 571,
-      "end": 588,
+      "start": 610,
+      "end": 627,
       "loc": {
         "start": {
-          "line": 25,
+          "line": 23,
           "column": 29
         },
         "end": {
-          "line": 25,
+          "line": 23,
           "column": 46
         }
       }
@@ -1819,15 +1819,15 @@
         "postfix": false,
         "binop": null
       },
-      "start": 588,
-      "end": 589,
+      "start": 627,
+      "end": 628,
       "loc": {
         "start": {
-          "line": 25,
+          "line": 23,
           "column": 46
         },
         "end": {
-          "line": 25,
+          "line": 23,
           "column": 47
         }
       }
@@ -1845,16 +1845,16 @@
         "binop": null
       },
       "value": "_fromReadStream",
-      "start": 590,
-      "end": 605,
+      "start": 628,
+      "end": 643,
       "loc": {
         "start": {
-          "line": 25,
-          "column": 48
+          "line": 23,
+          "column": 47
         },
         "end": {
-          "line": 25,
-          "column": 63
+          "line": 23,
+          "column": 62
         }
       }
     },
@@ -1870,16 +1870,16 @@
         "postfix": false,
         "binop": null
       },
-      "start": 605,
-      "end": 606,
+      "start": 643,
+      "end": 644,
       "loc": {
         "start": {
-          "line": 25,
-          "column": 63
+          "line": 23,
+          "column": 62
         },
         "end": {
-          "line": 25,
-          "column": 64
+          "line": 23,
+          "column": 63
         }
       }
     },
@@ -1896,66 +1896,66 @@
         "binop": null
       },
       "value": "readStream",
-      "start": 607,
-      "end": 617,
+      "start": 644,
+      "end": 654,
       "loc": {
         "start": {
-          "line": 25,
-          "column": 65
+          "line": 23,
+          "column": 63
         },
         "end": {
-          "line": 25,
+          "line": 23,
+          "column": 73
+        }
+      }
+    },
+    {
+      "type": {
+        "label": ")",
+        "beforeExpr": false,
+        "startsExpr": false,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null
+      },
+      "start": 654,
+      "end": 655,
+      "loc": {
+        "start": {
+          "line": 23,
+          "column": 73
+        },
+        "end": {
+          "line": 23,
+          "column": 74
+        }
+      }
+    },
+    {
+      "type": {
+        "label": ")",
+        "beforeExpr": false,
+        "startsExpr": false,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null
+      },
+      "start": 655,
+      "end": 656,
+      "loc": {
+        "start": {
+          "line": 23,
+          "column": 74
+        },
+        "end": {
+          "line": 23,
           "column": 75
-        }
-      }
-    },
-    {
-      "type": {
-        "label": ")",
-        "beforeExpr": false,
-        "startsExpr": false,
-        "rightAssociative": false,
-        "isLoop": false,
-        "isAssign": false,
-        "prefix": false,
-        "postfix": false,
-        "binop": null
-      },
-      "start": 618,
-      "end": 619,
-      "loc": {
-        "start": {
-          "line": 25,
-          "column": 76
-        },
-        "end": {
-          "line": 25,
-          "column": 77
-        }
-      }
-    },
-    {
-      "type": {
-        "label": ")",
-        "beforeExpr": false,
-        "startsExpr": false,
-        "rightAssociative": false,
-        "isLoop": false,
-        "isAssign": false,
-        "prefix": false,
-        "postfix": false,
-        "binop": null
-      },
-      "start": 620,
-      "end": 621,
-      "loc": {
-        "start": {
-          "line": 25,
-          "column": 78
-        },
-        "end": {
-          "line": 25,
-          "column": 79
         }
       }
     },
@@ -1972,16 +1972,16 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 622,
-      "end": 623,
+      "start": 656,
+      "end": 657,
       "loc": {
         "start": {
-          "line": 25,
-          "column": 80
+          "line": 23,
+          "column": 75
         },
         "end": {
-          "line": 25,
-          "column": 81
+          "line": 23,
+          "column": 76
         }
       }
     },
@@ -1998,15 +1998,15 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 624,
-      "end": 624,
+      "start": 658,
+      "end": 658,
       "loc": {
         "start": {
-          "line": 26,
+          "line": 24,
           "column": 0
         },
         "end": {
-          "line": 26,
+          "line": 24,
           "column": 0
         }
       }

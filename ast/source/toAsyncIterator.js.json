@@ -1,7 +1,7 @@
 {
   "type": "File",
   "start": 0,
-  "end": 264,
+  "end": 349,
   "loc": {
     "start": {
       "line": 1,
@@ -15,7 +15,7 @@
   "program": {
     "type": "Program",
     "start": 0,
-    "end": 264,
+    "end": 349,
     "loc": {
       "start": {
         "line": 1,
@@ -31,7 +31,7 @@
       {
         "type": "ImportDeclaration",
         "start": 0,
-        "end": 49,
+        "end": 48,
         "loc": {
           "start": {
             "line": 1,
@@ -39,7 +39,7 @@
           },
           "end": {
             "line": 1,
-            "column": 49
+            "column": 48
           }
         },
         "specifiers": [
@@ -99,9 +99,9 @@
         "trailingComments": [
           {
             "type": "CommentBlock",
-            "value": "*\n * Converts a tape to an async iterator.\n *\n * @function\n * @param {Tape} tape - the tape to read from\n * @returns {AsyncIterator}\n ",
-            "start": 51,
-            "end": 189,
+            "value": "*\n * Converts a tape to an async iterator.\n *\n * @function\n * @param {Tape} tape - The tape to read from.\n * @returns {AsyncIterator} The converted iterator.\n ",
+            "start": 50,
+            "end": 213,
             "loc": {
               "start": {
                 "line": 3,
@@ -117,8 +117,8 @@
       },
       {
         "type": "ExportDefaultDeclaration",
-        "start": 190,
-        "end": 263,
+        "start": 214,
+        "end": 283,
         "loc": {
           "start": {
             "line": 10,
@@ -126,13 +126,13 @@
           },
           "end": {
             "line": 10,
-            "column": 73
+            "column": 69
           }
         },
         "declaration": {
           "type": "ArrowFunctionExpression",
-          "start": 205,
-          "end": 261,
+          "start": 229,
+          "end": 282,
           "loc": {
             "start": {
               "line": 10,
@@ -140,7 +140,7 @@
             },
             "end": {
               "line": 10,
-              "column": 71
+              "column": 68
             }
           },
           "id": null,
@@ -150,8 +150,8 @@
           "params": [
             {
               "type": "Identifier",
-              "start": 205,
-              "end": 209,
+              "start": 229,
+              "end": 233,
               "loc": {
                 "start": {
                   "line": 10,
@@ -169,8 +169,8 @@
           ],
           "body": {
             "type": "CallExpression",
-            "start": 213,
-            "end": 261,
+            "start": 237,
+            "end": 282,
             "loc": {
               "start": {
                 "line": 10,
@@ -178,13 +178,13 @@
               },
               "end": {
                 "line": 10,
-                "column": 71
+                "column": 68
               }
             },
             "callee": {
               "type": "MemberExpression",
-              "start": 213,
-              "end": 258,
+              "start": 237,
+              "end": 280,
               "loc": {
                 "start": {
                   "line": 10,
@@ -192,13 +192,13 @@
                 },
                 "end": {
                   "line": 10,
-                  "column": 68
+                  "column": 66
                 }
               },
               "object": {
                 "type": "CallExpression",
-                "start": 213,
-                "end": 236,
+                "start": 237,
+                "end": 258,
                 "loc": {
                   "start": {
                     "line": 10,
@@ -206,13 +206,13 @@
                   },
                   "end": {
                     "line": 10,
-                    "column": 46
+                    "column": 44
                   }
                 },
                 "callee": {
                   "type": "Identifier",
-                  "start": 213,
-                  "end": 228,
+                  "start": 237,
+                  "end": 252,
                   "loc": {
                     "start": {
                       "line": 10,
@@ -229,16 +229,16 @@
                 "arguments": [
                   {
                     "type": "Identifier",
-                    "start": 230,
-                    "end": 234,
+                    "start": 253,
+                    "end": 257,
                     "loc": {
                       "start": {
                         "line": 10,
-                        "column": 40
+                        "column": 39
                       },
                       "end": {
                         "line": 10,
-                        "column": 44
+                        "column": 43
                       },
                       "identifierName": "tape"
                     },
@@ -248,30 +248,30 @@
               },
               "property": {
                 "type": "MemberExpression",
-                "start": 237,
-                "end": 257,
+                "start": 259,
+                "end": 279,
                 "loc": {
                   "start": {
                     "line": 10,
-                    "column": 47
+                    "column": 45
                   },
                   "end": {
                     "line": 10,
-                    "column": 67
+                    "column": 65
                   }
                 },
                 "object": {
                   "type": "Identifier",
-                  "start": 237,
-                  "end": 243,
+                  "start": 259,
+                  "end": 265,
                   "loc": {
                     "start": {
                       "line": 10,
-                      "column": 47
+                      "column": 45
                     },
                     "end": {
                       "line": 10,
-                      "column": 53
+                      "column": 51
                     },
                     "identifierName": "Symbol"
                   },
@@ -279,16 +279,16 @@
                 },
                 "property": {
                   "type": "Identifier",
-                  "start": 244,
-                  "end": 257,
+                  "start": 266,
+                  "end": 279,
                   "loc": {
                     "start": {
                       "line": 10,
-                      "column": 54
+                      "column": 52
                     },
                     "end": {
                       "line": 10,
-                      "column": 67
+                      "column": 65
                     },
                     "identifierName": "asyncIterator"
                   },
@@ -303,9 +303,9 @@
           "leadingComments": [
             {
               "type": "CommentBlock",
-              "value": "*\n * Converts a tape to an async iterator.\n *\n * @function\n * @param {Tape} tape - the tape to read from\n * @returns {AsyncIterator}\n ",
-              "start": 51,
-              "end": 189,
+              "value": "*\n * Converts a tape to an async iterator.\n *\n * @function\n * @param {Tape} tape - The tape to read from.\n * @returns {AsyncIterator} The converted iterator.\n ",
+              "start": 50,
+              "end": 213,
               "loc": {
                 "start": {
                   "line": 3,
@@ -318,14 +318,31 @@
               }
             }
           ],
-          "trailingComments": []
+          "trailingComments": [
+            {
+              "type": "CommentLine",
+              "value": " eslint-disable-line no-use-extend-native/no-use-extend-native",
+              "start": 284,
+              "end": 348,
+              "loc": {
+                "start": {
+                  "line": 10,
+                  "column": 70
+                },
+                "end": {
+                  "line": 10,
+                  "column": 134
+                }
+              }
+            }
+          ]
         },
         "leadingComments": [
           {
             "type": "CommentBlock",
-            "value": "*\n * Converts a tape to an async iterator.\n *\n * @function\n * @param {Tape} tape - the tape to read from\n * @returns {AsyncIterator}\n ",
-            "start": 51,
-            "end": 189,
+            "value": "*\n * Converts a tape to an async iterator.\n *\n * @function\n * @param {Tape} tape - The tape to read from.\n * @returns {AsyncIterator} The converted iterator.\n ",
+            "start": 50,
+            "end": 213,
             "loc": {
               "start": {
                 "line": 3,
@@ -337,6 +354,24 @@
               }
             }
           }
+        ],
+        "trailingComments": [
+          {
+            "type": "CommentLine",
+            "value": " eslint-disable-line no-use-extend-native/no-use-extend-native",
+            "start": 284,
+            "end": 348,
+            "loc": {
+              "start": {
+                "line": 10,
+                "column": 70
+              },
+              "end": {
+                "line": 10,
+                "column": 134
+              }
+            }
+          }
         ]
       }
     ],
@@ -345,9 +380,9 @@
   "comments": [
     {
       "type": "CommentBlock",
-      "value": "*\n * Converts a tape to an async iterator.\n *\n * @function\n * @param {Tape} tape - the tape to read from\n * @returns {AsyncIterator}\n ",
-      "start": 51,
-      "end": 189,
+      "value": "*\n * Converts a tape to an async iterator.\n *\n * @function\n * @param {Tape} tape - The tape to read from.\n * @returns {AsyncIterator} The converted iterator.\n ",
+      "start": 50,
+      "end": 213,
       "loc": {
         "start": {
           "line": 3,
@@ -356,6 +391,22 @@
         "end": {
           "line": 9,
           "column": 3
+        }
+      }
+    },
+    {
+      "type": "CommentLine",
+      "value": " eslint-disable-line no-use-extend-native/no-use-extend-native",
+      "start": 284,
+      "end": 348,
+      "loc": {
+        "start": {
+          "line": 10,
+          "column": 70
+        },
+        "end": {
+          "line": 10,
+          "column": 134
         }
       }
     }
@@ -481,24 +532,24 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 48,
-      "end": 49,
+      "start": 47,
+      "end": 48,
       "loc": {
         "start": {
           "line": 1,
-          "column": 48
+          "column": 47
         },
         "end": {
           "line": 1,
-          "column": 49
+          "column": 48
         }
       }
     },
     {
       "type": "CommentBlock",
-      "value": "*\n * Converts a tape to an async iterator.\n *\n * @function\n * @param {Tape} tape - the tape to read from\n * @returns {AsyncIterator}\n ",
-      "start": 51,
-      "end": 189,
+      "value": "*\n * Converts a tape to an async iterator.\n *\n * @function\n * @param {Tape} tape - The tape to read from.\n * @returns {AsyncIterator} The converted iterator.\n ",
+      "start": 50,
+      "end": 213,
       "loc": {
         "start": {
           "line": 3,
@@ -525,8 +576,8 @@
         "updateContext": null
       },
       "value": "export",
-      "start": 190,
-      "end": 196,
+      "start": 214,
+      "end": 220,
       "loc": {
         "start": {
           "line": 10,
@@ -553,8 +604,8 @@
         "updateContext": null
       },
       "value": "default",
-      "start": 197,
-      "end": 204,
+      "start": 221,
+      "end": 228,
       "loc": {
         "start": {
           "line": 10,
@@ -579,8 +630,8 @@
         "binop": null
       },
       "value": "tape",
-      "start": 205,
-      "end": 209,
+      "start": 229,
+      "end": 233,
       "loc": {
         "start": {
           "line": 10,
@@ -605,8 +656,8 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 210,
-      "end": 212,
+      "start": 234,
+      "end": 236,
       "loc": {
         "start": {
           "line": 10,
@@ -631,8 +682,8 @@
         "binop": null
       },
       "value": "toAsyncIterable",
-      "start": 213,
-      "end": 228,
+      "start": 237,
+      "end": 252,
       "loc": {
         "start": {
           "line": 10,
@@ -656,8 +707,8 @@
         "postfix": false,
         "binop": null
       },
-      "start": 228,
-      "end": 229,
+      "start": 252,
+      "end": 253,
       "loc": {
         "start": {
           "line": 10,
@@ -682,16 +733,16 @@
         "binop": null
       },
       "value": "tape",
-      "start": 230,
-      "end": 234,
+      "start": 253,
+      "end": 257,
       "loc": {
         "start": {
           "line": 10,
-          "column": 40
+          "column": 39
         },
         "end": {
           "line": 10,
-          "column": 44
+          "column": 43
         }
       }
     },
@@ -707,16 +758,16 @@
         "postfix": false,
         "binop": null
       },
-      "start": 235,
-      "end": 236,
+      "start": 257,
+      "end": 258,
       "loc": {
         "start": {
           "line": 10,
-          "column": 45
+          "column": 43
         },
         "end": {
           "line": 10,
-          "column": 46
+          "column": 44
         }
       }
     },
@@ -733,16 +784,16 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 236,
-      "end": 237,
+      "start": 258,
+      "end": 259,
       "loc": {
         "start": {
           "line": 10,
-          "column": 46
+          "column": 44
         },
         "end": {
           "line": 10,
-          "column": 47
+          "column": 45
         }
       }
     },
@@ -759,16 +810,16 @@
         "binop": null
       },
       "value": "Symbol",
-      "start": 237,
-      "end": 243,
+      "start": 259,
+      "end": 265,
       "loc": {
         "start": {
           "line": 10,
-          "column": 47
+          "column": 45
         },
         "end": {
           "line": 10,
-          "column": 53
+          "column": 51
         }
       }
     },
@@ -785,16 +836,16 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 243,
-      "end": 244,
+      "start": 265,
+      "end": 266,
       "loc": {
         "start": {
           "line": 10,
-          "column": 53
+          "column": 51
         },
         "end": {
           "line": 10,
-          "column": 54
+          "column": 52
         }
       }
     },
@@ -811,16 +862,16 @@
         "binop": null
       },
       "value": "asyncIterator",
-      "start": 244,
-      "end": 257,
+      "start": 266,
+      "end": 279,
       "loc": {
         "start": {
           "line": 10,
-          "column": 54
+          "column": 52
         },
         "end": {
           "line": 10,
-          "column": 67
+          "column": 65
         }
       }
     },
@@ -837,16 +888,16 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 257,
-      "end": 258,
+      "start": 279,
+      "end": 280,
       "loc": {
         "start": {
           "line": 10,
-          "column": 67
+          "column": 65
         },
         "end": {
           "line": 10,
-          "column": 68
+          "column": 66
         }
       }
     },
@@ -862,16 +913,16 @@
         "postfix": false,
         "binop": null
       },
-      "start": 258,
-      "end": 259,
+      "start": 280,
+      "end": 281,
       "loc": {
         "start": {
           "line": 10,
-          "column": 68
+          "column": 66
         },
         "end": {
           "line": 10,
-          "column": 69
+          "column": 67
         }
       }
     },
@@ -887,16 +938,16 @@
         "postfix": false,
         "binop": null
       },
-      "start": 260,
-      "end": 261,
+      "start": 281,
+      "end": 282,
       "loc": {
         "start": {
           "line": 10,
-          "column": 70
+          "column": 67
         },
         "end": {
           "line": 10,
-          "column": 71
+          "column": 68
         }
       }
     },
@@ -913,16 +964,32 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 262,
-      "end": 263,
+      "start": 282,
+      "end": 283,
       "loc": {
         "start": {
           "line": 10,
-          "column": 72
+          "column": 68
         },
         "end": {
           "line": 10,
-          "column": 73
+          "column": 69
+        }
+      }
+    },
+    {
+      "type": "CommentLine",
+      "value": " eslint-disable-line no-use-extend-native/no-use-extend-native",
+      "start": 284,
+      "end": 348,
+      "loc": {
+        "start": {
+          "line": 10,
+          "column": 70
+        },
+        "end": {
+          "line": 10,
+          "column": 134
         }
       }
     },
@@ -939,8 +1006,8 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 264,
-      "end": 264,
+      "start": 349,
+      "end": 349,
       "loc": {
         "start": {
           "line": 11,

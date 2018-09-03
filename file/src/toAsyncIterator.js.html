@@ -56,16 +56,16 @@
 </nav>
 
 <div class="content" data-ice="content"><h1 data-ice="title">src/toAsyncIterator.js</h1>
-<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">import toAsyncIterable from &apos;./toAsyncIterable&apos; ;
+<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">import toAsyncIterable from &apos;./toAsyncIterable&apos;;
 
 /**
  * Converts a tape to an async iterator.
  *
  * @function
- * @param {Tape} tape - the tape to read from
- * @returns {AsyncIterator}
+ * @param {Tape} tape - The tape to read from.
+ * @returns {AsyncIterator} The converted iterator.
  */
-export default tape =&gt; toAsyncIterable( tape )[Symbol.asyncIterator]( ) ;
+export default tape =&gt; toAsyncIterable(tape)[Symbol.asyncIterator](); // eslint-disable-line no-use-extend-native/no-use-extend-native
 </code></pre>
 
 </div>

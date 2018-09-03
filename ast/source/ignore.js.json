@@ -1,28 +1,28 @@
 {
   "type": "File",
   "start": 0,
-  "end": 319,
+  "end": 371,
   "loc": {
     "start": {
       "line": 1,
       "column": 0
     },
     "end": {
-      "line": 14,
+      "line": 13,
       "column": 0
     }
   },
   "program": {
     "type": "Program",
     "start": 0,
-    "end": 319,
+    "end": 371,
     "loc": {
       "start": {
         "line": 1,
         "column": 0
       },
       "end": {
-        "line": 14,
+        "line": 13,
         "column": 0
       }
     },
@@ -31,7 +31,7 @@
       {
         "type": "ImportDeclaration",
         "start": 0,
-        "end": 29,
+        "end": 28,
         "loc": {
           "start": {
             "line": 1,
@@ -39,7 +39,7 @@
           },
           "end": {
             "line": 1,
-            "column": 29
+            "column": 28
           }
         },
         "specifiers": [
@@ -99,8 +99,8 @@
       },
       {
         "type": "ImportDeclaration",
-        "start": 30,
-        "end": 59,
+        "start": 29,
+        "end": 57,
         "loc": {
           "start": {
             "line": 2,
@@ -108,14 +108,14 @@
           },
           "end": {
             "line": 2,
-            "column": 29
+            "column": 28
           }
         },
         "specifiers": [
           {
             "type": "ImportDefaultSpecifier",
-            "start": 37,
-            "end": 42,
+            "start": 36,
+            "end": 41,
             "loc": {
               "start": {
                 "line": 2,
@@ -128,8 +128,8 @@
             },
             "local": {
               "type": "Identifier",
-              "start": 37,
-              "end": 42,
+              "start": 36,
+              "end": 41,
               "loc": {
                 "start": {
                   "line": 2,
@@ -147,8 +147,8 @@
         ],
         "source": {
           "type": "StringLiteral",
-          "start": 48,
-          "end": 57,
+          "start": 47,
+          "end": 56,
           "loc": {
             "start": {
               "line": 2,
@@ -168,16 +168,16 @@
         "trailingComments": [
           {
             "type": "CommentBlock",
-            "value": "*\n * Filters a tape by ignoring a given set of tokens.\n * @param {Tape} tape - the tape to filter\n * @param {Iterable} toignore - the tokens to ignore\n ",
-            "start": 61,
-            "end": 217,
+            "value": "*\n * Filters a tape by ignoring a given set of tokens.\n * @param {Tape} tape - The tape to filter.\n * @param {Iterable} toignore - The tokens to ignore.\n * @returns {Tape} The input tape but with some tokens ignored.\n ",
+            "start": 59,
+            "end": 281,
             "loc": {
               "start": {
                 "line": 4,
                 "column": 0
               },
               "end": {
-                "line": 8,
+                "line": 9,
                 "column": 3
               }
             }
@@ -186,43 +186,43 @@
       },
       {
         "type": "ExportDefaultDeclaration",
-        "start": 218,
-        "end": 318,
+        "start": 282,
+        "end": 370,
         "loc": {
           "start": {
-            "line": 9,
+            "line": 10,
             "column": 0
           },
           "end": {
-            "line": 13,
+            "line": 12,
             "column": 1
           }
         },
         "declaration": {
           "type": "FunctionDeclaration",
-          "start": 233,
-          "end": 318,
+          "start": 297,
+          "end": 370,
           "loc": {
             "start": {
-              "line": 9,
+              "line": 10,
               "column": 15
             },
             "end": {
-              "line": 13,
+              "line": 12,
               "column": 1
             }
           },
           "id": {
             "type": "Identifier",
-            "start": 242,
-            "end": 248,
+            "start": 306,
+            "end": 312,
             "loc": {
               "start": {
-                "line": 9,
+                "line": 10,
                 "column": 24
               },
               "end": {
-                "line": 9,
+                "line": 10,
                 "column": 30
               },
               "identifierName": "ignore"
@@ -236,16 +236,16 @@
           "params": [
             {
               "type": "Identifier",
-              "start": 251,
-              "end": 255,
+              "start": 313,
+              "end": 317,
               "loc": {
                 "start": {
-                  "line": 9,
-                  "column": 33
+                  "line": 10,
+                  "column": 31
                 },
                 "end": {
-                  "line": 9,
-                  "column": 37
+                  "line": 10,
+                  "column": 35
                 },
                 "identifierName": "tape"
               },
@@ -253,16 +253,16 @@
             },
             {
               "type": "Identifier",
-              "start": 258,
-              "end": 266,
+              "start": 319,
+              "end": 327,
               "loc": {
                 "start": {
-                  "line": 9,
-                  "column": 40
+                  "line": 10,
+                  "column": 37
                 },
                 "end": {
-                  "line": 9,
-                  "column": 48
+                  "line": 10,
+                  "column": 45
                 },
                 "identifierName": "toignore"
               },
@@ -271,23 +271,23 @@
           ],
           "body": {
             "type": "BlockStatement",
-            "start": 269,
-            "end": 318,
+            "start": 329,
+            "end": 370,
             "loc": {
               "start": {
-                "line": 9,
-                "column": 51
+                "line": 10,
+                "column": 47
               },
               "end": {
-                "line": 13,
+                "line": 12,
                 "column": 1
               }
             },
             "body": [
               {
                 "type": "ReturnStatement",
-                "start": 273,
-                "end": 315,
+                "start": 332,
+                "end": 368,
                 "loc": {
                   "start": {
                     "line": 11,
@@ -295,13 +295,13 @@
                   },
                   "end": {
                     "line": 11,
-                    "column": 43
+                    "column": 37
                   }
                 },
                 "argument": {
                   "type": "CallExpression",
-                  "start": 280,
-                  "end": 313,
+                  "start": 339,
+                  "end": 367,
                   "loc": {
                     "start": {
                       "line": 11,
@@ -309,13 +309,13 @@
                     },
                     "end": {
                       "line": 11,
-                      "column": 41
+                      "column": 36
                     }
                   },
                   "callee": {
                     "type": "Identifier",
-                    "start": 280,
-                    "end": 285,
+                    "start": 339,
+                    "end": 344,
                     "loc": {
                       "start": {
                         "line": 11,
@@ -332,30 +332,30 @@
                   "arguments": [
                     {
                       "type": "CallExpression",
-                      "start": 287,
-                      "end": 311,
+                      "start": 345,
+                      "end": 366,
                       "loc": {
                         "start": {
                           "line": 11,
-                          "column": 15
+                          "column": 14
                         },
                         "end": {
                           "line": 11,
-                          "column": 39
+                          "column": 35
                         }
                       },
                       "callee": {
                         "type": "Identifier",
-                        "start": 287,
-                        "end": 292,
+                        "start": 345,
+                        "end": 350,
                         "loc": {
                           "start": {
                             "line": 11,
-                            "column": 15
+                            "column": 14
                           },
                           "end": {
                             "line": 11,
-                            "column": 20
+                            "column": 19
                           },
                           "identifierName": "split"
                         },
@@ -364,16 +364,16 @@
                       "arguments": [
                         {
                           "type": "Identifier",
-                          "start": 294,
-                          "end": 298,
+                          "start": 351,
+                          "end": 355,
                           "loc": {
                             "start": {
                               "line": 11,
-                              "column": 22
+                              "column": 20
                             },
                             "end": {
                               "line": 11,
-                              "column": 26
+                              "column": 24
                             },
                             "identifierName": "tape"
                           },
@@ -381,16 +381,16 @@
                         },
                         {
                           "type": "Identifier",
-                          "start": 301,
-                          "end": 309,
+                          "start": 357,
+                          "end": 365,
                           "loc": {
                             "start": {
                               "line": 11,
-                              "column": 29
+                              "column": 26
                             },
                             "end": {
                               "line": 11,
-                              "column": 37
+                              "column": 34
                             },
                             "identifierName": "toignore"
                           },
@@ -407,16 +407,16 @@
           "leadingComments": [
             {
               "type": "CommentBlock",
-              "value": "*\n * Filters a tape by ignoring a given set of tokens.\n * @param {Tape} tape - the tape to filter\n * @param {Iterable} toignore - the tokens to ignore\n ",
-              "start": 61,
-              "end": 217,
+              "value": "*\n * Filters a tape by ignoring a given set of tokens.\n * @param {Tape} tape - The tape to filter.\n * @param {Iterable} toignore - The tokens to ignore.\n * @returns {Tape} The input tape but with some tokens ignored.\n ",
+              "start": 59,
+              "end": 281,
               "loc": {
                 "start": {
                   "line": 4,
                   "column": 0
                 },
                 "end": {
-                  "line": 8,
+                  "line": 9,
                   "column": 3
                 }
               }
@@ -427,16 +427,16 @@
         "leadingComments": [
           {
             "type": "CommentBlock",
-            "value": "*\n * Filters a tape by ignoring a given set of tokens.\n * @param {Tape} tape - the tape to filter\n * @param {Iterable} toignore - the tokens to ignore\n ",
-            "start": 61,
-            "end": 217,
+            "value": "*\n * Filters a tape by ignoring a given set of tokens.\n * @param {Tape} tape - The tape to filter.\n * @param {Iterable} toignore - The tokens to ignore.\n * @returns {Tape} The input tape but with some tokens ignored.\n ",
+            "start": 59,
+            "end": 281,
             "loc": {
               "start": {
                 "line": 4,
                 "column": 0
               },
               "end": {
-                "line": 8,
+                "line": 9,
                 "column": 3
               }
             }
@@ -449,16 +449,16 @@
   "comments": [
     {
       "type": "CommentBlock",
-      "value": "*\n * Filters a tape by ignoring a given set of tokens.\n * @param {Tape} tape - the tape to filter\n * @param {Iterable} toignore - the tokens to ignore\n ",
-      "start": 61,
-      "end": 217,
+      "value": "*\n * Filters a tape by ignoring a given set of tokens.\n * @param {Tape} tape - The tape to filter.\n * @param {Iterable} toignore - The tokens to ignore.\n * @returns {Tape} The input tape but with some tokens ignored.\n ",
+      "start": 59,
+      "end": 281,
       "loc": {
         "start": {
           "line": 4,
           "column": 0
         },
         "end": {
-          "line": 8,
+          "line": 9,
           "column": 3
         }
       }
@@ -585,16 +585,16 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 28,
-      "end": 29,
+      "start": 27,
+      "end": 28,
       "loc": {
         "start": {
           "line": 1,
-          "column": 28
+          "column": 27
         },
         "end": {
           "line": 1,
-          "column": 29
+          "column": 28
         }
       }
     },
@@ -613,8 +613,8 @@
         "updateContext": null
       },
       "value": "import",
-      "start": 30,
-      "end": 36,
+      "start": 29,
+      "end": 35,
       "loc": {
         "start": {
           "line": 2,
@@ -639,8 +639,8 @@
         "binop": null
       },
       "value": "chain",
-      "start": 37,
-      "end": 42,
+      "start": 36,
+      "end": 41,
       "loc": {
         "start": {
           "line": 2,
@@ -665,8 +665,8 @@
         "binop": null
       },
       "value": "from",
-      "start": 43,
-      "end": 47,
+      "start": 42,
+      "end": 46,
       "loc": {
         "start": {
           "line": 2,
@@ -692,8 +692,8 @@
         "updateContext": null
       },
       "value": "./chain",
-      "start": 48,
-      "end": 57,
+      "start": 47,
+      "end": 56,
       "loc": {
         "start": {
           "line": 2,
@@ -718,31 +718,31 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 58,
-      "end": 59,
+      "start": 56,
+      "end": 57,
       "loc": {
         "start": {
           "line": 2,
-          "column": 28
+          "column": 27
         },
         "end": {
           "line": 2,
-          "column": 29
+          "column": 28
         }
       }
     },
     {
       "type": "CommentBlock",
-      "value": "*\n * Filters a tape by ignoring a given set of tokens.\n * @param {Tape} tape - the tape to filter\n * @param {Iterable} toignore - the tokens to ignore\n ",
-      "start": 61,
-      "end": 217,
+      "value": "*\n * Filters a tape by ignoring a given set of tokens.\n * @param {Tape} tape - The tape to filter.\n * @param {Iterable} toignore - The tokens to ignore.\n * @returns {Tape} The input tape but with some tokens ignored.\n ",
+      "start": 59,
+      "end": 281,
       "loc": {
         "start": {
           "line": 4,
           "column": 0
         },
         "end": {
-          "line": 8,
+          "line": 9,
           "column": 3
         }
       }
@@ -762,15 +762,15 @@
         "updateContext": null
       },
       "value": "export",
-      "start": 218,
-      "end": 224,
+      "start": 282,
+      "end": 288,
       "loc": {
         "start": {
-          "line": 9,
+          "line": 10,
           "column": 0
         },
         "end": {
-          "line": 9,
+          "line": 10,
           "column": 6
         }
       }
@@ -790,15 +790,15 @@
         "updateContext": null
       },
       "value": "default",
-      "start": 225,
-      "end": 232,
+      "start": 289,
+      "end": 296,
       "loc": {
         "start": {
-          "line": 9,
+          "line": 10,
           "column": 7
         },
         "end": {
-          "line": 9,
+          "line": 10,
           "column": 14
         }
       }
@@ -817,15 +817,15 @@
         "binop": null
       },
       "value": "function",
-      "start": 233,
-      "end": 241,
+      "start": 297,
+      "end": 305,
       "loc": {
         "start": {
-          "line": 9,
+          "line": 10,
           "column": 15
         },
         "end": {
-          "line": 9,
+          "line": 10,
           "column": 23
         }
       }
@@ -843,15 +843,15 @@
         "binop": null
       },
       "value": "ignore",
-      "start": 242,
-      "end": 248,
+      "start": 306,
+      "end": 312,
       "loc": {
         "start": {
-          "line": 9,
+          "line": 10,
           "column": 24
         },
         "end": {
-          "line": 9,
+          "line": 10,
           "column": 30
         }
       }
@@ -868,16 +868,16 @@
         "postfix": false,
         "binop": null
       },
-      "start": 249,
-      "end": 250,
+      "start": 312,
+      "end": 313,
       "loc": {
         "start": {
-          "line": 9,
-          "column": 31
+          "line": 10,
+          "column": 30
         },
         "end": {
-          "line": 9,
-          "column": 32
+          "line": 10,
+          "column": 31
         }
       }
     },
@@ -894,16 +894,16 @@
         "binop": null
       },
       "value": "tape",
-      "start": 251,
-      "end": 255,
+      "start": 313,
+      "end": 317,
       "loc": {
         "start": {
-          "line": 9,
-          "column": 33
+          "line": 10,
+          "column": 31
         },
         "end": {
-          "line": 9,
-          "column": 37
+          "line": 10,
+          "column": 35
         }
       }
     },
@@ -920,16 +920,16 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 256,
-      "end": 257,
+      "start": 317,
+      "end": 318,
       "loc": {
         "start": {
-          "line": 9,
-          "column": 38
+          "line": 10,
+          "column": 35
         },
         "end": {
-          "line": 9,
-          "column": 39
+          "line": 10,
+          "column": 36
         }
       }
     },
@@ -946,16 +946,16 @@
         "binop": null
       },
       "value": "toignore",
-      "start": 258,
-      "end": 266,
+      "start": 319,
+      "end": 327,
       "loc": {
         "start": {
-          "line": 9,
-          "column": 40
+          "line": 10,
+          "column": 37
         },
         "end": {
-          "line": 9,
-          "column": 48
+          "line": 10,
+          "column": 45
         }
       }
     },
@@ -971,16 +971,16 @@
         "postfix": false,
         "binop": null
       },
-      "start": 267,
-      "end": 268,
+      "start": 327,
+      "end": 328,
       "loc": {
         "start": {
-          "line": 9,
-          "column": 49
+          "line": 10,
+          "column": 45
         },
         "end": {
-          "line": 9,
-          "column": 50
+          "line": 10,
+          "column": 46
         }
       }
     },
@@ -996,16 +996,16 @@
         "postfix": false,
         "binop": null
       },
-      "start": 269,
-      "end": 270,
+      "start": 329,
+      "end": 330,
       "loc": {
         "start": {
-          "line": 9,
-          "column": 51
+          "line": 10,
+          "column": 47
         },
         "end": {
-          "line": 9,
-          "column": 52
+          "line": 10,
+          "column": 48
         }
       }
     },
@@ -1024,8 +1024,8 @@
         "updateContext": null
       },
       "value": "return",
-      "start": 273,
-      "end": 279,
+      "start": 332,
+      "end": 338,
       "loc": {
         "start": {
           "line": 11,
@@ -1050,8 +1050,8 @@
         "binop": null
       },
       "value": "chain",
-      "start": 280,
-      "end": 285,
+      "start": 339,
+      "end": 344,
       "loc": {
         "start": {
           "line": 11,
@@ -1075,8 +1075,8 @@
         "postfix": false,
         "binop": null
       },
-      "start": 285,
-      "end": 286,
+      "start": 344,
+      "end": 345,
       "loc": {
         "start": {
           "line": 11,
@@ -1101,16 +1101,16 @@
         "binop": null
       },
       "value": "split",
-      "start": 287,
-      "end": 292,
+      "start": 345,
+      "end": 350,
       "loc": {
         "start": {
           "line": 11,
-          "column": 15
+          "column": 14
         },
         "end": {
           "line": 11,
-          "column": 20
+          "column": 19
         }
       }
     },
@@ -1126,16 +1126,16 @@
         "postfix": false,
         "binop": null
       },
-      "start": 292,
-      "end": 293,
+      "start": 350,
+      "end": 351,
       "loc": {
         "start": {
           "line": 11,
-          "column": 20
+          "column": 19
         },
         "end": {
           "line": 11,
-          "column": 21
+          "column": 20
         }
       }
     },
@@ -1152,16 +1152,16 @@
         "binop": null
       },
       "value": "tape",
-      "start": 294,
-      "end": 298,
+      "start": 351,
+      "end": 355,
       "loc": {
         "start": {
           "line": 11,
-          "column": 22
+          "column": 20
         },
         "end": {
           "line": 11,
-          "column": 26
+          "column": 24
         }
       }
     },
@@ -1178,16 +1178,16 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 299,
-      "end": 300,
+      "start": 355,
+      "end": 356,
       "loc": {
         "start": {
           "line": 11,
-          "column": 27
+          "column": 24
         },
         "end": {
           "line": 11,
-          "column": 28
+          "column": 25
         }
       }
     },
@@ -1204,16 +1204,16 @@
         "binop": null
       },
       "value": "toignore",
-      "start": 301,
-      "end": 309,
+      "start": 357,
+      "end": 365,
       "loc": {
         "start": {
           "line": 11,
-          "column": 29
+          "column": 26
         },
         "end": {
           "line": 11,
-          "column": 37
+          "column": 34
         }
       }
     },
@@ -1229,16 +1229,16 @@
         "postfix": false,
         "binop": null
       },
-      "start": 310,
-      "end": 311,
+      "start": 365,
+      "end": 366,
       "loc": {
         "start": {
           "line": 11,
-          "column": 38
+          "column": 34
         },
         "end": {
           "line": 11,
-          "column": 39
+          "column": 35
         }
       }
     },
@@ -1254,16 +1254,16 @@
         "postfix": false,
         "binop": null
       },
-      "start": 312,
-      "end": 313,
+      "start": 366,
+      "end": 367,
       "loc": {
         "start": {
           "line": 11,
-          "column": 40
+          "column": 35
         },
         "end": {
           "line": 11,
-          "column": 41
+          "column": 36
         }
       }
     },
@@ -1280,16 +1280,16 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 314,
-      "end": 315,
+      "start": 367,
+      "end": 368,
       "loc": {
         "start": {
           "line": 11,
-          "column": 42
+          "column": 36
         },
         "end": {
           "line": 11,
-          "column": 43
+          "column": 37
         }
       }
     },
@@ -1305,15 +1305,15 @@
         "postfix": false,
         "binop": null
       },
-      "start": 317,
-      "end": 318,
+      "start": 369,
+      "end": 370,
       "loc": {
         "start": {
-          "line": 13,
+          "line": 12,
           "column": 0
         },
         "end": {
-          "line": 13,
+          "line": 12,
           "column": 1
         }
       }
@@ -1331,15 +1331,15 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 319,
-      "end": 319,
+      "start": 371,
+      "end": 371,
       "loc": {
         "start": {
-          "line": 14,
+          "line": 13,
           "column": 0
         },
         "end": {
-          "line": 14,
+          "line": 13,
           "column": 0
         }
       }

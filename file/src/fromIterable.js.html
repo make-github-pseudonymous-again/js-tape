@@ -56,16 +56,16 @@
 </nav>
 
 <div class="content" data-ice="content"><h1 data-ice="title">src/fromIterable.js</h1>
-<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">import fromIterator from &apos;./fromIterator&apos; ;
+<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">import fromIterator from &apos;./fromIterator&apos;;
 
 /**
  * Converts an iterable to a tape.
  *
  * @function
- * @param {Iterable} _iterable - the iterable to convert
- * @returns {Tape}
+ * @param {Iterable} iterable - The iterable to convert.
+ * @returns {Tape} The converted tape.
  */
-export default _iterable =&gt; fromIterator( _iterable[Symbol.iterator]( ) ) ;
+export default iterable =&gt; fromIterator(iterable[Symbol.iterator]());
 </code></pre>
 
 </div>
