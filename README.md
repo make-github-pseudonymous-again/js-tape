@@ -10,7 +10,7 @@ See [docs](https://aureooms.github.io/js-tape/index.html).
 ```js
 const stdin = fs.createReadStream( '/dev/stdin' , { encoding : 'utf8'} ) ;
 const myTape = tape.fromReadStream( stdin ) ;
-for await ( const character of tape ) ... ;
+for await ( const character of myTape ) ... ;
 ```
 
 [![License](https://img.shields.io/github/license/aureooms/js-tape.svg)](https://raw.githubusercontent.com/aureooms/js-tape/master/LICENSE)
