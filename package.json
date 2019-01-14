@@ -42,7 +42,7 @@
     "esdoc-standard-plugin": "1.0.0",
     "np": "3.1.0",
     "nyc": "13.1.0",
-    "xo": "0.23.0"
+    "xo": "0.24.0"
   },
   "files": [
     "lib"
