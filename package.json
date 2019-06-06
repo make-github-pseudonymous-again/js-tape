@@ -4,6 +4,12 @@
   "version": "7.0.0",
   "author": "aureooms",
   "ava": {
+    "sources": [
+      "src/**/*"
+    ],
+    "files": [
+      "test/src/**/*"
+    ],
     "require": [
       "@babel/polyfill",
       "@babel/register"
@@ -33,7 +39,7 @@
     "@babel/polyfill": "7.4.4",
     "@babel/preset-env": "7.4.5",
     "@babel/register": "7.4.4",
-    "ava": "1.4.1",
+    "ava": "2.0.0",
     "coveralls": "3.0.4",
     "esdoc": "1.1.0",
     "esdoc-ecmascript-proposal-plugin": "1.0.0",
@@ -67,7 +73,7 @@
     "esdoc": "esdoc",
     "prepare": "npm run build",
     "release": "np",
-    "test": "xo && ava ./test/src"
+    "test": "xo && ava"
   },
   "xo": {
     "prettier": true,
