@@ -7,4 +7,4 @@ import fromIterator from './fromIterator';
  * @param {AsyncIterable} _iterable - The iterable to convert.
  * @returns {Tape} The converted tape.
  */
-export default _iterable => fromIterator(_iterable[Symbol.asyncIterator]()); // eslint-disable-line no-use-extend-native/no-use-extend-native
+export default _iterable => fromIterator(_iterable[Symbol.asyncIterator]());

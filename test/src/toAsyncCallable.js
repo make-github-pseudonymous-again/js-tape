@@ -10,6 +10,6 @@ test('toAsyncCallable', async t => {
 	const myTape1 = fromString(input);
 	const mycallable = toAsyncCallable(myTape1);
 	const myTape2 = fromCallable(mycallable);
-	t.deepEqual((await mycallable()).value, '\n');
-	t.deepEqual('\n' + (await toString(myTape2)), input);
+	t.is((await mycallable()).value, '\n');
+	t.is('\n' + (await toString(myTape2)), input);
 });

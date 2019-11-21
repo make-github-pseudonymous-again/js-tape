@@ -15,7 +15,7 @@ test('Can iterate on a Tape object', async t => {
 	// NB: needs async test
 	// for await ( const token of myTape ) t.is( token , 'x' ) ;
 
-	const it = myTape[Symbol.asyncIterator](); // eslint-disable-line no-use-extend-native/no-use-extend-native
+	const it = myTape[Symbol.asyncIterator]();
 
 	const {value: a} = await it.next();
 	t.is(a, 'a');
