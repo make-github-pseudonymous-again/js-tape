@@ -7,4 +7,4 @@ import Tape from './Tape';
  * @param {Callable} callable - The callable to convert.
  * @returns {Tape} The converted tape.
  */
-export default callable => new Tape(callable);
+export default (callable) => new Tape(callable);

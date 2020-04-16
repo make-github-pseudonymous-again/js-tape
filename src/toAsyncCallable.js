@@ -7,7 +7,7 @@ import toAsyncIterator from './toAsyncIterator';
  * @param {Tape} tape - The tape to read from.
  * @return {Callable} The converted callable.
  */
-export default tape => {
+export default (tape) => {
 	const it = toAsyncIterator(tape);
 	return it.next.bind(it);
 };

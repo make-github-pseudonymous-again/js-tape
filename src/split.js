@@ -32,7 +32,7 @@ export async function* _split(tape, sep) {
 		if (_sep.has(token)) continue;
 
 		const group = fromAsyncIterable(
-			(async function*() {
+			(async function* () {
 				yield token;
 
 				while (true) {

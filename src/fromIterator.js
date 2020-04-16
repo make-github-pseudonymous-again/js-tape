@@ -7,4 +7,4 @@ import fromCallable from './fromCallable';
  * @param {Iterator} iterator - The iterator to convert.
  * @returns {Tape} The converted tape.
  */
-export default iterator => fromCallable(iterator.next.bind(iterator));
+export default (iterator) => fromCallable(iterator.next.bind(iterator));

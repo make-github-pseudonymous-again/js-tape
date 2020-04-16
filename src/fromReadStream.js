@@ -20,4 +20,4 @@ export async function* _fromReadStream(readStream) {
  * @param {ReadStream} readStream - The ReadStream object to convert.
  * @returns {Tape} The converted tape.
  */
-export default readStream => fromAsyncIterable(_fromReadStream(readStream));
+export default (readStream) => fromAsyncIterable(_fromReadStream(readStream));

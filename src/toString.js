@@ -7,4 +7,4 @@ import toArray from './toArray';
  * @param {Tape} tape - The tape to read from.
  * @returns {String} The converted string.
  */
-export default async tape => (await toArray(tape)).join('');
+export default async (tape) => (await toArray(tape)).join('');

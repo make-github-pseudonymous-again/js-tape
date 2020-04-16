@@ -5,7 +5,7 @@ import fromString from '../../src/fromString';
 /**
  * @test {Tape#[Symbol.asyncIterator]}
  */
-test('Can iterate on a Tape object', async t => {
+test('Can iterate on a Tape object', async (t) => {
 	const input = 'abcd';
 	t.plan(input.length + 1);
 

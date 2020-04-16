@@ -6,7 +6,7 @@ import {fromString, skip} from '../../src';
  * @test {fromString}
  * @test {skip}
  */
-test('can skip tokens from tape', async t => {
+test('can skip tokens from tape', async (t) => {
 	const input = '\n\n\n    1 ,\t22\n, 333\t,\n-44 ,\t-5 \t\n  \t';
 	const tape = fromString(input);
 	t.is(await skip(tape, ' \t\n'), '1');

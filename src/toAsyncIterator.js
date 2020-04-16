@@ -7,4 +7,4 @@ import toAsyncIterable from './toAsyncIterable';
  * @param {Tape} tape - The tape to read from.
  * @returns {AsyncIterator} The converted iterator.
  */
-export default tape => toAsyncIterable(tape)[Symbol.asyncIterator]();
+export default (tape) => toAsyncIterable(tape)[Symbol.asyncIterator]();

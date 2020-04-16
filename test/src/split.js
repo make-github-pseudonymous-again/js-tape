@@ -5,7 +5,7 @@ import {fromString, split, toString} from '../../src';
 /**
  * @test {split}
  */
-test('can split tape', async t => {
+test('can split tape', async (t) => {
 	const input = '\n\n\n    1 ,\t22\n, 333\t,\n-44 ,\t-5 \t\n  \t';
 	let myTape = fromString(input);
 	myTape = split(myTape, ' \t\n');

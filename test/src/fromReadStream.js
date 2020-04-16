@@ -4,7 +4,7 @@ import test from 'ava';
 import fromReadStream from '../../src/fromReadStream';
 import toString from '../../src/toString';
 
-test('unread token', async t => {
+test('unread token', async (t) => {
 	const filepath = 'test/data/hello-world.txt';
 	const encoding = 'utf8';
 	const expected = fs.readFileSync(filepath, encoding);

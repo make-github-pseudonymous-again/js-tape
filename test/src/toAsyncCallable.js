@@ -5,7 +5,7 @@ import {fromString, toAsyncCallable, fromCallable, toString} from '../../src';
 /**
  * @test {toAsyncCallable}
  */
-test('toAsyncCallable', async t => {
+test('toAsyncCallable', async (t) => {
 	const input = '\n\n\n    1 ,\t22\n, 333\t,\n-44 ,\t-5 \t\n  \t';
 	const myTape1 = fromString(input);
 	const mycallable = toAsyncCallable(myTape1);
