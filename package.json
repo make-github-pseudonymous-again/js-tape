@@ -83,6 +83,7 @@
       "unicorn"
     ],
     "rules": {
+      "import/no-anonymous-default-export": "off",
       "unicorn/filename-case": [
         "error",
         {
