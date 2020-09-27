@@ -22,8 +22,8 @@ for await ( const character of myTape ) ... ;
 [![Downloads](https://img.shields.io/npm/dm/@aureooms/js-tape.svg)](https://www.npmjs.org/package/@aureooms/js-tape)
 
 [![Code issues](https://img.shields.io/codeclimate/issues/aureooms/js-tape.svg)](https://codeclimate.com/github/aureooms/js-tape/issues)
-[![Code maintainability](https://img.shields.io/codeclimate/maintainability/github/aureooms/js-tape.svg)](https://codeclimate.com/github/aureooms/js-tape/trends/churn)
-[![Code coverage (cov)](https://img.shields.io/codecov/c/github/aureooms/js-tape.svg)](https://codecov.io/gh/aureooms/js-tape)
-[![Code coverage (clim)](https://img.shields.io/codeclimate/coverage-letter/aureooms/js-tape.svg)](https://codeclimate.com/github/aureooms/js-tape/trends/test_coverage_new_code)
+[![Code maintainability](https://img.shields.io/codeclimate/maintainability/aureooms/js-tape.svg)](https://codeclimate.com/github/aureooms/js-tape/trends/churn)
+[![Code coverage (cov)](https://img.shields.io/codecov/c/gh/aureooms/js-tape/master.svg)](https://codecov.io/gh/aureooms/js-tape)
 [![Code technical debt](https://img.shields.io/codeclimate/tech-debt/aureooms/js-tape.svg)](https://codeclimate.com/github/aureooms/js-tape/trends/technical_debt)
 [![Documentation](https://aureooms.github.io/js-tape/badge.svg)](https://aureooms.github.io/js-tape/source.html)
+[![Package size](https://img.shields.io/bundlephobia/minzip/@aureooms/js-tape)](https://bundlephobia.com/result?p=@aureooms/js-tape)
