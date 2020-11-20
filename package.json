@@ -85,10 +85,6 @@
   "sideEffects": false,
   "xo": {
     "prettier": true,
-    "ignore": [
-      "lib",
-      "doc"
-    ],
     "plugins": [
       "unicorn"
     ],
@@ -113,6 +109,10 @@
           ]
         }
       }
+    ],
+    "ignores": [
+      "lib",
+      "doc"
     ]
   }
 }
