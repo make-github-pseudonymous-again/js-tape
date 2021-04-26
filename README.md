@@ -1,8 +1,8 @@
-[@aureooms/js-tape](https://aureooms.github.io/js-tape)
+[@aureooms/js-tape](https://make-github-pseudonymous-again.github.io/js-tape)
 ==
 
 Tape library for JavaScript. Served with asynchronous goodness.
-See [docs](https://aureooms.github.io/js-tape/index.html).
+See [docs](https://make-github-pseudonymous-again.github.io/js-tape/index.html).
 
 > :warning: The code requires `regeneratorRuntime` to be defined, for instance by importing
 > [regenerator-runtime/runtime](https://www.npmjs.com/package/regenerator-runtime).
@@ -25,5 +25,5 @@ for await ( const character of myTape ) ... ;
 [![Code maintainability](https://img.shields.io/codeclimate/maintainability/aureooms/js-tape.svg)](https://codeclimate.com/github/aureooms/js-tape/trends/churn)
 [![Code coverage (cov)](https://img.shields.io/codecov/c/gh/aureooms/js-tape/main.svg)](https://codecov.io/gh/aureooms/js-tape)
 [![Code technical debt](https://img.shields.io/codeclimate/tech-debt/aureooms/js-tape.svg)](https://codeclimate.com/github/aureooms/js-tape/trends/technical_debt)
-[![Documentation](https://aureooms.github.io/js-tape/badge.svg)](https://aureooms.github.io/js-tape/source.html)
+[![Documentation](https://make-github-pseudonymous-again.github.io/js-tape/badge.svg)](https://make-github-pseudonymous-again.github.io/js-tape/source.html)
 [![Package size](https://img.shields.io/bundlephobia/minzip/@aureooms/js-tape)](https://bundlephobia.com/result?p=@aureooms/js-tape)
