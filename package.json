@@ -30,7 +30,7 @@
     }
   },
   "bugs": {
-    "url": "https://github.com/aureooms/js-tape/issues"
+    "url": "https://github.com/make-github-pseudonymous-again/js-tape/issues"
   },
   "dependencies": {},
   "devDependencies": {
@@ -69,7 +69,7 @@
   "main": "lib/index.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/aureooms/js-tape"
+    "url": "https://github.com/make-github-pseudonymous-again/js-tape"
   },
   "scripts": {
     "build": "babel --delete-dir-on-start --env-name production src -d lib",
