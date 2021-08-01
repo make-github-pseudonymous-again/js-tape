@@ -13,32 +13,40 @@ import tape from '@async-abstraction/tape' ;
 ## `fromString`
 
 ```js
-import tape from '@async-abstraction/tape' ;
-const myTape = tape.fromString( 'abracadabra' ) ;
+import {
+  fromString,
+  fromArray,
+  fromCallable,
+  fromIterable,
+  fromAsyncIterable,
+  fromIterator,
+  fromReadStream,
+} from '@async-abstraction/tape' ;
+const tape = fromString( 'abracadabra' ) ;
 // // OR
-// const myTape = tape.fromArray( ... ) ;
-// const myTape = tape.fromCallable( ... ) ;
-// const myTape = tape.fromIterable( ... ) ;
-// const myTape = tape.fromAsyncIterable( ... ) ;
-// const myTape = tape.fromIterator( ... ) ;
-// const myTape = tape.fromReadStream( ... ) ;
+// const tape = fromArray( ... ) ;
+// const tape = fromCallable( ... ) ;
+// const tape = fromIterable( ... ) ;
+// const tape = fromAsyncIterable( ... ) ;
+// const tape = fromIterator( ... ) ;
+// const tape = fromReadStream( ... ) ;
 ```
 
 
 ## `read` and `unread`
 
 ```js
-myTape.read()
-      .then( character => console.log(character) ) // 'a'
-      .then( () => myTape.read() )
-      .then( character => console.log(character) ) // 'b'
-      .then( () => myTape.unread('Z') )
-      .then( () => myTape.unread('X') )
-      .then( () => myTape.read() )
-      .then( character => console.log(character) ) // 'X'
-      .then( () => myTape.read() )
-      .then( character => console.log(character) ) // 'Z'
-      .then( () => myTape.read() )
-      .then( character => console.log(character) ) // 'r'
-      // ...
+tape.read()
+  .then( character => console.log(character) ) // 'a'
+  .then( () => tape.read() )
+  .then( character => console.log(character) ) // 'b'
+  .then( () => tape.unread('Z') )
+  .then( () => tape.unread('X') )
+  .then( () => tape.read() )
+  .then( character => console.log(character) ) // 'X'
+  .then( () => tape.read() )
+  .then( character => console.log(character) ) // 'Z'
+  .then( () => tape.read() )
+  .then( character => console.log(character) ) // 'r'
+  // ...
 ```

@@ -9,9 +9,10 @@ See [docs](https://async-abstraction.github.io/tape/index.html).
 > [regenerator-runtime/runtime](https://www.npmjs.com/package/regenerator-runtime).
 
 ```js
+import { fromReadStream } from '@async-abstraction/tape' ;
 const stdin = fs.createReadStream( '/dev/stdin' , { encoding : 'utf8'} ) ;
-const myTape = tape.fromReadStream( stdin ) ;
-for await ( const character of myTape ) ... ;
+const tape = fromReadStream( stdin ) ;
+for await ( const character of tape ) ... ;
 ```
 
 [![License](https://img.shields.io/github/license/async-abstraction/tape.svg)](https://raw.githubusercontent.com/async-abstraction/tape/main/LICENSE)

@@ -1,75 +1,23 @@
-import eof from './eof.js';
-import Tape from './Tape.js';
-import asyncIterableChain from './asyncIterableChain.js';
-import asyncIterableMap from './asyncIterableMap.js';
-import asyncIterableToArray from './asyncIterableToArray.js';
-import chain from './chain.js';
-import exhaust from './exhaust.js';
-import fromArray from './fromArray.js';
-import fromAsyncIterable from './fromAsyncIterable.js';
-import fromCallable from './fromCallable.js';
-import fromIterable from './fromIterable.js';
-import fromIterator from './fromIterator.js';
-import fromReadStream from './fromReadStream.js';
-import fromString from './fromString.js';
-import ignore from './ignore.js';
-import map from './map.js';
-import skip from './skip.js';
-import split from './split.js';
-import toArray from './toArray.js';
-import toAsyncCallable from './toAsyncCallable.js';
-import toAsyncIterable from './toAsyncIterable.js';
-import toAsyncIterator from './toAsyncIterator.js';
-import toString from './toString.js';
-
-export default {
-	eof,
-	Tape,
-	asyncIterableChain,
-	asyncIterableMap,
-	asyncIterableToArray,
-	chain,
-	exhaust,
-	fromArray,
-	fromAsyncIterable,
-	fromCallable,
-	fromIterable,
-	fromIterator,
-	fromReadStream,
-	fromString,
-	ignore,
-	map,
-	skip,
-	split,
-	toArray,
-	toAsyncCallable,
-	toAsyncIterable,
-	toAsyncIterator,
-	toString
-};
-
-export {
-	eof,
-	Tape,
-	asyncIterableChain,
-	asyncIterableMap,
-	asyncIterableToArray,
-	chain,
-	exhaust,
-	fromArray,
-	fromAsyncIterable,
-	fromCallable,
-	fromIterable,
-	fromIterator,
-	fromReadStream,
-	fromString,
-	ignore,
-	map,
-	skip,
-	split,
-	toArray,
-	toAsyncCallable,
-	toAsyncIterable,
-	toAsyncIterator,
-	toString
-};
+export {default as Tape} from './Tape.js';
+export {default as asyncIterableChain} from './asyncIterableChain.js';
+export {default as asyncIterableMap} from './asyncIterableMap.js';
+export {default as asyncIterableToArray} from './asyncIterableToArray.js';
+export {default as chain} from './chain.js';
+export {default as eof} from './eof.js';
+export {default as exhaust} from './exhaust.js';
+export {default as fromArray} from './fromArray.js';
+export {default as fromAsyncIterable} from './fromAsyncIterable.js';
+export {default as fromCallable} from './fromCallable.js';
+export {default as fromIterable} from './fromIterable.js';
+export {default as fromIterator} from './fromIterator.js';
+export {default as fromReadStream} from './fromReadStream.js';
+export {default as fromString} from './fromString.js';
+export {default as ignore} from './ignore.js';
+export {default as map} from './map.js';
+export {default as skip} from './skip.js';
+export {default as split} from './split.js';
+export {default as toArray} from './toArray.js';
+export {default as toAsyncCallable} from './toAsyncCallable.js';
+export {default as toAsyncIterable} from './toAsyncIterable.js';
+export {default as toAsyncIterator} from './toAsyncIterator.js';
+export {default as toString} from './toString.js';
