@@ -1,134 +1,134 @@
 window.esdocSearchIndex = [
   [
-    "@aureooms/js-tape/src/tape.js~tape",
+    "@async-abstraction/tape/src/tape.js~tape",
     "class/src/Tape.js~Tape.html",
-    "<span>Tape</span> <span class=\"search-result-import-path\">@aureooms/js-tape/src/Tape.js</span>",
+    "<span>Tape</span> <span class=\"search-result-import-path\">@async-abstraction/tape/src/Tape.js</span>",
     "class"
   ],
   [
-    "@aureooms/js-tape/src/fromreadstream.js~_fromreadstream",
+    "@async-abstraction/tape/src/fromreadstream.js~_fromreadstream",
     "function/index.html#static-function-_fromReadStream",
-    "<span>_fromReadStream</span> <span class=\"search-result-import-path\">@aureooms/js-tape/src/fromReadStream.js</span>",
+    "<span>_fromReadStream</span> <span class=\"search-result-import-path\">@async-abstraction/tape/src/fromReadStream.js</span>",
     "function"
   ],
   [
-    "@aureooms/js-tape/src/split.js~_split",
+    "@async-abstraction/tape/src/split.js~_split",
     "function/index.html#static-function-_split",
-    "<span>_split</span> <span class=\"search-result-import-path\">@aureooms/js-tape/src/split.js</span>",
+    "<span>_split</span> <span class=\"search-result-import-path\">@async-abstraction/tape/src/split.js</span>",
     "function"
   ],
   [
-    "@aureooms/js-tape/src/asynciterablechain.js~asynciterablechain",
+    "@async-abstraction/tape/src/asynciterablechain.js~asynciterablechain",
     "function/index.html#static-function-asyncIterableChain",
-    "<span>asyncIterableChain</span> <span class=\"search-result-import-path\">@aureooms/js-tape/src/asyncIterableChain.js</span>",
+    "<span>asyncIterableChain</span> <span class=\"search-result-import-path\">@async-abstraction/tape/src/asyncIterableChain.js</span>",
     "function"
   ],
   [
-    "@aureooms/js-tape/src/asynciterablemap.js~asynciterablemap",
+    "@async-abstraction/tape/src/asynciterablemap.js~asynciterablemap",
     "function/index.html#static-function-asyncIterableMap",
-    "<span>asyncIterableMap</span> <span class=\"search-result-import-path\">@aureooms/js-tape/src/asyncIterableMap.js</span>",
+    "<span>asyncIterableMap</span> <span class=\"search-result-import-path\">@async-abstraction/tape/src/asyncIterableMap.js</span>",
     "function"
   ],
   [
-    "@aureooms/js-tape/src/asynciterabletoarray.js~asynciterabletoarray",
+    "@async-abstraction/tape/src/asynciterabletoarray.js~asynciterabletoarray",
     "function/index.html#static-function-asyncIterableToArray",
-    "<span>asyncIterableToArray</span> <span class=\"search-result-import-path\">@aureooms/js-tape/src/asyncIterableToArray.js</span>",
+    "<span>asyncIterableToArray</span> <span class=\"search-result-import-path\">@async-abstraction/tape/src/asyncIterableToArray.js</span>",
     "function"
   ],
   [
-    "@aureooms/js-tape/src/chain.js~chain",
+    "@async-abstraction/tape/src/chain.js~chain",
     "function/index.html#static-function-chain",
-    "<span>chain</span> <span class=\"search-result-import-path\">@aureooms/js-tape/src/chain.js</span>",
+    "<span>chain</span> <span class=\"search-result-import-path\">@async-abstraction/tape/src/chain.js</span>",
     "function"
   ],
   [
-    "@aureooms/js-tape/src/exhaust.js~exhaust",
+    "@async-abstraction/tape/src/exhaust.js~exhaust",
     "function/index.html#static-function-exhaust",
-    "<span>exhaust</span> <span class=\"search-result-import-path\">@aureooms/js-tape/src/exhaust.js</span>",
+    "<span>exhaust</span> <span class=\"search-result-import-path\">@async-abstraction/tape/src/exhaust.js</span>",
     "function"
   ],
   [
-    "@aureooms/js-tape/src/fromasynciterable.js~fromasynciterable",
+    "@async-abstraction/tape/src/fromasynciterable.js~fromasynciterable",
     "function/index.html#static-function-fromAsyncIterable",
-    "<span>fromAsyncIterable</span> <span class=\"search-result-import-path\">@aureooms/js-tape/src/fromAsyncIterable.js</span>",
+    "<span>fromAsyncIterable</span> <span class=\"search-result-import-path\">@async-abstraction/tape/src/fromAsyncIterable.js</span>",
     "function"
   ],
   [
-    "@aureooms/js-tape/src/fromcallable.js~fromcallable",
+    "@async-abstraction/tape/src/fromcallable.js~fromcallable",
     "function/index.html#static-function-fromCallable",
-    "<span>fromCallable</span> <span class=\"search-result-import-path\">@aureooms/js-tape/src/fromCallable.js</span>",
+    "<span>fromCallable</span> <span class=\"search-result-import-path\">@async-abstraction/tape/src/fromCallable.js</span>",
     "function"
   ],
   [
-    "@aureooms/js-tape/src/fromiterable.js~fromiterable",
+    "@async-abstraction/tape/src/fromiterable.js~fromiterable",
     "function/index.html#static-function-fromIterable",
-    "<span>fromIterable</span> <span class=\"search-result-import-path\">@aureooms/js-tape/src/fromIterable.js</span>",
+    "<span>fromIterable</span> <span class=\"search-result-import-path\">@async-abstraction/tape/src/fromIterable.js</span>",
     "function"
   ],
   [
-    "@aureooms/js-tape/src/fromiterator.js~fromiterator",
+    "@async-abstraction/tape/src/fromiterator.js~fromiterator",
     "function/index.html#static-function-fromIterator",
-    "<span>fromIterator</span> <span class=\"search-result-import-path\">@aureooms/js-tape/src/fromIterator.js</span>",
+    "<span>fromIterator</span> <span class=\"search-result-import-path\">@async-abstraction/tape/src/fromIterator.js</span>",
     "function"
   ],
   [
-    "@aureooms/js-tape/src/fromreadstream.js~fromreadstream",
+    "@async-abstraction/tape/src/fromreadstream.js~fromreadstream",
     "function/index.html#static-function-fromReadStream",
-    "<span>fromReadStream</span> <span class=\"search-result-import-path\">@aureooms/js-tape/src/fromReadStream.js</span>",
+    "<span>fromReadStream</span> <span class=\"search-result-import-path\">@async-abstraction/tape/src/fromReadStream.js</span>",
     "function"
   ],
   [
-    "@aureooms/js-tape/src/ignore.js~ignore",
+    "@async-abstraction/tape/src/ignore.js~ignore",
     "function/index.html#static-function-ignore",
-    "<span>ignore</span> <span class=\"search-result-import-path\">@aureooms/js-tape/src/ignore.js</span>",
+    "<span>ignore</span> <span class=\"search-result-import-path\">@async-abstraction/tape/src/ignore.js</span>",
     "function"
   ],
   [
-    "@aureooms/js-tape/src/map.js~map",
+    "@async-abstraction/tape/src/map.js~map",
     "function/index.html#static-function-map",
-    "<span>map</span> <span class=\"search-result-import-path\">@aureooms/js-tape/src/map.js</span>",
+    "<span>map</span> <span class=\"search-result-import-path\">@async-abstraction/tape/src/map.js</span>",
     "function"
   ],
   [
-    "@aureooms/js-tape/src/skip.js~skip",
+    "@async-abstraction/tape/src/skip.js~skip",
     "function/index.html#static-function-skip",
-    "<span>skip</span> <span class=\"search-result-import-path\">@aureooms/js-tape/src/skip.js</span>",
+    "<span>skip</span> <span class=\"search-result-import-path\">@async-abstraction/tape/src/skip.js</span>",
     "function"
   ],
   [
-    "@aureooms/js-tape/src/split.js~split",
+    "@async-abstraction/tape/src/split.js~split",
     "function/index.html#static-function-split",
-    "<span>split</span> <span class=\"search-result-import-path\">@aureooms/js-tape/src/split.js</span>",
+    "<span>split</span> <span class=\"search-result-import-path\">@async-abstraction/tape/src/split.js</span>",
     "function"
   ],
   [
-    "@aureooms/js-tape/src/toarray.js~toarray",
+    "@async-abstraction/tape/src/toarray.js~toarray",
     "function/index.html#static-function-toArray",
-    "<span>toArray</span> <span class=\"search-result-import-path\">@aureooms/js-tape/src/toArray.js</span>",
+    "<span>toArray</span> <span class=\"search-result-import-path\">@async-abstraction/tape/src/toArray.js</span>",
     "function"
   ],
   [
-    "@aureooms/js-tape/src/toasynccallable.js~toasynccallable",
+    "@async-abstraction/tape/src/toasynccallable.js~toasynccallable",
     "function/index.html#static-function-toAsyncCallable",
-    "<span>toAsyncCallable</span> <span class=\"search-result-import-path\">@aureooms/js-tape/src/toAsyncCallable.js</span>",
+    "<span>toAsyncCallable</span> <span class=\"search-result-import-path\">@async-abstraction/tape/src/toAsyncCallable.js</span>",
     "function"
   ],
   [
-    "@aureooms/js-tape/src/toasynciterable.js~toasynciterable",
+    "@async-abstraction/tape/src/toasynciterable.js~toasynciterable",
     "function/index.html#static-function-toAsyncIterable",
-    "<span>toAsyncIterable</span> <span class=\"search-result-import-path\">@aureooms/js-tape/src/toAsyncIterable.js</span>",
+    "<span>toAsyncIterable</span> <span class=\"search-result-import-path\">@async-abstraction/tape/src/toAsyncIterable.js</span>",
     "function"
   ],
   [
-    "@aureooms/js-tape/src/toasynciterator.js~toasynciterator",
+    "@async-abstraction/tape/src/toasynciterator.js~toasynciterator",
     "function/index.html#static-function-toAsyncIterator",
-    "<span>toAsyncIterator</span> <span class=\"search-result-import-path\">@aureooms/js-tape/src/toAsyncIterator.js</span>",
+    "<span>toAsyncIterator</span> <span class=\"search-result-import-path\">@async-abstraction/tape/src/toAsyncIterator.js</span>",
     "function"
   ],
   [
-    "@aureooms/js-tape/src/tostring.js~tostring",
+    "@async-abstraction/tape/src/tostring.js~tostring",
     "function/index.html#static-function-toString",
-    "<span>toString</span> <span class=\"search-result-import-path\">@aureooms/js-tape/src/toString.js</span>",
+    "<span>toString</span> <span class=\"search-result-import-path\">@async-abstraction/tape/src/toString.js</span>",
     "function"
   ],
   [

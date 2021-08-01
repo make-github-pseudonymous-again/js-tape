@@ -3,12 +3,12 @@
 <head>
   <meta charset="utf-8">
   <base data-ice="baseUrl" href="../">
-  <title data-ice="title">Manual | @aureooms/js-tape</title>
+  <title data-ice="title">Manual | @async-abstraction/tape</title>
   <link type="text/css" rel="stylesheet" href="css/style.css">
   <link type="text/css" rel="stylesheet" href="css/prettify-tomorrow.css">
   <script src="script/prettify/prettify.js"></script>
   <script src="script/manual.js"></script>
-<link rel="stylesheet" href="./inject/css/0-style.css"><script src="./inject/script/0-header.js"></script><meta name="description" content="Tape library for JavaScript"><meta property="twitter:card" content="summary"><meta property="twitter:title" content="@aureooms/js-tape"><meta property="twitter:description" content="Tape library for JavaScript"></head>
+<link rel="stylesheet" href="./inject/css/0-style.css"><script src="./inject/script/0-header.js"></script><meta name="description" content="Tape library for JavaScript"><meta property="twitter:card" content="summary"><meta property="twitter:title" content="@async-abstraction/tape"><meta property="twitter:description" content="Tape library for JavaScript"></head>
 <body class="layout-container manual-root" data-ice="rootContainer">
 
 <header>
@@ -24,7 +24,7 @@
   </span>
     <ul class="search-result"></ul>
   </div>
-<a style="position:relative; top:3px;" href="https://github.com/aureooms/js-tape"><img width="20px" src="./image/github.png"></a></header>
+<a style="position:relative; top:3px;" href="https://github.com/async-abstraction/tape"><img width="20px" src="./image/github.png"></a></header>
 
 <nav class="navigation" data-ice="nav"><div class="manual-toc-root">
   
@@ -62,33 +62,41 @@
 </nav>
 
 <div class="content" data-ice="content"><div class="github-markdown" data-ice="content"><h1 id="examples">Examples</h1><blockquote>
-<p>More examples in <a href="https://github.com/aureooms/js-tape/tree/master/test/src">the test files</a>.</p>
+<p>More examples in <a href="https://github.com/async-abstraction/tape/tree/main/test/src">the test files</a>.</p>
 </blockquote>
-<h2 id="import">Import</h2><pre><code class="lang-js"><code class="source-code prettyprint">import tape from &apos;@aureooms/js-tape&apos; ;</code>
+<h2 id="import">Import</h2><pre><code class="lang-js"><code class="source-code prettyprint">import tape from &apos;@async-abstraction/tape&apos; ;</code>
 </code></pre>
-<h2 id="-code-fromstring--code-"><code>fromString</code></h2><pre><code class="lang-js"><code class="source-code prettyprint">import tape from &apos;@aureooms/js-tape&apos; ;
-const myTape = tape.fromString( &apos;abracadabra&apos; ) ;
+<h2 id="-code-fromstring--code-"><code>fromString</code></h2><pre><code class="lang-js"><code class="source-code prettyprint">import {
+  fromString,
+  fromArray,
+  fromCallable,
+  fromIterable,
+  fromAsyncIterable,
+  fromIterator,
+  fromReadStream,
+} from &apos;@async-abstraction/tape&apos; ;
+const tape = fromString( &apos;abracadabra&apos; ) ;
 // // OR
-// const myTape = tape.fromArray( ... ) ;
-// const myTape = tape.fromCallable( ... ) ;
-// const myTape = tape.fromIterable( ... ) ;
-// const myTape = tape.fromAsyncIterable( ... ) ;
-// const myTape = tape.fromIterator( ... ) ;
-// const myTape = tape.fromReadStream( ... ) ;</code>
+// const tape = fromArray( ... ) ;
+// const tape = fromCallable( ... ) ;
+// const tape = fromIterable( ... ) ;
+// const tape = fromAsyncIterable( ... ) ;
+// const tape = fromIterator( ... ) ;
+// const tape = fromReadStream( ... ) ;</code>
 </code></pre>
-<h2 id="-code-read--code--and--code-unread--code-"><code>read</code> and <code>unread</code></h2><pre><code class="lang-js"><code class="source-code prettyprint">myTape.read()
-      .then( character =&gt; console.log(character) ) // &apos;a&apos;
-      .then( () =&gt; myTape.read() )
-      .then( character =&gt; console.log(character) ) // &apos;b&apos;
-      .then( () =&gt; myTape.unread(&apos;Z&apos;) )
-      .then( () =&gt; myTape.unread(&apos;X&apos;) )
-      .then( () =&gt; myTape.read() )
-      .then( character =&gt; console.log(character) ) // &apos;X&apos;
-      .then( () =&gt; myTape.read() )
-      .then( character =&gt; console.log(character) ) // &apos;Z&apos;
-      .then( () =&gt; myTape.read() )
-      .then( character =&gt; console.log(character) ) // &apos;r&apos;
-      // ...</code>
+<h2 id="-code-read--code--and--code-unread--code-"><code>read</code> and <code>unread</code></h2><pre><code class="lang-js"><code class="source-code prettyprint">tape.read()
+  .then( character =&gt; console.log(character) ) // &apos;a&apos;
+  .then( () =&gt; tape.read() )
+  .then( character =&gt; console.log(character) ) // &apos;b&apos;
+  .then( () =&gt; tape.unread(&apos;Z&apos;) )
+  .then( () =&gt; tape.unread(&apos;X&apos;) )
+  .then( () =&gt; tape.read() )
+  .then( character =&gt; console.log(character) ) // &apos;X&apos;
+  .then( () =&gt; tape.read() )
+  .then( character =&gt; console.log(character) ) // &apos;Z&apos;
+  .then( () =&gt; tape.read() )
+  .then( character =&gt; console.log(character) ) // &apos;r&apos;
+  // ...</code>
 </code></pre>
 </div>
 </div>

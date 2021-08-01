@@ -3,12 +3,12 @@
 <head>
   <meta charset="utf-8">
   <base data-ice="baseUrl" href="../../">
-  <title data-ice="title">src/index.js | @aureooms/js-tape</title>
+  <title data-ice="title">src/index.js | @async-abstraction/tape</title>
   <link type="text/css" rel="stylesheet" href="css/style.css">
   <link type="text/css" rel="stylesheet" href="css/prettify-tomorrow.css">
   <script src="script/prettify/prettify.js"></script>
   <script src="script/manual.js"></script>
-<link rel="stylesheet" href="./inject/css/0-style.css"><script src="./inject/script/0-header.js"></script><meta name="description" content="Tape library for JavaScript"><meta property="twitter:card" content="summary"><meta property="twitter:title" content="@aureooms/js-tape"><meta property="twitter:description" content="Tape library for JavaScript"></head>
+<link rel="stylesheet" href="./inject/css/0-style.css"><script src="./inject/script/0-header.js"></script><meta name="description" content="Tape library for JavaScript"><meta property="twitter:card" content="summary"><meta property="twitter:title" content="@async-abstraction/tape"><meta property="twitter:description" content="Tape library for JavaScript"></head>
 <body class="layout-container" data-ice="rootContainer">
 
 <header>
@@ -24,7 +24,7 @@
   </span>
     <ul class="search-result"></ul>
   </div>
-<a style="position:relative; top:3px;" href="https://github.com/aureooms/js-tape"><img width="20px" src="./image/github.png"></a></header>
+<a style="position:relative; top:3px;" href="https://github.com/async-abstraction/tape"><img width="20px" src="./image/github.png"></a></header>
 
 <nav class="navigation" data-ice="nav"><div>
   <ul>
@@ -56,81 +56,29 @@
 </nav>
 
 <div class="content" data-ice="content"><h1 data-ice="title">src/index.js</h1>
-<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">import eof from &apos;./eof&apos;;
-import Tape from &apos;./Tape&apos;;
-import asyncIterableChain from &apos;./asyncIterableChain&apos;;
-import asyncIterableMap from &apos;./asyncIterableMap&apos;;
-import asyncIterableToArray from &apos;./asyncIterableToArray&apos;;
-import chain from &apos;./chain&apos;;
-import exhaust from &apos;./exhaust&apos;;
-import fromArray from &apos;./fromArray&apos;;
-import fromAsyncIterable from &apos;./fromAsyncIterable&apos;;
-import fromCallable from &apos;./fromCallable&apos;;
-import fromIterable from &apos;./fromIterable&apos;;
-import fromIterator from &apos;./fromIterator&apos;;
-import fromReadStream from &apos;./fromReadStream&apos;;
-import fromString from &apos;./fromString&apos;;
-import ignore from &apos;./ignore&apos;;
-import map from &apos;./map&apos;;
-import skip from &apos;./skip&apos;;
-import split from &apos;./split&apos;;
-import toArray from &apos;./toArray&apos;;
-import toAsyncCallable from &apos;./toAsyncCallable&apos;;
-import toAsyncIterable from &apos;./toAsyncIterable&apos;;
-import toAsyncIterator from &apos;./toAsyncIterator&apos;;
-import toString from &apos;./toString&apos;;
-
-export default {
-	eof,
-	Tape,
-	asyncIterableChain,
-	asyncIterableMap,
-	asyncIterableToArray,
-	chain,
-	exhaust,
-	fromArray,
-	fromAsyncIterable,
-	fromCallable,
-	fromIterable,
-	fromIterator,
-	fromReadStream,
-	fromString,
-	ignore,
-	map,
-	skip,
-	split,
-	toArray,
-	toAsyncCallable,
-	toAsyncIterable,
-	toAsyncIterator,
-	toString
-};
-
-export {
-	eof,
-	Tape,
-	asyncIterableChain,
-	asyncIterableMap,
-	asyncIterableToArray,
-	chain,
-	exhaust,
-	fromArray,
-	fromAsyncIterable,
-	fromCallable,
-	fromIterable,
-	fromIterator,
-	fromReadStream,
-	fromString,
-	ignore,
-	map,
-	skip,
-	split,
-	toArray,
-	toAsyncCallable,
-	toAsyncIterable,
-	toAsyncIterator,
-	toString
-};
+<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">export {default as Tape} from &apos;./Tape.js&apos;;
+export {default as asyncIterableChain} from &apos;./asyncIterableChain.js&apos;;
+export {default as asyncIterableMap} from &apos;./asyncIterableMap.js&apos;;
+export {default as asyncIterableToArray} from &apos;./asyncIterableToArray.js&apos;;
+export {default as chain} from &apos;./chain.js&apos;;
+export {default as eof} from &apos;./eof.js&apos;;
+export {default as exhaust} from &apos;./exhaust.js&apos;;
+export {default as fromArray} from &apos;./fromArray.js&apos;;
+export {default as fromAsyncIterable} from &apos;./fromAsyncIterable.js&apos;;
+export {default as fromCallable} from &apos;./fromCallable.js&apos;;
+export {default as fromIterable} from &apos;./fromIterable.js&apos;;
+export {default as fromIterator} from &apos;./fromIterator.js&apos;;
+export {default as fromReadStream} from &apos;./fromReadStream.js&apos;;
+export {default as fromString} from &apos;./fromString.js&apos;;
+export {default as ignore} from &apos;./ignore.js&apos;;
+export {default as map} from &apos;./map.js&apos;;
+export {default as skip} from &apos;./skip.js&apos;;
+export {default as split} from &apos;./split.js&apos;;
+export {default as toArray} from &apos;./toArray.js&apos;;
+export {default as toAsyncCallable} from &apos;./toAsyncCallable.js&apos;;
+export {default as toAsyncIterable} from &apos;./toAsyncIterable.js&apos;;
+export {default as toAsyncIterator} from &apos;./toAsyncIterator.js&apos;;
+export {default as toString} from &apos;./toString.js&apos;;
 </code></pre>
 
 </div>

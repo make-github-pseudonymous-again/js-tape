@@ -1,7 +1,7 @@
 {
   "type": "File",
   "start": 0,
-  "end": 196,
+  "end": 199,
   "loc": {
     "start": {
       "line": 1,
@@ -15,7 +15,7 @@
   "program": {
     "type": "Program",
     "start": 0,
-    "end": 196,
+    "end": 199,
     "loc": {
       "start": {
         "line": 1,
@@ -31,7 +31,7 @@
       {
         "type": "ImportDeclaration",
         "start": 0,
-        "end": 42,
+        "end": 45,
         "loc": {
           "start": {
             "line": 1,
@@ -39,7 +39,7 @@
           },
           "end": {
             "line": 1,
-            "column": 42
+            "column": 45
           }
         },
         "specifiers": [
@@ -79,7 +79,7 @@
         "source": {
           "type": "StringLiteral",
           "start": 25,
-          "end": 41,
+          "end": 44,
           "loc": {
             "start": {
               "line": 1,
@@ -87,21 +87,21 @@
             },
             "end": {
               "line": 1,
-              "column": 41
+              "column": 44
             }
           },
           "extra": {
-            "rawValue": "./fromIterable",
-            "raw": "'./fromIterable'"
+            "rawValue": "./fromIterable.js",
+            "raw": "'./fromIterable.js'"
           },
-          "value": "./fromIterable"
+          "value": "./fromIterable.js"
         },
         "trailingComments": [
           {
             "type": "CommentBlock",
             "value": "*\n * Converts an array to a tape.\n *\n * @function\n * @param {Array} _array - the array to convert\n * @returns {Tape}\n ",
-            "start": 44,
-            "end": 166,
+            "start": 47,
+            "end": 169,
             "loc": {
               "start": {
                 "line": 3,
@@ -117,8 +117,8 @@
       },
       {
         "type": "ExportDefaultDeclaration",
-        "start": 167,
-        "end": 195,
+        "start": 170,
+        "end": 198,
         "loc": {
           "start": {
             "line": 10,
@@ -131,8 +131,8 @@
         },
         "declaration": {
           "type": "Identifier",
-          "start": 182,
-          "end": 194,
+          "start": 185,
+          "end": 197,
           "loc": {
             "start": {
               "line": 10,
@@ -149,8 +149,8 @@
             {
               "type": "CommentBlock",
               "value": "*\n * Converts an array to a tape.\n *\n * @function\n * @param {Array} _array - the array to convert\n * @returns {Tape}\n ",
-              "start": 44,
-              "end": 166,
+              "start": 47,
+              "end": 169,
               "loc": {
                 "start": {
                   "line": 3,
@@ -169,8 +169,8 @@
           {
             "type": "CommentBlock",
             "value": "*\n * Converts an array to a tape.\n *\n * @function\n * @param {Array} _array - the array to convert\n * @returns {Tape}\n ",
-            "start": 44,
-            "end": 166,
+            "start": 47,
+            "end": 169,
             "loc": {
               "start": {
                 "line": 3,
@@ -191,8 +191,8 @@
     {
       "type": "CommentBlock",
       "value": "*\n * Converts an array to a tape.\n *\n * @function\n * @param {Array} _array - the array to convert\n * @returns {Tape}\n ",
-      "start": 44,
-      "end": 166,
+      "start": 47,
+      "end": 169,
       "loc": {
         "start": {
           "line": 3,
@@ -299,9 +299,9 @@
         "binop": null,
         "updateContext": null
       },
-      "value": "./fromIterable",
+      "value": "./fromIterable.js",
       "start": 25,
-      "end": 41,
+      "end": 44,
       "loc": {
         "start": {
           "line": 1,
@@ -309,7 +309,7 @@
         },
         "end": {
           "line": 1,
-          "column": 41
+          "column": 44
         }
       }
     },
@@ -326,24 +326,24 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 41,
-      "end": 42,
+      "start": 44,
+      "end": 45,
       "loc": {
         "start": {
           "line": 1,
-          "column": 41
+          "column": 44
         },
         "end": {
           "line": 1,
-          "column": 42
+          "column": 45
         }
       }
     },
     {
       "type": "CommentBlock",
       "value": "*\n * Converts an array to a tape.\n *\n * @function\n * @param {Array} _array - the array to convert\n * @returns {Tape}\n ",
-      "start": 44,
-      "end": 166,
+      "start": 47,
+      "end": 169,
       "loc": {
         "start": {
           "line": 3,
@@ -370,8 +370,8 @@
         "updateContext": null
       },
       "value": "export",
-      "start": 167,
-      "end": 173,
+      "start": 170,
+      "end": 176,
       "loc": {
         "start": {
           "line": 10,
@@ -398,8 +398,8 @@
         "updateContext": null
       },
       "value": "default",
-      "start": 174,
-      "end": 181,
+      "start": 177,
+      "end": 184,
       "loc": {
         "start": {
           "line": 10,
@@ -424,8 +424,8 @@
         "binop": null
       },
       "value": "fromIterable",
-      "start": 182,
-      "end": 194,
+      "start": 185,
+      "end": 197,
       "loc": {
         "start": {
           "line": 10,
@@ -450,8 +450,8 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 194,
-      "end": 195,
+      "start": 197,
+      "end": 198,
       "loc": {
         "start": {
           "line": 10,
@@ -476,8 +476,8 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 196,
-      "end": 196,
+      "start": 199,
+      "end": 199,
       "loc": {
         "start": {
           "line": 11,

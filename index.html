@@ -3,12 +3,12 @@
 <head>
   <meta charset="utf-8">
   <base data-ice="baseUrl">
-  <title data-ice="title">Home | @aureooms/js-tape</title>
+  <title data-ice="title">Home | @async-abstraction/tape</title>
   <link type="text/css" rel="stylesheet" href="css/style.css">
   <link type="text/css" rel="stylesheet" href="css/prettify-tomorrow.css">
   <script src="script/prettify/prettify.js"></script>
   <script src="script/manual.js"></script>
-<link rel="stylesheet" href="./inject/css/0-style.css"><script src="./inject/script/0-header.js"></script><meta name="description" content="Tape library for JavaScript"><meta property="twitter:card" content="summary"><meta property="twitter:title" content="@aureooms/js-tape"><meta property="twitter:description" content="Tape library for JavaScript"></head>
+<link rel="stylesheet" href="./inject/css/0-style.css"><script src="./inject/script/0-header.js"></script><meta name="description" content="Tape library for JavaScript"><meta property="twitter:card" content="summary"><meta property="twitter:title" content="@async-abstraction/tape"><meta property="twitter:description" content="Tape library for JavaScript"></head>
 <body class="layout-container" data-ice="rootContainer">
 
 <header>
@@ -24,7 +24,7 @@
   </span>
     <ul class="search-result"></ul>
   </div>
-<a style="position:relative; top:3px;" href="https://github.com/aureooms/js-tape"><img width="20px" src="./image/github.png"></a></header>
+<a style="position:relative; top:3px;" href="https://github.com/async-abstraction/tape"><img width="20px" src="./image/github.png"></a></header>
 
 <nav class="navigation" data-ice="nav"><div>
   <ul>
@@ -55,29 +55,31 @@
 </div>
 </nav>
 
-<div class="content" data-ice="content"><div data-ice="index" class="github-markdown"><h1 id="-a-href--https---aureooms-github-io-js-tape---aureooms-js-tape--a-"><a href="https://aureooms.github.io/js-tape">@aureooms/js-tape</a></h1><p>Tape library for JavaScript. Served with asynchronous goodness.
-See <a href="https://aureooms.github.io/js-tape/index.html">docs</a>.</p>
+<div class="content" data-ice="content"><div data-ice="index" class="github-markdown"><p>:vhs:</p>
+<h1 id="-a-href--https---async-abstraction-github-io-tape---async-abstraction-tape--a-"><a href="https://async-abstraction.github.io/tape">@async-abstraction/tape</a></h1><p>Tape library for JavaScript. Served with asynchronous goodness.
+See <a href="https://async-abstraction.github.io/tape/index.html">docs</a>.</p>
 <blockquote>
-<p>:warning: The code needs a ES2015+ polyfill to work (<code>regeneratorRuntime</code>),
-for instance <a href="https://babeljs.io/docs/usage/polyfill">@babel/polyfill</a>.</p>
+<p>:warning: The code requires <code>regeneratorRuntime</code> to be defined, for instance by importing
+<a href="https://www.npmjs.com/package/regenerator-runtime">regenerator-runtime/runtime</a>.</p>
 </blockquote>
-<pre><code class="lang-js"><code class="source-code prettyprint">const stdin = fs.createReadStream( &apos;/dev/stdin&apos; , { encoding : &apos;utf8&apos;} ) ;
-const myTape = tape.fromReadStream( stdin ) ;
-for await ( const character of myTape ) ... ;</code>
+<pre><code class="lang-js"><code class="source-code prettyprint">import { fromReadStream } from &apos;@async-abstraction/tape&apos; ;
+const stdin = fs.createReadStream( &apos;/dev/stdin&apos; , { encoding : &apos;utf8&apos;} ) ;
+const tape = fromReadStream( stdin ) ;
+for await ( const character of tape ) ... ;</code>
 </code></pre>
-<p><a href="https://raw.githubusercontent.com/aureooms/js-tape/master/LICENSE"><img src="https://img.shields.io/github/license/aureooms/js-tape.svg" alt="License"></a>
-<a href="https://www.npmjs.org/package/@aureooms/js-tape"><img src="https://img.shields.io/npm/v/@aureooms/js-tape.svg" alt="Version"></a>
-<a href="https://travis-ci.org/aureooms/js-tape/branches"><img src="https://img.shields.io/travis/aureooms/js-tape/master.svg" alt="Build"></a>
-<a href="https://david-dm.org/aureooms/js-tape"><img src="https://img.shields.io/david/aureooms/js-tape.svg" alt="Dependencies"></a>
-<a href="https://david-dm.org/aureooms/js-tape?type=dev"><img src="https://img.shields.io/david/dev/aureooms/js-tape.svg" alt="Dev dependencies"></a>
-<a href="https://github.com/aureooms/js-tape/issues"><img src="https://img.shields.io/github/issues/aureooms/js-tape.svg" alt="GitHub issues"></a>
-<a href="https://www.npmjs.org/package/@aureooms/js-tape"><img src="https://img.shields.io/npm/dm/@aureooms/js-tape.svg" alt="Downloads"></a></p>
-<p><a href="https://codeclimate.com/github/aureooms/js-tape/issues"><img src="https://img.shields.io/codeclimate/issues/aureooms/js-tape.svg" alt="Code issues"></a>
-<a href="https://codeclimate.com/github/aureooms/js-tape/trends/churn"><img src="https://img.shields.io/codeclimate/maintainability/github/aureooms/js-tape.svg" alt="Code maintainability"></a>
-<a href="https://codecov.io/gh/aureooms/js-tape"><img src="https://img.shields.io/codecov/c/github/aureooms/js-tape.svg" alt="Code coverage (cov)"></a>
-<a href="https://codeclimate.com/github/aureooms/js-tape/trends/test_coverage_new_code"><img src="https://img.shields.io/codeclimate/coverage-letter/aureooms/js-tape.svg" alt="Code coverage (clim)"></a>
-<a href="https://codeclimate.com/github/aureooms/js-tape/trends/technical_debt"><img src="https://img.shields.io/codeclimate/tech-debt/aureooms/js-tape.svg" alt="Code technical debt"></a>
-<a href="https://aureooms.github.io/js-tape/source.html"><img src="https://aureooms.github.io/js-tape/badge.svg" alt="Documentation"></a></p>
+<p><a href="https://raw.githubusercontent.com/async-abstraction/tape/main/LICENSE"><img src="https://img.shields.io/github/license/async-abstraction/tape.svg" alt="License"></a>
+<a href="https://www.npmjs.org/package/@async-abstraction/tape"><img src="https://img.shields.io/npm/v/@async-abstraction/tape.svg" alt="Version"></a>
+<a href="https://github.com/async-abstraction/tape/actions/workflows/ci:test.yml?query=branch:main"><img src="https://img.shields.io/github/workflow/status/async-abstraction/tape/ci:test?event=push&amp;label=tests" alt="Tests"></a>
+<a href="https://david-dm.org/async-abstraction/tape"><img src="https://img.shields.io/david/async-abstraction/tape.svg" alt="Dependencies"></a>
+<a href="https://david-dm.org/async-abstraction/tape?type=dev"><img src="https://img.shields.io/david/dev/async-abstraction/tape.svg" alt="Dev dependencies"></a>
+<a href="https://github.com/async-abstraction/tape/issues"><img src="https://img.shields.io/github/issues/async-abstraction/tape.svg" alt="GitHub issues"></a>
+<a href="https://www.npmjs.org/package/@async-abstraction/tape"><img src="https://img.shields.io/npm/dm/@async-abstraction/tape.svg" alt="Downloads"></a></p>
+<p><a href="https://codeclimate.com/github/async-abstraction/tape/issues"><img src="https://img.shields.io/codeclimate/issues/async-abstraction/tape.svg" alt="Code issues"></a>
+<a href="https://codeclimate.com/github/async-abstraction/tape/trends/churn"><img src="https://img.shields.io/codeclimate/maintainability/async-abstraction/tape.svg" alt="Code maintainability"></a>
+<a href="https://codecov.io/gh/async-abstraction/tape"><img src="https://img.shields.io/codecov/c/gh/async-abstraction/tape/main.svg" alt="Code coverage (cov)"></a>
+<a href="https://codeclimate.com/github/async-abstraction/tape/trends/technical_debt"><img src="https://img.shields.io/codeclimate/tech-debt/async-abstraction/tape.svg" alt="Code technical debt"></a>
+<a href="https://async-abstraction.github.io/tape/source.html"><img src="https://async-abstraction.github.io/tape/badge.svg" alt="Documentation"></a>
+<a href="https://bundlephobia.com/result?p=@async-abstraction/tape"><img src="https://img.shields.io/bundlephobia/minzip/@async-abstraction/tape" alt="Package size"></a></p>
 </div>
 </div>
 
