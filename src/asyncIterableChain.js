@@ -2,7 +2,7 @@
  * Utility function to chain an async iterable of async iterables.
  *
  * @private
- * @param {AsyncIterable} iterables - the input iterable of iterables.
+ * @param {AsyncIterable<AsyncIterable>} iterables - the input iterable of iterables.
  * @returns {AsyncIterable} The chain of the input iterables.
  */
 export default async function* asyncIterableChain(iterables) {

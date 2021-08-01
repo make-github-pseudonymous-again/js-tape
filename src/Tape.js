@@ -9,12 +9,12 @@ export default class Tape {
 	/**
 	 * The constructor. Stores the callable that yields values to put on the tape.
 	 *
-	 * @param {Callable} callable - The callable to use.
+	 * @param {Function} callable - The callable to use.
 	 */
 	constructor(callable) {
 		/**
 		 * The callable yielding values to put on the tape.
-		 * @type {Callable}
+		 * @type {Function}
 		 */
 		this.callable = callable;
 
@@ -26,7 +26,7 @@ export default class Tape {
 
 		/**
 		 * The eof symbol.
-		 * @type {String}
+		 * @type {any}
 		 */
 		this.eof = eof;
 	}
@@ -35,7 +35,7 @@ export default class Tape {
 	 * Returns the next token on the tape or {@link Tape#eof}
 	 * if the tape has been exhausted.
 	 *
-	 * @returns {Object} The next token on the tape or {@link Tape#eof}.
+	 * @returns {Promise} The next token on the tape or {@link Tape#eof}.
 	 */
 	async read() {
 		if (this.buffer.length > 0) return this.buffer.pop();
@@ -51,7 +51,7 @@ export default class Tape {
 	 * Puts a token back on the tape. If {@link Tape#read} is
 	 * used just after, this token will be returned.
 	 *
-	 * @param {Object} token - The token to put back on the tape.
+	 * @param {any} token - The token to put back on the tape.
 	 */
 	unread(token) {
 		// Should this be async too ?
@@ -69,7 +69,7 @@ export default class Tape {
 	/**
 	 * Skip the next `n` tokens on the tape.
 	 *
-	 * @param {Number} n - The number of tokens to skip.
+	 * @param {number} n - The number of tokens to skip.
 	 */
 	async skipMany(n) {
 		while (n-- > 0) await this.skip(); // eslint-disable-line no-await-in-loop

@@ -1,4 +1,7 @@
 /**
  * Shared object used as end of file.
+ *
+ * @type {object}
  */
-export default {};
+const eof = {};
+export default eof;

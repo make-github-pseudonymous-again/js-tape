@@ -3,7 +3,7 @@
  *
  * @private
  * @param {AsyncIterable} asyncIterable - the input iterable.
- * @returns {Array} A new array filled with the elements of the input iterable.
+ * @returns {Promise<any[]>} A new array filled with the elements of the input iterable.
  */
 export default async function asyncIterableToArray(asyncIterable) {
 	const array = [];

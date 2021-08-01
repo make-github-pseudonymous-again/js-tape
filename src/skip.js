@@ -5,7 +5,7 @@
  * @private
  * @param {Tape} tape - The input tape.
  * @param {Iterable} toskip - The (hashable) tokens to skip.
- * @returns {Object} The next token not in `toskip`.
+ * @returns {Promise} The next token not in `toskip`.
  */
 export default async function skip(tape, toskip) {
 	const _toskip = new Set(toskip);

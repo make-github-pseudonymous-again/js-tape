@@ -2,7 +2,7 @@
  * Utility function to apply a sync callable to each item of an async iterable.
  *
  * @private
- * @param {Callable} callable - The callable to apply.
+ * @param {Function} callable - The callable to apply.
  * @param {AsyncIterable} iterable - The iterable to process.
  * @returns {AsyncIterable} The iterable of mapped values.
  */

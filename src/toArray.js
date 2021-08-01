@@ -6,6 +6,6 @@ import asyncIterableToArray from './asyncIterableToArray.js';
  *
  * @function
  * @param {Tape} tape - The tape to read from.
- * @returns {Array} The converted array.
+ * @returns {Promise<any[]>} The converted array.
  */
 export default (tape) => asyncIterableToArray(toAsyncIterable(tape));

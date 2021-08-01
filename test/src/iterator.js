@@ -1,6 +1,6 @@
 import test from 'ava';
 
-import fromString from '../../src/fromString.js';
+import {fromString} from '../../src/index.js';
 
 /**
  * Checks that trying to access the synchronous iterator of a tape throws.

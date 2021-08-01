@@ -7,7 +7,8 @@ import fromIterable from './fromIterable.js';
  * fromString( '1,3,2' ) ;
  *
  * @function
- * @param {String} _string - the string to convert
+ * @param {string} string - the string to convert
  * @returns {Tape}
  */
-export default fromIterable;
+const fromString = fromIterable;
+export default fromString;
