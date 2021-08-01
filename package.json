@@ -1,8 +1,8 @@
 {
-  "name": "@aureooms/js-tape",
+  "name": "@async-abstraction/tape",
   "description": "Tape library for JavaScript",
   "version": "7.0.0",
-  "author": "aureooms",
+  "author": "make-github-pseudonymous-again",
   "ava": {
     "files": [
       "test/src/**/*"
@@ -30,7 +30,7 @@
     }
   },
   "bugs": {
-    "url": "https://github.com/make-github-pseudonymous-again/js-tape/issues"
+    "url": "https://github.com/async-abstraction/tape/issues"
   },
   "dependencies": {},
   "devDependencies": {
@@ -57,7 +57,7 @@
   "files": [
     "lib"
   ],
-  "homepage": "https://make-github-pseudonymous-again.github.io/js-tape",
+  "homepage": "https://async-abstraction.github.io/tape",
   "keywords": [
     "parsing",
     "read",
@@ -69,7 +69,7 @@
   "main": "lib/index.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/make-github-pseudonymous-again/js-tape"
+    "url": "https://github.com/async-abstraction/tape"
   },
   "scripts": {
     "build": "babel --delete-dir-on-start --env-name production src -d lib",

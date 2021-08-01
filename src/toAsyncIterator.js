@@ -1,4 +1,4 @@
-import toAsyncIterable from './toAsyncIterable';
+import toAsyncIterable from './toAsyncIterable.js';
 
 /**
  * Converts a tape to an async iterator.

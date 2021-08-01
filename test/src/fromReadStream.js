@@ -1,8 +1,8 @@
 import fs from 'fs';
 import test from 'ava';
 
-import fromReadStream from '../../src/fromReadStream';
-import toString from '../../src/toString';
+import fromReadStream from '../../src/fromReadStream.js';
+import toString from '../../src/toString.js';
 
 test('unread token', async (t) => {
 	const filepath = 'test/data/hello-world.txt';

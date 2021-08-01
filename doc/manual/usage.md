@@ -12,7 +12,7 @@ import 'regenerator-runtime/runtime.js' ;
 
 Then, import the library where needed
 ```js
-const tape = require( '@aureooms/js-tape' ) ;
+const tape = require( '@async-abstraction/tape' ) ;
 // or
-import tape from '@aureooms/js-tape' ;
+import tape from '@async-abstraction/tape' ;
 ```

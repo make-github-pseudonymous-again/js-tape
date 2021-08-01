@@ -1,6 +1,6 @@
-import fromAsyncIterable from './fromAsyncIterable';
-import toAsyncIterable from './toAsyncIterable';
-import asyncIterableMap from './asyncIterableMap';
+import fromAsyncIterable from './fromAsyncIterable.js';
+import toAsyncIterable from './toAsyncIterable.js';
+import asyncIterableMap from './asyncIterableMap.js';
 
 /**
  * Applies a callable to each token of a tape.

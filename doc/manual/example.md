@@ -1,19 +1,19 @@
 # Examples
 
-> More examples in [the test files](https://github.com/make-github-pseudonymous-again/js-tape/tree/main/test/src).
+> More examples in [the test files](https://github.com/async-abstraction/tape/tree/main/test/src).
 
 
 ## Import
 
 ```js
-import tape from '@aureooms/js-tape' ;
+import tape from '@async-abstraction/tape' ;
 ```
 
 
 ## `fromString`
 
 ```js
-import tape from '@aureooms/js-tape' ;
+import tape from '@async-abstraction/tape' ;
 const myTape = tape.fromString( 'abracadabra' ) ;
 // // OR
 // const myTape = tape.fromArray( ... ) ;

@@ -1,7 +1,7 @@
 import test from 'ava';
 
-import fromString from '../../src/fromString';
-import toString from '../../src/toString';
+import fromString from '../../src/fromString.js';
+import toString from '../../src/toString.js';
 
 /**
  * @test {fromString}

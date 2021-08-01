@@ -41,7 +41,7 @@
           "autoPrivate": true
         },
         "brand": {
-          "title": "@aureooms/js-tape"
+          "title": "@async-abstraction/tape"
         },
         "test": {
           "type": "ava",

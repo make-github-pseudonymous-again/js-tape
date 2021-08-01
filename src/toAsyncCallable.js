@@ -1,4 +1,4 @@
-import toAsyncIterator from './toAsyncIterator';
+import toAsyncIterator from './toAsyncIterator.js';
 
 /**
  * Converts a tape to a callable.

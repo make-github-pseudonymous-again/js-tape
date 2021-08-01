@@ -1,4 +1,4 @@
-import fromIterator from './fromIterator';
+import fromIterator from './fromIterator.js';
 
 /**
  * Converts an asynchronous iterable to a tape.

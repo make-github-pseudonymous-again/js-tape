@@ -1,5 +1,5 @@
-import fromAsyncIterable from './fromAsyncIterable';
-import exhaust from './exhaust';
+import fromAsyncIterable from './fromAsyncIterable.js';
+import exhaust from './exhaust.js';
 
 /**
  * Splits the input tape into a tape of tapes according to some set of

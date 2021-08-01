@@ -1,6 +1,6 @@
 import test from 'ava';
 
-import {fromString, ignore, toString} from '../../src';
+import {fromString, ignore, toString} from '../../src/index.js';
 
 /**
  * @test {ignore}

@@ -1,5 +1,5 @@
-import eof from './eof';
-import toAsyncIterator from './toAsyncIterator';
+import eof from './eof.js';
+import toAsyncIterator from './toAsyncIterator.js';
 
 /**
  * Class that wraps a callable with a tape.

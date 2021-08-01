@@ -8,15 +8,15 @@ or [jspm](https://jspm.org/docs).
 
 ### yarn
 ```terminal
-yarn add @aureooms/js-tape
+yarn add @async-abstraction/tape
 ```
 
 ### npm
 ```terminal
-npm install @aureooms/js-tape --save
+npm install @async-abstraction/tape --save
 ```
 
 ### jspm
 ```terminal
-jspm install npm:@aureooms/js-tape
+jspm install npm:@async-abstraction/tape
 ```

@@ -1,4 +1,4 @@
-import fromAsyncIterable from './fromAsyncIterable';
+import fromAsyncIterable from './fromAsyncIterable.js';
 
 /**
  * Converts a ReadStream object to an async iterable of tokens.

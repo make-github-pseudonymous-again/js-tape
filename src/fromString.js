@@ -1,4 +1,4 @@
-import fromIterable from './fromIterable';
+import fromIterable from './fromIterable.js';
 
 /**
  * Converts a string to a tape.

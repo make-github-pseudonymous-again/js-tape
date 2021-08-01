@@ -1,8 +1,8 @@
 import test from 'ava';
 
-import fromString from '../../src/fromString';
-import map from '../../src/map';
-import toString from '../../src/toString';
+import fromString from '../../src/fromString.js';
+import map from '../../src/map.js';
+import toString from '../../src/toString.js';
 
 /**
  * @test {map}

@@ -1,4 +1,4 @@
-import fromCallable from './fromCallable';
+import fromCallable from './fromCallable.js';
 
 /**
  * Converts an iterator to a tape.

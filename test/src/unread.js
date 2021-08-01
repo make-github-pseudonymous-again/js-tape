@@ -1,6 +1,11 @@
 import test from 'ava';
 
-import {fromString, toAsyncCallable, fromCallable, toString} from '../../src';
+import {
+	fromString,
+	toAsyncCallable,
+	fromCallable,
+	toString
+} from '../../src/index.js';
 
 /**
  * @test {Tape#unread}

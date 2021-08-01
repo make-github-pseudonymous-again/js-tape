@@ -1,4 +1,4 @@
-import Tape from './Tape';
+import Tape from './Tape.js';
 
 /**
  * Converts a callable to a tape.

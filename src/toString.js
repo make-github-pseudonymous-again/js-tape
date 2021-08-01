@@ -1,4 +1,4 @@
-import toArray from './toArray';
+import toArray from './toArray.js';
 
 /**
  * Converts a tape to a string.
