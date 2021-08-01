@@ -4,7 +4,7 @@ import {
 	fromString,
 	toAsyncCallable,
 	fromCallable,
-	toString
+	toString,
 } from '../../src/index.js';
 
 /**

@@ -95,7 +95,7 @@ export default class Tape {
 	 */
 	[Symbol.iterator]() {
 		throw new Error(
-			'Not implemented. A tape has no *synchronous* iterator. Use `toArray` or `toString` instead.'
+			'Not implemented. A tape has no *synchronous* iterator. Use `toArray` or `toString` instead.',
 		);
 	}
 }

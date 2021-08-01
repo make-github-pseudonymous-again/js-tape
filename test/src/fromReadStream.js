@@ -11,7 +11,7 @@ test('unread token', async (t) => {
 
 	const readStream = fs.createReadStream(filepath, {
 		encoding,
-		highWaterMark: 1024
+		highWaterMark: 1024,
 	});
 
 	const myTape = fromReadStream(readStream);

@@ -42,7 +42,7 @@ export async function* _split(tape, sep) {
 
 					yield token;
 				}
-			})()
+			})(),
 		);
 
 		yield group;

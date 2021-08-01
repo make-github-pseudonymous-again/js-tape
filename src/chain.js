@@ -10,6 +10,8 @@ import asyncIterableMap from './asyncIterableMap.js';
  */
 export default function chain(tape) {
 	return fromAsyncIterable(
-		asyncIterableChain(asyncIterableMap(toAsyncIterable, toAsyncIterable(tape)))
+		asyncIterableChain(
+			asyncIterableMap(toAsyncIterable, toAsyncIterable(tape)),
+		),
 	);
 }
