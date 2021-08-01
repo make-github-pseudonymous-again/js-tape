@@ -96,6 +96,7 @@
       "test": {
         "sourceMaps": "inline"
       },
+      "cover": {},
       "development": {
         "sourceMaps": "inline"
       },
