@@ -150,7 +150,20 @@
         ]
       },
       "production": {
-        "sourceMaps": "inline"
+        "sourceMaps": "inline",
+        "plugins": [
+          "babel-plugin-unassert",
+          [
+            "transform-remove-console",
+            {
+              "exclude": [
+                "log",
+                "error",
+                "warn"
+              ]
+            }
+          ]
+        ]
       }
     }
   },
