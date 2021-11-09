@@ -1,7 +1,7 @@
 import fs from 'fs';
 import test from 'ava';
 
-import {fromReadStream, toString} from '../../src/index.js';
+import {fromReadStream, toString} from '#module';
 
 test('unread token', async (t) => {
 	const filepath = 'test/data/hello-world.txt';

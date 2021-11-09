@@ -1,6 +1,6 @@
 import test from 'ava';
 
-import {fromString, toString, map} from '../../src/index.js';
+import {fromString, toString, map} from '#module';
 
 /**
  * @test {map}
