@@ -1,11 +1,6 @@
 import test from 'ava';
 
-import {
-	fromString,
-	toAsyncCallable,
-	fromCallable,
-	toString,
-} from '../../src/index.js';
+import {fromString, toAsyncCallable, fromCallable, toString} from '#module';
 
 /**
  * @test {toAsyncCallable}
