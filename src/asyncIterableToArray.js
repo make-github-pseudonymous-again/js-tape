@@ -7,6 +7,13 @@
  */
 export default async function asyncIterableToArray(asyncIterable) {
 	const array = [];
-	for await (const item of asyncIterable) array.push(item);
+	const it = asyncIterable[Symbol.asyncIterator]();
+	for (;;) {
+		// eslint-disable-next-line no-await-in-loop
+		const {done, value} = await it.next();
+		if (done) break;
+		array.push(value);
+	}
+
 	return array;
 }
