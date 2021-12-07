@@ -1,3 +1,5 @@
+import asyncIteratorMap from './asyncIteratorMap.js';
+
 /**
  * Utility function to apply a sync callable to each item of an async iterable.
  *
@@ -6,7 +8,6 @@
  * @param {AsyncIterable} iterable - The iterable to process.
  * @returns {AsyncIterable} The iterable of mapped values.
  */
-export default async function* asyncIterableMap(callable, iterable) {
-	// Should the callable also be async ?
-	for await (const item of iterable) yield callable(item);
+export default function asyncIterableMap(callable, iterable) {
+	return asyncIteratorMap(callable, iterable[Symbol.asyncIterator]());
 }

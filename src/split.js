@@ -1,3 +1,4 @@
+import assert from 'assert';
 import fromAsyncIterable from './fromAsyncIterable.js';
 import exhaust from './exhaust.js';
 
@@ -13,6 +14,38 @@ export default function split(tape, sep) {
 	return fromAsyncIterable(_split(tape, sep));
 }
 
+export class Group {
+	constructor(first, sep, tape) {
+		this.first = first;
+		this.sep = sep;
+		this.tape = tape;
+		this.state = 0;
+	}
+
+	async next() {
+		if (this.state === 0) {
+			this.state = 1;
+			return {done: false, value: this.first};
+		}
+
+		if (this.state === 1) {
+			const value = await this.tape.read();
+			if (value !== this.tape.eof && !this.sep.has(value))
+				return {done: false, value};
+			this.sep = null;
+			this.tape = null;
+			this.state = 2;
+			return {done: true};
+		}
+
+		return {done: true};
+	}
+
+	[Symbol.asyncIterator]() {
+		return this;
+	}
+}
+
 /**
  * Same as {@link split}, but returns an iterable rather than a tape.
  *
@@ -21,32 +54,45 @@ export default function split(tape, sep) {
  * @param {Iterable} sep - An iterable of separators.
  * @returns {AsyncIterable} An iterable of tapes.
  */
-export async function* _split(tape, sep) {
-	const _sep = new Set(sep);
+export function _split(tape, sep) {
+	return new Split(tape, sep);
+}
 
-	while (true) {
-		const token = await tape.read(); // eslint-disable-line no-await-in-loop
+class Split {
+	constructor(tape, sep) {
+		this.tape = tape;
+		this.sep = new Set(sep);
+		this.group = null;
+		this.state = 0;
+		assert(!this.sep.has(this.tape.eof));
+	}
 
-		if (token === tape.eof) break;
+	async next() {
+		if (this.state === 0) {
+			if (this.group !== null) await exhaust(this.group);
+			let token;
+			do {
+				// eslint-disable-next-line no-await-in-loop
+				token = await this.tape.read();
+			} while (this.sep.has(token));
 
-		if (_sep.has(token)) continue;
+			if (token === this.tape.eof) {
+				this.tape = null;
+				this.sep = null;
+				this.group = null;
+				this.state = 1;
+				return {done: true};
+			}
 
-		const group = fromAsyncIterable(
-			(async function* () {
-				yield token;
+			assert(!this.sep.has(token));
+			this.group = fromAsyncIterable(new Group(token, this.sep, this.tape));
+			return {done: false, value: this.group};
+		}
 
-				while (true) {
-					const token = await tape.read(); // eslint-disable-line no-await-in-loop
+		return {done: true};
+	}
 
-					if (_sep.has(token)) break;
-
-					yield token;
-				}
-			})(),
-		);
-
-		yield group;
-
-		await exhaust(group); // eslint-disable-line no-await-in-loop
+	[Symbol.asyncIterator]() {
+		return this;
 	}
 }
