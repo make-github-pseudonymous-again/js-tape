@@ -10,7 +10,8 @@ test('unread token', async (t) => {
 	const myTape1 = fromString(input);
 	const mycallable = toAsyncCallable(myTape1);
 	const myTape2 = fromCallable(mycallable);
-	t.is((await mycallable()).value, '\n');
+	const {value} = await mycallable();
+	t.is(value, '\n');
 	myTape1.unread('\n');
 	t.is(await toString(myTape2), input);
 });
