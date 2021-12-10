@@ -1174,17 +1174,17 @@
   resolved "https://registry.yarnpkg.com/@js-library/commitlint-config/-/commitlint-config-0.0.4.tgz#5243a58b0d4ad36999d4b944c7770c50658c68f5"
   integrity sha512-l6un9f0HmIJZswqGe5H/HGBkENpqBQv1b36bdLZLXhZEZBTlm2Chbv3J1hJ2kNG8ogh+EFV5nUYQnL3MefLSDQ==
 
-"@node-loader/babel@^2.0.0":
+"@node-loader/babel@2.0.0":
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/@node-loader/babel/-/babel-2.0.0.tgz#59d153d0c27737faae22da9368704a46ea93961a"
   integrity sha512-aEnLPbryL7NCAxMcj8NmRzGID161/2H0hTlhsjtGLuxxuw9w2900CFUmfZEIrw0XkoKOQhHwY4swF/o2WCR3sQ==
 
-"@node-loader/core@^2.0.0":
+"@node-loader/core@2.0.0":
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/@node-loader/core/-/core-2.0.0.tgz#7f5a3a91fe137c8e71c0813f3bbaa0ee136a1308"
   integrity sha512-7wV4qj2/tROXGgoYWmNvObUXbXqSv1yUD31K79Jt1q7NDuqrLz4WjjW+wVoCNgVcl8+YSj9BvLX8KsB/SrSzuw==
 
-"@node-loader/import-maps@^1.0.3":
+"@node-loader/import-maps@1.0.3":
   version "1.0.3"
   resolved "https://registry.yarnpkg.com/@node-loader/import-maps/-/import-maps-1.0.3.tgz#4dff536d5dd4d9ff3510e1d2e0ddaf86630d4299"
   integrity sha512-Wjw7atGrC/s9m26k853N93xUi9fxo8wcL8asFXqpkITRltuUmbSVyzblW7K742SCC/Ev9FM0zcS72CPreBu8Kg==
@@ -1792,7 +1792,7 @@ autoprefixer@^10.1.0:
     picocolors "^1.0.0"
     postcss-value-parser "^4.1.0"
 
-ava@^4.0.0-rc.1:
+ava@4.0.0-rc.1:
   version "4.0.0-rc.1"
   resolved "https://registry.yarnpkg.com/ava/-/ava-4.0.0-rc.1.tgz#208066586782c2b0992b701c50b69d3e6d5fda3c"
   integrity sha512-ibYMBSeG0z2L0My3yJtxK0NNMcP5uN/TMZnNJ2FvHa3rGg6UpLglVh/2wjWvuc1kTGPy32liwoneFITQ85wbbg==
