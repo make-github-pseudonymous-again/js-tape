@@ -15,5 +15,5 @@ test('unread token', async (t) => {
 
 	const myTape = fromReadStream(readStream);
 
-	t.deepEqual(await toString(myTape), expected);
+	t.is(await toString(myTape), expected);
 });
