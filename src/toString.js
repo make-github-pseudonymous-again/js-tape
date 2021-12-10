@@ -7,4 +7,4 @@ import toArray from './toArray.js';
  * @param {Tape} tape - The tape to read from.
  * @returns {Promise<string>} The converted string.
  */
-export default async (tape) => (await toArray(tape)).join('');
+export default (tape) => toArray(tape).then((x) => x.join(''));

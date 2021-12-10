@@ -1,4 +1,4 @@
-import assert from 'assert';
+import assert from 'node:assert';
 import fromAsyncIterable from './fromAsyncIterable.js';
 import exhaust from './exhaust.js';
 
