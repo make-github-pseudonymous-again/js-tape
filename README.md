@@ -5,7 +5,8 @@
 Tape library for JavaScript. Served with asynchronous goodness.
 See [docs](https://async-abstraction.github.io/tape/index.html).
 
-> :warning: The code requires `regeneratorRuntime` to be defined, for instance by importing
+> :warning: Depending on your environment, the code may require
+> `regeneratorRuntime` to be defined, for instance by importing
 > [regenerator-runtime/runtime](https://www.npmjs.com/package/regenerator-runtime).
 
 ```js
