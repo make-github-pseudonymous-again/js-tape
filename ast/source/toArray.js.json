@@ -1,7 +1,7 @@
 {
   "type": "File",
   "start": 0,
-  "end": 329,
+  "end": 338,
   "loc": {
     "start": {
       "line": 1,
@@ -15,7 +15,7 @@
   "program": {
     "type": "Program",
     "start": 0,
-    "end": 329,
+    "end": 338,
     "loc": {
       "start": {
         "line": 1,
@@ -168,9 +168,9 @@
         "trailingComments": [
           {
             "type": "CommentBlock",
-            "value": "*\n * Converts a tape to an array.\n *\n * @function\n * @param {Tape} tape - The tape to read from.\n * @returns {Array} The converted array.\n ",
+            "value": "*\n * Converts a tape to an array.\n *\n * @function\n * @param {Tape} tape - The tape to read from.\n * @returns {Promise<any[]>} The converted array.\n ",
             "start": 115,
-            "end": 258,
+            "end": 267,
             "loc": {
               "start": {
                 "line": 4,
@@ -186,8 +186,8 @@
       },
       {
         "type": "ExportDefaultDeclaration",
-        "start": 259,
-        "end": 328,
+        "start": 268,
+        "end": 337,
         "loc": {
           "start": {
             "line": 11,
@@ -200,8 +200,8 @@
         },
         "declaration": {
           "type": "ArrowFunctionExpression",
-          "start": 274,
-          "end": 327,
+          "start": 283,
+          "end": 336,
           "loc": {
             "start": {
               "line": 11,
@@ -219,8 +219,8 @@
           "params": [
             {
               "type": "Identifier",
-              "start": 275,
-              "end": 279,
+              "start": 284,
+              "end": 288,
               "loc": {
                 "start": {
                   "line": 11,
@@ -238,8 +238,8 @@
           ],
           "body": {
             "type": "CallExpression",
-            "start": 284,
-            "end": 327,
+            "start": 293,
+            "end": 336,
             "loc": {
               "start": {
                 "line": 11,
@@ -252,8 +252,8 @@
             },
             "callee": {
               "type": "Identifier",
-              "start": 284,
-              "end": 304,
+              "start": 293,
+              "end": 313,
               "loc": {
                 "start": {
                   "line": 11,
@@ -270,8 +270,8 @@
             "arguments": [
               {
                 "type": "CallExpression",
-                "start": 305,
-                "end": 326,
+                "start": 314,
+                "end": 335,
                 "loc": {
                   "start": {
                     "line": 11,
@@ -284,8 +284,8 @@
                 },
                 "callee": {
                   "type": "Identifier",
-                  "start": 305,
-                  "end": 320,
+                  "start": 314,
+                  "end": 329,
                   "loc": {
                     "start": {
                       "line": 11,
@@ -302,8 +302,8 @@
                 "arguments": [
                   {
                     "type": "Identifier",
-                    "start": 321,
-                    "end": 325,
+                    "start": 330,
+                    "end": 334,
                     "loc": {
                       "start": {
                         "line": 11,
@@ -324,9 +324,9 @@
           "leadingComments": [
             {
               "type": "CommentBlock",
-              "value": "*\n * Converts a tape to an array.\n *\n * @function\n * @param {Tape} tape - The tape to read from.\n * @returns {Array} The converted array.\n ",
+              "value": "*\n * Converts a tape to an array.\n *\n * @function\n * @param {Tape} tape - The tape to read from.\n * @returns {Promise<any[]>} The converted array.\n ",
               "start": 115,
-              "end": 258,
+              "end": 267,
               "loc": {
                 "start": {
                   "line": 4,
@@ -344,9 +344,9 @@
         "leadingComments": [
           {
             "type": "CommentBlock",
-            "value": "*\n * Converts a tape to an array.\n *\n * @function\n * @param {Tape} tape - The tape to read from.\n * @returns {Array} The converted array.\n ",
+            "value": "*\n * Converts a tape to an array.\n *\n * @function\n * @param {Tape} tape - The tape to read from.\n * @returns {Promise<any[]>} The converted array.\n ",
             "start": 115,
-            "end": 258,
+            "end": 267,
             "loc": {
               "start": {
                 "line": 4,
@@ -366,9 +366,9 @@
   "comments": [
     {
       "type": "CommentBlock",
-      "value": "*\n * Converts a tape to an array.\n *\n * @function\n * @param {Tape} tape - The tape to read from.\n * @returns {Array} The converted array.\n ",
+      "value": "*\n * Converts a tape to an array.\n *\n * @function\n * @param {Tape} tape - The tape to read from.\n * @returns {Promise<any[]>} The converted array.\n ",
       "start": 115,
-      "end": 258,
+      "end": 267,
       "loc": {
         "start": {
           "line": 4,
@@ -650,9 +650,9 @@
     },
     {
       "type": "CommentBlock",
-      "value": "*\n * Converts a tape to an array.\n *\n * @function\n * @param {Tape} tape - The tape to read from.\n * @returns {Array} The converted array.\n ",
+      "value": "*\n * Converts a tape to an array.\n *\n * @function\n * @param {Tape} tape - The tape to read from.\n * @returns {Promise<any[]>} The converted array.\n ",
       "start": 115,
-      "end": 258,
+      "end": 267,
       "loc": {
         "start": {
           "line": 4,
@@ -679,8 +679,8 @@
         "updateContext": null
       },
       "value": "export",
-      "start": 259,
-      "end": 265,
+      "start": 268,
+      "end": 274,
       "loc": {
         "start": {
           "line": 11,
@@ -707,8 +707,8 @@
         "updateContext": null
       },
       "value": "default",
-      "start": 266,
-      "end": 273,
+      "start": 275,
+      "end": 282,
       "loc": {
         "start": {
           "line": 11,
@@ -732,8 +732,8 @@
         "postfix": false,
         "binop": null
       },
-      "start": 274,
-      "end": 275,
+      "start": 283,
+      "end": 284,
       "loc": {
         "start": {
           "line": 11,
@@ -758,8 +758,8 @@
         "binop": null
       },
       "value": "tape",
-      "start": 275,
-      "end": 279,
+      "start": 284,
+      "end": 288,
       "loc": {
         "start": {
           "line": 11,
@@ -783,8 +783,8 @@
         "postfix": false,
         "binop": null
       },
-      "start": 279,
-      "end": 280,
+      "start": 288,
+      "end": 289,
       "loc": {
         "start": {
           "line": 11,
@@ -809,8 +809,8 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 281,
-      "end": 283,
+      "start": 290,
+      "end": 292,
       "loc": {
         "start": {
           "line": 11,
@@ -835,8 +835,8 @@
         "binop": null
       },
       "value": "asyncIterableToArray",
-      "start": 284,
-      "end": 304,
+      "start": 293,
+      "end": 313,
       "loc": {
         "start": {
           "line": 11,
@@ -860,8 +860,8 @@
         "postfix": false,
         "binop": null
       },
-      "start": 304,
-      "end": 305,
+      "start": 313,
+      "end": 314,
       "loc": {
         "start": {
           "line": 11,
@@ -886,8 +886,8 @@
         "binop": null
       },
       "value": "toAsyncIterable",
-      "start": 305,
-      "end": 320,
+      "start": 314,
+      "end": 329,
       "loc": {
         "start": {
           "line": 11,
@@ -911,8 +911,8 @@
         "postfix": false,
         "binop": null
       },
-      "start": 320,
-      "end": 321,
+      "start": 329,
+      "end": 330,
       "loc": {
         "start": {
           "line": 11,
@@ -937,8 +937,8 @@
         "binop": null
       },
       "value": "tape",
-      "start": 321,
-      "end": 325,
+      "start": 330,
+      "end": 334,
       "loc": {
         "start": {
           "line": 11,
@@ -962,8 +962,8 @@
         "postfix": false,
         "binop": null
       },
-      "start": 325,
-      "end": 326,
+      "start": 334,
+      "end": 335,
       "loc": {
         "start": {
           "line": 11,
@@ -987,8 +987,8 @@
         "postfix": false,
         "binop": null
       },
-      "start": 326,
-      "end": 327,
+      "start": 335,
+      "end": 336,
       "loc": {
         "start": {
           "line": 11,
@@ -1013,8 +1013,8 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 327,
-      "end": 328,
+      "start": 336,
+      "end": 337,
       "loc": {
         "start": {
           "line": 11,
@@ -1039,8 +1039,8 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 329,
-      "end": 329,
+      "start": 338,
+      "end": 338,
       "loc": {
         "start": {
           "line": 12,

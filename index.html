@@ -30,9 +30,12 @@
   <ul>
     
   <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/Tape.js~Tape.html">Tape</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/asyncIterableChain.js~Chain.html">Chain</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/split.js~Group.html">Group</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-asyncIterableChain">asyncIterableChain</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-asyncIterableMap">asyncIterableMap</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-asyncIterableToArray">asyncIterableToArray</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-asyncIteratorMap">asyncIteratorMap</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-chain">chain</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-exhaust">exhaust</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-fromAsyncIterable">fromAsyncIterable</a></span></span></li>
@@ -40,6 +43,7 @@
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-fromIterable">fromIterable</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-fromIterator">fromIterator</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-_fromReadStream">_fromReadStream</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-_fromReadStreamIterator">_fromReadStreamIterator</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-fromReadStream">fromReadStream</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-ignore">ignore</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-map">map</a></span></span></li>
@@ -51,6 +55,9 @@
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-toAsyncIterable">toAsyncIterable</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-toAsyncIterator">toAsyncIterator</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-toString">toString</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-eof">eof</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-fromArray">fromArray</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-fromString">fromString</a></span></span></li>
 </ul>
 </div>
 </nav>
@@ -59,7 +66,8 @@
 <h1 id="-a-href--https---async-abstraction-github-io-tape---async-abstraction-tape--a-"><a href="https://async-abstraction.github.io/tape">@async-abstraction/tape</a></h1><p>Tape library for JavaScript. Served with asynchronous goodness.
 See <a href="https://async-abstraction.github.io/tape/index.html">docs</a>.</p>
 <blockquote>
-<p>:warning: The code requires <code>regeneratorRuntime</code> to be defined, for instance by importing
+<p>:warning: Depending on your environment, the code may require
+<code>regeneratorRuntime</code> to be defined, for instance by importing
 <a href="https://www.npmjs.com/package/regenerator-runtime">regenerator-runtime/runtime</a>.</p>
 </blockquote>
 <pre><code class="lang-js"><code class="source-code prettyprint">import { fromReadStream } from &apos;@async-abstraction/tape&apos; ;
@@ -69,9 +77,8 @@ for await ( const character of tape ) ... ;</code>
 </code></pre>
 <p><a href="https://raw.githubusercontent.com/async-abstraction/tape/main/LICENSE"><img src="https://img.shields.io/github/license/async-abstraction/tape.svg" alt="License"></a>
 <a href="https://www.npmjs.org/package/@async-abstraction/tape"><img src="https://img.shields.io/npm/v/@async-abstraction/tape.svg" alt="Version"></a>
-<a href="https://github.com/async-abstraction/tape/actions/workflows/ci:test.yml?query=branch:main"><img src="https://img.shields.io/github/workflow/status/async-abstraction/tape/ci:test?event=push&amp;label=tests" alt="Tests"></a>
-<a href="https://david-dm.org/async-abstraction/tape"><img src="https://img.shields.io/david/async-abstraction/tape.svg" alt="Dependencies"></a>
-<a href="https://david-dm.org/async-abstraction/tape?type=dev"><img src="https://img.shields.io/david/dev/async-abstraction/tape.svg" alt="Dev dependencies"></a>
+<a href="https://github.com/async-abstraction/tape/actions/workflows/ci.yml?query=branch:main"><img src="https://img.shields.io/github/workflow/status/async-abstraction/tape/ci?event=push&amp;label=tests" alt="Tests"></a>
+<a href="https://github.com/async-abstraction/tape/network/dependencies"><img src="https://img.shields.io/librariesio/github/async-abstraction/tape" alt="Dependencies"></a>
 <a href="https://github.com/async-abstraction/tape/issues"><img src="https://img.shields.io/github/issues/async-abstraction/tape.svg" alt="GitHub issues"></a>
 <a href="https://www.npmjs.org/package/@async-abstraction/tape"><img src="https://img.shields.io/npm/dm/@async-abstraction/tape.svg" alt="Downloads"></a></p>
 <p><a href="https://codeclimate.com/github/async-abstraction/tape/issues"><img src="https://img.shields.io/codeclimate/issues/async-abstraction/tape.svg" alt="Code issues"></a>

@@ -237,7 +237,7 @@
         "trailingComments": [
           {
             "type": "CommentBlock",
-            "value": "*\n * Applies a callable to each token of a tape.\n * @param {Callable} callable - the callable to apply\n * @param {Tape} tape - the tape to process\n * @returns {Tape} The processed tape.\n ",
+            "value": "*\n * Applies a callable to each token of a tape.\n * @param {Function} callable - the callable to apply\n * @param {Tape} tape - the tape to process\n * @returns {Tape} The processed tape.\n ",
             "start": 163,
             "end": 354,
             "loc": {
@@ -510,7 +510,7 @@
           "leadingComments": [
             {
               "type": "CommentBlock",
-              "value": "*\n * Applies a callable to each token of a tape.\n * @param {Callable} callable - the callable to apply\n * @param {Tape} tape - the tape to process\n * @returns {Tape} The processed tape.\n ",
+              "value": "*\n * Applies a callable to each token of a tape.\n * @param {Function} callable - the callable to apply\n * @param {Tape} tape - the tape to process\n * @returns {Tape} The processed tape.\n ",
               "start": 163,
               "end": 354,
               "loc": {
@@ -530,7 +530,7 @@
         "leadingComments": [
           {
             "type": "CommentBlock",
-            "value": "*\n * Applies a callable to each token of a tape.\n * @param {Callable} callable - the callable to apply\n * @param {Tape} tape - the tape to process\n * @returns {Tape} The processed tape.\n ",
+            "value": "*\n * Applies a callable to each token of a tape.\n * @param {Function} callable - the callable to apply\n * @param {Tape} tape - the tape to process\n * @returns {Tape} The processed tape.\n ",
             "start": 163,
             "end": 354,
             "loc": {
@@ -552,7 +552,7 @@
   "comments": [
     {
       "type": "CommentBlock",
-      "value": "*\n * Applies a callable to each token of a tape.\n * @param {Callable} callable - the callable to apply\n * @param {Tape} tape - the tape to process\n * @returns {Tape} The processed tape.\n ",
+      "value": "*\n * Applies a callable to each token of a tape.\n * @param {Function} callable - the callable to apply\n * @param {Tape} tape - the tape to process\n * @returns {Tape} The processed tape.\n ",
       "start": 163,
       "end": 354,
       "loc": {
@@ -969,7 +969,7 @@
     },
     {
       "type": "CommentBlock",
-      "value": "*\n * Applies a callable to each token of a tape.\n * @param {Callable} callable - the callable to apply\n * @param {Tape} tape - the tape to process\n * @returns {Tape} The processed tape.\n ",
+      "value": "*\n * Applies a callable to each token of a tape.\n * @param {Function} callable - the callable to apply\n * @param {Tape} tape - the tape to process\n * @returns {Tape} The processed tape.\n ",
       "start": 163,
       "end": 354,
       "loc": {

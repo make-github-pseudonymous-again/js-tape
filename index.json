@@ -567,7 +567,7 @@
     "__docId__": 48,
     "kind": "file",
     "name": "src/Tape.js",
-    "content": "import eof from './eof.js';\nimport toAsyncIterator from './toAsyncIterator.js';\n\n/**\n * Class that wraps a callable with a tape.\n * Do not use directly. Use {@link fromCallable} instead.\n */\nexport default class Tape {\n\t/**\n\t * The constructor. Stores the callable that yields values to put on the tape.\n\t *\n\t * @param {Callable} callable - The callable to use.\n\t */\n\tconstructor(callable) {\n\t\t/**\n\t\t * The callable yielding values to put on the tape.\n\t\t * @type {Callable}\n\t\t */\n\t\tthis.callable = callable;\n\n\t\t/**\n\t\t * Buffer used to implement {@link Tape#unread}.\n\t\t * @type {Array}\n\t\t */\n\t\tthis.buffer = [];\n\n\t\t/**\n\t\t * The eof symbol.\n\t\t * @type {String}\n\t\t */\n\t\tthis.eof = eof;\n\t}\n\n\t/**\n\t * Returns the next token on the tape or {@link Tape#eof}\n\t * if the tape has been exhausted.\n\t *\n\t * @returns {Object} The next token on the tape or {@link Tape#eof}.\n\t */\n\tasync read() {\n\t\tif (this.buffer.length > 0) return this.buffer.pop();\n\n\t\tconst state = await this.callable();\n\n\t\tif (state.done) return this.eof;\n\n\t\treturn state.value;\n\t}\n\n\t/**\n\t * Puts a token back on the tape. If {@link Tape#read} is\n\t * used just after, this token will be returned.\n\t *\n\t * @param {Object} token - The token to put back on the tape.\n\t */\n\tunread(token) {\n\t\t// Should this be async too ?\n\t\tthis.buffer.push(token);\n\t}\n\n\t/**\n\t * Skips the next token on the tape.\n\t */\n\tasync skip() {\n\t\tif (this.buffer.length > 0) this.buffer.pop();\n\t\telse await this.callable();\n\t}\n\n\t/**\n\t * Skip the next `n` tokens on the tape.\n\t *\n\t * @param {Number} n - The number of tokens to skip.\n\t */\n\tasync skipMany(n) {\n\t\twhile (n-- > 0) await this.skip(); // eslint-disable-line no-await-in-loop\n\t}\n\n\t/**\n\t * Returns an async iterator on the tokens of the tape.\n\t *\n\t * @example\n\t * fromString('abc');\n\t * for await ( const token of tape ) console.log(token) ;\n\t *\n\t * @returns {AsyncIterator} Iterator on the tokens of the tape.\n\t */\n\t[Symbol.asyncIterator]() {\n\t\treturn toAsyncIterator(this);\n\t}\n\n\t/**\n\t * Explicitely throws when trying to access iterator symbol.\n\t *\n\t * @throws {Error} Always.\n\t */\n\t[Symbol.iterator]() {\n\t\tthrow new Error(\n\t\t\t'Not implemented. A tape has no *synchronous* iterator. Use `toArray` or `toString` instead.',\n\t\t);\n\t}\n}\n",
+    "content": "import eof from './eof.js';\nimport toAsyncIterator from './toAsyncIterator.js';\n\n/**\n * Class that wraps a callable with a tape.\n * Do not use directly. Use {@link fromCallable} instead.\n */\nexport default class Tape {\n\t/**\n\t * The constructor. Stores the callable that yields values to put on the tape.\n\t *\n\t * @param {Function} callable - The callable to use.\n\t */\n\tconstructor(callable) {\n\t\t/**\n\t\t * The callable yielding values to put on the tape.\n\t\t * @type {Function}\n\t\t */\n\t\tthis.callable = callable;\n\n\t\t/**\n\t\t * Buffer used to implement {@link Tape#unread}.\n\t\t * @type {Array}\n\t\t */\n\t\tthis.buffer = [];\n\n\t\t/**\n\t\t * The eof symbol.\n\t\t * @type {any}\n\t\t */\n\t\tthis.eof = eof;\n\t}\n\n\t/**\n\t * Returns the next token on the tape or {@link Tape#eof}\n\t * if the tape has been exhausted.\n\t *\n\t * @returns {Promise} The next token on the tape or {@link Tape#eof}.\n\t */\n\tasync read() {\n\t\tif (this.buffer.length > 0) return this.buffer.pop();\n\n\t\tconst state = await this.callable();\n\n\t\tif (state.done) return this.eof;\n\n\t\treturn state.value;\n\t}\n\n\t/**\n\t * Puts a token back on the tape. If {@link Tape#read} is\n\t * used just after, this token will be returned.\n\t *\n\t * @param {any} token - The token to put back on the tape.\n\t */\n\tunread(token) {\n\t\t// Should this be async too ?\n\t\tthis.buffer.push(token);\n\t}\n\n\t/**\n\t * Skips the next token on the tape.\n\t */\n\tasync skip() {\n\t\tif (this.buffer.length > 0) this.buffer.pop();\n\t\telse await this.callable();\n\t}\n\n\t/**\n\t * Skip the next `n` tokens on the tape.\n\t *\n\t * @param {number} n - The number of tokens to skip.\n\t */\n\tasync skipMany(n) {\n\t\twhile (n-- > 0) await this.skip(); // eslint-disable-line no-await-in-loop\n\t}\n\n\t/**\n\t * Returns an async iterator on the tokens of the tape.\n\t *\n\t * @example\n\t * fromString('abc');\n\t * for await ( const token of tape ) console.log(token) ;\n\t *\n\t * @returns {AsyncIterator} Iterator on the tokens of the tape.\n\t */\n\t[Symbol.asyncIterator]() {\n\t\treturn toAsyncIterator(this);\n\t}\n\n\t/**\n\t * Explicitely throws when trying to access iterator symbol.\n\t *\n\t * @throws {Error} Always.\n\t */\n\t[Symbol.iterator]() {\n\t\tthrow new Error(\n\t\t\t'Not implemented. A tape has no *synchronous* iterator. Use `toArray` or `toString` instead.',\n\t\t);\n\t}\n}\n",
     "static": true,
     "longname": "/home/runner/work/tape/tape/src/Tape.js",
     "access": "public",
@@ -605,7 +605,7 @@
       {
         "nullable": null,
         "types": [
-          "Callable"
+          "Function"
         ],
         "spread": false,
         "optional": false,
@@ -627,7 +627,7 @@
     "type": {
       "nullable": null,
       "types": [
-        "Callable"
+        "Function"
       ],
       "spread": false,
       "description": null
@@ -665,7 +665,7 @@
     "type": {
       "nullable": null,
       "types": [
-        "String"
+        "any"
       ],
       "spread": false,
       "description": null
@@ -686,13 +686,13 @@
     "unknown": [
       {
         "tagName": "@returns",
-        "tagValue": "{Object} The next token on the tape or {@link Tape#eof}."
+        "tagValue": "{Promise} The next token on the tape or {@link Tape#eof}."
       }
     ],
     "return": {
       "nullable": null,
       "types": [
-        "Object"
+        "Promise"
       ],
       "spread": false,
       "description": "The next token on the tape or {@link Tape#eof}."
@@ -715,7 +715,7 @@
       {
         "nullable": null,
         "types": [
-          "Object"
+          "any"
         ],
         "spread": false,
         "optional": false,
@@ -756,7 +756,7 @@
       {
         "nullable": null,
         "types": [
-          "Number"
+          "number"
         ],
         "spread": false,
         "optional": false,
@@ -824,7 +824,7 @@
     "__docId__": 60,
     "kind": "file",
     "name": "src/asyncIterableChain.js",
-    "content": "/**\n * Utility function to chain an async iterable of async iterables.\n *\n * @private\n * @param {AsyncIterable} iterables - the input iterable of iterables.\n * @returns {AsyncIterable} The chain of the input iterables.\n */\nexport default async function* asyncIterableChain(iterables) {\n\tfor await (const iterable of iterables) {\n\t\tfor await (const item of iterable) yield item;\n\t}\n}\n",
+    "content": "/**\n * Utility function to chain an async iterable of async iterables.\n *\n * @private\n * @param {AsyncIterable<AsyncIterable>} iterables - the input iterable of iterables.\n * @returns {AsyncIterable} The chain of the input iterables.\n */\nexport default function asyncIterableChain(iterables) {\n\treturn new Chain(iterables);\n}\n\nexport class Chain {\n\tconstructor(iterables) {\n\t\tthis.iterators = iterables[Symbol.asyncIterator]();\n\t\tthis.iterator = null;\n\t}\n\n\tasync next() {\n\t\tfor (;;) {\n\t\t\tif (this.iterator === null) {\n\t\t\t\t// eslint-disable-next-line no-await-in-loop\n\t\t\t\tconst {done, value} = await this.iterators.next();\n\t\t\t\tif (done) return {done: true};\n\t\t\t\tthis.iterator = value[Symbol.asyncIterator]();\n\t\t\t}\n\n\t\t\t// eslint-disable-next-line no-await-in-loop\n\t\t\tconst {done, value} = await this.iterator.next();\n\t\t\tif (done) {\n\t\t\t\tthis.iterator = null;\n\t\t\t} else {\n\t\t\t\treturn {done: false, value};\n\t\t\t}\n\t\t}\n\t}\n\n\t[Symbol.asyncIterator]() {\n\t\treturn this;\n\t}\n}\n",
     "static": true,
     "longname": "/home/runner/work/tape/tape/src/asyncIterableChain.js",
     "access": "public",
@@ -836,8 +836,8 @@
     "kind": "function",
     "name": "asyncIterableChain",
     "memberof": "src/asyncIterableChain.js",
-    "generator": true,
-    "async": true,
+    "generator": false,
+    "async": false,
     "static": true,
     "longname": "src/asyncIterableChain.js~asyncIterableChain",
     "access": "private",
@@ -856,7 +856,7 @@
       {
         "nullable": null,
         "types": [
-          "AsyncIterable"
+          "AsyncIterable<AsyncIterable>"
         ],
         "spread": false,
         "optional": false,
@@ -875,9 +875,113 @@
   },
   {
     "__docId__": 62,
+    "kind": "class",
+    "name": "Chain",
+    "memberof": "src/asyncIterableChain.js",
+    "static": true,
+    "longname": "src/asyncIterableChain.js~Chain",
+    "access": "public",
+    "export": true,
+    "importPath": "@async-abstraction/tape/src/asyncIterableChain.js",
+    "importStyle": "{Chain}",
+    "description": null,
+    "lineNumber": 12,
+    "undocument": true,
+    "interface": false
+  },
+  {
+    "__docId__": 63,
+    "kind": "constructor",
+    "name": "constructor",
+    "memberof": "src/asyncIterableChain.js~Chain",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/asyncIterableChain.js~Chain#constructor",
+    "access": "public",
+    "description": null,
+    "lineNumber": 13,
+    "undocument": true
+  },
+  {
+    "__docId__": 64,
+    "kind": "member",
+    "name": "iterators",
+    "memberof": "src/asyncIterableChain.js~Chain",
+    "static": false,
+    "longname": "src/asyncIterableChain.js~Chain#iterators",
+    "access": "public",
+    "description": null,
+    "lineNumber": 14,
+    "undocument": true,
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 65,
+    "kind": "member",
+    "name": "iterator",
+    "memberof": "src/asyncIterableChain.js~Chain",
+    "static": false,
+    "longname": "src/asyncIterableChain.js~Chain#iterator",
+    "access": "public",
+    "description": null,
+    "lineNumber": 15,
+    "undocument": true,
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 66,
+    "kind": "method",
+    "name": "next",
+    "memberof": "src/asyncIterableChain.js~Chain",
+    "generator": false,
+    "async": true,
+    "static": false,
+    "longname": "src/asyncIterableChain.js~Chain#next",
+    "access": "public",
+    "description": null,
+    "lineNumber": 18,
+    "undocument": true,
+    "params": [],
+    "return": {
+      "types": [
+        "{\"done\": *, \"value\": *}"
+      ]
+    }
+  },
+  {
+    "__docId__": 69,
+    "kind": "method",
+    "name": "[Symbol.asyncIterator]",
+    "memberof": "src/asyncIterableChain.js~Chain",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/asyncIterableChain.js~Chain#[Symbol.asyncIterator]",
+    "access": "public",
+    "description": null,
+    "lineNumber": 37,
+    "undocument": true,
+    "params": [],
+    "return": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 70,
     "kind": "file",
     "name": "src/asyncIterableMap.js",
-    "content": "/**\n * Utility function to apply a sync callable to each item of an async iterable.\n *\n * @private\n * @param {Callable} callable - The callable to apply.\n * @param {AsyncIterable} iterable - The iterable to process.\n * @returns {AsyncIterable} The iterable of mapped values.\n */\nexport default async function* asyncIterableMap(callable, iterable) {\n\t// Should the callable also be async ?\n\tfor await (const item of iterable) yield callable(item);\n}\n",
+    "content": "import asyncIteratorMap from './asyncIteratorMap.js';\n\n/**\n * Utility function to apply a sync callable to each item of an async iterable.\n *\n * @private\n * @param {Function} callable - The callable to apply.\n * @param {AsyncIterable} iterable - The iterable to process.\n * @returns {AsyncIterable} The iterable of mapped values.\n */\nexport default function asyncIterableMap(callable, iterable) {\n\treturn asyncIteratorMap(callable, iterable[Symbol.asyncIterator]());\n}\n",
     "static": true,
     "longname": "/home/runner/work/tape/tape/src/asyncIterableMap.js",
     "access": "public",
@@ -885,12 +989,12 @@
     "lineNumber": 1
   },
   {
-    "__docId__": 63,
+    "__docId__": 71,
     "kind": "function",
     "name": "asyncIterableMap",
     "memberof": "src/asyncIterableMap.js",
-    "generator": true,
-    "async": true,
+    "generator": false,
+    "async": false,
     "static": true,
     "longname": "src/asyncIterableMap.js~asyncIterableMap",
     "access": "private",
@@ -898,7 +1002,7 @@
     "importPath": "@async-abstraction/tape/src/asyncIterableMap.js",
     "importStyle": "asyncIterableMap",
     "description": "Utility function to apply a sync callable to each item of an async iterable.",
-    "lineNumber": 9,
+    "lineNumber": 11,
     "unknown": [
       {
         "tagName": "@returns",
@@ -909,7 +1013,7 @@
       {
         "nullable": null,
         "types": [
-          "Callable"
+          "Function"
         ],
         "spread": false,
         "optional": false,
@@ -937,10 +1041,10 @@
     }
   },
   {
-    "__docId__": 64,
+    "__docId__": 72,
     "kind": "file",
     "name": "src/asyncIterableToArray.js",
-    "content": "/**\n * Spreads an asynchronous iterable inside a new array.\n *\n * @private\n * @param {AsyncIterable} asyncIterable - the input iterable.\n * @returns {Array} A new array filled with the elements of the input iterable.\n */\nexport default async function asyncIterableToArray(asyncIterable) {\n\tconst array = [];\n\tfor await (const item of asyncIterable) array.push(item);\n\treturn array;\n}\n",
+    "content": "/**\n * Spreads an asynchronous iterable inside a new array.\n *\n * @private\n * @param {AsyncIterable} asyncIterable - the input iterable.\n * @returns {Promise<any[]>} A new array filled with the elements of the input iterable.\n */\nexport default async function asyncIterableToArray(asyncIterable) {\n\tconst array = [];\n\tconst it = asyncIterable[Symbol.asyncIterator]();\n\tfor (;;) {\n\t\t// eslint-disable-next-line no-await-in-loop\n\t\tconst {done, value} = await it.next();\n\t\tif (done) break;\n\t\tarray.push(value);\n\t}\n\n\treturn array;\n}\n",
     "static": true,
     "longname": "/home/runner/work/tape/tape/src/asyncIterableToArray.js",
     "access": "public",
@@ -948,7 +1052,7 @@
     "lineNumber": 1
   },
   {
-    "__docId__": 65,
+    "__docId__": 73,
     "kind": "function",
     "name": "asyncIterableToArray",
     "memberof": "src/asyncIterableToArray.js",
@@ -965,7 +1069,7 @@
     "unknown": [
       {
         "tagName": "@returns",
-        "tagValue": "{Array} A new array filled with the elements of the input iterable."
+        "tagValue": "{Promise<any[]>} A new array filled with the elements of the input iterable."
       }
     ],
     "params": [
@@ -983,17 +1087,80 @@
     "return": {
       "nullable": null,
       "types": [
-        "Array"
+        "Promise<any[]>"
       ],
       "spread": false,
       "description": "A new array filled with the elements of the input iterable."
     }
   },
   {
-    "__docId__": 66,
+    "__docId__": 74,
+    "kind": "file",
+    "name": "src/asyncIteratorMap.js",
+    "content": "/**\n * Utility function to apply a sync callable to each item of an async iterator.\n *\n * @private\n * @param {Function} callable - The callable to apply.\n * @param {AsyncIterator} iterator - The iterator to process.\n * @returns {AsyncIterator} The iterator of mapped values.\n */\nexport default async function* asyncIteratorMap(callable, iterator) {\n\t// Should the callable also be async ?\n\tfor (;;) {\n\t\t// eslint-disable-next-line no-await-in-loop\n\t\tconst {done, value} = await iterator.next();\n\t\tif (done) break;\n\t\tyield callable(value);\n\t}\n}\n",
+    "static": true,
+    "longname": "/home/runner/work/tape/tape/src/asyncIteratorMap.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 75,
+    "kind": "function",
+    "name": "asyncIteratorMap",
+    "memberof": "src/asyncIteratorMap.js",
+    "generator": true,
+    "async": true,
+    "static": true,
+    "longname": "src/asyncIteratorMap.js~asyncIteratorMap",
+    "access": "private",
+    "export": true,
+    "importPath": "@async-abstraction/tape/src/asyncIteratorMap.js",
+    "importStyle": "asyncIteratorMap",
+    "description": "Utility function to apply a sync callable to each item of an async iterator.",
+    "lineNumber": 9,
+    "unknown": [
+      {
+        "tagName": "@returns",
+        "tagValue": "{AsyncIterator} The iterator of mapped values."
+      }
+    ],
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "Function"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "callable",
+        "description": "The callable to apply."
+      },
+      {
+        "nullable": null,
+        "types": [
+          "AsyncIterator"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "iterator",
+        "description": "The iterator to process."
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "AsyncIterator"
+      ],
+      "spread": false,
+      "description": "The iterator of mapped values."
+    }
+  },
+  {
+    "__docId__": 76,
     "kind": "file",
     "name": "src/chain.js",
-    "content": "import fromAsyncIterable from './fromAsyncIterable.js';\nimport toAsyncIterable from './toAsyncIterable.js';\nimport asyncIterableChain from './asyncIterableChain.js';\nimport asyncIterableMap from './asyncIterableMap.js';\n\n/**\n * Converts a tape of tapes of tokens to a tape of tokens.\n * @param {Tape} tape - The tape of tapes of tokens to read from.\n * @return {Tape} The converted tape of tokens.\n */\nexport default function chain(tape) {\n\treturn fromAsyncIterable(\n\t\tasyncIterableChain(\n\t\t\tasyncIterableMap(toAsyncIterable, toAsyncIterable(tape)),\n\t\t),\n\t);\n}\n",
+    "content": "import fromAsyncIterable from './fromAsyncIterable.js';\nimport toAsyncIterable from './toAsyncIterable.js';\nimport asyncIterableChain from './asyncIterableChain.js';\nimport asyncIterableMap from './asyncIterableMap.js';\n\n/**\n * Converts a tape of tapes of tokens to a tape of tokens.\n * @param {Tape} tape - The tape of tapes of tokens to read from.\n * @returns {Tape} The converted tape of tokens.\n */\nexport default function chain(tape) {\n\treturn fromAsyncIterable(\n\t\tasyncIterableChain(\n\t\t\tasyncIterableMap(toAsyncIterable, toAsyncIterable(tape)),\n\t\t),\n\t);\n}\n",
     "static": true,
     "longname": "/home/runner/work/tape/tape/src/chain.js",
     "access": "public",
@@ -1001,7 +1168,7 @@
     "lineNumber": 1
   },
   {
-    "__docId__": 67,
+    "__docId__": 77,
     "kind": "function",
     "name": "chain",
     "memberof": "src/chain.js",
@@ -1015,6 +1182,12 @@
     "importStyle": "chain",
     "description": "Converts a tape of tapes of tokens to a tape of tokens.",
     "lineNumber": 11,
+    "unknown": [
+      {
+        "tagName": "@returns",
+        "tagValue": "{Tape} The converted tape of tokens."
+      }
+    ],
     "params": [
       {
         "nullable": null,
@@ -1037,10 +1210,10 @@
     }
   },
   {
-    "__docId__": 68,
+    "__docId__": 78,
     "kind": "file",
     "name": "src/eof.js",
-    "content": "/**\n * Shared object used as end of file.\n */\nexport default {};\n",
+    "content": "/**\n * Shared object used as end of file.\n *\n * @type {object}\n */\nconst eof = {};\nexport default eof;\n",
     "static": true,
     "longname": "/home/runner/work/tape/tape/src/eof.js",
     "access": "public",
@@ -1048,10 +1221,32 @@
     "lineNumber": 1
   },
   {
-    "__docId__": 69,
+    "__docId__": 79,
+    "kind": "variable",
+    "name": "eof",
+    "memberof": "src/eof.js",
+    "static": true,
+    "longname": "src/eof.js~eof",
+    "access": "public",
+    "export": true,
+    "importPath": "@async-abstraction/tape/src/eof.js",
+    "importStyle": "eof",
+    "description": "Shared object used as end of file.",
+    "lineNumber": 6,
+    "type": {
+      "nullable": null,
+      "types": [
+        "object"
+      ],
+      "spread": false,
+      "description": null
+    }
+  },
+  {
+    "__docId__": 80,
     "kind": "file",
     "name": "src/exhaust.js",
-    "content": "/**\n * Exhausts a tape.\n * @param {Tape} tape - The tape to read from.\n */\nexport default async function exhaust(tape) {\n\twhile ((await tape.read()) !== tape.eof); // eslint-disable-line no-await-in-loop\n}\n",
+    "content": "/**\n * Exhausts a tape.\n * @param {Tape} tape - The tape to read from.\n */\nexport default async function exhaust(tape) {\n\t// While ((await tape.read()) !== tape.eof); // eslint-disable-line no-await-in-loop\n\tfor (;;) {\n\t\t// eslint-disable-next-line no-await-in-loop\n\t\tconst token = await tape.read();\n\t\tif (token === tape.eof) return;\n\t}\n}\n",
     "static": true,
     "longname": "/home/runner/work/tape/tape/src/exhaust.js",
     "access": "public",
@@ -1059,7 +1254,7 @@
     "lineNumber": 1
   },
   {
-    "__docId__": 70,
+    "__docId__": 81,
     "kind": "function",
     "name": "exhaust",
     "memberof": "src/exhaust.js",
@@ -1088,10 +1283,10 @@
     "return": null
   },
   {
-    "__docId__": 71,
+    "__docId__": 82,
     "kind": "file",
     "name": "src/fromArray.js",
-    "content": "import fromIterable from './fromIterable.js';\n\n/**\n * Converts an array to a tape.\n *\n * @function\n * @param {Array} _array - the array to convert\n * @returns {Tape}\n */\nexport default fromIterable;\n",
+    "content": "import fromIterable from './fromIterable.js';\n\n/**\n * Converts an array to a tape.\n *\n * @function\n * @param {Array} array - the array to convert\n * @returns {Tape}\n */\nconst fromArray = fromIterable;\nexport default fromArray;\n",
     "static": true,
     "longname": "/home/runner/work/tape/tape/src/fromArray.js",
     "access": "public",
@@ -1099,7 +1294,56 @@
     "lineNumber": 1
   },
   {
-    "__docId__": 72,
+    "__docId__": 83,
+    "kind": "variable",
+    "name": "fromArray",
+    "memberof": "src/fromArray.js",
+    "static": true,
+    "longname": "src/fromArray.js~fromArray",
+    "access": "public",
+    "export": true,
+    "importPath": "@async-abstraction/tape/src/fromArray.js",
+    "importStyle": "fromArray",
+    "description": "Converts an array to a tape.",
+    "lineNumber": 10,
+    "unknown": [
+      {
+        "tagName": "@function",
+        "tagValue": ""
+      },
+      {
+        "tagName": "@returns",
+        "tagValue": "{Tape}"
+      }
+    ],
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "Array"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "array",
+        "description": "the array to convert"
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "Tape"
+      ],
+      "spread": false,
+      "description": ""
+    },
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 84,
     "kind": "file",
     "name": "src/fromAsyncIterable.js",
     "content": "import fromIterator from './fromIterator.js';\n\n/**\n * Converts an asynchronous iterable to a tape.\n *\n * @function\n * @param {AsyncIterable} _iterable - The iterable to convert.\n * @returns {Tape} The converted tape.\n */\nexport default (_iterable) => fromIterator(_iterable[Symbol.asyncIterator]());\n",
@@ -1110,7 +1354,7 @@
     "lineNumber": 1
   },
   {
-    "__docId__": 73,
+    "__docId__": 85,
     "kind": "function",
     "name": "fromAsyncIterable",
     "memberof": "src/fromAsyncIterable.js",
@@ -1156,10 +1400,10 @@
     }
   },
   {
-    "__docId__": 74,
+    "__docId__": 86,
     "kind": "file",
     "name": "src/fromCallable.js",
-    "content": "import Tape from './Tape.js';\n\n/**\n * Converts a callable to a tape.\n *\n * @function\n * @param {Callable} callable - The callable to convert.\n * @returns {Tape} The converted tape.\n */\nexport default (callable) => new Tape(callable);\n",
+    "content": "import Tape from './Tape.js';\n\n/**\n * Converts a callable to a tape.\n *\n * @function\n * @param {Function} callable - The callable to convert.\n * @returns {Tape} The converted tape.\n */\nexport default (callable) => new Tape(callable);\n",
     "static": true,
     "longname": "/home/runner/work/tape/tape/src/fromCallable.js",
     "access": "public",
@@ -1167,7 +1411,7 @@
     "lineNumber": 1
   },
   {
-    "__docId__": 75,
+    "__docId__": 87,
     "kind": "function",
     "name": "fromCallable",
     "memberof": "src/fromCallable.js",
@@ -1195,7 +1439,7 @@
       {
         "nullable": null,
         "types": [
-          "Callable"
+          "Function"
         ],
         "spread": false,
         "optional": false,
@@ -1213,7 +1457,7 @@
     }
   },
   {
-    "__docId__": 76,
+    "__docId__": 88,
     "kind": "file",
     "name": "src/fromIterable.js",
     "content": "import fromIterator from './fromIterator.js';\n\n/**\n * Converts an iterable to a tape.\n *\n * @function\n * @param {Iterable} iterable - The iterable to convert.\n * @returns {Tape} The converted tape.\n */\nexport default (iterable) => fromIterator(iterable[Symbol.iterator]());\n",
@@ -1224,7 +1468,7 @@
     "lineNumber": 1
   },
   {
-    "__docId__": 77,
+    "__docId__": 89,
     "kind": "function",
     "name": "fromIterable",
     "memberof": "src/fromIterable.js",
@@ -1270,10 +1514,10 @@
     }
   },
   {
-    "__docId__": 78,
+    "__docId__": 90,
     "kind": "file",
     "name": "src/fromIterator.js",
-    "content": "import fromCallable from './fromCallable.js';\n\n/**\n * Converts an iterator to a tape.\n *\n * @function\n * @param {Iterator} iterator - The iterator to convert.\n * @returns {Tape} The converted tape.\n */\nexport default (iterator) => fromCallable(iterator.next.bind(iterator));\n",
+    "content": "import fromCallable from './fromCallable.js';\n\n/**\n * Converts an iterator to a tape.\n *\n * @function\n * @param {Iterator|AsyncIterator} iterator - The iterator to convert.\n * @returns {Tape} The converted tape.\n */\nexport default (iterator) => fromCallable(iterator.next.bind(iterator));\n",
     "static": true,
     "longname": "/home/runner/work/tape/tape/src/fromIterator.js",
     "access": "public",
@@ -1281,7 +1525,7 @@
     "lineNumber": 1
   },
   {
-    "__docId__": 79,
+    "__docId__": 91,
     "kind": "function",
     "name": "fromIterator",
     "memberof": "src/fromIterator.js",
@@ -1309,7 +1553,8 @@
       {
         "nullable": null,
         "types": [
-          "Iterator"
+          "Iterator",
+          "AsyncIterator"
         ],
         "spread": false,
         "optional": false,
@@ -1327,10 +1572,10 @@
     }
   },
   {
-    "__docId__": 80,
+    "__docId__": 92,
     "kind": "file",
     "name": "src/fromReadStream.js",
-    "content": "import fromAsyncIterable from './fromAsyncIterable.js';\n\n/**\n * Converts a ReadStream object to an async iterable of tokens.\n *\n * @private\n * @param {ReadStream} readStream - The ReadStream object to convert.\n * @returns {AsyncIterable} The converted iterable.\n */\nexport async function* _fromReadStream(readStream) {\n\tfor await (const chunk of readStream) {\n\t\tfor (const piece of chunk) yield piece;\n\t}\n}\n\n/**\n * Converts a ReadStream object to a tape.\n *\n * @function\n * @param {ReadStream} readStream - The ReadStream object to convert.\n * @returns {Tape} The converted tape.\n */\nexport default (readStream) => fromAsyncIterable(_fromReadStream(readStream));\n",
+    "content": "import fromAsyncIterable from './fromAsyncIterable.js';\n\n/**\n * Converts a ReadStream iterator to an async iterable of tokens.\n *\n * @private\n * @param {AsyncIterator} iterator - The ReadStream iterator to convert.\n * @returns {AsyncIterable} The converted iterable.\n */\nexport async function* _fromReadStreamIterator(iterator) {\n\tfor (;;) {\n\t\t// eslint-disable-next-line no-await-in-loop\n\t\tconst {done, value: chunk} = await iterator.next();\n\t\tif (done) break;\n\t\tconst chunkIterator = chunk[Symbol.iterator]();\n\t\tfor (;;) {\n\t\t\tconst {done, value} = chunkIterator.next();\n\t\t\tif (done) break;\n\t\t\tyield value;\n\t\t}\n\t}\n}\n\n/**\n * Converts a ReadStream object to an async iterable of tokens.\n *\n * @private\n * @param {ReadStream} readStream - The ReadStream object to convert.\n * @returns {AsyncIterable} The converted iterable.\n */\nexport function _fromReadStream(readStream) {\n\treturn _fromReadStreamIterator(readStream[Symbol.asyncIterator]());\n}\n\n/**\n * Converts a ReadStream object to a tape.\n *\n * @function\n * @param {ReadStream} readStream - The ReadStream object to convert.\n * @returns {Tape} The converted tape.\n */\nexport default (readStream) => fromAsyncIterable(_fromReadStream(readStream));\n",
     "static": true,
     "longname": "/home/runner/work/tape/tape/src/fromReadStream.js",
     "access": "public",
@@ -1338,12 +1583,54 @@
     "lineNumber": 1
   },
   {
-    "__docId__": 81,
+    "__docId__": 93,
     "kind": "function",
-    "name": "_fromReadStream",
+    "name": "_fromReadStreamIterator",
     "memberof": "src/fromReadStream.js",
     "generator": true,
     "async": true,
+    "static": true,
+    "longname": "src/fromReadStream.js~_fromReadStreamIterator",
+    "access": "private",
+    "export": true,
+    "importPath": "@async-abstraction/tape/src/fromReadStream.js",
+    "importStyle": "{_fromReadStreamIterator}",
+    "description": "Converts a ReadStream iterator to an async iterable of tokens.",
+    "lineNumber": 10,
+    "unknown": [
+      {
+        "tagName": "@returns",
+        "tagValue": "{AsyncIterable} The converted iterable."
+      }
+    ],
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "AsyncIterator"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "iterator",
+        "description": "The ReadStream iterator to convert."
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "AsyncIterable"
+      ],
+      "spread": false,
+      "description": "The converted iterable."
+    }
+  },
+  {
+    "__docId__": 94,
+    "kind": "function",
+    "name": "_fromReadStream",
+    "memberof": "src/fromReadStream.js",
+    "generator": false,
+    "async": false,
     "static": true,
     "longname": "src/fromReadStream.js~_fromReadStream",
     "access": "private",
@@ -1351,7 +1638,7 @@
     "importPath": "@async-abstraction/tape/src/fromReadStream.js",
     "importStyle": "{_fromReadStream}",
     "description": "Converts a ReadStream object to an async iterable of tokens.",
-    "lineNumber": 10,
+    "lineNumber": 31,
     "unknown": [
       {
         "tagName": "@returns",
@@ -1380,7 +1667,7 @@
     }
   },
   {
-    "__docId__": 82,
+    "__docId__": 95,
     "kind": "function",
     "name": "fromReadStream",
     "memberof": "src/fromReadStream.js",
@@ -1393,7 +1680,7 @@
     "importPath": "@async-abstraction/tape/src/fromReadStream.js",
     "importStyle": "fromReadStream",
     "description": "Converts a ReadStream object to a tape.",
-    "lineNumber": 23,
+    "lineNumber": 42,
     "unknown": [
       {
         "tagName": "@function",
@@ -1426,10 +1713,10 @@
     }
   },
   {
-    "__docId__": 83,
+    "__docId__": 96,
     "kind": "file",
     "name": "src/fromString.js",
-    "content": "import fromIterable from './fromIterable.js';\n\n/**\n * Converts a string to a tape.\n *\n * @example\n * fromString( '1,3,2' ) ;\n *\n * @function\n * @param {String} _string - the string to convert\n * @returns {Tape}\n */\nexport default fromIterable;\n",
+    "content": "import fromIterable from './fromIterable.js';\n\n/**\n * Converts a string to a tape.\n *\n * @example\n * fromString( '1,3,2' ) ;\n *\n * @function\n * @param {string} string - the string to convert\n * @returns {Tape}\n */\nconst fromString = fromIterable;\nexport default fromString;\n",
     "static": true,
     "longname": "/home/runner/work/tape/tape/src/fromString.js",
     "access": "public",
@@ -1437,7 +1724,59 @@
     "lineNumber": 1
   },
   {
-    "__docId__": 84,
+    "__docId__": 97,
+    "kind": "variable",
+    "name": "fromString",
+    "memberof": "src/fromString.js",
+    "static": true,
+    "longname": "src/fromString.js~fromString",
+    "access": "public",
+    "export": true,
+    "importPath": "@async-abstraction/tape/src/fromString.js",
+    "importStyle": "fromString",
+    "description": "Converts a string to a tape.",
+    "examples": [
+      "fromString( '1,3,2' ) ;"
+    ],
+    "lineNumber": 13,
+    "unknown": [
+      {
+        "tagName": "@function",
+        "tagValue": ""
+      },
+      {
+        "tagName": "@returns",
+        "tagValue": "{Tape}"
+      }
+    ],
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "string",
+        "description": "the string to convert"
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "Tape"
+      ],
+      "spread": false,
+      "description": ""
+    },
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 98,
     "kind": "file",
     "name": "src/ignore.js",
     "content": "import split from './split.js';\nimport chain from './chain.js';\n\n/**\n * Filters a tape by ignoring a given set of tokens.\n * @param {Tape} tape - The tape to filter.\n * @param {Iterable} toignore - The tokens to ignore.\n * @returns {Tape} The input tape but with some tokens ignored.\n */\nexport default function ignore(tape, toignore) {\n\treturn chain(split(tape, toignore));\n}\n",
@@ -1448,7 +1787,7 @@
     "lineNumber": 1
   },
   {
-    "__docId__": 85,
+    "__docId__": 99,
     "kind": "function",
     "name": "ignore",
     "memberof": "src/ignore.js",
@@ -1500,7 +1839,7 @@
     }
   },
   {
-    "__docId__": 86,
+    "__docId__": 100,
     "kind": "file",
     "name": "src/index.js",
     "content": "export {default as Tape} from './Tape.js';\nexport {default as asyncIterableChain} from './asyncIterableChain.js';\nexport {default as asyncIterableMap} from './asyncIterableMap.js';\nexport {default as asyncIterableToArray} from './asyncIterableToArray.js';\nexport {default as chain} from './chain.js';\nexport {default as eof} from './eof.js';\nexport {default as exhaust} from './exhaust.js';\nexport {default as fromArray} from './fromArray.js';\nexport {default as fromAsyncIterable} from './fromAsyncIterable.js';\nexport {default as fromCallable} from './fromCallable.js';\nexport {default as fromIterable} from './fromIterable.js';\nexport {default as fromIterator} from './fromIterator.js';\nexport {default as fromReadStream} from './fromReadStream.js';\nexport {default as fromString} from './fromString.js';\nexport {default as ignore} from './ignore.js';\nexport {default as map} from './map.js';\nexport {default as skip} from './skip.js';\nexport {default as split} from './split.js';\nexport {default as toArray} from './toArray.js';\nexport {default as toAsyncCallable} from './toAsyncCallable.js';\nexport {default as toAsyncIterable} from './toAsyncIterable.js';\nexport {default as toAsyncIterator} from './toAsyncIterator.js';\nexport {default as toString} from './toString.js';\n",
@@ -1511,10 +1850,10 @@
     "lineNumber": 1
   },
   {
-    "__docId__": 87,
+    "__docId__": 101,
     "kind": "file",
     "name": "src/map.js",
-    "content": "import fromAsyncIterable from './fromAsyncIterable.js';\nimport toAsyncIterable from './toAsyncIterable.js';\nimport asyncIterableMap from './asyncIterableMap.js';\n\n/**\n * Applies a callable to each token of a tape.\n * @param {Callable} callable - the callable to apply\n * @param {Tape} tape - the tape to process\n * @returns {Tape} The processed tape.\n */\nexport default function map(callable, tape) {\n\treturn fromAsyncIterable(asyncIterableMap(callable, toAsyncIterable(tape)));\n}\n",
+    "content": "import fromAsyncIterable from './fromAsyncIterable.js';\nimport toAsyncIterable from './toAsyncIterable.js';\nimport asyncIterableMap from './asyncIterableMap.js';\n\n/**\n * Applies a callable to each token of a tape.\n * @param {Function} callable - the callable to apply\n * @param {Tape} tape - the tape to process\n * @returns {Tape} The processed tape.\n */\nexport default function map(callable, tape) {\n\treturn fromAsyncIterable(asyncIterableMap(callable, toAsyncIterable(tape)));\n}\n",
     "static": true,
     "longname": "/home/runner/work/tape/tape/src/map.js",
     "access": "public",
@@ -1522,7 +1861,7 @@
     "lineNumber": 1
   },
   {
-    "__docId__": 88,
+    "__docId__": 102,
     "kind": "function",
     "name": "map",
     "memberof": "src/map.js",
@@ -1546,7 +1885,7 @@
       {
         "nullable": null,
         "types": [
-          "Callable"
+          "Function"
         ],
         "spread": false,
         "optional": false,
@@ -1574,10 +1913,10 @@
     }
   },
   {
-    "__docId__": 89,
+    "__docId__": 103,
     "kind": "file",
     "name": "src/skip.js",
-    "content": "/**\n * Outputs the next token of a tape that is not contained in a given toskip\n * set.\n *\n * @private\n * @param {Tape} tape - The input tape.\n * @param {Iterable} toskip - The (hashable) tokens to skip.\n * @returns {Object} The next token not in `toskip`.\n */\nexport default async function skip(tape, toskip) {\n\tconst _toskip = new Set(toskip);\n\n\tfor (;;) {\n\t\tconst token = await tape.read(); // eslint-disable-line no-await-in-loop\n\t\tif (!_toskip.has(token)) return token;\n\t}\n}\n",
+    "content": "/**\n * Outputs the next token of a tape that is not contained in a given toskip\n * set.\n *\n * @private\n * @param {Tape} tape - The input tape.\n * @param {Iterable} toskip - The (hashable) tokens to skip.\n * @returns {Promise} The next token not in `toskip`.\n */\nexport default async function skip(tape, toskip) {\n\tconst _toskip = new Set(toskip);\n\n\tfor (;;) {\n\t\tconst token = await tape.read(); // eslint-disable-line no-await-in-loop\n\t\tif (!_toskip.has(token)) return token;\n\t}\n}\n",
     "static": true,
     "longname": "/home/runner/work/tape/tape/src/skip.js",
     "access": "public",
@@ -1585,7 +1924,7 @@
     "lineNumber": 1
   },
   {
-    "__docId__": 90,
+    "__docId__": 104,
     "kind": "function",
     "name": "skip",
     "memberof": "src/skip.js",
@@ -1602,7 +1941,7 @@
     "unknown": [
       {
         "tagName": "@returns",
-        "tagValue": "{Object} The next token not in `toskip`."
+        "tagValue": "{Promise} The next token not in `toskip`."
       }
     ],
     "params": [
@@ -1630,17 +1969,17 @@
     "return": {
       "nullable": null,
       "types": [
-        "Object"
+        "Promise"
       ],
       "spread": false,
       "description": "The next token not in `toskip`."
     }
   },
   {
-    "__docId__": 91,
+    "__docId__": 105,
     "kind": "file",
     "name": "src/split.js",
-    "content": "import fromAsyncIterable from './fromAsyncIterable.js';\nimport exhaust from './exhaust.js';\n\n/**\n * Splits the input tape into a tape of tapes according to some set of\n * separators. See {@link _split} for the actual implementation.\n *\n * @param {Tape} tape - The input tape.\n * @param {Iterable} sep - An iterable of separators.\n * @returns {Tape} A tape of tapes.\n */\nexport default function split(tape, sep) {\n\treturn fromAsyncIterable(_split(tape, sep));\n}\n\n/**\n * Same as {@link split}, but returns an iterable rather than a tape.\n *\n * @private\n * @param {Tape} tape - The input tape.\n * @param {Iterable} sep - An iterable of separators.\n * @returns {AsyncIterable} An iterable of tapes.\n */\nexport async function* _split(tape, sep) {\n\tconst _sep = new Set(sep);\n\n\twhile (true) {\n\t\tconst token = await tape.read(); // eslint-disable-line no-await-in-loop\n\n\t\tif (token === tape.eof) break;\n\n\t\tif (_sep.has(token)) continue;\n\n\t\tconst group = fromAsyncIterable(\n\t\t\t(async function* () {\n\t\t\t\tyield token;\n\n\t\t\t\twhile (true) {\n\t\t\t\t\tconst token = await tape.read(); // eslint-disable-line no-await-in-loop\n\n\t\t\t\t\tif (_sep.has(token)) break;\n\n\t\t\t\t\tyield token;\n\t\t\t\t}\n\t\t\t})(),\n\t\t);\n\n\t\tyield group;\n\n\t\tawait exhaust(group); // eslint-disable-line no-await-in-loop\n\t}\n}\n",
+    "content": "import assert from 'assert';\nimport fromAsyncIterable from './fromAsyncIterable.js';\nimport exhaust from './exhaust.js';\n\n/**\n * Splits the input tape into a tape of tapes according to some set of\n * separators. See {@link _split} for the actual implementation.\n *\n * @param {Tape} tape - The input tape.\n * @param {Iterable} sep - An iterable of separators.\n * @returns {Tape} A tape of tapes.\n */\nexport default function split(tape, sep) {\n\treturn fromAsyncIterable(_split(tape, sep));\n}\n\nexport class Group {\n\tconstructor(first, sep, tape) {\n\t\tthis.first = first;\n\t\tthis.sep = sep;\n\t\tthis.tape = tape;\n\t\tthis.state = 0;\n\t}\n\n\tasync next() {\n\t\tif (this.state === 0) {\n\t\t\tthis.state = 1;\n\t\t\treturn {done: false, value: this.first};\n\t\t}\n\n\t\tif (this.state === 1) {\n\t\t\tconst value = await this.tape.read();\n\t\t\tif (value !== this.tape.eof && !this.sep.has(value))\n\t\t\t\treturn {done: false, value};\n\t\t\tthis.sep = null;\n\t\t\tthis.tape = null;\n\t\t\tthis.state = 2;\n\t\t\treturn {done: true};\n\t\t}\n\n\t\treturn {done: true};\n\t}\n\n\t[Symbol.asyncIterator]() {\n\t\treturn this;\n\t}\n}\n\n/**\n * Same as {@link split}, but returns an iterable rather than a tape.\n *\n * @private\n * @param {Tape} tape - The input tape.\n * @param {Iterable} sep - An iterable of separators.\n * @returns {AsyncIterableIterator} An iterable of tapes.\n */\nexport function _split(tape, sep) {\n\treturn new Split(tape, sep);\n}\n\nclass Split {\n\tconstructor(tape, sep) {\n\t\tthis.tape = tape;\n\t\tthis.sep = new Set(sep);\n\t\tthis.group = null;\n\t\tthis.state = 0;\n\t\tassert(!this.sep.has(this.tape.eof));\n\t}\n\n\tasync next() {\n\t\tif (this.state === 0) {\n\t\t\tif (this.group !== null) await exhaust(this.group);\n\t\t\tlet token;\n\t\t\tdo {\n\t\t\t\t// eslint-disable-next-line no-await-in-loop\n\t\t\t\ttoken = await this.tape.read();\n\t\t\t} while (this.sep.has(token));\n\n\t\t\tif (token === this.tape.eof) {\n\t\t\t\tthis.tape = null;\n\t\t\t\tthis.sep = null;\n\t\t\t\tthis.group = null;\n\t\t\t\tthis.state = 1;\n\t\t\t\treturn {done: true};\n\t\t\t}\n\n\t\t\tassert(!this.sep.has(token));\n\t\t\tthis.group = fromAsyncIterable(new Group(token, this.sep, this.tape));\n\t\t\treturn {done: false, value: this.group};\n\t\t}\n\n\t\treturn {done: true};\n\t}\n\n\t[Symbol.asyncIterator]() {\n\t\treturn this;\n\t}\n}\n",
     "static": true,
     "longname": "/home/runner/work/tape/tape/src/split.js",
     "access": "public",
@@ -1648,7 +1987,7 @@
     "lineNumber": 1
   },
   {
-    "__docId__": 92,
+    "__docId__": 106,
     "kind": "function",
     "name": "split",
     "memberof": "src/split.js",
@@ -1661,7 +2000,7 @@
     "importPath": "@async-abstraction/tape/src/split.js",
     "importStyle": "split",
     "description": "Splits the input tape into a tape of tapes according to some set of\nseparators. See {@link _split} for the actual implementation.",
-    "lineNumber": 12,
+    "lineNumber": 13,
     "unknown": [
       {
         "tagName": "@returns",
@@ -1700,12 +2039,150 @@
     }
   },
   {
-    "__docId__": 93,
+    "__docId__": 107,
+    "kind": "class",
+    "name": "Group",
+    "memberof": "src/split.js",
+    "static": true,
+    "longname": "src/split.js~Group",
+    "access": "public",
+    "export": true,
+    "importPath": "@async-abstraction/tape/src/split.js",
+    "importStyle": "{Group}",
+    "description": null,
+    "lineNumber": 17,
+    "undocument": true,
+    "interface": false
+  },
+  {
+    "__docId__": 108,
+    "kind": "constructor",
+    "name": "constructor",
+    "memberof": "src/split.js~Group",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/split.js~Group#constructor",
+    "access": "public",
+    "description": null,
+    "lineNumber": 18,
+    "undocument": true
+  },
+  {
+    "__docId__": 109,
+    "kind": "member",
+    "name": "first",
+    "memberof": "src/split.js~Group",
+    "static": false,
+    "longname": "src/split.js~Group#first",
+    "access": "public",
+    "description": null,
+    "lineNumber": 19,
+    "undocument": true,
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 110,
+    "kind": "member",
+    "name": "sep",
+    "memberof": "src/split.js~Group",
+    "static": false,
+    "longname": "src/split.js~Group#sep",
+    "access": "public",
+    "description": null,
+    "lineNumber": 20,
+    "undocument": true,
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 111,
+    "kind": "member",
+    "name": "tape",
+    "memberof": "src/split.js~Group",
+    "static": false,
+    "longname": "src/split.js~Group#tape",
+    "access": "public",
+    "description": null,
+    "lineNumber": 21,
+    "undocument": true,
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 112,
+    "kind": "member",
+    "name": "state",
+    "memberof": "src/split.js~Group",
+    "static": false,
+    "longname": "src/split.js~Group#state",
+    "access": "public",
+    "description": null,
+    "lineNumber": 22,
+    "undocument": true,
+    "type": {
+      "types": [
+        "number"
+      ]
+    }
+  },
+  {
+    "__docId__": 113,
+    "kind": "method",
+    "name": "next",
+    "memberof": "src/split.js~Group",
+    "generator": false,
+    "async": true,
+    "static": false,
+    "longname": "src/split.js~Group#next",
+    "access": "public",
+    "description": null,
+    "lineNumber": 25,
+    "undocument": true,
+    "params": [],
+    "return": {
+      "types": [
+        "{\"done\": boolean}"
+      ]
+    }
+  },
+  {
+    "__docId__": 118,
+    "kind": "method",
+    "name": "[Symbol.asyncIterator]",
+    "memberof": "src/split.js~Group",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/split.js~Group#[Symbol.asyncIterator]",
+    "access": "public",
+    "description": null,
+    "lineNumber": 44,
+    "undocument": true,
+    "params": [],
+    "return": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 119,
     "kind": "function",
     "name": "_split",
     "memberof": "src/split.js",
-    "generator": true,
-    "async": true,
+    "generator": false,
+    "async": false,
     "static": true,
     "longname": "src/split.js~_split",
     "access": "private",
@@ -1713,11 +2190,11 @@
     "importPath": "@async-abstraction/tape/src/split.js",
     "importStyle": "{_split}",
     "description": "Same as {@link split}, but returns an iterable rather than a tape.",
-    "lineNumber": 24,
+    "lineNumber": 57,
     "unknown": [
       {
         "tagName": "@returns",
-        "tagValue": "{AsyncIterable} An iterable of tapes."
+        "tagValue": "{AsyncIterableIterator} An iterable of tapes."
       }
     ],
     "params": [
@@ -1745,17 +2222,156 @@
     "return": {
       "nullable": null,
       "types": [
-        "AsyncIterable"
+        "AsyncIterableIterator"
       ],
       "spread": false,
       "description": "An iterable of tapes."
     }
   },
   {
-    "__docId__": 94,
+    "__docId__": 120,
+    "kind": "class",
+    "name": "Split",
+    "memberof": "src/split.js",
+    "static": true,
+    "longname": "src/split.js~Split",
+    "access": "public",
+    "export": false,
+    "importPath": "@async-abstraction/tape/src/split.js",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 61,
+    "undocument": true,
+    "interface": false,
+    "ignore": true
+  },
+  {
+    "__docId__": 121,
+    "kind": "constructor",
+    "name": "constructor",
+    "memberof": "src/split.js~Split",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/split.js~Split#constructor",
+    "access": "public",
+    "description": null,
+    "lineNumber": 62,
+    "undocument": true
+  },
+  {
+    "__docId__": 122,
+    "kind": "member",
+    "name": "tape",
+    "memberof": "src/split.js~Split",
+    "static": false,
+    "longname": "src/split.js~Split#tape",
+    "access": "public",
+    "description": null,
+    "lineNumber": 63,
+    "undocument": true,
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 123,
+    "kind": "member",
+    "name": "sep",
+    "memberof": "src/split.js~Split",
+    "static": false,
+    "longname": "src/split.js~Split#sep",
+    "access": "public",
+    "description": null,
+    "lineNumber": 64,
+    "undocument": true,
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 124,
+    "kind": "member",
+    "name": "group",
+    "memberof": "src/split.js~Split",
+    "static": false,
+    "longname": "src/split.js~Split#group",
+    "access": "public",
+    "description": null,
+    "lineNumber": 65,
+    "undocument": true,
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 125,
+    "kind": "member",
+    "name": "state",
+    "memberof": "src/split.js~Split",
+    "static": false,
+    "longname": "src/split.js~Split#state",
+    "access": "public",
+    "description": null,
+    "lineNumber": 66,
+    "undocument": true,
+    "type": {
+      "types": [
+        "number"
+      ]
+    }
+  },
+  {
+    "__docId__": 126,
+    "kind": "method",
+    "name": "next",
+    "memberof": "src/split.js~Split",
+    "generator": false,
+    "async": true,
+    "static": false,
+    "longname": "src/split.js~Split#next",
+    "access": "public",
+    "description": null,
+    "lineNumber": 70,
+    "undocument": true,
+    "params": [],
+    "return": {
+      "types": [
+        "{\"done\": boolean}"
+      ]
+    }
+  },
+  {
+    "__docId__": 132,
+    "kind": "method",
+    "name": "[Symbol.asyncIterator]",
+    "memberof": "src/split.js~Split",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/split.js~Split#[Symbol.asyncIterator]",
+    "access": "public",
+    "description": null,
+    "lineNumber": 95,
+    "undocument": true,
+    "params": [],
+    "return": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 133,
     "kind": "file",
     "name": "src/toArray.js",
-    "content": "import toAsyncIterable from './toAsyncIterable.js';\nimport asyncIterableToArray from './asyncIterableToArray.js';\n\n/**\n * Converts a tape to an array.\n *\n * @function\n * @param {Tape} tape - The tape to read from.\n * @returns {Array} The converted array.\n */\nexport default (tape) => asyncIterableToArray(toAsyncIterable(tape));\n",
+    "content": "import toAsyncIterable from './toAsyncIterable.js';\nimport asyncIterableToArray from './asyncIterableToArray.js';\n\n/**\n * Converts a tape to an array.\n *\n * @function\n * @param {Tape} tape - The tape to read from.\n * @returns {Promise<any[]>} The converted array.\n */\nexport default (tape) => asyncIterableToArray(toAsyncIterable(tape));\n",
     "static": true,
     "longname": "/home/runner/work/tape/tape/src/toArray.js",
     "access": "public",
@@ -1763,7 +2379,7 @@
     "lineNumber": 1
   },
   {
-    "__docId__": 95,
+    "__docId__": 134,
     "kind": "function",
     "name": "toArray",
     "memberof": "src/toArray.js",
@@ -1784,7 +2400,7 @@
       },
       {
         "tagName": "@returns",
-        "tagValue": "{Array} The converted array."
+        "tagValue": "{Promise<any[]>} The converted array."
       }
     ],
     "params": [
@@ -1802,17 +2418,17 @@
     "return": {
       "nullable": null,
       "types": [
-        "Array"
+        "Promise<any[]>"
       ],
       "spread": false,
       "description": "The converted array."
     }
   },
   {
-    "__docId__": 96,
+    "__docId__": 135,
     "kind": "file",
     "name": "src/toAsyncCallable.js",
-    "content": "import toAsyncIterator from './toAsyncIterator.js';\n\n/**\n * Converts a tape to a callable.\n *\n * @function\n * @param {Tape} tape - The tape to read from.\n * @return {Callable} The converted callable.\n */\nexport default (tape) => {\n\tconst it = toAsyncIterator(tape);\n\treturn it.next.bind(it);\n};\n",
+    "content": "import toAsyncIterator from './toAsyncIterator.js';\n\n/**\n * Converts a tape to a callable.\n *\n * @function\n * @param {Tape} tape - The tape to read from.\n * @returns {Function} The converted callable.\n */\nexport default (tape) => {\n\tconst it = toAsyncIterator(tape);\n\treturn it.next.bind(it);\n};\n",
     "static": true,
     "longname": "/home/runner/work/tape/tape/src/toAsyncCallable.js",
     "access": "public",
@@ -1820,7 +2436,7 @@
     "lineNumber": 1
   },
   {
-    "__docId__": 97,
+    "__docId__": 136,
     "kind": "function",
     "name": "toAsyncCallable",
     "memberof": "src/toAsyncCallable.js",
@@ -1838,6 +2454,10 @@
       {
         "tagName": "@function",
         "tagValue": ""
+      },
+      {
+        "tagName": "@returns",
+        "tagValue": "{Function} The converted callable."
       }
     ],
     "params": [
@@ -1855,14 +2475,14 @@
     "return": {
       "nullable": null,
       "types": [
-        "Callable"
+        "Function"
       ],
       "spread": false,
       "description": "The converted callable."
     }
   },
   {
-    "__docId__": 98,
+    "__docId__": 137,
     "kind": "file",
     "name": "src/toAsyncIterable.js",
     "content": "/**\n * Converts a tape to an asynchronous iterable.\n *\n * @param {Tape} tape - The tape to read from.\n * @returns {AsyncIterable} The converted iterable.\n */\nexport default async function* toAsyncIterable(tape) {\n\twhile (true) {\n\t\tconst token = await tape.read(); // eslint-disable-line no-await-in-loop\n\n\t\tif (token === tape.eof) break;\n\n\t\tyield token;\n\t}\n}\n",
@@ -1873,7 +2493,7 @@
     "lineNumber": 1
   },
   {
-    "__docId__": 99,
+    "__docId__": 138,
     "kind": "function",
     "name": "toAsyncIterable",
     "memberof": "src/toAsyncIterable.js",
@@ -1915,7 +2535,7 @@
     }
   },
   {
-    "__docId__": 100,
+    "__docId__": 139,
     "kind": "file",
     "name": "src/toAsyncIterator.js",
     "content": "import toAsyncIterable from './toAsyncIterable.js';\n\n/**\n * Converts a tape to an async iterator.\n *\n * @function\n * @param {Tape} tape - The tape to read from.\n * @returns {AsyncIterator} The converted iterator.\n */\nexport default (tape) => toAsyncIterable(tape)[Symbol.asyncIterator]();\n",
@@ -1926,7 +2546,7 @@
     "lineNumber": 1
   },
   {
-    "__docId__": 101,
+    "__docId__": 140,
     "kind": "function",
     "name": "toAsyncIterator",
     "memberof": "src/toAsyncIterator.js",
@@ -1972,10 +2592,10 @@
     }
   },
   {
-    "__docId__": 102,
+    "__docId__": 141,
     "kind": "file",
     "name": "src/toString.js",
-    "content": "import toArray from './toArray.js';\n\n/**\n * Converts a tape to a string.\n *\n * @function\n * @param {Tape} tape - The tape to read from.\n * @returns {String} The converted string.\n */\nexport default async (tape) => (await toArray(tape)).join('');\n",
+    "content": "import toArray from './toArray.js';\n\n/**\n * Converts a tape to a string.\n *\n * @function\n * @param {Tape} tape - The tape to read from.\n * @returns {Promise<string>} The converted string.\n */\nexport default (tape) => toArray(tape).then((x) => x.join(''));\n",
     "static": true,
     "longname": "/home/runner/work/tape/tape/src/toString.js",
     "access": "public",
@@ -1983,12 +2603,12 @@
     "lineNumber": 1
   },
   {
-    "__docId__": 103,
+    "__docId__": 142,
     "kind": "function",
     "name": "toString",
     "memberof": "src/toString.js",
     "generator": false,
-    "async": true,
+    "async": false,
     "static": true,
     "longname": "src/toString.js~toString",
     "access": "public",
@@ -2004,7 +2624,7 @@
       },
       {
         "tagName": "@returns",
-        "tagValue": "{String} The converted string."
+        "tagValue": "{Promise<string>} The converted string."
       }
     ],
     "params": [
@@ -2022,7 +2642,7 @@
     "return": {
       "nullable": null,
       "types": [
-        "String"
+        "Promise<string>"
       ],
       "spread": false,
       "description": "The converted string."
@@ -2030,7 +2650,7 @@
   },
   {
     "kind": "index",
-    "content": ":vhs:\n[@async-abstraction/tape](https://async-abstraction.github.io/tape)\n==\n\nTape library for JavaScript. Served with asynchronous goodness.\nSee [docs](https://async-abstraction.github.io/tape/index.html).\n\n> :warning: The code requires `regeneratorRuntime` to be defined, for instance by importing\n> [regenerator-runtime/runtime](https://www.npmjs.com/package/regenerator-runtime).\n\n```js\nimport { fromReadStream } from '@async-abstraction/tape' ;\nconst stdin = fs.createReadStream( '/dev/stdin' , { encoding : 'utf8'} ) ;\nconst tape = fromReadStream( stdin ) ;\nfor await ( const character of tape ) ... ;\n```\n\n[![License](https://img.shields.io/github/license/async-abstraction/tape.svg)](https://raw.githubusercontent.com/async-abstraction/tape/main/LICENSE)\n[![Version](https://img.shields.io/npm/v/@async-abstraction/tape.svg)](https://www.npmjs.org/package/@async-abstraction/tape)\n[![Tests](https://img.shields.io/github/workflow/status/async-abstraction/tape/ci:test?event=push&label=tests)](https://github.com/async-abstraction/tape/actions/workflows/ci:test.yml?query=branch:main)\n[![Dependencies](https://img.shields.io/david/async-abstraction/tape.svg)](https://david-dm.org/async-abstraction/tape)\n[![Dev dependencies](https://img.shields.io/david/dev/async-abstraction/tape.svg)](https://david-dm.org/async-abstraction/tape?type=dev)\n[![GitHub issues](https://img.shields.io/github/issues/async-abstraction/tape.svg)](https://github.com/async-abstraction/tape/issues)\n[![Downloads](https://img.shields.io/npm/dm/@async-abstraction/tape.svg)](https://www.npmjs.org/package/@async-abstraction/tape)\n\n[![Code issues](https://img.shields.io/codeclimate/issues/async-abstraction/tape.svg)](https://codeclimate.com/github/async-abstraction/tape/issues)\n[![Code maintainability](https://img.shields.io/codeclimate/maintainability/async-abstraction/tape.svg)](https://codeclimate.com/github/async-abstraction/tape/trends/churn)\n[![Code coverage (cov)](https://img.shields.io/codecov/c/gh/async-abstraction/tape/main.svg)](https://codecov.io/gh/async-abstraction/tape)\n[![Code technical debt](https://img.shields.io/codeclimate/tech-debt/async-abstraction/tape.svg)](https://codeclimate.com/github/async-abstraction/tape/trends/technical_debt)\n[![Documentation](https://async-abstraction.github.io/tape/badge.svg)](https://async-abstraction.github.io/tape/source.html)\n[![Package size](https://img.shields.io/bundlephobia/minzip/@async-abstraction/tape)](https://bundlephobia.com/result?p=@async-abstraction/tape)\n",
+    "content": ":vhs:\n[@async-abstraction/tape](https://async-abstraction.github.io/tape)\n==\n\nTape library for JavaScript. Served with asynchronous goodness.\nSee [docs](https://async-abstraction.github.io/tape/index.html).\n\n> :warning: Depending on your environment, the code may require\n> `regeneratorRuntime` to be defined, for instance by importing\n> [regenerator-runtime/runtime](https://www.npmjs.com/package/regenerator-runtime).\n\n```js\nimport { fromReadStream } from '@async-abstraction/tape' ;\nconst stdin = fs.createReadStream( '/dev/stdin' , { encoding : 'utf8'} ) ;\nconst tape = fromReadStream( stdin ) ;\nfor await ( const character of tape ) ... ;\n```\n\n[![License](https://img.shields.io/github/license/async-abstraction/tape.svg)](https://raw.githubusercontent.com/async-abstraction/tape/main/LICENSE)\n[![Version](https://img.shields.io/npm/v/@async-abstraction/tape.svg)](https://www.npmjs.org/package/@async-abstraction/tape)\n[![Tests](https://img.shields.io/github/workflow/status/async-abstraction/tape/ci?event=push&label=tests)](https://github.com/async-abstraction/tape/actions/workflows/ci.yml?query=branch:main)\n[![Dependencies](https://img.shields.io/librariesio/github/async-abstraction/tape)](https://github.com/async-abstraction/tape/network/dependencies)\n[![GitHub issues](https://img.shields.io/github/issues/async-abstraction/tape.svg)](https://github.com/async-abstraction/tape/issues)\n[![Downloads](https://img.shields.io/npm/dm/@async-abstraction/tape.svg)](https://www.npmjs.org/package/@async-abstraction/tape)\n\n[![Code issues](https://img.shields.io/codeclimate/issues/async-abstraction/tape.svg)](https://codeclimate.com/github/async-abstraction/tape/issues)\n[![Code maintainability](https://img.shields.io/codeclimate/maintainability/async-abstraction/tape.svg)](https://codeclimate.com/github/async-abstraction/tape/trends/churn)\n[![Code coverage (cov)](https://img.shields.io/codecov/c/gh/async-abstraction/tape/main.svg)](https://codecov.io/gh/async-abstraction/tape)\n[![Code technical debt](https://img.shields.io/codeclimate/tech-debt/async-abstraction/tape.svg)](https://codeclimate.com/github/async-abstraction/tape/trends/technical_debt)\n[![Documentation](https://async-abstraction.github.io/tape/badge.svg)](https://async-abstraction.github.io/tape/source.html)\n[![Package size](https://img.shields.io/bundlephobia/minzip/@async-abstraction/tape)](https://bundlephobia.com/result?p=@async-abstraction/tape)\n",
     "longname": "/home/runner/work/tape/tape/README.md",
     "name": "./README.md",
     "static": true,
@@ -2038,7 +2658,7 @@
   },
   {
     "kind": "packageJSON",
-    "content": "{\n  \"name\": \"@async-abstraction/tape\",\n  \"description\": \"Tape library for JavaScript\",\n  \"version\": \"8.0.0\",\n  \"license\": \"AGPL-3.0\",\n  \"author\": \"make-github-pseudonymous-again\",\n  \"homepage\": \"https://async-abstraction.github.io/tape\",\n  \"repository\": {\n    \"type\": \"git\",\n    \"url\": \"https://github.com/async-abstraction/tape\"\n  },\n  \"bugs\": {\n    \"url\": \"https://github.com/async-abstraction/tape/issues\"\n  },\n  \"keywords\": [\n    \"parsing\",\n    \"read\",\n    \"stream\",\n    \"tape\",\n    \"unread\"\n  ],\n  \"sideEffects\": false,\n  \"type\": \"module\",\n  \"source\": \"src/index.js\",\n  \"main\": \"dist/index.cjs\",\n  \"module\": \"dist/index.module.js\",\n  \"esmodule\": \"dist/index.modern.js\",\n  \"umd:main\": \"dist/index.umd.js\",\n  \"unpkg\": \"dist/index.umd.js\",\n  \"exports\": {\n    \".\": {\n      \"browser\": \"./dist/index.module.js\",\n      \"umd\": \"./dist/index.umd.js\",\n      \"require\": \"./dist/index.cjs\",\n      \"default\": \"./dist/index.modern.js\"\n    }\n  },\n  \"files\": [\n    \"dist\"\n  ],\n  \"scripts\": {\n    \"build\": \"NODE_ENV=production microbundle\",\n    \"build-docs\": \"esdoc\",\n    \"build-gh-pages\": \"npm run build-docs\",\n    \"ci:build\": \"npm run build\",\n    \"ci:test\": \"npm run lint-config && npm run lint && npm run cover\",\n    \"commit-msg\": \"commitlint --edit\",\n    \"cover\": \"NODE_ENV=cover c8 --all --src src --reporter lcov --reporter text-summary --reporter text npm test\",\n    \"debug\": \"NODE_ENV=debug npm run test -- -st --fail-fast\",\n    \"dev\": \"npm run lint-config-and-fix && npm run lint-and-fix && npm run cover -- -- -st --fail-fast\",\n    \"install-hooks\": \"husky install\",\n    \"lint\": \"xo\",\n    \"lint-and-fix\": \"npm run lint -- --fix\",\n    \"lint-config\": \"fixpack --dryRun\",\n    \"lint-config-and-fix\": \"fixpack || fixpack\",\n    \"postinstall\": \"npm run install-hooks\",\n    \"postpublish\": \"pinst --enable\",\n    \"precommit\": \"lint-staged\",\n    \"prepare\": \"npm run build\",\n    \"prepublishOnly\": \"pinst --disable\",\n    \"release\": \"np --message ':hatching_chick: release: Bumping to v%s.'\",\n    \"test\": \"ava\"\n  },\n  \"dependencies\": {},\n  \"devDependencies\": {\n    \"@babel/core\": \"7.13.10\",\n    \"@babel/preset-env\": \"7.13.12\",\n    \"@babel/register\": \"7.13.8\",\n    \"@commitlint/cli\": \"13.1.0\",\n    \"@js-library/commitlint-config\": \"0.0.4\",\n    \"ava\": \"3.15.0\",\n    \"babel-plugin-transform-remove-console\": \"6.9.4\",\n    \"babel-plugin-unassert\": \"3.0.1\",\n    \"babel-preset-power-assert\": \"3.0.0\",\n    \"c8\": \"7.8.0\",\n    \"esdoc\": \"1.1.0\",\n    \"esdoc-ecmascript-proposal-plugin\": \"1.0.0\",\n    \"esdoc-inject-script-plugin\": \"1.0.0\",\n    \"esdoc-inject-style-plugin\": \"1.0.0\",\n    \"esdoc-standard-plugin\": \"1.0.0\",\n    \"fixpack\": \"4.0.0\",\n    \"husky\": \"7.0.1\",\n    \"lint-staged\": \"11.1.1\",\n    \"microbundle\": \"0.13.1\",\n    \"np\": \"7.4.0\",\n    \"pinst\": \"2.1.6\",\n    \"power-assert\": \"1.6.1\",\n    \"regenerator-runtime\": \"0.13.7\",\n    \"xo\": \"0.38.2\"\n  },\n  \"ava\": {\n    \"files\": [\n      \"test/src/**/*\"\n    ],\n    \"require\": [\n      \"regenerator-runtime/runtime\",\n      \"@babel/register\"\n    ],\n    \"timeout\": \"1m\"\n  },\n  \"babel\": {\n    \"sourceMaps\": true,\n    \"presets\": [\n      [\n        \"@babel/preset-env\",\n        {\n          \"targets\": \"current node\"\n        }\n      ]\n    ],\n    \"plugins\": [\n      [\n        \"transform-remove-console\",\n        {\n          \"exclude\": [\n            \"log\",\n            \"error\",\n            \"warn\"\n          ]\n        }\n      ]\n    ],\n    \"env\": {\n      \"debug\": {\n        \"presets\": [\n          \"babel-preset-power-assert\"\n        ],\n        \"plugins\": [\n          [\n            \"transform-remove-console\",\n            {\n              \"exclude\": [\n                \"debug\",\n                \"log\",\n                \"error\",\n                \"warn\"\n              ]\n            }\n          ]\n        ]\n      },\n      \"test\": {\n        \"presets\": [\n          \"babel-preset-power-assert\"\n        ]\n      },\n      \"cover\": {\n        \"sourceMaps\": \"both\",\n        \"presets\": [\n          \"babel-preset-power-assert\"\n        ]\n      },\n      \"development\": {\n        \"presets\": [\n          [\n            \"@babel/preset-env\",\n            {\n              \"targets\": [\n                \"defaults\",\n                \"maintained node versions\"\n              ]\n            }\n          ],\n          \"babel-preset-power-assert\"\n        ]\n      },\n      \"production\": {\n        \"presets\": [\n          [\n            \"@babel/preset-env\",\n            {\n              \"targets\": [\n                \"defaults\",\n                \"maintained node versions\"\n              ]\n            }\n          ]\n        ],\n        \"plugins\": [\n          \"babel-plugin-unassert\"\n        ]\n      }\n    }\n  },\n  \"lint-staged\": {\n    \"*.js\": [\n      \"npm run lint-and-fix\"\n    ],\n    \"package.json\": [\n      \"npm run lint-config-and-fix\"\n    ]\n  },\n  \"prettier\": {\n    \"trailingComma\": \"all\"\n  },\n  \"xo\": {\n    \"prettier\": true,\n    \"plugins\": [\n      \"unicorn\"\n    ],\n    \"rules\": {\n      \"import/no-anonymous-default-export\": \"off\",\n      \"unicorn/filename-case\": [\n        \"error\",\n        {\n          \"case\": \"camelCase\"\n        }\n      ]\n    },\n    \"overrides\": [\n      {\n        \"files\": \"src/Tape.js\",\n        \"rules\": {\n          \"unicorn/filename-case\": [\n            \"error\",\n            {\n              \"case\": \"pascalCase\"\n            }\n          ]\n        }\n      },\n      {\n        \"files\": [\n          \"doc/**\"\n        ],\n        \"env\": \"browser\"\n      }\n    ]\n  }\n}\n",
+    "content": "{\n  \"name\": \"@async-abstraction/tape\",\n  \"description\": \"Tape library for JavaScript\",\n  \"version\": \"9.0.0\",\n  \"license\": \"AGPL-3.0\",\n  \"author\": \"make-github-pseudonymous-again\",\n  \"homepage\": \"https://async-abstraction.github.io/tape\",\n  \"repository\": {\n    \"url\": \"https://github.com/async-abstraction/tape\",\n    \"type\": \"git\"\n  },\n  \"bugs\": {\n    \"url\": \"https://github.com/async-abstraction/tape/issues\"\n  },\n  \"keywords\": [\n    \"parsing\",\n    \"read\",\n    \"stream\",\n    \"tape\",\n    \"unread\"\n  ],\n  \"sideEffects\": false,\n  \"type\": \"module\",\n  \"source\": \"src/index.js\",\n  \"main\": \"dist/index.cjs\",\n  \"module\": \"dist/index.module.js\",\n  \"esmodule\": \"dist/index.modern.js\",\n  \"umd:main\": \"dist/index.umd.js\",\n  \"unpkg\": \"dist/index.umd.js\",\n  \"exports\": {\n    \".\": {\n      \"browser\": \"./dist/index.module.js\",\n      \"umd\": \"./dist/index.umd.js\",\n      \"require\": \"./dist/index.cjs\",\n      \"default\": \"./dist/index.modern.js\"\n    }\n  },\n  \"files\": [\n    \"dist\"\n  ],\n  \"scripts\": {\n    \"build\": \"NODE_ENV=production microbundle\",\n    \"build-docs\": \"esdoc\",\n    \"build-gh-pages\": \"npm run build-docs\",\n    \"commit-msg\": \"commitlint --edit\",\n    \"cover\": \"NODE_ENV=cover c8 --all --src src --reporter lcov --reporter text-summary --reporter text npm test\",\n    \"debug\": \"NODE_ENV=debug npm test -- -- -- -st --fail-fast\",\n    \"dev\": \"npm run lint-config-and-fix && npm run lint-and-fix && npm run cover -- -- -st --fail-fast\",\n    \"install-hooks\": \"husky install\",\n    \"lint\": \"xo\",\n    \"lint-and-fix\": \"npm run lint -- --fix\",\n    \"lint-config\": \"fixpack --dryRun\",\n    \"lint-config-and-fix\": \"fixpack || fixpack\",\n    \"postinstall\": \"npm run install-hooks\",\n    \"postpublish\": \"pinst --enable\",\n    \"precommit\": \"lint-staged\",\n    \"prepare\": \"npm run build\",\n    \"prepublishOnly\": \"pinst --disable\",\n    \"release\": \"np --message ':hatching_chick: release: Bumping to v%s.'\",\n    \"test\": \"npm run test:src\",\n    \"test-cmd\": \"NODE_LOADER_CONFIG=test/loader/config.js ava\",\n    \"test:cjs\": \"IMPORT_MAP_PATH=test/import-maps/dist/index.json npm run test-cmd\",\n    \"test:dist\": \"npm run test:modern && npm run test:module && npm run test:cjs\",\n    \"test:modern\": \"IMPORT_MAP_PATH=test/import-maps/dist/index.modern.json npm run test-cmd\",\n    \"test:module\": \"IMPORT_MAP_PATH=test/import-maps/dist/index.module.json npm run test-cmd\",\n    \"test:src\": \"IMPORT_MAP_PATH=test/import-maps/src/index.json npm run test-cmd\"\n  },\n  \"dependencies\": {},\n  \"devDependencies\": {\n    \"@babel/core\": \"7.16.0\",\n    \"@babel/preset-env\": \"7.16.4\",\n    \"@babel/register\": \"7.16.0\",\n    \"@commitlint/cli\": \"15.0.0\",\n    \"@js-library/commitlint-config\": \"0.0.4\",\n    \"@node-loader/babel\": \"^2.0.0\",\n    \"@node-loader/core\": \"^2.0.0\",\n    \"@node-loader/import-maps\": \"^1.0.3\",\n    \"ava\": \"^4.0.0-rc.1\",\n    \"babel-plugin-transform-remove-console\": \"6.9.4\",\n    \"babel-plugin-unassert\": \"3.2.0\",\n    \"babel-preset-power-assert\": \"3.0.0\",\n    \"c8\": \"7.10.0\",\n    \"esdoc\": \"1.1.0\",\n    \"esdoc-ecmascript-proposal-plugin\": \"1.0.0\",\n    \"esdoc-inject-script-plugin\": \"1.0.0\",\n    \"esdoc-inject-style-plugin\": \"1.0.0\",\n    \"esdoc-standard-plugin\": \"1.0.0\",\n    \"fixpack\": \"4.0.0\",\n    \"husky\": \"7.0.4\",\n    \"lint-staged\": \"12.1.2\",\n    \"microbundle\": \"0.14.2\",\n    \"np\": \"7.6.0\",\n    \"pinst\": \"2.1.6\",\n    \"power-assert\": \"1.6.1\",\n    \"regenerator-runtime\": \"0.13.9\",\n    \"xo\": \"0.47.0\"\n  },\n  \"ava\": {\n    \"files\": [\n      \"test/src/**/*\"\n    ],\n    \"require\": [\n      \"regenerator-runtime/runtime\"\n    ],\n    \"nodeArguments\": [\n      \"--experimental-loader=@node-loader/core\"\n    ],\n    \"timeout\": \"1m\"\n  },\n  \"babel\": {\n    \"sourceMaps\": true,\n    \"plugins\": [\n      [\n        \"transform-remove-console\",\n        {\n          \"exclude\": [\n            \"log\",\n            \"error\",\n            \"warn\"\n          ]\n        }\n      ]\n    ],\n    \"env\": {\n      \"debug\": {\n        \"sourceMaps\": \"both\",\n        \"presets\": [\n          \"babel-preset-power-assert\"\n        ],\n        \"plugins\": [\n          [\n            \"transform-remove-console\",\n            {\n              \"exclude\": [\n                \"debug\",\n                \"log\",\n                \"error\",\n                \"warn\"\n              ]\n            }\n          ]\n        ]\n      },\n      \"test\": {\n        \"sourceMaps\": \"both\",\n        \"presets\": [\n          \"babel-preset-power-assert\"\n        ]\n      },\n      \"cover\": {\n        \"sourceMaps\": \"both\",\n        \"presets\": [\n          \"babel-preset-power-assert\"\n        ]\n      },\n      \"development\": {\n        \"presets\": [\n          [\n            \"@babel/preset-env\",\n            {\n              \"targets\": [\n                \"defaults\",\n                \"maintained node versions\"\n              ]\n            }\n          ],\n          \"babel-preset-power-assert\"\n        ]\n      },\n      \"production\": {\n        \"presets\": [\n          [\n            \"@babel/preset-env\",\n            {\n              \"targets\": [\n                \"defaults\",\n                \"maintained node versions\"\n              ]\n            }\n          ]\n        ],\n        \"plugins\": [\n          \"babel-plugin-unassert\"\n        ]\n      }\n    }\n  },\n  \"lint-staged\": {\n    \"*.js\": [\n      \"npm run lint-and-fix\"\n    ],\n    \"package.json\": [\n      \"npm run lint-config-and-fix\"\n    ]\n  },\n  \"prettier\": {\n    \"trailingComma\": \"all\"\n  },\n  \"xo\": {\n    \"prettier\": true,\n    \"plugins\": [\n      \"unicorn\"\n    ],\n    \"rules\": {\n      \"unicorn/prefer-node-protocol\": \"off\",\n      \"import/no-anonymous-default-export\": \"off\",\n      \"unicorn/filename-case\": [\n        \"error\",\n        {\n          \"case\": \"camelCase\"\n        }\n      ]\n    },\n    \"overrides\": [\n      {\n        \"files\": \"src/Tape.js\",\n        \"rules\": {\n          \"unicorn/filename-case\": [\n            \"error\",\n            {\n              \"case\": \"pascalCase\"\n            }\n          ]\n        }\n      },\n      {\n        \"files\": [\n          \"doc/**\"\n        ],\n        \"env\": \"browser\"\n      }\n    ]\n  }\n}\n",
     "longname": "/home/runner/work/tape/tape/package.json",
     "name": "package.json",
     "static": true,
@@ -2072,7 +2692,7 @@
     "kind": "manual",
     "longname": "/home/runner/work/tape/tape/doc/manual/usage.md",
     "name": "./doc/manual/usage.md",
-    "content": "# Usage\n\n> :warning: The code requires `regeneratorRuntime` to be defined, for instance by importing\n> [regenerator-runtime/runtime](https://www.npmjs.com/package/regenerator-runtime).\n\nFirst, require the polyfill at the entry point of your application\n```js\nawait import( 'regenerator-runtime/runtime.js' );\n// or\nimport 'regenerator-runtime/runtime.js' ;\n```\n\nThen, import the library where needed\n```js\nconst tape = await import( '@async-abstraction/tape' ) ;\n// or\nimport tape from '@async-abstraction/tape' ;\n```\n",
+    "content": "# Usage\n\n> :warning: Depending on your environment, the code may require\n> `regeneratorRuntime` to be defined, for instance by importing\n> [regenerator-runtime/runtime](https://www.npmjs.com/package/regenerator-runtime).\n\nFirst, require the polyfill at the entry point of your application\n```js\nawait import('regenerator-runtime/runtime.js');\n// or\nimport 'regenerator-runtime/runtime.js';\n```\n\nThen, import the library where needed\n```js\nconst tape = await import('@async-abstraction/tape');\n// or\nimport * as tape from '@async-abstraction/tape';\n```\n",
     "static": true,
     "access": "public"
   },

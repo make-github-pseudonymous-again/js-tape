@@ -1,7 +1,7 @@
 {
-  "coverage": "100%",
-  "expectCount": 32,
-  "actualCount": 32,
+  "coverage": "62.71%",
+  "expectCount": 59,
+  "actualCount": 37,
   "files": {
     "src/Tape.js": {
       "expectCount": 11,
@@ -9,9 +9,16 @@
       "undocumentLines": []
     },
     "src/asyncIterableChain.js": {
-      "expectCount": 1,
+      "expectCount": 7,
       "actualCount": 1,
-      "undocumentLines": []
+      "undocumentLines": [
+        12,
+        13,
+        14,
+        15,
+        18,
+        37
+      ]
     },
     "src/asyncIterableMap.js": {
       "expectCount": 1,
@@ -23,12 +30,27 @@
       "actualCount": 1,
       "undocumentLines": []
     },
+    "src/asyncIteratorMap.js": {
+      "expectCount": 1,
+      "actualCount": 1,
+      "undocumentLines": []
+    },
     "src/chain.js": {
       "expectCount": 1,
       "actualCount": 1,
       "undocumentLines": []
     },
+    "src/eof.js": {
+      "expectCount": 1,
+      "actualCount": 1,
+      "undocumentLines": []
+    },
     "src/exhaust.js": {
+      "expectCount": 1,
+      "actualCount": 1,
+      "undocumentLines": []
+    },
+    "src/fromArray.js": {
       "expectCount": 1,
       "actualCount": 1,
       "undocumentLines": []
@@ -54,8 +76,13 @@
       "undocumentLines": []
     },
     "src/fromReadStream.js": {
-      "expectCount": 2,
-      "actualCount": 2,
+      "expectCount": 3,
+      "actualCount": 3,
+      "undocumentLines": []
+    },
+    "src/fromString.js": {
+      "expectCount": 1,
+      "actualCount": 1,
       "undocumentLines": []
     },
     "src/ignore.js": {
@@ -74,9 +101,26 @@
       "undocumentLines": []
     },
     "src/split.js": {
-      "expectCount": 2,
+      "expectCount": 18,
       "actualCount": 2,
-      "undocumentLines": []
+      "undocumentLines": [
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        25,
+        44,
+        61,
+        62,
+        63,
+        64,
+        65,
+        66,
+        70,
+        95
+      ]
     },
     "src/toArray.js": {
       "expectCount": 1,

@@ -89,14 +89,15 @@ or <a href="https://jspm.org/docs">jspm</a>.</p><h3>yarn</h3><pre><code class="l
 <div class="manual-card-wrap" data-ice="cards">
       <div class="manual-card">
         <div data-ice="card"><h1>Usage</h1><blockquote>
-<p>:warning: The code requires <code>regeneratorRuntime</code> to be defined, for instance by importing
+<p>:warning: Depending on your environment, the code may require
+<code>regeneratorRuntime</code> to be defined, for instance by importing
 <a href="https://www.npmjs.com/package/regenerator-runtime">regenerator-runtime/runtime</a>.</p>
-</blockquote><p>First, require the polyfill at the entry point of your application</p><pre><code class="lang-js"><code class="source-code prettyprint">await import( &apos;regenerator-runtime/runtime.js&apos; );
+</blockquote><p>First, require the polyfill at the entry point of your application</p><pre><code class="lang-js"><code class="source-code prettyprint">await import(&apos;regenerator-runtime/runtime.js&apos;);
 // or
-import &apos;regenerator-runtime/runtime.js&apos; ;</code>
-</code></pre><p>Then, import the library where needed</p><pre><code class="lang-js"><code class="source-code prettyprint">const tape = await import( &apos;@async-abstraction/tape&apos; ) ;
+import &apos;regenerator-runtime/runtime.js&apos;;</code>
+</code></pre><p>Then, import the library where needed</p><pre><code class="lang-js"><code class="source-code prettyprint">const tape = await import(&apos;@async-abstraction/tape&apos;);
 // or
-import tape from &apos;@async-abstraction/tape&apos; ;</code>
+import * as tape from &apos;@async-abstraction/tape&apos;;</code>
 </code></pre></div>
         <a data-ice="link" href="manual/usage.html"></a>
       </div>

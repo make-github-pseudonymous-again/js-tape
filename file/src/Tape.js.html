@@ -30,9 +30,12 @@
   <ul>
     
   <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/Tape.js~Tape.html">Tape</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/asyncIterableChain.js~Chain.html">Chain</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/split.js~Group.html">Group</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-asyncIterableChain">asyncIterableChain</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-asyncIterableMap">asyncIterableMap</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-asyncIterableToArray">asyncIterableToArray</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-asyncIteratorMap">asyncIteratorMap</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-chain">chain</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-exhaust">exhaust</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-fromAsyncIterable">fromAsyncIterable</a></span></span></li>
@@ -40,6 +43,7 @@
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-fromIterable">fromIterable</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-fromIterator">fromIterator</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-_fromReadStream">_fromReadStream</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-_fromReadStreamIterator">_fromReadStreamIterator</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-fromReadStream">fromReadStream</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-ignore">ignore</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-map">map</a></span></span></li>
@@ -51,6 +55,9 @@
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-toAsyncIterable">toAsyncIterable</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-toAsyncIterator">toAsyncIterator</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-toString">toString</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-eof">eof</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-fromArray">fromArray</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-fromString">fromString</a></span></span></li>
 </ul>
 </div>
 </nav>
@@ -67,12 +74,12 @@ export default class Tape {
 	/**
 	 * The constructor. Stores the callable that yields values to put on the tape.
 	 *
-	 * @param {Callable} callable - The callable to use.
+	 * @param {Function} callable - The callable to use.
 	 */
 	constructor(callable) {
 		/**
 		 * The callable yielding values to put on the tape.
-		 * @type {Callable}
+		 * @type {Function}
 		 */
 		this.callable = callable;
 
@@ -84,7 +91,7 @@ export default class Tape {
 
 		/**
 		 * The eof symbol.
-		 * @type {String}
+		 * @type {any}
 		 */
 		this.eof = eof;
 	}
@@ -93,7 +100,7 @@ export default class Tape {
 	 * Returns the next token on the tape or {@link Tape#eof}
 	 * if the tape has been exhausted.
 	 *
-	 * @returns {Object} The next token on the tape or {@link Tape#eof}.
+	 * @returns {Promise} The next token on the tape or {@link Tape#eof}.
 	 */
 	async read() {
 		if (this.buffer.length &gt; 0) return this.buffer.pop();
@@ -109,7 +116,7 @@ export default class Tape {
 	 * Puts a token back on the tape. If {@link Tape#read} is
 	 * used just after, this token will be returned.
 	 *
-	 * @param {Object} token - The token to put back on the tape.
+	 * @param {any} token - The token to put back on the tape.
 	 */
 	unread(token) {
 		// Should this be async too ?
@@ -127,7 +134,7 @@ export default class Tape {
 	/**
 	 * Skip the next `n` tokens on the tape.
 	 *
-	 * @param {Number} n - The number of tokens to skip.
+	 * @param {number} n - The number of tokens to skip.
 	 */
 	async skipMany(n) {
 		while (n-- &gt; 0) await this.skip(); // eslint-disable-line no-await-in-loop

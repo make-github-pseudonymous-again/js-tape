@@ -2,8 +2,8 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <base data-ice="baseUrl" href="../../">
-  <title data-ice="title">src/split.js | @async-abstraction/tape</title>
+  <base data-ice="baseUrl" href="../">
+  <title data-ice="title">Variable | @async-abstraction/tape</title>
   <link type="text/css" rel="stylesheet" href="css/style.css">
   <link type="text/css" rel="stylesheet" href="css/prettify-tomorrow.css">
   <script src="script/prettify/prettify.js"></script>
@@ -62,107 +62,267 @@
 </div>
 </nav>
 
-<div class="content" data-ice="content"><h1 data-ice="title">src/split.js</h1>
-<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">import assert from &apos;assert&apos;;
-import fromAsyncIterable from &apos;./fromAsyncIterable.js&apos;;
-import exhaust from &apos;./exhaust.js&apos;;
+<div class="content" data-ice="content"><h1 data-ice="title">Variable</h1>
+<div data-ice="summaries"><table class="summary" data-ice="summary">
+  <thead><tr><td data-ice="title" colspan="3">Static Public Summary</td></tr></thead>
+  <tbody>
+  
+  <tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
+          
+          <span class="code" data-ice="name"><span><a href="variable/index.html#static-variable-eof">eof</a></span></span><span class="code" data-ice="signature">: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">object</a></span></span>
+        </p>
+      </div>
+      <div>
+        
+        
+        <div data-ice="description"><p>Shared object used as end of file.</p>
+</div>
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
+          
+          <span class="code" data-ice="name"><span><a href="variable/index.html#static-variable-fromArray">fromArray</a></span></span><span class="code" data-ice="signature">(array: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></span>): <span><a href="class/src/Tape.js~Tape.html">Tape</a></span>: <span>*</span></span>
+        </p>
+      </div>
+      <div>
+        
+        
+        <div data-ice="description"><p>Converts an array to a tape.</p>
+</div>
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
+          
+          <span class="code" data-ice="name"><span><a href="variable/index.html#static-variable-fromString">fromString</a></span></span><span class="code" data-ice="signature">(string: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>): <span><a href="class/src/Tape.js~Tape.html">Tape</a></span>: <span>*</span></span>
+        </p>
+      </div>
+      <div>
+        
+        
+        <div data-ice="description"><p>Converts a string to a tape.</p>
+</div>
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+</tbody>
+</table>
+</div>
+<div data-ice="details"><h2 data-ice="title">Static Public </h2>
 
-/**
- * Splits the input tape into a tape of tapes according to some set of
- * separators. See {@link _split} for the actual implementation.
- *
- * @param {Tape} tape - The input tape.
- * @param {Iterable} sep - An iterable of separators.
- * @returns {Tape} A tape of tapes.
- */
-export default function split(tape, sep) {
-	return fromAsyncIterable(_split(tape, sep));
-}
+<div class="detail" data-ice="detail">
+  <h3 data-ice="anchor" id="static-variable-eof">
+    <span class="access" data-ice="access">public</span>
+    
+    
+    
+    
+    
+    <span class="code" data-ice="name">eof</span><span class="code" data-ice="signature">: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">object</a></span></span>
+    <span class="right-info">
+      
+      
+      <span data-ice="source"><span><a href="file/src/eof.js.html#lineNumber6">source</a></span></span>
+    </span>
+  </h3>
 
-export class Group {
-	constructor(first, sep, tape) {
-		this.first = first;
-		this.sep = sep;
-		this.tape = tape;
-		this.state = 0;
-	}
+  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import eof from &apos;<span><a href="file/src/eof.js.html#lineNumber6">@async-abstraction/tape/src/eof.js</a></span>&apos;</code></pre></div>
+  
+  
+  <div data-ice="description"><p>Shared object used as end of file.</p>
+</div>
 
-	async next() {
-		if (this.state === 0) {
-			this.state = 1;
-			return {done: false, value: this.first};
-		}
+  
 
-		if (this.state === 1) {
-			const value = await this.tape.read();
-			if (value !== this.tape.eof &amp;&amp; !this.sep.has(value))
-				return {done: false, value};
-			this.sep = null;
-			this.tape = null;
-			this.state = 2;
-			return {done: true};
-		}
+  <div data-ice="properties">
+</div>
 
-		return {done: true};
-	}
+  
 
-	[Symbol.asyncIterator]() {
-		return this;
-	}
-}
+  
 
-/**
- * Same as {@link split}, but returns an iterable rather than a tape.
- *
- * @private
- * @param {Tape} tape - The input tape.
- * @param {Iterable} sep - An iterable of separators.
- * @returns {AsyncIterableIterator} An iterable of tapes.
- */
-export function _split(tape, sep) {
-	return new Split(tape, sep);
-}
+  
 
-class Split {
-	constructor(tape, sep) {
-		this.tape = tape;
-		this.sep = new Set(sep);
-		this.group = null;
-		this.state = 0;
-		assert(!this.sep.has(this.tape.eof));
-	}
+  
 
-	async next() {
-		if (this.state === 0) {
-			if (this.group !== null) await exhaust(this.group);
-			let token;
-			do {
-				// eslint-disable-next-line no-await-in-loop
-				token = await this.tape.read();
-			} while (this.sep.has(token));
+  
 
-			if (token === this.tape.eof) {
-				this.tape = null;
-				this.sep = null;
-				this.group = null;
-				this.state = 1;
-				return {done: true};
-			}
+  
 
-			assert(!this.sep.has(token));
-			this.group = fromAsyncIterable(new Group(token, this.sep, this.tape));
-			return {done: false, value: this.group};
-		}
+  
 
-		return {done: true};
-	}
+  
+  
+</div>
+<div class="detail" data-ice="detail">
+  <h3 data-ice="anchor" id="static-variable-fromArray">
+    <span class="access" data-ice="access">public</span>
+    
+    
+    
+    
+    
+    <span class="code" data-ice="name">fromArray</span><span class="code" data-ice="signature">(array: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></span>): <span><a href="class/src/Tape.js~Tape.html">Tape</a></span>: <span>*</span></span>
+    <span class="right-info">
+      
+      
+      <span data-ice="source"><span><a href="file/src/fromArray.js.html#lineNumber10">source</a></span></span>
+    </span>
+  </h3>
 
-	[Symbol.asyncIterator]() {
-		return this;
-	}
-}
-</code></pre>
+  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import fromArray from &apos;<span><a href="file/src/fromArray.js.html#lineNumber10">@async-abstraction/tape/src/fromArray.js</a></span>&apos;</code></pre></div>
+  
+  
+  <div data-ice="description"><p>Converts an array to a tape.</p>
+</div>
 
+  
+
+  <div data-ice="properties">
+</div>
+
+  <div class="return-params" data-ice="returnParams">
+    <h4>Return:</h4>
+    <table>
+      <tbody>
+        <tr>
+          <td class="return-type code" data-ice="returnType"><span><a href="class/src/Tape.js~Tape.html">Tape</a></span></td>
+          
+        </tr>
+      </tbody>
+    </table>
+    <div data-ice="returnProperties">
+</div>
+  </div>
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+</div>
+<div class="detail" data-ice="detail">
+  <h3 data-ice="anchor" id="static-variable-fromString">
+    <span class="access" data-ice="access">public</span>
+    
+    
+    
+    
+    
+    <span class="code" data-ice="name">fromString</span><span class="code" data-ice="signature">(string: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>): <span><a href="class/src/Tape.js~Tape.html">Tape</a></span>: <span>*</span></span>
+    <span class="right-info">
+      
+      
+      <span data-ice="source"><span><a href="file/src/fromString.js.html#lineNumber13">source</a></span></span>
+    </span>
+  </h3>
+
+  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import fromString from &apos;<span><a href="file/src/fromString.js.html#lineNumber13">@async-abstraction/tape/src/fromString.js</a></span>&apos;</code></pre></div>
+  
+  
+  <div data-ice="description"><p>Converts a string to a tape.</p>
+</div>
+
+  
+
+  <div data-ice="properties">
+</div>
+
+  <div class="return-params" data-ice="returnParams">
+    <h4>Return:</h4>
+    <table>
+      <tbody>
+        <tr>
+          <td class="return-type code" data-ice="returnType"><span><a href="class/src/Tape.js~Tape.html">Tape</a></span></td>
+          
+        </tr>
+      </tbody>
+    </table>
+    <div data-ice="returnProperties">
+</div>
+  </div>
+
+  
+
+  
+
+  
+
+  
+
+  <div data-ice="example">
+    <h4>Example:</h4>
+    
+  <div class="example-doc" data-ice="exampleDoc">
+      
+      <pre class="prettyprint source-code"><code data-ice="exampleCode">fromString( &apos;1,3,2&apos; ) ;</code></pre>
+    </div>
+</div>
+
+  
+
+  
+  
+</div>
+</div>
 </div>
 
 <footer class="footer">

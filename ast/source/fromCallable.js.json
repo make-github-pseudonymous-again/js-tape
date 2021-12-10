@@ -99,7 +99,7 @@
         "trailingComments": [
           {
             "type": "CommentBlock",
-            "value": "*\n * Converts a callable to a tape.\n *\n * @function\n * @param {Callable} callable - The callable to convert.\n * @returns {Tape} The converted tape.\n ",
+            "value": "*\n * Converts a callable to a tape.\n *\n * @function\n * @param {Function} callable - The callable to convert.\n * @returns {Tape} The converted tape.\n ",
             "start": 31,
             "end": 184,
             "loc": {
@@ -221,7 +221,7 @@
           "leadingComments": [
             {
               "type": "CommentBlock",
-              "value": "*\n * Converts a callable to a tape.\n *\n * @function\n * @param {Callable} callable - The callable to convert.\n * @returns {Tape} The converted tape.\n ",
+              "value": "*\n * Converts a callable to a tape.\n *\n * @function\n * @param {Function} callable - The callable to convert.\n * @returns {Tape} The converted tape.\n ",
               "start": 31,
               "end": 184,
               "loc": {
@@ -241,7 +241,7 @@
         "leadingComments": [
           {
             "type": "CommentBlock",
-            "value": "*\n * Converts a callable to a tape.\n *\n * @function\n * @param {Callable} callable - The callable to convert.\n * @returns {Tape} The converted tape.\n ",
+            "value": "*\n * Converts a callable to a tape.\n *\n * @function\n * @param {Function} callable - The callable to convert.\n * @returns {Tape} The converted tape.\n ",
             "start": 31,
             "end": 184,
             "loc": {
@@ -263,7 +263,7 @@
   "comments": [
     {
       "type": "CommentBlock",
-      "value": "*\n * Converts a callable to a tape.\n *\n * @function\n * @param {Callable} callable - The callable to convert.\n * @returns {Tape} The converted tape.\n ",
+      "value": "*\n * Converts a callable to a tape.\n *\n * @function\n * @param {Function} callable - The callable to convert.\n * @returns {Tape} The converted tape.\n ",
       "start": 31,
       "end": 184,
       "loc": {
@@ -414,7 +414,7 @@
     },
     {
       "type": "CommentBlock",
-      "value": "*\n * Converts a callable to a tape.\n *\n * @function\n * @param {Callable} callable - The callable to convert.\n * @returns {Tape} The converted tape.\n ",
+      "value": "*\n * Converts a callable to a tape.\n *\n * @function\n * @param {Function} callable - The callable to convert.\n * @returns {Tape} The converted tape.\n ",
       "start": 31,
       "end": 184,
       "loc": {

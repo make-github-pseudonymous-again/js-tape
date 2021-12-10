@@ -30,9 +30,12 @@
   <ul>
     
   <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/Tape.js~Tape.html">Tape</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/asyncIterableChain.js~Chain.html">Chain</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/split.js~Group.html">Group</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-asyncIterableChain">asyncIterableChain</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-asyncIterableMap">asyncIterableMap</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-asyncIterableToArray">asyncIterableToArray</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-asyncIteratorMap">asyncIteratorMap</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-chain">chain</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-exhaust">exhaust</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-fromAsyncIterable">fromAsyncIterable</a></span></span></li>
@@ -40,6 +43,7 @@
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-fromIterable">fromIterable</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-fromIterator">fromIterator</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-_fromReadStream">_fromReadStream</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-_fromReadStreamIterator">_fromReadStreamIterator</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-fromReadStream">fromReadStream</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-ignore">ignore</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-map">map</a></span></span></li>
@@ -51,6 +55,9 @@
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-toAsyncIterable">toAsyncIterable</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-toAsyncIterator">toAsyncIterator</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-toString">toString</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-eof">eof</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-fromArray">fromArray</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-fromString">fromString</a></span></span></li>
 </ul>
 </div>
 </nav>
@@ -161,7 +168,7 @@
           
           
           
-          <span class="code" data-ice="name"><span><a href="function/index.html#static-function-fromCallable">fromCallable</a></span></span><span class="code" data-ice="signature">(callable: <span>Callable</span>): <span><a href="class/src/Tape.js~Tape.html">Tape</a></span></span>
+          <span class="code" data-ice="name"><span><a href="function/index.html#static-function-fromCallable">fromCallable</a></span></span><span class="code" data-ice="signature">(callable: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function">Function</a></span>): <span><a href="class/src/Tape.js~Tape.html">Tape</a></span></span>
         </p>
       </div>
       <div>
@@ -219,7 +226,7 @@
           
           
           
-          <span class="code" data-ice="name"><span><a href="function/index.html#static-function-fromIterator">fromIterator</a></span></span><span class="code" data-ice="signature">(iterator: <span>Iterator</span>): <span><a href="class/src/Tape.js~Tape.html">Tape</a></span></span>
+          <span class="code" data-ice="name"><span><a href="function/index.html#static-function-fromIterator">fromIterator</a></span></span><span class="code" data-ice="signature">(iterator: <span>Iterator</span> | <span>AsyncIterator</span>): <span><a href="class/src/Tape.js~Tape.html">Tape</a></span></span>
         </p>
       </div>
       <div>
@@ -306,7 +313,7 @@
           
           
           
-          <span class="code" data-ice="name"><span><a href="function/index.html#static-function-map">map</a></span></span><span class="code" data-ice="signature">(callable: <span>Callable</span>, tape: <span><a href="class/src/Tape.js~Tape.html">Tape</a></span>): <span><a href="class/src/Tape.js~Tape.html">Tape</a></span></span>
+          <span class="code" data-ice="name"><span><a href="function/index.html#static-function-map">map</a></span></span><span class="code" data-ice="signature">(callable: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function">Function</a></span>, tape: <span><a href="class/src/Tape.js~Tape.html">Tape</a></span>): <span><a href="class/src/Tape.js~Tape.html">Tape</a></span></span>
         </p>
       </div>
       <div>
@@ -365,7 +372,7 @@ separators.</p>
           
           
           
-          <span class="code" data-ice="name"><span><a href="function/index.html#static-function-toArray">toArray</a></span></span><span class="code" data-ice="signature">(tape: <span><a href="class/src/Tape.js~Tape.html">Tape</a></span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></span></span>
+          <span class="code" data-ice="name"><span><a href="function/index.html#static-function-toArray">toArray</a></span></span><span class="code" data-ice="signature">(tape: <span><a href="class/src/Tape.js~Tape.html">Tape</a></span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></span>&lt;<span><span>any</span><span>[]</span></span>&gt;</span>
         </p>
       </div>
       <div>
@@ -394,7 +401,7 @@ separators.</p>
           
           
           
-          <span class="code" data-ice="name"><span><a href="function/index.html#static-function-toAsyncCallable">toAsyncCallable</a></span></span><span class="code" data-ice="signature">(tape: <span><a href="class/src/Tape.js~Tape.html">Tape</a></span>): <span>Callable</span></span>
+          <span class="code" data-ice="name"><span><a href="function/index.html#static-function-toAsyncCallable">toAsyncCallable</a></span></span><span class="code" data-ice="signature">(tape: <span><a href="class/src/Tape.js~Tape.html">Tape</a></span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function">Function</a></span></span>
         </p>
       </div>
       <div>
@@ -479,9 +486,9 @@ separators.</p>
       <div>
         <p>
           
-          <span data-ice="async">async</span>
           
-          <span class="code" data-ice="name"><span><a href="function/index.html#static-function-toString">toString</a></span></span><span class="code" data-ice="signature">(tape: <span><a href="class/src/Tape.js~Tape.html">Tape</a></span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">String</a></span></span>
+          
+          <span class="code" data-ice="name"><span><a href="function/index.html#static-function-toString">toString</a></span></span><span class="code" data-ice="signature">(tape: <span><a href="class/src/Tape.js~Tape.html">Tape</a></span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></span>&lt;<span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>&gt;</span>
         </p>
       </div>
       <div>
@@ -514,8 +521,8 @@ separators.</p>
       <div>
         <p>
           
-          <span data-ice="async">async</span>
-          <span data-ice="generator">*</span>
+          
+          
           <span class="code" data-ice="name"><span><a href="function/index.html#static-function-_fromReadStream">_fromReadStream</a></span></span><span class="code" data-ice="signature">(readStream: <span>ReadStream</span>): <span>AsyncIterable</span></span>
         </p>
       </div>
@@ -545,7 +552,36 @@ separators.</p>
           
           <span data-ice="async">async</span>
           <span data-ice="generator">*</span>
-          <span class="code" data-ice="name"><span><a href="function/index.html#static-function-_split">_split</a></span></span><span class="code" data-ice="signature">(tape: <span><a href="class/src/Tape.js~Tape.html">Tape</a></span>, sep: <span>Iterable</span>): <span>AsyncIterable</span></span>
+          <span class="code" data-ice="name"><span><a href="function/index.html#static-function-_fromReadStreamIterator">_fromReadStreamIterator</a></span></span><span class="code" data-ice="signature">(iterator: <span>AsyncIterator</span>): <span>AsyncIterable</span></span>
+        </p>
+      </div>
+      <div>
+        
+        
+        <div data-ice="description"><p>Converts a ReadStream iterator to an async iterable of tokens.</p>
+</div>
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">private</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
+          
+          <span class="code" data-ice="name"><span><a href="function/index.html#static-function-_split">_split</a></span></span><span class="code" data-ice="signature">(tape: <span><a href="class/src/Tape.js~Tape.html">Tape</a></span>, sep: <span>Iterable</span>): <span>AsyncIterableIterator</span></span>
         </p>
       </div>
       <div>
@@ -572,9 +608,9 @@ separators.</p>
       <div>
         <p>
           
-          <span data-ice="async">async</span>
-          <span data-ice="generator">*</span>
-          <span class="code" data-ice="name"><span><a href="function/index.html#static-function-asyncIterableChain">asyncIterableChain</a></span></span><span class="code" data-ice="signature">(iterables: <span>AsyncIterable</span>): <span>AsyncIterable</span></span>
+          
+          
+          <span class="code" data-ice="name"><span><a href="function/index.html#static-function-asyncIterableChain">asyncIterableChain</a></span></span><span class="code" data-ice="signature">(iterables: <span>AsyncIterable</span>&lt;<span>AsyncIterable</span>&gt;): <span>AsyncIterable</span></span>
         </p>
       </div>
       <div>
@@ -601,9 +637,9 @@ separators.</p>
       <div>
         <p>
           
-          <span data-ice="async">async</span>
-          <span data-ice="generator">*</span>
-          <span class="code" data-ice="name"><span><a href="function/index.html#static-function-asyncIterableMap">asyncIterableMap</a></span></span><span class="code" data-ice="signature">(callable: <span>Callable</span>, iterable: <span>AsyncIterable</span>): <span>AsyncIterable</span></span>
+          
+          
+          <span class="code" data-ice="name"><span><a href="function/index.html#static-function-asyncIterableMap">asyncIterableMap</a></span></span><span class="code" data-ice="signature">(callable: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function">Function</a></span>, iterable: <span>AsyncIterable</span>): <span>AsyncIterable</span></span>
         </p>
       </div>
       <div>
@@ -632,7 +668,7 @@ separators.</p>
           
           <span data-ice="async">async</span>
           
-          <span class="code" data-ice="name"><span><a href="function/index.html#static-function-asyncIterableToArray">asyncIterableToArray</a></span></span><span class="code" data-ice="signature">(asyncIterable: <span>AsyncIterable</span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></span></span>
+          <span class="code" data-ice="name"><span><a href="function/index.html#static-function-asyncIterableToArray">asyncIterableToArray</a></span></span><span class="code" data-ice="signature">(asyncIterable: <span>AsyncIterable</span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></span>&lt;<span><span>any</span><span>[]</span></span>&gt;</span>
         </p>
       </div>
       <div>
@@ -660,8 +696,37 @@ separators.</p>
         <p>
           
           <span data-ice="async">async</span>
+          <span data-ice="generator">*</span>
+          <span class="code" data-ice="name"><span><a href="function/index.html#static-function-asyncIteratorMap">asyncIteratorMap</a></span></span><span class="code" data-ice="signature">(callable: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function">Function</a></span>, iterator: <span>AsyncIterator</span>): <span>AsyncIterator</span></span>
+        </p>
+      </div>
+      <div>
+        
+        
+        <div data-ice="description"><p>Utility function to apply a sync callable to each item of an async iterator.</p>
+</div>
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">private</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
           
-          <span class="code" data-ice="name"><span><a href="function/index.html#static-function-skip">skip</a></span></span><span class="code" data-ice="signature">(tape: <span><a href="class/src/Tape.js~Tape.html">Tape</a></span>, toskip: <span>Iterable</span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></span></span>
+          <span data-ice="async">async</span>
+          
+          <span class="code" data-ice="name"><span><a href="function/index.html#static-function-skip">skip</a></span></span><span class="code" data-ice="signature">(tape: <span><a href="class/src/Tape.js~Tape.html">Tape</a></span>, toskip: <span>Iterable</span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></span></span>
         </p>
       </div>
       <div>
@@ -899,7 +964,7 @@ set.</p>
     
     
     
-    <span class="code" data-ice="name">fromCallable</span><span class="code" data-ice="signature">(callable: <span>Callable</span>): <span><a href="class/src/Tape.js~Tape.html">Tape</a></span></span>
+    <span class="code" data-ice="name">fromCallable</span><span class="code" data-ice="signature">(callable: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function">Function</a></span>): <span><a href="class/src/Tape.js~Tape.html">Tape</a></span></span>
     <span class="right-info">
       
       
@@ -925,7 +990,7 @@ set.</p>
     
     <tr data-ice="property" data-depth="0">
       <td data-ice="name" class="code" data-depth="0">callable</td>
-      <td data-ice="type" class="code"><span>Callable</span></td>
+      <td data-ice="type" class="code"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function">Function</a></span></td>
       <td data-ice="appendix"></td>
       <td data-ice="description"><p>The callable to convert.</p>
 </td>
@@ -1047,7 +1112,7 @@ set.</p>
     
     
     
-    <span class="code" data-ice="name">fromIterator</span><span class="code" data-ice="signature">(iterator: <span>Iterator</span>): <span><a href="class/src/Tape.js~Tape.html">Tape</a></span></span>
+    <span class="code" data-ice="name">fromIterator</span><span class="code" data-ice="signature">(iterator: <span>Iterator</span> | <span>AsyncIterator</span>): <span><a href="class/src/Tape.js~Tape.html">Tape</a></span></span>
     <span class="right-info">
       
       
@@ -1073,7 +1138,7 @@ set.</p>
     
     <tr data-ice="property" data-depth="0">
       <td data-ice="name" class="code" data-depth="0">iterator</td>
-      <td data-ice="type" class="code"><span>Iterator</span></td>
+      <td data-ice="type" class="code"><span>Iterator</span> | <span>AsyncIterator</span></td>
       <td data-ice="appendix"></td>
       <td data-ice="description"><p>The iterator to convert.</p>
 </td>
@@ -1125,11 +1190,11 @@ set.</p>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/fromReadStream.js.html#lineNumber23">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/fromReadStream.js.html#lineNumber42">source</a></span></span>
     </span>
   </h3>
 
-  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import fromReadStream from &apos;<span><a href="file/src/fromReadStream.js.html#lineNumber23">@async-abstraction/tape/src/fromReadStream.js</a></span>&apos;</code></pre></div>
+  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import fromReadStream from &apos;<span><a href="file/src/fromReadStream.js.html#lineNumber42">@async-abstraction/tape/src/fromReadStream.js</a></span>&apos;</code></pre></div>
   
   
   <div data-ice="description"><p>Converts a ReadStream object to a tape.</p>
@@ -1276,7 +1341,7 @@ set.</p>
     
     
     
-    <span class="code" data-ice="name">map</span><span class="code" data-ice="signature">(callable: <span>Callable</span>, tape: <span><a href="class/src/Tape.js~Tape.html">Tape</a></span>): <span><a href="class/src/Tape.js~Tape.html">Tape</a></span></span>
+    <span class="code" data-ice="name">map</span><span class="code" data-ice="signature">(callable: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function">Function</a></span>, tape: <span><a href="class/src/Tape.js~Tape.html">Tape</a></span>): <span><a href="class/src/Tape.js~Tape.html">Tape</a></span></span>
     <span class="right-info">
       
       
@@ -1302,7 +1367,7 @@ set.</p>
     
     <tr data-ice="property" data-depth="0">
       <td data-ice="name" class="code" data-depth="0">callable</td>
-      <td data-ice="type" class="code"><span>Callable</span></td>
+      <td data-ice="type" class="code"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function">Function</a></span></td>
       <td data-ice="appendix"></td>
       <td data-ice="description"><p>the callable to apply</p>
 </td>
@@ -1361,11 +1426,11 @@ set.</p>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/split.js.html#lineNumber12">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/split.js.html#lineNumber13">source</a></span></span>
     </span>
   </h3>
 
-  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import split from &apos;<span><a href="file/src/split.js.html#lineNumber12">@async-abstraction/tape/src/split.js</a></span>&apos;</code></pre></div>
+  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import split from &apos;<span><a href="file/src/split.js.html#lineNumber13">@async-abstraction/tape/src/split.js</a></span>&apos;</code></pre></div>
   
   
   <div data-ice="description"><p>Splits the input tape into a tape of tapes according to some set of
@@ -1439,7 +1504,7 @@ separators. See <span><a href="function/index.html#static-function-_split">_spli
     
     
     
-    <span class="code" data-ice="name">toArray</span><span class="code" data-ice="signature">(tape: <span><a href="class/src/Tape.js~Tape.html">Tape</a></span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></span></span>
+    <span class="code" data-ice="name">toArray</span><span class="code" data-ice="signature">(tape: <span><a href="class/src/Tape.js~Tape.html">Tape</a></span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></span>&lt;<span><span>any</span><span>[]</span></span>&gt;</span>
     <span class="right-info">
       
       
@@ -1480,7 +1545,7 @@ separators. See <span><a href="function/index.html#static-function-_split">_spli
     <table>
       <tbody>
         <tr>
-          <td class="return-type code" data-ice="returnType"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></span></td>
+          <td class="return-type code" data-ice="returnType"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></span>&lt;<span><span>any</span><span>[]</span></span>&gt;</td>
           <td class="return-desc" data-ice="returnDescription"><p>The converted array.</p>
 </td>
         </tr>
@@ -1513,7 +1578,7 @@ separators. See <span><a href="function/index.html#static-function-_split">_spli
     
     
     
-    <span class="code" data-ice="name">toAsyncCallable</span><span class="code" data-ice="signature">(tape: <span><a href="class/src/Tape.js~Tape.html">Tape</a></span>): <span>Callable</span></span>
+    <span class="code" data-ice="name">toAsyncCallable</span><span class="code" data-ice="signature">(tape: <span><a href="class/src/Tape.js~Tape.html">Tape</a></span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function">Function</a></span></span>
     <span class="right-info">
       
       
@@ -1554,7 +1619,7 @@ separators. See <span><a href="function/index.html#static-function-_split">_spli
     <table>
       <tbody>
         <tr>
-          <td class="return-type code" data-ice="returnType"><span>Callable</span></td>
+          <td class="return-type code" data-ice="returnType"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function">Function</a></span></td>
           <td class="return-desc" data-ice="returnDescription"><p>The converted callable.</p>
 </td>
         </tr>
@@ -1733,9 +1798,9 @@ separators. See <span><a href="function/index.html#static-function-_split">_spli
     
     
     
-    <span data-ice="async">async</span>
     
-    <span class="code" data-ice="name">toString</span><span class="code" data-ice="signature">(tape: <span><a href="class/src/Tape.js~Tape.html">Tape</a></span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">String</a></span></span>
+    
+    <span class="code" data-ice="name">toString</span><span class="code" data-ice="signature">(tape: <span><a href="class/src/Tape.js~Tape.html">Tape</a></span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></span>&lt;<span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>&gt;</span>
     <span class="right-info">
       
       
@@ -1776,7 +1841,7 @@ separators. See <span><a href="function/index.html#static-function-_split">_spli
     <table>
       <tbody>
         <tr>
-          <td class="return-type code" data-ice="returnType"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">String</a></span></td>
+          <td class="return-type code" data-ice="returnType"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></span>&lt;<span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>&gt;</td>
           <td class="return-desc" data-ice="returnDescription"><p>The converted string.</p>
 </td>
         </tr>
@@ -1809,17 +1874,17 @@ separators. See <span><a href="function/index.html#static-function-_split">_spli
     
     
     
-    <span data-ice="async">async</span>
-    <span data-ice="generator">*</span>
+    
+    
     <span class="code" data-ice="name">_fromReadStream</span><span class="code" data-ice="signature">(readStream: <span>ReadStream</span>): <span>AsyncIterable</span></span>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/fromReadStream.js.html#lineNumber10">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/fromReadStream.js.html#lineNumber31">source</a></span></span>
     </span>
   </h3>
 
-  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import {_fromReadStream} from &apos;<span><a href="file/src/fromReadStream.js.html#lineNumber10">@async-abstraction/tape/src/fromReadStream.js</a></span>&apos;</code></pre></div>
+  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import {_fromReadStream} from &apos;<span><a href="file/src/fromReadStream.js.html#lineNumber31">@async-abstraction/tape/src/fromReadStream.js</a></span>&apos;</code></pre></div>
   
   
   <div data-ice="description"><p>Converts a ReadStream object to an async iterable of tokens.</p>
@@ -1878,22 +1943,96 @@ separators. See <span><a href="function/index.html#static-function-_split">_spli
   
 </div>
 <div class="detail" data-ice="detail">
-  <h3 data-ice="anchor" id="static-function-_split">
+  <h3 data-ice="anchor" id="static-function-_fromReadStreamIterator">
     <span class="access" data-ice="access">private</span>
     
     
     
     <span data-ice="async">async</span>
     <span data-ice="generator">*</span>
-    <span class="code" data-ice="name">_split</span><span class="code" data-ice="signature">(tape: <span><a href="class/src/Tape.js~Tape.html">Tape</a></span>, sep: <span>Iterable</span>): <span>AsyncIterable</span></span>
+    <span class="code" data-ice="name">_fromReadStreamIterator</span><span class="code" data-ice="signature">(iterator: <span>AsyncIterator</span>): <span>AsyncIterable</span></span>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/split.js.html#lineNumber24">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/fromReadStream.js.html#lineNumber10">source</a></span></span>
     </span>
   </h3>
 
-  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import {_split} from &apos;<span><a href="file/src/split.js.html#lineNumber24">@async-abstraction/tape/src/split.js</a></span>&apos;</code></pre></div>
+  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import {_fromReadStreamIterator} from &apos;<span><a href="file/src/fromReadStream.js.html#lineNumber10">@async-abstraction/tape/src/fromReadStream.js</a></span>&apos;</code></pre></div>
+  
+  
+  <div data-ice="description"><p>Converts a ReadStream iterator to an async iterable of tokens.</p>
+</div>
+
+  
+
+  <div data-ice="properties"><div data-ice="properties">
+  <h4 data-ice="title">Params:</h4>
+  <table class="params">
+    <thead>
+    <tr><td>Name</td><td>Type</td><td>Attribute</td><td>Description</td></tr>
+    </thead>
+    <tbody>
+    
+    <tr data-ice="property" data-depth="0">
+      <td data-ice="name" class="code" data-depth="0">iterator</td>
+      <td data-ice="type" class="code"><span>AsyncIterator</span></td>
+      <td data-ice="appendix"></td>
+      <td data-ice="description"><p>The ReadStream iterator to convert.</p>
+</td>
+    </tr>
+</tbody>
+  </table>
+</div>
+</div>
+
+  <div class="return-params" data-ice="returnParams">
+    <h4>Return:</h4>
+    <table>
+      <tbody>
+        <tr>
+          <td class="return-type code" data-ice="returnType"><span>AsyncIterable</span></td>
+          <td class="return-desc" data-ice="returnDescription"><p>The converted iterable.</p>
+</td>
+        </tr>
+      </tbody>
+    </table>
+    <div data-ice="returnProperties">
+</div>
+  </div>
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+</div>
+<div class="detail" data-ice="detail">
+  <h3 data-ice="anchor" id="static-function-_split">
+    <span class="access" data-ice="access">private</span>
+    
+    
+    
+    
+    
+    <span class="code" data-ice="name">_split</span><span class="code" data-ice="signature">(tape: <span><a href="class/src/Tape.js~Tape.html">Tape</a></span>, sep: <span>Iterable</span>): <span>AsyncIterableIterator</span></span>
+    <span class="right-info">
+      
+      
+      <span data-ice="source"><span><a href="file/src/split.js.html#lineNumber57">source</a></span></span>
+    </span>
+  </h3>
+
+  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import {_split} from &apos;<span><a href="file/src/split.js.html#lineNumber57">@async-abstraction/tape/src/split.js</a></span>&apos;</code></pre></div>
   
   
   <div data-ice="description"><p>Same as <span><a href="function/index.html#static-function-split">split</a></span>, but returns an iterable rather than a tape.</p>
@@ -1933,7 +2072,7 @@ separators. See <span><a href="function/index.html#static-function-_split">_spli
     <table>
       <tbody>
         <tr>
-          <td class="return-type code" data-ice="returnType"><span>AsyncIterable</span></td>
+          <td class="return-type code" data-ice="returnType"><span>AsyncIterableIterator</span></td>
           <td class="return-desc" data-ice="returnDescription"><p>An iterable of tapes.</p>
 </td>
         </tr>
@@ -1964,9 +2103,9 @@ separators. See <span><a href="function/index.html#static-function-_split">_spli
     
     
     
-    <span data-ice="async">async</span>
-    <span data-ice="generator">*</span>
-    <span class="code" data-ice="name">asyncIterableChain</span><span class="code" data-ice="signature">(iterables: <span>AsyncIterable</span>): <span>AsyncIterable</span></span>
+    
+    
+    <span class="code" data-ice="name">asyncIterableChain</span><span class="code" data-ice="signature">(iterables: <span>AsyncIterable</span>&lt;<span>AsyncIterable</span>&gt;): <span>AsyncIterable</span></span>
     <span class="right-info">
       
       
@@ -1992,7 +2131,7 @@ separators. See <span><a href="function/index.html#static-function-_split">_spli
     
     <tr data-ice="property" data-depth="0">
       <td data-ice="name" class="code" data-depth="0">iterables</td>
-      <td data-ice="type" class="code"><span>AsyncIterable</span></td>
+      <td data-ice="type" class="code"><span>AsyncIterable</span>&lt;<span>AsyncIterable</span>&gt;</td>
       <td data-ice="appendix"></td>
       <td data-ice="description"><p>the input iterable of iterables.</p>
 </td>
@@ -2038,17 +2177,17 @@ separators. See <span><a href="function/index.html#static-function-_split">_spli
     
     
     
-    <span data-ice="async">async</span>
-    <span data-ice="generator">*</span>
-    <span class="code" data-ice="name">asyncIterableMap</span><span class="code" data-ice="signature">(callable: <span>Callable</span>, iterable: <span>AsyncIterable</span>): <span>AsyncIterable</span></span>
+    
+    
+    <span class="code" data-ice="name">asyncIterableMap</span><span class="code" data-ice="signature">(callable: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function">Function</a></span>, iterable: <span>AsyncIterable</span>): <span>AsyncIterable</span></span>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/asyncIterableMap.js.html#lineNumber9">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/asyncIterableMap.js.html#lineNumber11">source</a></span></span>
     </span>
   </h3>
 
-  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import asyncIterableMap from &apos;<span><a href="file/src/asyncIterableMap.js.html#lineNumber9">@async-abstraction/tape/src/asyncIterableMap.js</a></span>&apos;</code></pre></div>
+  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import asyncIterableMap from &apos;<span><a href="file/src/asyncIterableMap.js.html#lineNumber11">@async-abstraction/tape/src/asyncIterableMap.js</a></span>&apos;</code></pre></div>
   
   
   <div data-ice="description"><p>Utility function to apply a sync callable to each item of an async iterable.</p>
@@ -2066,7 +2205,7 @@ separators. See <span><a href="function/index.html#static-function-_split">_spli
     
     <tr data-ice="property" data-depth="0">
       <td data-ice="name" class="code" data-depth="0">callable</td>
-      <td data-ice="type" class="code"><span>Callable</span></td>
+      <td data-ice="type" class="code"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function">Function</a></span></td>
       <td data-ice="appendix"></td>
       <td data-ice="description"><p>The callable to apply.</p>
 </td>
@@ -2121,7 +2260,7 @@ separators. See <span><a href="function/index.html#static-function-_split">_spli
     
     <span data-ice="async">async</span>
     
-    <span class="code" data-ice="name">asyncIterableToArray</span><span class="code" data-ice="signature">(asyncIterable: <span>AsyncIterable</span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></span></span>
+    <span class="code" data-ice="name">asyncIterableToArray</span><span class="code" data-ice="signature">(asyncIterable: <span>AsyncIterable</span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></span>&lt;<span><span>any</span><span>[]</span></span>&gt;</span>
     <span class="right-info">
       
       
@@ -2162,8 +2301,89 @@ separators. See <span><a href="function/index.html#static-function-_split">_spli
     <table>
       <tbody>
         <tr>
-          <td class="return-type code" data-ice="returnType"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></span></td>
+          <td class="return-type code" data-ice="returnType"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></span>&lt;<span><span>any</span><span>[]</span></span>&gt;</td>
           <td class="return-desc" data-ice="returnDescription"><p>A new array filled with the elements of the input iterable.</p>
+</td>
+        </tr>
+      </tbody>
+    </table>
+    <div data-ice="returnProperties">
+</div>
+  </div>
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+</div>
+<div class="detail" data-ice="detail">
+  <h3 data-ice="anchor" id="static-function-asyncIteratorMap">
+    <span class="access" data-ice="access">private</span>
+    
+    
+    
+    <span data-ice="async">async</span>
+    <span data-ice="generator">*</span>
+    <span class="code" data-ice="name">asyncIteratorMap</span><span class="code" data-ice="signature">(callable: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function">Function</a></span>, iterator: <span>AsyncIterator</span>): <span>AsyncIterator</span></span>
+    <span class="right-info">
+      
+      
+      <span data-ice="source"><span><a href="file/src/asyncIteratorMap.js.html#lineNumber9">source</a></span></span>
+    </span>
+  </h3>
+
+  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import asyncIteratorMap from &apos;<span><a href="file/src/asyncIteratorMap.js.html#lineNumber9">@async-abstraction/tape/src/asyncIteratorMap.js</a></span>&apos;</code></pre></div>
+  
+  
+  <div data-ice="description"><p>Utility function to apply a sync callable to each item of an async iterator.</p>
+</div>
+
+  
+
+  <div data-ice="properties"><div data-ice="properties">
+  <h4 data-ice="title">Params:</h4>
+  <table class="params">
+    <thead>
+    <tr><td>Name</td><td>Type</td><td>Attribute</td><td>Description</td></tr>
+    </thead>
+    <tbody>
+    
+    <tr data-ice="property" data-depth="0">
+      <td data-ice="name" class="code" data-depth="0">callable</td>
+      <td data-ice="type" class="code"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function">Function</a></span></td>
+      <td data-ice="appendix"></td>
+      <td data-ice="description"><p>The callable to apply.</p>
+</td>
+    </tr>
+<tr data-ice="property" data-depth="0">
+      <td data-ice="name" class="code" data-depth="0">iterator</td>
+      <td data-ice="type" class="code"><span>AsyncIterator</span></td>
+      <td data-ice="appendix"></td>
+      <td data-ice="description"><p>The iterator to process.</p>
+</td>
+    </tr>
+</tbody>
+  </table>
+</div>
+</div>
+
+  <div class="return-params" data-ice="returnParams">
+    <h4>Return:</h4>
+    <table>
+      <tbody>
+        <tr>
+          <td class="return-type code" data-ice="returnType"><span>AsyncIterator</span></td>
+          <td class="return-desc" data-ice="returnDescription"><p>The iterator of mapped values.</p>
 </td>
         </tr>
       </tbody>
@@ -2195,7 +2415,7 @@ separators. See <span><a href="function/index.html#static-function-_split">_spli
     
     <span data-ice="async">async</span>
     
-    <span class="code" data-ice="name">skip</span><span class="code" data-ice="signature">(tape: <span><a href="class/src/Tape.js~Tape.html">Tape</a></span>, toskip: <span>Iterable</span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></span></span>
+    <span class="code" data-ice="name">skip</span><span class="code" data-ice="signature">(tape: <span><a href="class/src/Tape.js~Tape.html">Tape</a></span>, toskip: <span>Iterable</span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></span></span>
     <span class="right-info">
       
       
@@ -2244,7 +2464,7 @@ set.</p>
     <table>
       <tbody>
         <tr>
-          <td class="return-type code" data-ice="returnType"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></span></td>
+          <td class="return-type code" data-ice="returnType"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></span></td>
           <td class="return-desc" data-ice="returnDescription"><p>The next token not in <code>toskip</code>.</p>
 </td>
         </tr>

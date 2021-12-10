@@ -1,5 +1,17 @@
 window.esdocSearchIndex = [
   [
+    "@async-abstraction/tape/src/asynciterablechain.js~chain",
+    "class/src/asyncIterableChain.js~Chain.html",
+    "<span>Chain</span> <span class=\"search-result-import-path\">@async-abstraction/tape/src/asyncIterableChain.js</span>",
+    "class"
+  ],
+  [
+    "@async-abstraction/tape/src/split.js~group",
+    "class/src/split.js~Group.html",
+    "<span>Group</span> <span class=\"search-result-import-path\">@async-abstraction/tape/src/split.js</span>",
+    "class"
+  ],
+  [
     "@async-abstraction/tape/src/tape.js~tape",
     "class/src/Tape.js~Tape.html",
     "<span>Tape</span> <span class=\"search-result-import-path\">@async-abstraction/tape/src/Tape.js</span>",
@@ -9,6 +21,12 @@ window.esdocSearchIndex = [
     "@async-abstraction/tape/src/fromreadstream.js~_fromreadstream",
     "function/index.html#static-function-_fromReadStream",
     "<span>_fromReadStream</span> <span class=\"search-result-import-path\">@async-abstraction/tape/src/fromReadStream.js</span>",
+    "function"
+  ],
+  [
+    "@async-abstraction/tape/src/fromreadstream.js~_fromreadstreamiterator",
+    "function/index.html#static-function-_fromReadStreamIterator",
+    "<span>_fromReadStreamIterator</span> <span class=\"search-result-import-path\">@async-abstraction/tape/src/fromReadStream.js</span>",
     "function"
   ],
   [
@@ -36,16 +54,34 @@ window.esdocSearchIndex = [
     "function"
   ],
   [
+    "@async-abstraction/tape/src/asynciteratormap.js~asynciteratormap",
+    "function/index.html#static-function-asyncIteratorMap",
+    "<span>asyncIteratorMap</span> <span class=\"search-result-import-path\">@async-abstraction/tape/src/asyncIteratorMap.js</span>",
+    "function"
+  ],
+  [
     "@async-abstraction/tape/src/chain.js~chain",
     "function/index.html#static-function-chain",
     "<span>chain</span> <span class=\"search-result-import-path\">@async-abstraction/tape/src/chain.js</span>",
     "function"
   ],
   [
+    "@async-abstraction/tape/src/eof.js~eof",
+    "variable/index.html#static-variable-eof",
+    "<span>eof</span> <span class=\"search-result-import-path\">@async-abstraction/tape/src/eof.js</span>",
+    "variable"
+  ],
+  [
     "@async-abstraction/tape/src/exhaust.js~exhaust",
     "function/index.html#static-function-exhaust",
     "<span>exhaust</span> <span class=\"search-result-import-path\">@async-abstraction/tape/src/exhaust.js</span>",
     "function"
+  ],
+  [
+    "@async-abstraction/tape/src/fromarray.js~fromarray",
+    "variable/index.html#static-variable-fromArray",
+    "<span>fromArray</span> <span class=\"search-result-import-path\">@async-abstraction/tape/src/fromArray.js</span>",
+    "variable"
   ],
   [
     "@async-abstraction/tape/src/fromasynciterable.js~fromasynciterable",
@@ -76,6 +112,12 @@ window.esdocSearchIndex = [
     "function/index.html#static-function-fromReadStream",
     "<span>fromReadStream</span> <span class=\"search-result-import-path\">@async-abstraction/tape/src/fromReadStream.js</span>",
     "function"
+  ],
+  [
+    "@async-abstraction/tape/src/fromstring.js~fromstring",
+    "variable/index.html#static-variable-fromString",
+    "<span>fromString</span> <span class=\"search-result-import-path\">@async-abstraction/tape/src/fromString.js</span>",
+    "variable"
   ],
   [
     "@async-abstraction/tape/src/ignore.js~ignore",
@@ -486,6 +528,36 @@ window.esdocSearchIndex = [
     "file"
   ],
   [
+    "src/asynciterablechain.js~chain#[symbol.asynciterator]",
+    "class/src/asyncIterableChain.js~Chain.html#instance-method-[Symbol.asyncIterator]",
+    "src/asyncIterableChain.js~Chain#[Symbol.asyncIterator]",
+    "method"
+  ],
+  [
+    "src/asynciterablechain.js~chain#constructor",
+    "class/src/asyncIterableChain.js~Chain.html#instance-constructor-constructor",
+    "src/asyncIterableChain.js~Chain#constructor",
+    "method"
+  ],
+  [
+    "src/asynciterablechain.js~chain#iterator",
+    "class/src/asyncIterableChain.js~Chain.html#instance-member-iterator",
+    "src/asyncIterableChain.js~Chain#iterator",
+    "member"
+  ],
+  [
+    "src/asynciterablechain.js~chain#iterators",
+    "class/src/asyncIterableChain.js~Chain.html#instance-member-iterators",
+    "src/asyncIterableChain.js~Chain#iterators",
+    "member"
+  ],
+  [
+    "src/asynciterablechain.js~chain#next",
+    "class/src/asyncIterableChain.js~Chain.html#instance-method-next",
+    "src/asyncIterableChain.js~Chain#next",
+    "method"
+  ],
+  [
     "src/asynciterablemap.js",
     "file/src/asyncIterableMap.js.html",
     "src/asyncIterableMap.js",
@@ -495,6 +567,12 @@ window.esdocSearchIndex = [
     "src/asynciterabletoarray.js",
     "file/src/asyncIterableToArray.js.html",
     "src/asyncIterableToArray.js",
+    "file"
+  ],
+  [
+    "src/asynciteratormap.js",
+    "file/src/asyncIteratorMap.js.html",
+    "src/asyncIteratorMap.js",
     "file"
   ],
   [
@@ -586,6 +664,48 @@ window.esdocSearchIndex = [
     "file/src/split.js.html",
     "src/split.js",
     "file"
+  ],
+  [
+    "src/split.js~group#[symbol.asynciterator]",
+    "class/src/split.js~Group.html#instance-method-[Symbol.asyncIterator]",
+    "src/split.js~Group#[Symbol.asyncIterator]",
+    "method"
+  ],
+  [
+    "src/split.js~group#constructor",
+    "class/src/split.js~Group.html#instance-constructor-constructor",
+    "src/split.js~Group#constructor",
+    "method"
+  ],
+  [
+    "src/split.js~group#first",
+    "class/src/split.js~Group.html#instance-member-first",
+    "src/split.js~Group#first",
+    "member"
+  ],
+  [
+    "src/split.js~group#next",
+    "class/src/split.js~Group.html#instance-method-next",
+    "src/split.js~Group#next",
+    "method"
+  ],
+  [
+    "src/split.js~group#sep",
+    "class/src/split.js~Group.html#instance-member-sep",
+    "src/split.js~Group#sep",
+    "member"
+  ],
+  [
+    "src/split.js~group#state",
+    "class/src/split.js~Group.html#instance-member-state",
+    "src/split.js~Group#state",
+    "member"
+  ],
+  [
+    "src/split.js~group#tape",
+    "class/src/split.js~Group.html#instance-member-tape",
+    "src/split.js~Group#tape",
+    "member"
   ],
   [
     "src/toarray.js",
