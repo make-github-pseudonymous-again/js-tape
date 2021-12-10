@@ -58,7 +58,7 @@
     "prepublishOnly": "pinst --disable",
     "release": "np --message ':hatching_chick: release: Bumping to v%s.'",
     "test": "npm run test:src",
-    "test-cmd": "ava",
+    "test-cmd": "NODE_LOADER_CONFIG=test/loader/config.js ava",
     "test:cjs": "IMPORT_MAP_PATH=test/import-maps/dist/index.json npm run test-cmd",
     "test:dist": "npm run test:modern && npm run test:module && npm run test:cjs",
     "test:modern": "IMPORT_MAP_PATH=test/import-maps/dist/index.modern.json npm run test-cmd",
@@ -72,6 +72,8 @@
     "@babel/register": "7.16.0",
     "@commitlint/cli": "15.0.0",
     "@js-library/commitlint-config": "0.0.4",
+    "@node-loader/babel": "^2.0.0",
+    "@node-loader/core": "^2.0.0",
     "@node-loader/import-maps": "^1.0.3",
     "ava": "^4.0.0-rc.1",
     "babel-plugin-transform-remove-console": "6.9.4",
@@ -101,20 +103,12 @@
       "regenerator-runtime/runtime"
     ],
     "nodeArguments": [
-      "--experimental-loader=@node-loader/import-maps"
+      "--experimental-loader=@node-loader/core"
     ],
     "timeout": "1m"
   },
   "babel": {
     "sourceMaps": true,
-    "presets": [
-      [
-        "@babel/preset-env",
-        {
-          "targets": "current node"
-        }
-      ]
-    ],
     "plugins": [
       [
         "transform-remove-console",
@@ -129,6 +123,7 @@
     ],
     "env": {
       "debug": {
+        "sourceMaps": "both",
         "presets": [
           "babel-preset-power-assert"
         ],
@@ -147,6 +142,7 @@
         ]
       },
       "test": {
+        "sourceMaps": "both",
         "presets": [
           "babel-preset-power-assert"
         ]
@@ -206,6 +202,7 @@
       "unicorn"
     ],
     "rules": {
+      "unicorn/prefer-node-protocol": "off",
       "import/no-anonymous-default-export": "off",
       "unicorn/filename-case": [
         "error",
