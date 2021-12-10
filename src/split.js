@@ -52,7 +52,7 @@ export class Group {
  * @private
  * @param {Tape} tape - The input tape.
  * @param {Iterable} sep - An iterable of separators.
- * @returns {AsyncIterable} An iterable of tapes.
+ * @returns {AsyncIterableIterator} An iterable of tapes.
  */
 export function _split(tape, sep) {
 	return new Split(tape, sep);
