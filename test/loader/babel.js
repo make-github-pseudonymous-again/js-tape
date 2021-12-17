@@ -30,46 +30,39 @@
 
 import process from 'process';
 import path from 'path';
-import urlModule from 'url';
-import babel from '@babel/core';
+import {fileURLToPath} from 'url';
+import {loadOptionsAsync, transformAsync} from '@babel/core';
 
-const {loadOptionsAsync, transformAsync} = babel;
+const BABEL_FORMATS_TRANSFORMED = new Set(['module']);
+
+const BABEL_CONFIG_FILES = new Set([
+	'.babelrc.js',
+	'.babelrc.mjs',
+	'babel.config.js',
+	'babel.config.mjs',
+	'.babelrc',
+	'.babelrc.cjs',
+	'babel.config.cjs',
+]);
+
+const anyURLToPathOrUndefined = (url) => {
+	try {
+		return fileURLToPath(url);
+	} catch (error) {
+		if (error instanceof TypeError && error.code === 'ERR_INVALID_URL_SCHEME') {
+			return undefined;
+		}
+
+		throw error;
+	}
+};
 
 const isBabelConfigFile = (filename) => {
 	const basename = path.basename(filename);
-	return (
-		basename === '.babelrc.js' ||
-		basename === '.babelrc.mjs' ||
-		basename === 'babel.config.js' ||
-		basename === 'babel.config.mjs' ||
-		basename === '.babelrc' ||
-		basename === '.babelrc.cjs' ||
-		basename === 'babel.config.cjs'
-	);
+	return BABEL_CONFIG_FILES.has(basename);
 };
 
-const getFormatWithCertitude = (filename) => {
-	return /\.cjs$/.test(filename)
-		? 'commonjs'
-		: /\.mjs$/.test(filename)
-		? 'module'
-		: undefined;
-};
-
-const getFormat = (filename) => {
-	const packageType = 'module'; // TODO query package.json
-	const defaultFormat = 'json'; // TODO is this correct as default?
-
-	return (
-		getFormatWithCertitude(filename) ??
-		(/\.js$/.test(filename) ? packageType : defaultFormat)
-	);
-};
-
-const getSourceType = (filename) => {
-	// TODO replace with getFormat once getFormat queries package.json
-	const format = getFormatWithCertitude(filename);
-
+const getSourceType = (format) => {
 	switch (format) {
 		case 'module':
 			return 'module';
@@ -80,41 +73,60 @@ const getSourceType = (filename) => {
 	}
 };
 
-const skip = (url) => {
-	return /node_modules/.test(url) || /node:/.test(url);
-};
+const prepare = async (url, context, defaultLoad) => {
+	const original = await defaultLoad(url, context, defaultLoad);
 
-const transformLoad = async (url, context, defaultLoad) => {
-	const {source} = await defaultLoad(url, context, defaultLoad);
+	const noop = () => ({
+		transform: false,
+		original,
+	});
 
-	const filename = urlModule.fileURLToPath(url);
-	// Babel config files can themselves be ES modules,
-	// but we cannot transform those since doing so would cause an infinite loop.
-	if (isBabelConfigFile(filename)) {
-		return {
-			source,
-			format: getFormat(filename),
-		};
+	if (
+		/node_modules/.test(url) ||
+		/node:/.test(url) ||
+		!BABEL_FORMATS_TRANSFORMED.has(original.format)
+	) {
+		return noop();
 	}
 
+	const filename = anyURLToPathOrUndefined(url);
+
+	// Babel config files can themselves be ES modules,
+	// but transforming those could require more than one pass.
+	if (isBabelConfigFile(filename)) return noop();
+
+	return {
+		transform: true,
+		original,
+		options: {
+			filename,
+		},
+	};
+};
+
+const transformed = async ({format, source}, {filename}) => {
 	const options = await loadOptionsAsync({
-		sourceType: getSourceType(filename),
+		sourceType: getSourceType(format),
 		root: process.cwd(),
 		rootMode: 'root',
 		filename,
 		configFile: true,
 	});
-	const transformed = await transformAsync(source, options);
+
+	const result = await transformAsync(source, options);
 
 	return {
-		source: transformed.code,
+		source: result.code,
 		// TODO: look at babel config to see whether it will output ESM/CJS or other formats
-		format: getFormat(filename),
+		format,
 	};
 };
 
 export const load = async (url, context, defaultLoad) => {
-	return skip(url)
-		? defaultLoad(url, context, defaultLoad)
-		: transformLoad(url, context, defaultLoad);
+	const {transform, original, options} = await prepare(
+		url,
+		context,
+		defaultLoad,
+	);
+	return transform ? transformed(original, options) : original;
 };
