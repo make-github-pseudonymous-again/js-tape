@@ -84,9 +84,7 @@ const skip = (url) => {
 	return /node_modules/.test(url) || /node:/.test(url);
 };
 
-export const load = async (url, context, defaultLoad) => {
-	if (skip(url)) return defaultLoad(url, context, defaultLoad);
-
+const transformLoad = async (url, context, defaultLoad) => {
 	const {source} = await defaultLoad(url, context, defaultLoad);
 
 	const filename = urlModule.fileURLToPath(url);
@@ -113,4 +111,10 @@ export const load = async (url, context, defaultLoad) => {
 		// TODO: look at babel config to see whether it will output ESM/CJS or other formats
 		format: getFormat(filename),
 	};
+};
+
+export const load = async (url, context, defaultLoad) => {
+	return skip(url)
+		? defaultLoad(url, context, defaultLoad)
+		: transformLoad(url, context, defaultLoad);
 };
