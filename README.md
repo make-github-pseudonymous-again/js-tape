@@ -19,7 +19,7 @@ for await ( const character of tape ) ... ;
 [![License](https://img.shields.io/github/license/async-abstraction/tape.svg)](https://raw.githubusercontent.com/async-abstraction/tape/main/LICENSE)
 [![Version](https://img.shields.io/npm/v/@async-abstraction/tape.svg)](https://www.npmjs.org/package/@async-abstraction/tape)
 [![Tests](https://img.shields.io/github/workflow/status/async-abstraction/tape/ci?event=push&label=tests)](https://github.com/async-abstraction/tape/actions/workflows/ci.yml?query=branch:main)
-[![Dependencies](https://img.shields.io/librariesio/github/async-abstraction/tape)](https://github.com/async-abstraction/tape/network/dependencies)
+[![Dependencies](https://img.shields.io/librariesio/github/async-abstraction/tape.svg)](https://github.com/async-abstraction/tape/network/dependencies)
 [![GitHub issues](https://img.shields.io/github/issues/async-abstraction/tape.svg)](https://github.com/async-abstraction/tape/issues)
 [![Downloads](https://img.shields.io/npm/dm/@async-abstraction/tape.svg)](https://www.npmjs.org/package/@async-abstraction/tape)
 

@@ -44,7 +44,7 @@
     "build-gh-pages": "npm run build-docs",
     "commit-msg": "commitlint --edit",
     "cover": "NODE_ENV=cover c8 --all --src src --reporter lcov --reporter text-summary --reporter text npm test",
-    "debug": "NODE_ENV=debug npm test -- -- -- -st --fail-fast",
+    "debug": "NODE_ENV=debug npm run test -- -st --fail-fast",
     "dev": "npm run lint-config-and-fix && npm run lint-and-fix && npm run cover -- -- -st --fail-fast",
     "install-hooks": "husky install",
     "lint": "xo",
@@ -69,7 +69,6 @@
   "devDependencies": {
     "@babel/core": "7.16.5",
     "@babel/preset-env": "7.16.5",
-    "@babel/register": "7.16.5",
     "@commitlint/cli": "15.0.0",
     "@js-library/commitlint-config": "0.0.4",
     "@node-loader/babel": "2.0.0",
