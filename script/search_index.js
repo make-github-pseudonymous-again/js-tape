@@ -48,12 +48,6 @@ window.esdocSearchIndex = [
     "function"
   ],
   [
-    "@async-abstraction/tape/src/asynciterabletoarray.js~asynciterabletoarray",
-    "function/index.html#static-function-asyncIterableToArray",
-    "<span>asyncIterableToArray</span> <span class=\"search-result-import-path\">@async-abstraction/tape/src/asyncIterableToArray.js</span>",
-    "function"
-  ],
-  [
     "@async-abstraction/tape/src/asynciteratormap.js~asynciteratormap",
     "function/index.html#static-function-asyncIteratorMap",
     "<span>asyncIteratorMap</span> <span class=\"search-result-import-path\">@async-abstraction/tape/src/asyncIteratorMap.js</span>",
@@ -561,12 +555,6 @@ window.esdocSearchIndex = [
     "src/asynciterablemap.js",
     "file/src/asyncIterableMap.js.html",
     "src/asyncIterableMap.js",
-    "file"
-  ],
-  [
-    "src/asynciterabletoarray.js",
-    "file/src/asyncIterableToArray.js.html",
-    "src/asyncIterableToArray.js",
     "file"
   ],
   [

@@ -1,7 +1,7 @@
 {
-  "coverage": "62.71%",
-  "expectCount": 59,
-  "actualCount": 37,
+  "coverage": "62.06%",
+  "expectCount": 58,
+  "actualCount": 36,
   "files": {
     "src/Tape.js": {
       "expectCount": 11,
@@ -21,11 +21,6 @@
       ]
     },
     "src/asyncIterableMap.js": {
-      "expectCount": 1,
-      "actualCount": 1,
-      "undocumentLines": []
-    },
-    "src/asyncIterableToArray.js": {
       "expectCount": 1,
       "actualCount": 1,
       "undocumentLines": []
