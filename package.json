@@ -65,7 +65,9 @@
     "test:module": "IMPORT_MAP_PATH=test/import-maps/dist/index.module.json npm run test-cmd",
     "test:src": "IMPORT_MAP_PATH=test/import-maps/src/index.json npm run test-cmd"
   },
-  "dependencies": {},
+  "dependencies": {
+    "@async-iterable-iterator/async-iterable-to-array": "^0.0.1"
+  },
   "devDependencies": {
     "@babel/core": "7.16.5",
     "@babel/preset-env": "7.16.5",

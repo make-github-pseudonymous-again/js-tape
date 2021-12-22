@@ -1,5 +1,5 @@
+import {asyncIterableToArray} from '@async-iterable-iterator/async-iterable-to-array';
 import toAsyncIterable from './toAsyncIterable.js';
-import asyncIterableToArray from './asyncIterableToArray.js';
 
 /**
  * Converts a tape to an array.

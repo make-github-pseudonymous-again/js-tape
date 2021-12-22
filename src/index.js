@@ -1,7 +1,6 @@
 export {default as Tape} from './Tape.js';
 export {default as asyncIterableChain} from './asyncIterableChain.js';
 export {default as asyncIterableMap} from './asyncIterableMap.js';
-export {default as asyncIterableToArray} from './asyncIterableToArray.js';
 export {default as chain} from './chain.js';
 export {default as eof} from './eof.js';
 export {default as exhaust} from './exhaust.js';

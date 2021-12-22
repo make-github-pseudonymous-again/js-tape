@@ -2,6 +2,18 @@
 # yarn lockfile v1
 
 
+"@async-iterable-iterator/async-iterable-to-array@^0.0.1":
+  version "0.0.1"
+  resolved "https://registry.yarnpkg.com/@async-iterable-iterator/async-iterable-to-array/-/async-iterable-to-array-0.0.1.tgz#919786e9394d3530dbfa47325d2eb405c29b2413"
+  integrity sha512-KkKdBzXTi5saccAsxEXWTCi4ZvehZX0PKRF2crCa4URFMp4VG5pAgmauB3CuLvF3wPrp8AwsGV1QAfJy/zgTEA==
+  dependencies:
+    "@async-iterable-iterator/async-iterator-to-array" "^0.0.1"
+
+"@async-iterable-iterator/async-iterator-to-array@^0.0.1":
+  version "0.0.1"
+  resolved "https://registry.yarnpkg.com/@async-iterable-iterator/async-iterator-to-array/-/async-iterator-to-array-0.0.1.tgz#4bbd362eb42586812f79e07fea8f8c58feeaeacd"
+  integrity sha512-VaFBhYBdTJ4DdVblOmZRjDMzPFzf46lm/hA7rMqWYguArQHho0wGe8gADpraXqD2REwGL0q/FvO8cnZ9+rMoUQ==
+
 "@babel/code-frame@^7.0.0", "@babel/code-frame@^7.10.4", "@babel/code-frame@^7.16.0":
   version "7.16.0"
   resolved "https://registry.yarnpkg.com/@babel/code-frame/-/code-frame-7.16.0.tgz#0dfc80309beec8411e65e706461c408b0bb9b431"
