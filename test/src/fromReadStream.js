@@ -1,4 +1,5 @@
 import fs from 'node:fs';
+
 import test from 'ava';
 
 import {fromReadStream, toString} from '#module';

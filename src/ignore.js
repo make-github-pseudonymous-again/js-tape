@@ -1,5 +1,5 @@
-import split from './split.js';
 import chain from './chain.js';
+import split from './split.js';
 
 /**
  * Filters a tape by ignoring a given set of tokens.

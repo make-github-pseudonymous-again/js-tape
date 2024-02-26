@@ -1,4 +1,5 @@
 import {asyncIterableToArray} from '@async-iterable-iterator/async-iterable-to-array';
+
 import toAsyncIterable from './toAsyncIterable.js';
 
 /**

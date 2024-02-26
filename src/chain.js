@@ -1,7 +1,7 @@
-import fromAsyncIterable from './fromAsyncIterable.js';
-import toAsyncIterable from './toAsyncIterable.js';
 import asyncIterableChain from './asyncIterableChain.js';
 import asyncIterableMap from './asyncIterableMap.js';
+import fromAsyncIterable from './fromAsyncIterable.js';
+import toAsyncIterable from './toAsyncIterable.js';
 
 /**
  * Converts a tape of tapes of tokens to a tape of tokens.
